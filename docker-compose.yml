@@ -1,0 +1,30 @@
+db:
+  image: sameersbn/mysql
+  volumes:
+   - ./src/dbdump:/var/lib/mysql
+  environment:
+   - DB_NAME=modx
+   - DB_USER=stargumbo
+   - DB_PASS=gold6969
+   - MYSQL_ROOT_PASSWORD=gold6969
+   - MYSQL_DATABASE=modx
+  ports:
+    - "3306:3306"
+
+php:
+  image: nmcteam/php56
+  volumes:
+    - ./src/php-fpm.conf:/etc/php5/fpm/php-fpm.conf
+    - ./src:/var/www
+  links:
+    - db
+    
+web:
+  image: tester/nginx
+  ports:
+    - "8080:80"
+  volumes:
+    - ./src:/var/www
+    - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
+  links:
+    - php

@@ -1,0 +1,720 @@
+[2017-01-15 19:18:09] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 166) Could not cache context settings for mgr.
+[2017-01-15 19:18:09] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 166) Could not cache context settings for web.
+[2017-01-15 19:18:09] (ERROR @ /var/www/htdocs/core/xpdo/cache/xpdocachemanager.class.php : 510) PHP warning: unlink(/var/www/htdocs/core/cache/lexicon_topics/lexicon/en/core/action.cache.php): No such file or directory
+[2017-01-15 19:18:09] (ERROR @ /var/www/htdocs/core/xpdo/cache/xpdocachemanager.class.php : 510) PHP warning: unlink(/var/www/htdocs/core/cache/lexicon_topics/lexicon/en/core/login.cache.php): No such file or directory
+[2017-01-15 19:18:09] (ERROR @ /var/www/htdocs/core/xpdo/cache/xpdocachemanager.class.php : 518) PHP warning: closedir(): 25 is not a valid Directory resource
+[2017-01-15 19:18:16] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 344) Error caching lexicon topic lexicon/en/core/default
+[2017-01-15 19:18:16] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 344) Error caching lexicon topic lexicon/en/core/menu
+[2017-01-15 19:18:16] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 344) Error caching lexicon topic lexicon/en/core/topmenu
+[2017-01-15 19:18:17] (ERROR @ /var/www/htdocs/core/model/modx/modmenu.class.php : 67) The menu cache key menus/usernav/en could not be written.
+[2017-01-15 19:41:42] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 344) Error caching lexicon topic lexicon/en/core/welcome
+[2017-01-15 19:41:42] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 344) Error caching lexicon topic lexicon/en/core/dashboards
+[2017-01-15 19:41:43] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 344) Error caching lexicon topic lexicon/en/core/menu
+[2017-01-15 19:41:43] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 344) Error caching lexicon topic lexicon/en/migx/default
+[2017-01-15 19:41:43] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 344) Error caching lexicon topic lexicon/en/versionx/default
+[2017-01-15 19:41:44] (ERROR @ /var/www/htdocs/core/model/modx/modmenu.class.php : 67) The menu cache key menus/usernav/en could not be written.
+[2017-01-15 19:41:44] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 394) Error caching action map mgr/actions
+[2017-01-15 19:41:44] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 344) Error caching lexicon topic lexicon/en/core/resource
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoquery.class.php : 653) Could not construct or prepare query because it is invalid or could not connect: SELECT `modExtensionPackage`.`id`, `modExtensionPackage`.`namespace`, `modExtensionPackage`.`name`, `modExtensionPackage`.`path`, `modExtensionPackage`.`table_prefix`, `modExtensionPackage`.`service_class`, `modExtensionPackage`.`service_name`, `modExtensionPackage`.`created_at`, `modExtensionPackage`.`updated_at`, Namespace.path AS namespace_path FROM `modx_extension_packages` AS `modExtensionPackage` JOIN `modx_namespaces` `Namespace` ON `modExtensionPackage`.`namespace` =  `Namespace`.`name` ORDER BY namespace ASC 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoquery.class.php : 653) Could not construct or prepare query because it is invalid or could not connect: SELECT `modSession`.`id` AS `modSession_id`, `modSession`.`access` AS `modSession_access`, `modSession`.`data` AS `modSession_data` FROM `modx_session` AS `modSession` WHERE `modSession`.`id` = ? 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 263) Error preparing statement for query: SELECT `modSession`.`id` AS `modSession_id`, `modSession`.`access` AS `modSession_access`, `modSession`.`data` AS `modSession_data` FROM `modx_session` AS `modSession` WHERE `modSession`.`id` = ?  - 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoquery.class.php : 653) Could not construct or prepare query because it is invalid or could not connect: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 546) Error  preparing statement: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC  - 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoquery.class.php : 653) Could not construct or prepare query because it is invalid or could not connect: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 546) Error  preparing statement: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC  - 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoquery.class.php : 653) Could not construct or prepare query because it is invalid or could not connect: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 546) Error  preparing statement: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC  - 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoquery.class.php : 653) Could not construct or prepare query because it is invalid or could not connect: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 546) Error  preparing statement: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC  - 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoquery.class.php : 653) Could not construct or prepare query because it is invalid or could not connect: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 546) Error  preparing statement: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC  - 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoquery.class.php : 653) Could not construct or prepare query because it is invalid or could not connect: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 546) Error  preparing statement: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC  - 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoquery.class.php : 653) Could not construct or prepare query because it is invalid or could not connect: SELECT `modSession`.`id` AS `modSession_id`, `modSession`.`access` AS `modSession_access`, `modSession`.`data` AS `modSession_data` FROM `modx_session` AS `modSession` WHERE `modSession`.`id` = ? 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 263) Error preparing statement for query: SELECT `modSession`.`id` AS `modSession_id`, `modSession`.`access` AS `modSession_access`, `modSession`.`data` AS `modSession_data` FROM `modx_session` AS `modSession` WHERE `modSession`.`id` = ?  - 
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:53:01] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [2002] Connection refused
+[2017-01-15 19:54:30] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:30] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_tmplvars' doesn't exist
+)
+
+[2017-01-15 19:54:30] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_tmplvars' doesn't exist
+)
+
+[2017-01-15 19:54:30] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_tmplvars' doesn't exist
+)
+
+[2017-01-15 19:54:30] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_tmplvars' doesn't exist
+)
+
+[2017-01-15 19:54:30] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_tmplvars' doesn't exist
+)
+
+[2017-01-15 19:54:30] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modTemplateVar`.`id` AS `modTemplateVar_id`, `modTemplateVar`.`source` AS `modTemplateVar_source`, `modTemplateVar`.`property_preprocess` AS `modTemplateVar_property_preprocess`, `modTemplateVar`.`type` AS `modTemplateVar_type`, `modTemplateVar`.`name` AS `modTemplateVar_name`, `modTemplateVar`.`caption` AS `modTemplateVar_caption`, `modTemplateVar`.`description` AS `modTemplateVar_description`, `modTemplateVar`.`editor_type` AS `modTemplateVar_editor_type`, `modTemplateVar`.`category` AS `modTemplateVar_category`, `modTemplateVar`.`locked` AS `modTemplateVar_locked`, `modTemplateVar`.`elements` AS `modTemplateVar_elements`, `modTemplateVar`.`rank` AS `modTemplateVar_rank`, `modTemplateVar`.`display` AS `modTemplateVar_display`, `modTemplateVar`.`default_text` AS `modTemplateVar_default_text`, `modTemplateVar`.`properties` AS `modTemplateVar_properties`, `modTemplateVar`.`input_properties` AS `modTemplateVar_input_properties`, `modTemplateVar`.`output_properties` AS `modTemplateVar_output_properties`, `modTemplateVar`.`static` AS `modTemplateVar_static`, `modTemplateVar`.`static_file` AS `modTemplateVar_static_file`, `Source`.`id` AS `Source_id`, `Source`.`name` AS `Source_name`, `Source`.`description` AS `Source_description`, `Source`.`class_key` AS `Source_class_key`, `Source`.`properties` AS `Source_properties`, `Source`.`is_stream` AS `Source_is_stream` FROM `modx_site_tmplvars` AS `modTemplateVar` LEFT JOIN `modx_media_sources` `Source` ON `modTemplateVar`.`source` = `Source`.`id` WHERE `modTemplateVar`.`name` = ? ORDER BY `modTemplateVar`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_tmplvars' doesn't exist
+)
+
+[2017-01-15 19:54:30] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:30] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 1452) Error 42S02 executing statement:
+INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES ('42eghra60k4ubkamqaf62af8h1', 1484510070, 'modx.user.contextTokens|a:0:{}')
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:34] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:34] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_access_context' doesn't exist
+)
+
+[2017-01-15 19:54:34] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:34] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 1452) Error 42S02 executing statement:
+INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES ('42eghra60k4ubkamqaf62af8h1', 1484510074, '')
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:34] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:34] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_actiondom' doesn't exist
+)
+
+[2017-01-15 19:54:34] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:54:34] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:54:35] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:35] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 1452) Error 42S02 executing statement:
+INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES ('42eghra60k4ubkamqaf62af8h1', 1484510075, 'modx.user.contextTokens|a:0:{}')
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:36] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:36] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_actiondom' doesn't exist
+)
+
+[2017-01-15 19:54:36] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:54:36] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:54:36] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:54:36] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modUser`.`id` AS `modUser_id`, `modUser`.`username` AS `modUser_username`, `modUser`.`password` AS `modUser_password`, `modUser`.`cachepwd` AS `modUser_cachepwd`, `modUser`.`class_key` AS `modUser_class_key`, `modUser`.`active` AS `modUser_active`, `modUser`.`remote_key` AS `modUser_remote_key`, `modUser`.`remote_data` AS `modUser_remote_data`, `modUser`.`hash_class` AS `modUser_hash_class`, `modUser`.`salt` AS `modUser_salt`, `modUser`.`primary_group` AS `modUser_primary_group`, `modUser`.`session_stale` AS `modUser_session_stale`, `modUser`.`sudo` AS `modUser_sudo`, `modUser`.`createdon` AS `modUser_createdon`, `Profile`.`id` AS `Profile_id`, `Profile`.`internalKey` AS `Profile_internalKey`, `Profile`.`fullname` AS `Profile_fullname`, `Profile`.`email` AS `Profile_email`, `Profile`.`phone` AS `Profile_phone`, `Profile`.`mobilephone` AS `Profile_mobilephone`, `Profile`.`blocked` AS `Profile_blocked`, `Profile`.`blockeduntil` AS `Profile_blockeduntil`, `Profile`.`blockedafter` AS `Profile_blockedafter`, `Profile`.`logincount` AS `Profile_logincount`, `Profile`.`lastlogin` AS `Profile_lastlogin`, `Profile`.`thislogin` AS `Profile_thislogin`, `Profile`.`failedlogincount` AS `Profile_failedlogincount`, `Profile`.`sessionid` AS `Profile_sessionid`, `Profile`.`dob` AS `Profile_dob`, `Profile`.`gender` AS `Profile_gender`, `Profile`.`address` AS `Profile_address`, `Profile`.`country` AS `Profile_country`, `Profile`.`city` AS `Profile_city`, `Profile`.`state` AS `Profile_state`, `Profile`.`zip` AS `Profile_zip`, `Profile`.`fax` AS `Profile_fax`, `Profile`.`photo` AS `Profile_photo`, `Profile`.`comment` AS `Profile_comment`, `Profile`.`website` AS `Profile_website`, `Profile`.`extended` AS `Profile_extended`, `UserSettings`.`user` AS `UserSettings_user`, `UserSettings`.`key` AS `UserSettings_key`, `UserSettings`.`value` AS `UserSettings_value`, `UserSettings`.`xtype` AS `UserSettings_xtype`, `UserSettings`.`namespace` AS `UserSettings_namespace`, `UserSettings`.`area` AS `UserSettings_area`, `UserSettings`.`editedon` AS `UserSettings_editedon` FROM `modx_users` AS `modUser` LEFT JOIN `modx_user_attributes` `Profile` ON `modUser`.`id` = `Profile`.`internalKey` LEFT JOIN `modx_user_settings` `UserSettings` ON `modUser`.`id` = `UserSettings`.`user` WHERE `modUser`.`username` = ? ORDER BY `modUser`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:54:36] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:36] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 1452) Error 42S02 executing statement:
+INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES ('42eghra60k4ubkamqaf62af8h1', 1484510076, 'modx.user.contextTokens|a:0:{}')
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:45] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:45] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_actiondom' doesn't exist
+)
+
+[2017-01-15 19:54:45] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:54:45] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:54:45] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:54:45] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modUser`.`id` AS `modUser_id`, `modUser`.`username` AS `modUser_username`, `modUser`.`password` AS `modUser_password`, `modUser`.`cachepwd` AS `modUser_cachepwd`, `modUser`.`class_key` AS `modUser_class_key`, `modUser`.`active` AS `modUser_active`, `modUser`.`remote_key` AS `modUser_remote_key`, `modUser`.`remote_data` AS `modUser_remote_data`, `modUser`.`hash_class` AS `modUser_hash_class`, `modUser`.`salt` AS `modUser_salt`, `modUser`.`primary_group` AS `modUser_primary_group`, `modUser`.`session_stale` AS `modUser_session_stale`, `modUser`.`sudo` AS `modUser_sudo`, `modUser`.`createdon` AS `modUser_createdon`, `Profile`.`id` AS `Profile_id`, `Profile`.`internalKey` AS `Profile_internalKey`, `Profile`.`fullname` AS `Profile_fullname`, `Profile`.`email` AS `Profile_email`, `Profile`.`phone` AS `Profile_phone`, `Profile`.`mobilephone` AS `Profile_mobilephone`, `Profile`.`blocked` AS `Profile_blocked`, `Profile`.`blockeduntil` AS `Profile_blockeduntil`, `Profile`.`blockedafter` AS `Profile_blockedafter`, `Profile`.`logincount` AS `Profile_logincount`, `Profile`.`lastlogin` AS `Profile_lastlogin`, `Profile`.`thislogin` AS `Profile_thislogin`, `Profile`.`failedlogincount` AS `Profile_failedlogincount`, `Profile`.`sessionid` AS `Profile_sessionid`, `Profile`.`dob` AS `Profile_dob`, `Profile`.`gender` AS `Profile_gender`, `Profile`.`address` AS `Profile_address`, `Profile`.`country` AS `Profile_country`, `Profile`.`city` AS `Profile_city`, `Profile`.`state` AS `Profile_state`, `Profile`.`zip` AS `Profile_zip`, `Profile`.`fax` AS `Profile_fax`, `Profile`.`photo` AS `Profile_photo`, `Profile`.`comment` AS `Profile_comment`, `Profile`.`website` AS `Profile_website`, `Profile`.`extended` AS `Profile_extended`, `UserSettings`.`user` AS `UserSettings_user`, `UserSettings`.`key` AS `UserSettings_key`, `UserSettings`.`value` AS `UserSettings_value`, `UserSettings`.`xtype` AS `UserSettings_xtype`, `UserSettings`.`namespace` AS `UserSettings_namespace`, `UserSettings`.`area` AS `UserSettings_area`, `UserSettings`.`editedon` AS `UserSettings_editedon` FROM `modx_users` AS `modUser` LEFT JOIN `modx_user_attributes` `Profile` ON `modUser`.`id` = `Profile`.`internalKey` LEFT JOIN `modx_user_settings` `UserSettings` ON `modUser`.`id` = `UserSettings`.`user` WHERE `modUser`.`username` = ? ORDER BY `modUser`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:54:45] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:45] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 1452) Error 42S02 executing statement:
+INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES ('42eghra60k4ubkamqaf62af8h1', 1484510085, 'modx.user.contextTokens|a:0:{}')
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:49] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:49] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_actiondom' doesn't exist
+)
+
+[2017-01-15 19:54:49] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:54:49] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:54:49] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:54:49] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modUser`.`id` AS `modUser_id`, `modUser`.`username` AS `modUser_username`, `modUser`.`password` AS `modUser_password`, `modUser`.`cachepwd` AS `modUser_cachepwd`, `modUser`.`class_key` AS `modUser_class_key`, `modUser`.`active` AS `modUser_active`, `modUser`.`remote_key` AS `modUser_remote_key`, `modUser`.`remote_data` AS `modUser_remote_data`, `modUser`.`hash_class` AS `modUser_hash_class`, `modUser`.`salt` AS `modUser_salt`, `modUser`.`primary_group` AS `modUser_primary_group`, `modUser`.`session_stale` AS `modUser_session_stale`, `modUser`.`sudo` AS `modUser_sudo`, `modUser`.`createdon` AS `modUser_createdon`, `Profile`.`id` AS `Profile_id`, `Profile`.`internalKey` AS `Profile_internalKey`, `Profile`.`fullname` AS `Profile_fullname`, `Profile`.`email` AS `Profile_email`, `Profile`.`phone` AS `Profile_phone`, `Profile`.`mobilephone` AS `Profile_mobilephone`, `Profile`.`blocked` AS `Profile_blocked`, `Profile`.`blockeduntil` AS `Profile_blockeduntil`, `Profile`.`blockedafter` AS `Profile_blockedafter`, `Profile`.`logincount` AS `Profile_logincount`, `Profile`.`lastlogin` AS `Profile_lastlogin`, `Profile`.`thislogin` AS `Profile_thislogin`, `Profile`.`failedlogincount` AS `Profile_failedlogincount`, `Profile`.`sessionid` AS `Profile_sessionid`, `Profile`.`dob` AS `Profile_dob`, `Profile`.`gender` AS `Profile_gender`, `Profile`.`address` AS `Profile_address`, `Profile`.`country` AS `Profile_country`, `Profile`.`city` AS `Profile_city`, `Profile`.`state` AS `Profile_state`, `Profile`.`zip` AS `Profile_zip`, `Profile`.`fax` AS `Profile_fax`, `Profile`.`photo` AS `Profile_photo`, `Profile`.`comment` AS `Profile_comment`, `Profile`.`website` AS `Profile_website`, `Profile`.`extended` AS `Profile_extended`, `UserSettings`.`user` AS `UserSettings_user`, `UserSettings`.`key` AS `UserSettings_key`, `UserSettings`.`value` AS `UserSettings_value`, `UserSettings`.`xtype` AS `UserSettings_xtype`, `UserSettings`.`namespace` AS `UserSettings_namespace`, `UserSettings`.`area` AS `UserSettings_area`, `UserSettings`.`editedon` AS `UserSettings_editedon` FROM `modx_users` AS `modUser` LEFT JOIN `modx_user_attributes` `Profile` ON `modUser`.`id` = `Profile`.`internalKey` LEFT JOIN `modx_user_settings` `UserSettings` ON `modUser`.`id` = `UserSettings`.`user` WHERE `modUser`.`username` = ? ORDER BY `modUser`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:54:49] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:49] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 1452) Error 42S02 executing statement:
+INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES ('42eghra60k4ubkamqaf62af8h1', 1484510089, 'modx.user.contextTokens|a:0:{}')
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:53] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:53] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_actiondom' doesn't exist
+)
+
+[2017-01-15 19:54:53] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:54:53] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:54:53] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:54:53] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modUser`.`id` AS `modUser_id`, `modUser`.`username` AS `modUser_username`, `modUser`.`password` AS `modUser_password`, `modUser`.`cachepwd` AS `modUser_cachepwd`, `modUser`.`class_key` AS `modUser_class_key`, `modUser`.`active` AS `modUser_active`, `modUser`.`remote_key` AS `modUser_remote_key`, `modUser`.`remote_data` AS `modUser_remote_data`, `modUser`.`hash_class` AS `modUser_hash_class`, `modUser`.`salt` AS `modUser_salt`, `modUser`.`primary_group` AS `modUser_primary_group`, `modUser`.`session_stale` AS `modUser_session_stale`, `modUser`.`sudo` AS `modUser_sudo`, `modUser`.`createdon` AS `modUser_createdon`, `Profile`.`id` AS `Profile_id`, `Profile`.`internalKey` AS `Profile_internalKey`, `Profile`.`fullname` AS `Profile_fullname`, `Profile`.`email` AS `Profile_email`, `Profile`.`phone` AS `Profile_phone`, `Profile`.`mobilephone` AS `Profile_mobilephone`, `Profile`.`blocked` AS `Profile_blocked`, `Profile`.`blockeduntil` AS `Profile_blockeduntil`, `Profile`.`blockedafter` AS `Profile_blockedafter`, `Profile`.`logincount` AS `Profile_logincount`, `Profile`.`lastlogin` AS `Profile_lastlogin`, `Profile`.`thislogin` AS `Profile_thislogin`, `Profile`.`failedlogincount` AS `Profile_failedlogincount`, `Profile`.`sessionid` AS `Profile_sessionid`, `Profile`.`dob` AS `Profile_dob`, `Profile`.`gender` AS `Profile_gender`, `Profile`.`address` AS `Profile_address`, `Profile`.`country` AS `Profile_country`, `Profile`.`city` AS `Profile_city`, `Profile`.`state` AS `Profile_state`, `Profile`.`zip` AS `Profile_zip`, `Profile`.`fax` AS `Profile_fax`, `Profile`.`photo` AS `Profile_photo`, `Profile`.`comment` AS `Profile_comment`, `Profile`.`website` AS `Profile_website`, `Profile`.`extended` AS `Profile_extended`, `UserSettings`.`user` AS `UserSettings_user`, `UserSettings`.`key` AS `UserSettings_key`, `UserSettings`.`value` AS `UserSettings_value`, `UserSettings`.`xtype` AS `UserSettings_xtype`, `UserSettings`.`namespace` AS `UserSettings_namespace`, `UserSettings`.`area` AS `UserSettings_area`, `UserSettings`.`editedon` AS `UserSettings_editedon` FROM `modx_users` AS `modUser` LEFT JOIN `modx_user_attributes` `Profile` ON `modUser`.`id` = `Profile`.`internalKey` LEFT JOIN `modx_user_settings` `UserSettings` ON `modUser`.`id` = `UserSettings`.`user` WHERE `modUser`.`username` = ? ORDER BY `modUser`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:54:53] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:54:53] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 1452) Error 42S02 executing statement:
+INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES ('42eghra60k4ubkamqaf62af8h1', 1484510093, 'modx.user.contextTokens|a:0:{}')
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:55:04] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:55:05] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_actiondom' doesn't exist
+)
+
+[2017-01-15 19:55:05] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:55:05] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:55:05] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:55:05] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modUser`.`id` AS `modUser_id`, `modUser`.`username` AS `modUser_username`, `modUser`.`password` AS `modUser_password`, `modUser`.`cachepwd` AS `modUser_cachepwd`, `modUser`.`class_key` AS `modUser_class_key`, `modUser`.`active` AS `modUser_active`, `modUser`.`remote_key` AS `modUser_remote_key`, `modUser`.`remote_data` AS `modUser_remote_data`, `modUser`.`hash_class` AS `modUser_hash_class`, `modUser`.`salt` AS `modUser_salt`, `modUser`.`primary_group` AS `modUser_primary_group`, `modUser`.`session_stale` AS `modUser_session_stale`, `modUser`.`sudo` AS `modUser_sudo`, `modUser`.`createdon` AS `modUser_createdon`, `Profile`.`id` AS `Profile_id`, `Profile`.`internalKey` AS `Profile_internalKey`, `Profile`.`fullname` AS `Profile_fullname`, `Profile`.`email` AS `Profile_email`, `Profile`.`phone` AS `Profile_phone`, `Profile`.`mobilephone` AS `Profile_mobilephone`, `Profile`.`blocked` AS `Profile_blocked`, `Profile`.`blockeduntil` AS `Profile_blockeduntil`, `Profile`.`blockedafter` AS `Profile_blockedafter`, `Profile`.`logincount` AS `Profile_logincount`, `Profile`.`lastlogin` AS `Profile_lastlogin`, `Profile`.`thislogin` AS `Profile_thislogin`, `Profile`.`failedlogincount` AS `Profile_failedlogincount`, `Profile`.`sessionid` AS `Profile_sessionid`, `Profile`.`dob` AS `Profile_dob`, `Profile`.`gender` AS `Profile_gender`, `Profile`.`address` AS `Profile_address`, `Profile`.`country` AS `Profile_country`, `Profile`.`city` AS `Profile_city`, `Profile`.`state` AS `Profile_state`, `Profile`.`zip` AS `Profile_zip`, `Profile`.`fax` AS `Profile_fax`, `Profile`.`photo` AS `Profile_photo`, `Profile`.`comment` AS `Profile_comment`, `Profile`.`website` AS `Profile_website`, `Profile`.`extended` AS `Profile_extended`, `UserSettings`.`user` AS `UserSettings_user`, `UserSettings`.`key` AS `UserSettings_key`, `UserSettings`.`value` AS `UserSettings_value`, `UserSettings`.`xtype` AS `UserSettings_xtype`, `UserSettings`.`namespace` AS `UserSettings_namespace`, `UserSettings`.`area` AS `UserSettings_area`, `UserSettings`.`editedon` AS `UserSettings_editedon` FROM `modx_users` AS `modUser` LEFT JOIN `modx_user_attributes` `Profile` ON `modUser`.`id` = `Profile`.`internalKey` LEFT JOIN `modx_user_settings` `UserSettings` ON `modUser`.`id` = `UserSettings`.`user` WHERE `modUser`.`username` = ? ORDER BY `modUser`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:55:05] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:55:05] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 1452) Error 42S02 executing statement:
+INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES ('rgblv56i63u63gmhqf28gntgn4', 1484510105, 'modx.user.contextTokens|a:0:{}')
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:55:10] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:55:10] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_actiondom' doesn't exist
+)
+
+[2017-01-15 19:55:10] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:55:10] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:55:10] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:55:10] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modUser`.`id` AS `modUser_id`, `modUser`.`username` AS `modUser_username`, `modUser`.`password` AS `modUser_password`, `modUser`.`cachepwd` AS `modUser_cachepwd`, `modUser`.`class_key` AS `modUser_class_key`, `modUser`.`active` AS `modUser_active`, `modUser`.`remote_key` AS `modUser_remote_key`, `modUser`.`remote_data` AS `modUser_remote_data`, `modUser`.`hash_class` AS `modUser_hash_class`, `modUser`.`salt` AS `modUser_salt`, `modUser`.`primary_group` AS `modUser_primary_group`, `modUser`.`session_stale` AS `modUser_session_stale`, `modUser`.`sudo` AS `modUser_sudo`, `modUser`.`createdon` AS `modUser_createdon`, `Profile`.`id` AS `Profile_id`, `Profile`.`internalKey` AS `Profile_internalKey`, `Profile`.`fullname` AS `Profile_fullname`, `Profile`.`email` AS `Profile_email`, `Profile`.`phone` AS `Profile_phone`, `Profile`.`mobilephone` AS `Profile_mobilephone`, `Profile`.`blocked` AS `Profile_blocked`, `Profile`.`blockeduntil` AS `Profile_blockeduntil`, `Profile`.`blockedafter` AS `Profile_blockedafter`, `Profile`.`logincount` AS `Profile_logincount`, `Profile`.`lastlogin` AS `Profile_lastlogin`, `Profile`.`thislogin` AS `Profile_thislogin`, `Profile`.`failedlogincount` AS `Profile_failedlogincount`, `Profile`.`sessionid` AS `Profile_sessionid`, `Profile`.`dob` AS `Profile_dob`, `Profile`.`gender` AS `Profile_gender`, `Profile`.`address` AS `Profile_address`, `Profile`.`country` AS `Profile_country`, `Profile`.`city` AS `Profile_city`, `Profile`.`state` AS `Profile_state`, `Profile`.`zip` AS `Profile_zip`, `Profile`.`fax` AS `Profile_fax`, `Profile`.`photo` AS `Profile_photo`, `Profile`.`comment` AS `Profile_comment`, `Profile`.`website` AS `Profile_website`, `Profile`.`extended` AS `Profile_extended`, `UserSettings`.`user` AS `UserSettings_user`, `UserSettings`.`key` AS `UserSettings_key`, `UserSettings`.`value` AS `UserSettings_value`, `UserSettings`.`xtype` AS `UserSettings_xtype`, `UserSettings`.`namespace` AS `UserSettings_namespace`, `UserSettings`.`area` AS `UserSettings_area`, `UserSettings`.`editedon` AS `UserSettings_editedon` FROM `modx_users` AS `modUser` LEFT JOIN `modx_user_attributes` `Profile` ON `modUser`.`id` = `Profile`.`internalKey` LEFT JOIN `modx_user_settings` `UserSettings` ON `modUser`.`id` = `UserSettings`.`user` WHERE `modUser`.`username` = ? ORDER BY `modUser`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:55:10] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:55:10] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 1452) Error 42S02 executing statement:
+INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES ('rgblv56i63u63gmhqf28gntgn4', 1484510110, 'modx.user.contextTokens|a:0:{}')
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:55:14] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:55:14] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_actiondom' doesn't exist
+)
+
+[2017-01-15 19:55:14] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:55:14] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:55:14] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:55:14] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modUser`.`id` AS `modUser_id`, `modUser`.`username` AS `modUser_username`, `modUser`.`password` AS `modUser_password`, `modUser`.`cachepwd` AS `modUser_cachepwd`, `modUser`.`class_key` AS `modUser_class_key`, `modUser`.`active` AS `modUser_active`, `modUser`.`remote_key` AS `modUser_remote_key`, `modUser`.`remote_data` AS `modUser_remote_data`, `modUser`.`hash_class` AS `modUser_hash_class`, `modUser`.`salt` AS `modUser_salt`, `modUser`.`primary_group` AS `modUser_primary_group`, `modUser`.`session_stale` AS `modUser_session_stale`, `modUser`.`sudo` AS `modUser_sudo`, `modUser`.`createdon` AS `modUser_createdon`, `Profile`.`id` AS `Profile_id`, `Profile`.`internalKey` AS `Profile_internalKey`, `Profile`.`fullname` AS `Profile_fullname`, `Profile`.`email` AS `Profile_email`, `Profile`.`phone` AS `Profile_phone`, `Profile`.`mobilephone` AS `Profile_mobilephone`, `Profile`.`blocked` AS `Profile_blocked`, `Profile`.`blockeduntil` AS `Profile_blockeduntil`, `Profile`.`blockedafter` AS `Profile_blockedafter`, `Profile`.`logincount` AS `Profile_logincount`, `Profile`.`lastlogin` AS `Profile_lastlogin`, `Profile`.`thislogin` AS `Profile_thislogin`, `Profile`.`failedlogincount` AS `Profile_failedlogincount`, `Profile`.`sessionid` AS `Profile_sessionid`, `Profile`.`dob` AS `Profile_dob`, `Profile`.`gender` AS `Profile_gender`, `Profile`.`address` AS `Profile_address`, `Profile`.`country` AS `Profile_country`, `Profile`.`city` AS `Profile_city`, `Profile`.`state` AS `Profile_state`, `Profile`.`zip` AS `Profile_zip`, `Profile`.`fax` AS `Profile_fax`, `Profile`.`photo` AS `Profile_photo`, `Profile`.`comment` AS `Profile_comment`, `Profile`.`website` AS `Profile_website`, `Profile`.`extended` AS `Profile_extended`, `UserSettings`.`user` AS `UserSettings_user`, `UserSettings`.`key` AS `UserSettings_key`, `UserSettings`.`value` AS `UserSettings_value`, `UserSettings`.`xtype` AS `UserSettings_xtype`, `UserSettings`.`namespace` AS `UserSettings_namespace`, `UserSettings`.`area` AS `UserSettings_area`, `UserSettings`.`editedon` AS `UserSettings_editedon` FROM `modx_users` AS `modUser` LEFT JOIN `modx_user_attributes` `Profile` ON `modUser`.`id` = `Profile`.`internalKey` LEFT JOIN `modx_user_settings` `UserSettings` ON `modUser`.`id` = `UserSettings`.`user` WHERE `modUser`.`username` = ? ORDER BY `modUser`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:55:14] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:55:14] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 1452) Error 42S02 executing statement:
+INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES ('rgblv56i63u63gmhqf28gntgn4', 1484510114, 'modx.user.contextTokens|a:0:{}')
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:55:18] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:55:19] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_actiondom' doesn't exist
+)
+
+[2017-01-15 19:55:19] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:55:19] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_site_snippets' doesn't exist
+)
+
+[2017-01-15 19:55:19] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:55:19] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 543) Error 42S02 executing query: SELECT `modUser`.`id` AS `modUser_id`, `modUser`.`username` AS `modUser_username`, `modUser`.`password` AS `modUser_password`, `modUser`.`cachepwd` AS `modUser_cachepwd`, `modUser`.`class_key` AS `modUser_class_key`, `modUser`.`active` AS `modUser_active`, `modUser`.`remote_key` AS `modUser_remote_key`, `modUser`.`remote_data` AS `modUser_remote_data`, `modUser`.`hash_class` AS `modUser_hash_class`, `modUser`.`salt` AS `modUser_salt`, `modUser`.`primary_group` AS `modUser_primary_group`, `modUser`.`session_stale` AS `modUser_session_stale`, `modUser`.`sudo` AS `modUser_sudo`, `modUser`.`createdon` AS `modUser_createdon`, `Profile`.`id` AS `Profile_id`, `Profile`.`internalKey` AS `Profile_internalKey`, `Profile`.`fullname` AS `Profile_fullname`, `Profile`.`email` AS `Profile_email`, `Profile`.`phone` AS `Profile_phone`, `Profile`.`mobilephone` AS `Profile_mobilephone`, `Profile`.`blocked` AS `Profile_blocked`, `Profile`.`blockeduntil` AS `Profile_blockeduntil`, `Profile`.`blockedafter` AS `Profile_blockedafter`, `Profile`.`logincount` AS `Profile_logincount`, `Profile`.`lastlogin` AS `Profile_lastlogin`, `Profile`.`thislogin` AS `Profile_thislogin`, `Profile`.`failedlogincount` AS `Profile_failedlogincount`, `Profile`.`sessionid` AS `Profile_sessionid`, `Profile`.`dob` AS `Profile_dob`, `Profile`.`gender` AS `Profile_gender`, `Profile`.`address` AS `Profile_address`, `Profile`.`country` AS `Profile_country`, `Profile`.`city` AS `Profile_city`, `Profile`.`state` AS `Profile_state`, `Profile`.`zip` AS `Profile_zip`, `Profile`.`fax` AS `Profile_fax`, `Profile`.`photo` AS `Profile_photo`, `Profile`.`comment` AS `Profile_comment`, `Profile`.`website` AS `Profile_website`, `Profile`.`extended` AS `Profile_extended`, `UserSettings`.`user` AS `UserSettings_user`, `UserSettings`.`key` AS `UserSettings_key`, `UserSettings`.`value` AS `UserSettings_value`, `UserSettings`.`xtype` AS `UserSettings_xtype`, `UserSettings`.`namespace` AS `UserSettings_namespace`, `UserSettings`.`area` AS `UserSettings_area`, `UserSettings`.`editedon` AS `UserSettings_editedon` FROM `modx_users` AS `modUser` LEFT JOIN `modx_user_attributes` `Profile` ON `modUser`.`id` = `Profile`.`internalKey` LEFT JOIN `modx_user_settings` `UserSettings` ON `modUser`.`id` = `UserSettings`.`user` WHERE `modUser`.`username` = ? ORDER BY `modUser`.`id` ASC  - Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_users' doesn't exist
+)
+
+[2017-01-15 19:55:19] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 240) Error 42S02 executing statement: 
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
+[2017-01-15 19:55:19] (ERROR @ /var/www/htdocs/core/xpdo/om/xpdoobject.class.php : 1452) Error 42S02 executing statement:
+INSERT INTO `modx_session` (`id`, `access`, `data`) VALUES ('rgblv56i63u63gmhqf28gntgn4', 1484510119, 'modx.user.contextTokens|a:0:{}')
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'modx.modx_session' doesn't exist
+)
+
