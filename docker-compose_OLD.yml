@@ -1,0 +1,56 @@
+db:
+  image: sameersbn/mysql
+  volumes:
+   - ./src/dbdump:/var/lib/mysql
+  environment:
+   - DB_NAME=modx
+   - DB_USER=stargumbo
+   - DB_PASS=gold6969
+   - MYSQL_ROOT_PASSWORD=gold6969
+   - MYSQL_DATABASE=modx
+  ports:
+    - "3306:3306"
+
+php:
+  image: nmcteam/php56
+  volumes:
+    - ./src/php-fpm.conf:/etc/php5/fpm/php-fpm.conf
+    - ./src:/var/www
+  links:
+    - db
+
+web:
+  image: tester/nginx
+  ports:
+    - "8080:80"
+  volumes:
+    - ./src:/var/www
+    - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
+  volumes_from:
+    - githubmimosa-5775d535
+  links:
+    - php
+
+
+
+version: ‘2’
+services:
+  dbpostgres:
+    image: postgres:9.4 #define the image to get
+    volumes:
+     — pgvolume:/var/lib/postgresql/data #using the declared volume
+    ports:
+     — “5432:5432”
+  express-app-container:
+    build: .
+    image: express-app #assign a name to the built image
+    depends_on:
+     — dbpostgres #wait for dbpostgres to be started, not for ready
+    ports:
+     — “3000:3000”
+    volumes:
+     — ./:/app
+volumes:
+ pgvolume:
+  external:
+   name: nodedocker_pgvolume
