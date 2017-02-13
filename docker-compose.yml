@@ -1,22 +1,30 @@
-version: ‘2’
-services:
-  db:
-    image: sameersbn/mysql
-    volumes:
-     - ./src/dbdump:/var/lib/mysql
-    ports:
-      - "3306:3306"
-  php:
-    image: nmcteam/php56
-    volumes:
-      - ./src/php-fpm.conf:/etc/php5/fpm/php-fpm.conf
-      - ./src:/var/www
-    depends_on:
-      - db
-  web:
-    image: library/nginx
-    volumes:
-      - ./src:/var/www
-      - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
-    depends_on:
-      - php
+db:
+  image: sameersbn/mysql
+  volumes:
+   - ./src/dbdump:/var/lib/mysql
+  environment:
+   - DB_NAME=modx
+   - DB_USER=tkoscinski
+   - DB_PASS=pa$$0123!
+   - MYSQL_ROOT_PASSWORD=pa$$0123!
+   - MYSQL_DATABASE=modx
+  ports:
+    - "3306:3306"
+
+php:
+  image: nmcteam/php56
+  volumes:
+    - ./src/php-fpm.conf:/etc/php5/fpm/php-fpm.conf
+    - ./src:/var/www
+  links:
+    - db
+
+web:
+  image: tkoscinski/nginx
+  ports:
+    - "8080:80"
+  volumes:
+    - ./src:/var/www
+    - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
+  links:
+    - php

@@ -4,8 +4,8 @@
  */
 $database_type = 'mysql';
 $database_server = '172.17.0.2';
-$database_user = 'stargumbo';
-$database_password = 'gold6969';
+$database_user = 'tkoscinski';
+$database_password = 'pa$$0123!';
 $database_connection_charset = 'utf8';
 $dbase = 'modx';
 $table_prefix = 'modx_';
