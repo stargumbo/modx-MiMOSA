@@ -5,14 +5,16 @@ db:
   environment:
    - DB_NAME=modx
    - DB_USER=tkoscinski
-   - DB_PASS=pa$$0123!
-   - MYSQL_ROOT_PASSWORD=pa$$0123!
+   - DB_PASS=past0123!
+   - MYSQL_ROOT_PASSWORD=past0123!
    - MYSQL_DATABASE=modx
   ports:
     - "3306:3306"
 
 php:
   image: nmcteam/php56
+  ports:
+    - "9000:9000"
   volumes:
     - ./src/php-fpm.conf:/etc/php5/fpm/php-fpm.conf
     - ./src:/var/www
@@ -22,7 +24,7 @@ php:
 web:
   image: tkoscinski/nginx
   ports:
-    - "8080:80"
+    - "80:80"
   volumes:
     - ./src:/var/www
     - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf

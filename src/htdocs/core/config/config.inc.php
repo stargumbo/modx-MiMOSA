@@ -3,24 +3,24 @@
  *  MODX Configuration file
  */
 $database_type = 'mysql';
-$database_server = '172.17.0.2';
+$database_server = '172.17.0.1';
 $database_user = 'tkoscinski';
-$database_password = 'pa$$0123!';
+$database_password = 'past0123!';
 $database_connection_charset = 'utf8';
 $dbase = 'modx';
 $table_prefix = 'modx_';
-$database_dsn = 'mysql:host=172.17.0.2;dbname=modx;charset=utf8';
+$database_dsn = 'mysql:host=172.17.0.1;dbname=modx;charset=utf8';
 $config_options = array (
 );
 $driver_options = array (
 );
 
-$lastInstallTime = 1484509237;
+$lastInstallTime = 1487885969;
 
-$site_id = 'modx587bd035c84a97.18801995';
+$site_id = 'modx58af569156c139.09453042';
 $site_sessionname = 'SN587bca6d27347';
 $https_port = '443';
-$uuid = '1cb1922b-1585-4ec0-a9dd-f5ec813e840d';
+$uuid = '96040bdc-4198-494d-8eee-e1bea5e16b7d';
 
 if (!defined('MODX_CORE_PATH')) {
     $modx_core_path= '/var/www/htdocs/core/';
@@ -59,10 +59,10 @@ if (!defined('MODX_URL_SCHEME')) {
 }
 if (!defined('MODX_HTTP_HOST')) {
     if(defined('PHP_SAPI') && (PHP_SAPI == "cli" || PHP_SAPI == "embed")) {
-        $http_host='localhost:8080';
+        $http_host='localhost';
         define('MODX_HTTP_HOST', $http_host);
     } else {
-        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? $_SERVER['HTTP_HOST'] : 'localhost:8080';
+        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? $_SERVER['HTTP_HOST'] : 'localhost';
         if ($_SERVER['SERVER_PORT'] != 80) {
             $http_host= str_replace(':' . $_SERVER['SERVER_PORT'], '', $http_host); // remove port from HTTP_HOST
         }

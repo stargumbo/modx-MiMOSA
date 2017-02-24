@@ -1115,24 +1115,24 @@ $.getJSON(url, function(data) {
 </head>
 <body>
 <div class="header">    <div class="container">
-        <h1 class="header-heading"><a href="index.php?id=2" title="CBSi" class="logo">CBSi</a></h1>
+        <h1 class="header-heading"><a href="http://localhost/" title="CBSi" class="logo">CBSi</a></h1>
     </div>
 </div>
 <div class="nav-bar">    <div class="container">
-        <nav><ul><li class="first"><a href="http://localhost:8080/" title="Home" >Home</a></li>
-<li class="active"><a href="index.php?id=3" title="Specs" class=\'linkdisable\'>Specs</a><ul><li class="first active"><a href="index.php?id=12" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first active"><a href="index.php?id=8" title="Apps" class=\'linkdisable\'>Apps</a><ul><li class="first active"><a href="index.php?id=4" title="CBS Sports App" >CBS Sports</a></li>
-<li><a href="index.php?id=17" title="CBS Sports Fantasy App" >CBS Sports Fantasy</a></li>
-<li><a href="index.php?id=11" title="DraftMaster App" >DraftMaster</a></li>
-<li><a href="index.php?id=16" title="MaxPreps App" >MaxPreps</a></li>
-<li class="last"><a href="index.php?id=15" title="Test App" >Test App</a></li>
+        <nav><ul><li class="first"><a href="http://localhost/" title="Home" >Home</a></li>
+<li class="active"><a href="specs/" title="Specs" class=\'linkdisable\'>Specs</a><ul><li class="first active"><a href="sports/" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first active"><a href="apps/" title="Apps" class=\'linkdisable\'>Apps</a><ul><li class="first active"><a href="cbs-sports-app.html" title="CBS Sports App" >CBS Sports</a></li>
+<li><a href="cbssportsfantasy-app.html" title="CBS Sports Fantasy App" >CBS Sports Fantasy</a></li>
+<li><a href="draftmaster-app.html" title="DraftMaster App" >DraftMaster</a></li>
+<li><a href="maxpreps.html" title="MaxPreps App" >MaxPreps</a></li>
+<li class="last"><a href="test-app.html" title="Test App" >Test App</a></li>
 </ul></li>
-<li><a href="index.php?id=18" title="Web" class=\'linkdisable\'>Web</a></li>
-<li class="last"><a href="index.php?id=19" title="OTT" class=\'linkdisable\'>OTT</a></li>
+<li><a href="web.html" title="Web" class=\'linkdisable\'>Web</a></li>
+<li class="last"><a href="ott.html" title="OTT" class=\'linkdisable\'>OTT</a></li>
 </ul></li>
 </ul></li>
-<li><a href="index.php?id=13" title="Docs" class=\'linkdisable\'>Docs</a><ul><li class="first"><a href="https://docs.google.com/spreadsheets/d/1pZrw5CPZixbBxDsSB7ePCecZQm7Hanyg9J3SKJyEybI/edit#gid=3222535" title="CBSi Omniture Variables 2016" target="_blank">CBSi Omniture Variables 2016</a></li>
+<li><a href="docsclasslinkdisable/" title="Docs" class=\'linkdisable\'>Docs</a><ul><li class="first"><a href="https://docs.google.com/spreadsheets/d/1pZrw5CPZixbBxDsSB7ePCecZQm7Hanyg9J3SKJyEybI/edit#gid=3222535" title="CBSi Omniture Variables 2016" target="_blank">CBSi Omniture Variables 2016</a></li>
 </ul></li>
-<li class="last"><a href="index.php?id=9" title="APIs" class=\'linkdisable\'>APIs</a><ul><li class="first"><a href="index.php?id=1" title="Google API" >Google API</a></li>
+<li class="last"><a href="apis.html" title="APIs" class=\'linkdisable\'>APIs</a><ul><li class="first"><a href="googleapi.html" title="Google API" >Google API</a></li>
 </ul></li>
 </ul></nav>
     </div></div>
@@ -3307,40 +3307,40 @@ $.getJSON(url, function(data) {
     
 ',
     '[[$mainHeader]]' => '    <div class="container">
-        <h1 class="header-heading"><a href="index.php?id=2" title="CBSi" class="logo">CBSi</a></h1>
+        <h1 class="header-heading"><a href="http://localhost/" title="CBSi" class="logo">CBSi</a></h1>
     </div>
 ',
-    '[[Wayfinder? &startId=`0`]]' => '<ul><li class="first"><a href="http://localhost:8080/" title="Home" >Home</a></li>
-<li class="active"><a href="index.php?id=3" title="Specs" class=\'linkdisable\'>Specs</a><ul><li class="first active"><a href="index.php?id=12" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first active"><a href="index.php?id=8" title="Apps" class=\'linkdisable\'>Apps</a><ul><li class="first active"><a href="index.php?id=4" title="CBS Sports App" >CBS Sports</a></li>
-<li><a href="index.php?id=17" title="CBS Sports Fantasy App" >CBS Sports Fantasy</a></li>
-<li><a href="index.php?id=11" title="DraftMaster App" >DraftMaster</a></li>
-<li><a href="index.php?id=16" title="MaxPreps App" >MaxPreps</a></li>
-<li class="last"><a href="index.php?id=15" title="Test App" >Test App</a></li>
+    '[[Wayfinder? &startId=`0`]]' => '<ul><li class="first"><a href="http://localhost/" title="Home" >Home</a></li>
+<li class="active"><a href="specs/" title="Specs" class=\'linkdisable\'>Specs</a><ul><li class="first active"><a href="sports/" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first active"><a href="apps/" title="Apps" class=\'linkdisable\'>Apps</a><ul><li class="first active"><a href="cbs-sports-app.html" title="CBS Sports App" >CBS Sports</a></li>
+<li><a href="cbssportsfantasy-app.html" title="CBS Sports Fantasy App" >CBS Sports Fantasy</a></li>
+<li><a href="draftmaster-app.html" title="DraftMaster App" >DraftMaster</a></li>
+<li><a href="maxpreps.html" title="MaxPreps App" >MaxPreps</a></li>
+<li class="last"><a href="test-app.html" title="Test App" >Test App</a></li>
 </ul></li>
-<li><a href="index.php?id=18" title="Web" class=\'linkdisable\'>Web</a></li>
-<li class="last"><a href="index.php?id=19" title="OTT" class=\'linkdisable\'>OTT</a></li>
+<li><a href="web.html" title="Web" class=\'linkdisable\'>Web</a></li>
+<li class="last"><a href="ott.html" title="OTT" class=\'linkdisable\'>OTT</a></li>
 </ul></li>
 </ul></li>
-<li><a href="index.php?id=13" title="Docs" class=\'linkdisable\'>Docs</a><ul><li class="first"><a href="https://docs.google.com/spreadsheets/d/1pZrw5CPZixbBxDsSB7ePCecZQm7Hanyg9J3SKJyEybI/edit#gid=3222535" title="CBSi Omniture Variables 2016" target="_blank">CBSi Omniture Variables 2016</a></li>
+<li><a href="docsclasslinkdisable/" title="Docs" class=\'linkdisable\'>Docs</a><ul><li class="first"><a href="https://docs.google.com/spreadsheets/d/1pZrw5CPZixbBxDsSB7ePCecZQm7Hanyg9J3SKJyEybI/edit#gid=3222535" title="CBSi Omniture Variables 2016" target="_blank">CBSi Omniture Variables 2016</a></li>
 </ul></li>
-<li class="last"><a href="index.php?id=9" title="APIs" class=\'linkdisable\'>APIs</a><ul><li class="first"><a href="index.php?id=1" title="Google API" >Google API</a></li>
+<li class="last"><a href="apis.html" title="APIs" class=\'linkdisable\'>APIs</a><ul><li class="first"><a href="googleapi.html" title="Google API" >Google API</a></li>
 </ul></li>
 </ul>',
     '[[$mainNavbar]]' => '    <div class="container">
-        <nav><ul><li class="first"><a href="http://localhost:8080/" title="Home" >Home</a></li>
-<li class="active"><a href="index.php?id=3" title="Specs" class=\'linkdisable\'>Specs</a><ul><li class="first active"><a href="index.php?id=12" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first active"><a href="index.php?id=8" title="Apps" class=\'linkdisable\'>Apps</a><ul><li class="first active"><a href="index.php?id=4" title="CBS Sports App" >CBS Sports</a></li>
-<li><a href="index.php?id=17" title="CBS Sports Fantasy App" >CBS Sports Fantasy</a></li>
-<li><a href="index.php?id=11" title="DraftMaster App" >DraftMaster</a></li>
-<li><a href="index.php?id=16" title="MaxPreps App" >MaxPreps</a></li>
-<li class="last"><a href="index.php?id=15" title="Test App" >Test App</a></li>
+        <nav><ul><li class="first"><a href="http://localhost/" title="Home" >Home</a></li>
+<li class="active"><a href="specs/" title="Specs" class=\'linkdisable\'>Specs</a><ul><li class="first active"><a href="sports/" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first active"><a href="apps/" title="Apps" class=\'linkdisable\'>Apps</a><ul><li class="first active"><a href="cbs-sports-app.html" title="CBS Sports App" >CBS Sports</a></li>
+<li><a href="cbssportsfantasy-app.html" title="CBS Sports Fantasy App" >CBS Sports Fantasy</a></li>
+<li><a href="draftmaster-app.html" title="DraftMaster App" >DraftMaster</a></li>
+<li><a href="maxpreps.html" title="MaxPreps App" >MaxPreps</a></li>
+<li class="last"><a href="test-app.html" title="Test App" >Test App</a></li>
 </ul></li>
-<li><a href="index.php?id=18" title="Web" class=\'linkdisable\'>Web</a></li>
-<li class="last"><a href="index.php?id=19" title="OTT" class=\'linkdisable\'>OTT</a></li>
+<li><a href="web.html" title="Web" class=\'linkdisable\'>Web</a></li>
+<li class="last"><a href="ott.html" title="OTT" class=\'linkdisable\'>OTT</a></li>
 </ul></li>
 </ul></li>
-<li><a href="index.php?id=13" title="Docs" class=\'linkdisable\'>Docs</a><ul><li class="first"><a href="https://docs.google.com/spreadsheets/d/1pZrw5CPZixbBxDsSB7ePCecZQm7Hanyg9J3SKJyEybI/edit#gid=3222535" title="CBSi Omniture Variables 2016" target="_blank">CBSi Omniture Variables 2016</a></li>
+<li><a href="docsclasslinkdisable/" title="Docs" class=\'linkdisable\'>Docs</a><ul><li class="first"><a href="https://docs.google.com/spreadsheets/d/1pZrw5CPZixbBxDsSB7ePCecZQm7Hanyg9J3SKJyEybI/edit#gid=3222535" title="CBSi Omniture Variables 2016" target="_blank">CBSi Omniture Variables 2016</a></li>
 </ul></li>
-<li class="last"><a href="index.php?id=9" title="APIs" class=\'linkdisable\'>APIs</a><ul><li class="first"><a href="index.php?id=1" title="Google API" >Google API</a></li>
+<li class="last"><a href="apis.html" title="APIs" class=\'linkdisable\'>APIs</a><ul><li class="first"><a href="googleapi.html" title="Google API" >Google API</a></li>
 </ul></li>
 </ul></nav>
     </div>',

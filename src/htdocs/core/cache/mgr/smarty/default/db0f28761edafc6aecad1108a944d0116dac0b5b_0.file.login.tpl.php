@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2017-01-15 19:41:24
+<?php /* Smarty version 3.1.27, created on 2017-02-24 16:40:52
          compiled from "/var/www/htdocs/manager/templates/default/security/login.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:535565137587bd064851b60_63628458%%*/
+/*%%SmartyHeaderCode:93460510258b06214add278_67247376%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'db0f28761edafc6aecad1108a944d0116dac0b5b' => 
     array (
       0 => '/var/www/htdocs/manager/templates/default/security/login.tpl',
-      1 => 1483976994,
+      1 => 1487710690,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '535565137587bd064851b60_63628458',
+  'nocache_hash' => '93460510258b06214add278_67247376',
   'variables' => 
   array (
     '_config' => 0,
@@ -30,14 +30,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_587bd064a22860_83979518',
+  'unifunc' => 'content_58b06214eb76e3_28774701',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_587bd064a22860_83979518')) {
-function content_587bd064a22860_83979518 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58b06214eb76e3_28774701')) {
+function content_58b06214eb76e3_28774701 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_replace')) require_once '/var/www/htdocs/core/model/smarty/plugins/modifier.replace.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '535565137587bd064851b60_63628458';
+$_smarty_tpl->properties['nocache_hash'] = '93460510258b06214add278_67247376';
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php if ($_smarty_tpl->tpl_vars['_config']->value['manager_direction'] == 'rtl') {?>dir="rtl"<?php }?> lang="<?php echo $_smarty_tpl->tpl_vars['_config']->value['manager_lang_attribute'];?>

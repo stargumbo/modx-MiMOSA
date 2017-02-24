@@ -2,6 +2,24 @@
   'config' => 
   array (
   ),
+  'aliasMap' => 
+  array (
+    'index.html' => 2,
+    'specs/' => 3,
+    'docsclasslinkdisable/' => 13,
+    'apis.html' => 9,
+    'sports/' => 12,
+    'cbs-sports-app.html' => 4,
+    'cbssportsfantasy-app.html' => 17,
+    'draftmaster-app.html' => 11,
+    'maxpreps.html' => 16,
+    'test-app.html' => 15,
+    'googleapi.html' => 1,
+    'apps/' => 8,
+    'web.html' => 18,
+    'ott.html' => 19,
+    'cbsi-omniture-variables-2016.html' => 14,
+  ),
   'resourceMap' => 
   array (
     0 => 
