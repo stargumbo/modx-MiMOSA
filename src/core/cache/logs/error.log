@@ -1,0 +1,3 @@
+[2017-02-27 18:06:33] (ERROR @ /var/www/core/model/modx/modcachemanager.class.php : 394) Error caching action map mgr/actions
+[2017-02-27 18:08:45] (ERROR @ /var/www/core/model/modx/modcachemanager.class.php : 394) Error caching action map mgr/actions
+[2017-02-27 18:08:45] (ERROR @ /var/www/core/model/modx/modcachemanager.class.php : 344) Error caching lexicon topic lexicon/en/core/resource
