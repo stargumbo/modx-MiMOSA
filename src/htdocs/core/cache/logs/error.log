@@ -541,3 +541,13 @@
 [2017-02-23 21:30:24] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 394) Error caching action map mgr/actions
 [2017-02-24 16:41:08] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 394) Error caching action map mgr/actions
 [2017-02-24 16:43:07] (ERROR @ /var/www/htdocs/core/model/modx/modcachemanager.class.php : 394) Error caching action map mgr/actions
+[2017-02-24 18:00:45] (ERROR @ /var/www/htdocs/core/cache/includes/elements/modsnippet/38.include.cache.php : 67) [migxResourceMediaPath]: docid could not be determined.
+[2017-02-24 18:00:45] (ERROR @ /var/www/htdocs/core/cache/includes/elements/modsnippet/38.include.cache.php : 67) [migxResourceMediaPath]: docid could not be determined.
+[2017-02-24 18:00:45] (ERROR @ /var/www/htdocs/core/cache/includes/elements/modsnippet/38.include.cache.php : 67) [migxResourceMediaPath]: docid could not be determined.
+[2017-02-24 18:00:46] (ERROR @ /var/www/htdocs/core/cache/includes/elements/modsnippet/38.include.cache.php : 67) [migxResourceMediaPath]: docid could not be determined.
+[2017-02-24 18:06:01] (ERROR @ /var/www/htdocs/core/cache/includes/elements/modsnippet/38.include.cache.php : 67) [migxResourceMediaPath]: docid could not be determined.
+[2017-02-24 18:06:01] (ERROR @ /var/www/htdocs/core/cache/includes/elements/modsnippet/38.include.cache.php : 67) [migxResourceMediaPath]: docid could not be determined.
+[2017-02-24 18:06:01] (ERROR @ /var/www/htdocs/core/cache/includes/elements/modsnippet/38.include.cache.php : 67) [migxResourceMediaPath]: docid could not be determined.
+[2017-02-24 19:13:41] (ERROR @ /var/www/htdocs/core/cache/includes/elements/modsnippet/38.include.cache.php : 67) [migxResourceMediaPath]: docid could not be determined.
+[2017-02-24 19:13:41] (ERROR @ /var/www/htdocs/core/cache/includes/elements/modsnippet/38.include.cache.php : 67) [migxResourceMediaPath]: docid could not be determined.
+[2017-02-24 19:13:41] (ERROR @ /var/www/htdocs/core/cache/includes/elements/modsnippet/38.include.cache.php : 67) [migxResourceMediaPath]: docid could not be determined.
