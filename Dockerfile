@@ -15,8 +15,7 @@ RUN mkdir -p /etc/service/nginx
 ADD start.sh /etc/service/nginx/run
 RUN chmod +x /etc/service/nginx/run
 
-RUN mkdir /var/www/htdocs/core
-RUN mkdir /var/www/htdocs/core/export
+RUN mkdir -p /var/www/htdocs/core/export
 RUN chown www-data:www-data /var/www/htdocs/core -R
 
 EXPOSE 80

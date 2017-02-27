@@ -1,1 +1,0 @@
-[2017-02-22 17:59:15] (ERROR in xPDOConnection::connect @ /var/www/htdocs/core/xpdo/xpdo.class.php : 3116) SQLSTATE[HY000] [1045] Access denied for user 'stargumbo'@'172.17.0.3' (using password: YES)
