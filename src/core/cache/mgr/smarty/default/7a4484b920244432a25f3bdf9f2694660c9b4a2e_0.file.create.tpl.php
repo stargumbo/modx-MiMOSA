@@ -1,19 +1,19 @@
-<?php /* Smarty version 3.1.27, created on 2017-03-03 16:16:24
-         compiled from "/var/www/htdocs/manager/templates/default/resource/update.tpl" */ ?>
+<?php /* Smarty version 3.1.27, created on 2017-03-03 17:28:40
+         compiled from "/var/www/htdocs/manager/templates/default/resource/create.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:72365660558b996d89bb191_70303652%%*/
+/*%%SmartyHeaderCode:182434009458b9a7c88afc40_76835841%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '3981d8072371d7cd69efa40bac5ca5feca55d2ae' => 
+    '7a4484b920244432a25f3bdf9f2694660c9b4a2e' => 
     array (
-      0 => '/var/www/htdocs/manager/templates/default/resource/update.tpl',
+      0 => '/var/www/htdocs/manager/templates/default/resource/create.tpl',
       1 => 1488222676,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '72365660558b996d89bb191_70303652',
+  'nocache_hash' => '182434009458b9a7c88afc40_76835841',
   'variables' => 
   array (
     'tvOutput' => 0,
@@ -26,16 +26,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_58b996d89d01c5_54131560',
+  'unifunc' => 'content_58b9a7c88c7b63_05284068',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58b996d89d01c5_54131560')) {
-function content_58b996d89d01c5_54131560 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58b9a7c88c7b63_05284068')) {
+function content_58b9a7c88c7b63_05284068 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '72365660558b996d89bb191_70303652';
+$_smarty_tpl->properties['nocache_hash'] = '182434009458b9a7c88afc40_76835841';
 ?>
 <div id="modx-panel-resource-div"></div>
-<div id="modx-resource-tvs-div"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['tvOutput']->value)===null||$tmp==='' ? '' : $tmp);?>
+<div id="modx-resource-tvs-div" class="modx-resource-tab x-form-label-left x-panel"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['tvOutput']->value)===null||$tmp==='' ? '' : $tmp);?>
 </div>
 <?php
 $_from = $_smarty_tpl->tpl_vars['hidden']->value;

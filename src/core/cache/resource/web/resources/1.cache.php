@@ -2,36 +2,43 @@
   'resourceClass' => 'modDocument',
   'resource' => 
   array (
-    'id' => 2,
+    'id' => 1,
     'type' => 'document',
     'contentType' => 'text/html',
-    'pagetitle' => 'Home',
-    'longtitle' => 'Home Page',
+    'pagetitle' => 'Google API',
+    'longtitle' => 'Congratulations!',
     'description' => '',
-    'alias' => 'index',
+    'alias' => 'googleapi',
     'link_attributes' => '',
     'published' => 1,
     'pub_date' => 0,
     'unpub_date' => 0,
-    'parent' => 0,
+    'parent' => 9,
     'isfolder' => 0,
     'introtext' => '',
-    'content' => '<h1>Welcome Home!</h1>
-<p>Nothing to see here.  Click somewhere in the menu!</p>',
+    'content' => '<h1>Google API</h1>
+<p>Below is the Sheets API</p>
+<p><a title="some title" href="[[~2]]">Home</a></p>
+<div id="authorize-div" style="display: none;"><span>Authorize access to Google Sheets API</span> <!--Button for the user to click to initiate auth sequence --> <button id="authorize-button" onclick="handleAuthClick(event)"> Authorize </button></div>
+<div class="row-fluid">
+<div class="span12">
+<div id="api_demo">Give it a minute...</div>
+</div>
+</div>',
     'richtext' => 1,
     'template' => 1,
-    'menuindex' => 1,
+    'menuindex' => 0,
     'searchable' => 1,
     'cacheable' => 1,
     'createdby' => 1,
-    'createdon' => 1476110137,
+    'createdon' => 1471473687,
     'editedby' => 1,
-    'editedon' => 1476780111,
+    'editedon' => 1476779813,
     'deleted' => 0,
     'deletedon' => 0,
     'deletedby' => 0,
-    'publishedon' => 1476110160,
-    'publishedby' => 1,
+    'publishedon' => 0,
+    'publishedby' => 0,
     'menutitle' => '',
     'donthit' => 0,
     'privateweb' => 0,
@@ -41,14 +48,14 @@
     'class_key' => 'modDocument',
     'context_key' => 'web',
     'content_type' => 1,
-    'uri' => 'index.html',
+    'uri' => 'googleapi.html',
     'uri_override' => 0,
     'hide_children_in_tree' => 0,
     'show_in_tree' => 1,
     'properties' => NULL,
     '_content' => '<!doctype html>
 <html lang="en">
-<head>    <title>Home - MiMOSA</title>
+<head>    <title>Google API - MiMOSA</title>
 
     <base href="[[!++site_url]]" />
 
@@ -1080,7 +1087,7 @@ table.display tr.gradeU {
 </div>
 
 <div class="nav-bar">    <div class="container">
-        <nav><ul><li class="first active"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
+        <nav><ul><li class="first"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
 <li><a href="groups/" title="Groups" class=\'linkdisable\'>Groups</a><ul><li class="first"><a href="cdm/" title="CDM" class=\'linkdisable\'>CDM</a><ul><li class="first"><a href="sports/" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first"><a href="cbs-sports.html" title="CBS Sports" >CBS Sports</a><ul><li class="first"><a href="cbssportsapps/" title="Apps" class=\'linkdisable\'>Apps</a><ul><li class="first"><a href="cbs-sports-app.html" title="CBS Sports App" >CBS Sports App</a></li>
 </ul></li>
 </ul></li>
@@ -1110,7 +1117,7 @@ table.display tr.gradeU {
 </ul></li>
 <li><a href="docsclasslinkdisable/" title="Docs" class=\'linkdisable\'>Docs</a><ul><li class="first"><a href="https://docs.google.com/spreadsheets/d/1pZrw5CPZixbBxDsSB7ePCecZQm7Hanyg9J3SKJyEybI/edit#gid=3222535" title="CBSi Omniture Variables 2016" target="_blank">CBSi Omniture Variables 2016</a></li>
 </ul></li>
-<li class="last"><a href="apis.html" title="APIs" class=\'linkdisable\'>APIs</a><ul><li class="first"><a href="googleapi.html" title="Google API" >Google API</a></li>
+<li class="last active"><a href="apis.html" title="APIs" class=\'linkdisable\'>APIs</a><ul><li class="first active"><a href="googleapi.html" title="Google API" >Google API</a></li>
 </ul></li>
 </ul></nav>
     </div></div>
@@ -1118,9 +1125,16 @@ table.display tr.gradeU {
 <div class="content">
     <div class="container">
         <div class="main">
-            <h2>Home Page Overview</h2>
-            <div class="inner-container"><h1>Welcome Home!</h1>
-<p>Nothing to see here.  Click somewhere in the menu!</p></div>
+            <h2>Congratulations! Overview</h2>
+            <div class="inner-container"><h1>Google API</h1>
+<p>Below is the Sheets API</p>
+<p><a title="some title" href="http://util274.mia2.cbsig.net/">Home</a></p>
+<div id="authorize-div" style="display: none;"><span>Authorize access to Google Sheets API</span> <!--Button for the user to click to initiate auth sequence --> <button id="authorize-button" onclick="handleAuthClick(event)"> Authorize </button></div>
+<div class="row-fluid">
+<div class="span12">
+<div id="api_demo">Give it a minute...</div>
+</div>
+</div></div>
         </div>
         <div class="aside">
             <h3>Quick Reference</h3>
@@ -1198,7 +1212,7 @@ $(document)
 
 </body>
 </html>',
-    '_isForward' => false,
+    '_isForward' => true,
   ),
   'contentType' => 
   array (
@@ -1540,7 +1554,7 @@ $.getJSON(url, function(data) {
 
 
 ',
-    '[[$basicHead]]' => '    <title>Home - MiMOSA</title>
+    '[[$basicHead]]' => '    <title>Google API - MiMOSA</title>
 
     <base href="[[!++site_url]]" />
 
@@ -3249,7 +3263,7 @@ table.display tr.gradeU {
         <h1 class="header-heading"><a href="http://util274.mia2.cbsig.net/" title="CBSi" class="logo">CBSi</a></h1>
     </div>
 ',
-    '[[Wayfinder? &startId=`0`]]' => '<ul><li class="first active"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
+    '[[Wayfinder? &startId=`0`]]' => '<ul><li class="first"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
 <li><a href="groups/" title="Groups" class=\'linkdisable\'>Groups</a><ul><li class="first"><a href="cdm/" title="CDM" class=\'linkdisable\'>CDM</a><ul><li class="first"><a href="sports/" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first"><a href="cbs-sports.html" title="CBS Sports" >CBS Sports</a><ul><li class="first"><a href="cbssportsapps/" title="Apps" class=\'linkdisable\'>Apps</a><ul><li class="first"><a href="cbs-sports-app.html" title="CBS Sports App" >CBS Sports App</a></li>
 </ul></li>
 </ul></li>
@@ -3279,11 +3293,11 @@ table.display tr.gradeU {
 </ul></li>
 <li><a href="docsclasslinkdisable/" title="Docs" class=\'linkdisable\'>Docs</a><ul><li class="first"><a href="https://docs.google.com/spreadsheets/d/1pZrw5CPZixbBxDsSB7ePCecZQm7Hanyg9J3SKJyEybI/edit#gid=3222535" title="CBSi Omniture Variables 2016" target="_blank">CBSi Omniture Variables 2016</a></li>
 </ul></li>
-<li class="last"><a href="apis.html" title="APIs" class=\'linkdisable\'>APIs</a><ul><li class="first"><a href="googleapi.html" title="Google API" >Google API</a></li>
+<li class="last active"><a href="apis.html" title="APIs" class=\'linkdisable\'>APIs</a><ul><li class="first active"><a href="googleapi.html" title="Google API" >Google API</a></li>
 </ul></li>
 </ul>',
     '[[$mainNavbar]]' => '    <div class="container">
-        <nav><ul><li class="first active"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
+        <nav><ul><li class="first"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
 <li><a href="groups/" title="Groups" class=\'linkdisable\'>Groups</a><ul><li class="first"><a href="cdm/" title="CDM" class=\'linkdisable\'>CDM</a><ul><li class="first"><a href="sports/" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first"><a href="cbs-sports.html" title="CBS Sports" >CBS Sports</a><ul><li class="first"><a href="cbssportsapps/" title="Apps" class=\'linkdisable\'>Apps</a><ul><li class="first"><a href="cbs-sports-app.html" title="CBS Sports App" >CBS Sports App</a></li>
 </ul></li>
 </ul></li>
@@ -3313,7 +3327,7 @@ table.display tr.gradeU {
 </ul></li>
 <li><a href="docsclasslinkdisable/" title="Docs" class=\'linkdisable\'>Docs</a><ul><li class="first"><a href="https://docs.google.com/spreadsheets/d/1pZrw5CPZixbBxDsSB7ePCecZQm7Hanyg9J3SKJyEybI/edit#gid=3222535" title="CBSi Omniture Variables 2016" target="_blank">CBSi Omniture Variables 2016</a></li>
 </ul></li>
-<li class="last"><a href="apis.html" title="APIs" class=\'linkdisable\'>APIs</a><ul><li class="first"><a href="googleapi.html" title="Google API" >Google API</a></li>
+<li class="last active"><a href="apis.html" title="APIs" class=\'linkdisable\'>APIs</a><ul><li class="first active"><a href="googleapi.html" title="Google API" >Google API</a></li>
 </ul></li>
 </ul></nav>
     </div>',
@@ -3383,6 +3397,9 @@ table.display tr.gradeU {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -3751,6 +3768,9 @@ pre.line-numbers > code { position:relative; }
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -4177,6 +4197,9 @@ $.getJSON(url, function(data) {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -4219,6 +4242,9 @@ $.getJSON(url, function(data) {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -4475,6 +4501,9 @@ $.getJSON(url, function(data) {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -5647,6 +5676,9 @@ table.display tr.gradeU {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -5689,6 +5721,9 @@ table.display tr.gradeU {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -5729,6 +5764,9 @@ table.display tr.gradeU {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -6549,6 +6587,9 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -6592,6 +6633,9 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -6643,6 +6687,9 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -6694,6 +6741,9 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -6745,6 +6795,9 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -6793,6 +6846,9 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (
@@ -6844,6 +6900,9 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
+          'web' => 
+          array (
+          ),
         ),
         'source' => 
         array (

@@ -5,20 +5,39 @@
   'aliasMap' => 
   array (
     'index.html' => 2,
-    'specs/' => 3,
+    'groups/' => 3,
     'docsclasslinkdisable/' => 13,
     'apis.html' => 9,
-    'sports/' => 12,
+    'cdm/' => 20,
+    'cmg/' => 21,
     'cbs-sports-app.html' => 4,
-    'cbssportsfantasy-app.html' => 17,
-    'draftmaster-app.html' => 11,
-    'maxpreps.html' => 16,
-    'test-app.html' => 15,
     'googleapi.html' => 1,
-    'apps/' => 8,
     'web.html' => 18,
     'ott.html' => 19,
+    'cbs-sports.html' => 24,
+    'cbs-sports-fantasy/' => 25,
+    'sportsline.html' => 26,
+    'maxpreps/' => 27,
+    'trainerpass.html' => 28,
+    'college-sports-live.html' => 29,
+    '247sports.html' => 30,
     'cbsi-omniture-variables-2016.html' => 14,
+    'sports/' => 12,
+    'news/' => 22,
+    'entertainment/' => 23,
+    'b2b.html' => 34,
+    'games.html' => 35,
+    'media.html' => 36,
+    'ctd.html' => 37,
+    'cbs-news.html' => 31,
+    '60-minutes.html' => 32,
+    'cbs.com.html' => 33,
+    'cbssportsapps/' => 8,
+    'cbssportsfantasyapps.html' => 38,
+    'maxprepsapps.html' => 39,
+    'cbssportsfantasy-app.html' => 17,
+    'draftmaster-app.html' => 11,
+    'maxprepsapp.html' => 16,
   ),
   'resourceMap' => 
   array (
@@ -31,15 +50,12 @@
     ),
     3 => 
     array (
-      0 => 12,
+      0 => 20,
+      1 => 21,
     ),
     8 => 
     array (
       0 => 4,
-      1 => 17,
-      2 => 11,
-      3 => 16,
-      4 => 15,
     ),
     9 => 
     array (
@@ -47,13 +63,62 @@
     ),
     12 => 
     array (
-      0 => 8,
-      1 => 18,
-      2 => 19,
+      0 => 18,
+      1 => 19,
+      2 => 24,
+      3 => 25,
+      4 => 26,
+      5 => 27,
+      6 => 28,
+      7 => 29,
+      8 => 30,
     ),
     13 => 
     array (
       0 => 14,
+    ),
+    20 => 
+    array (
+      0 => 12,
+      1 => 22,
+      2 => 23,
+    ),
+    21 => 
+    array (
+      0 => 34,
+      1 => 35,
+      2 => 36,
+      3 => 37,
+    ),
+    22 => 
+    array (
+      0 => 31,
+      1 => 32,
+    ),
+    23 => 
+    array (
+      0 => 33,
+    ),
+    24 => 
+    array (
+      0 => 8,
+    ),
+    25 => 
+    array (
+      0 => 38,
+    ),
+    27 => 
+    array (
+      0 => 39,
+    ),
+    38 => 
+    array (
+      0 => 17,
+      1 => 11,
+    ),
+    39 => 
+    array (
+      0 => 16,
     ),
   ),
   'webLinkMap' => 
@@ -110,8 +175,8 @@
     ),
     'OnSiteRefresh' => 
     array (
-      7 => '7',
       8 => '8',
+      7 => '7',
     ),
     'OnSnipFormPrerender' => 
     array (
@@ -144,8 +209,8 @@
     ),
     'OnTVInputRenderList' => 
     array (
-      2 => '2',
       9 => '9',
+      2 => '2',
     ),
     'OnTVOutputRenderList' => 
     array (

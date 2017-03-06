@@ -15,12 +15,12 @@ $config_options = array (
 $driver_options = array (
 );
 
-$lastInstallTime = 1488218874;
+$lastInstallTime = 1488224051;
 
-$site_id = 'modx58b46afa1893f4.74847248';
+$site_id = 'modx58b47f339e9651.10306431';
 $site_sessionname = 'SN587bca6d27347';
 $https_port = '443';
-$uuid = 'bcf30b8d-acd0-47ce-a2b7-382ebdf75c84';
+$uuid = 'ccc62abf-5ce9-4f55-9291-e4da29117489';
 
 if (!defined('MODX_CORE_PATH')) {
     $modx_core_path= '/var/www/core/';
@@ -59,10 +59,10 @@ if (!defined('MODX_URL_SCHEME')) {
 }
 if (!defined('MODX_HTTP_HOST')) {
     if(defined('PHP_SAPI') && (PHP_SAPI == "cli" || PHP_SAPI == "embed")) {
-        $http_host='localhost';
+        $http_host='util274.mia2.cbsig.net';
         define('MODX_HTTP_HOST', $http_host);
     } else {
-        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? $_SERVER['HTTP_HOST'] : 'localhost';
+        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? $_SERVER['HTTP_HOST'] : 'util274.mia2.cbsig.net';
         if ($_SERVER['SERVER_PORT'] != 80) {
             $http_host= str_replace(':' . $_SERVER['SERVER_PORT'], '', $http_host); // remove port from HTTP_HOST
         }
