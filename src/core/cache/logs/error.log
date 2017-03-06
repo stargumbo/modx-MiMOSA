@@ -19556,3 +19556,240 @@ Array
 )
 
 [2017-03-03 21:12:43] (ERROR @ /var/www/core/components/versionx/model/versionx.class.php : 627) [VersionX checkLastVersion] Last Flattened: content_id:16,title:MaxPreps App,context_key:web,class:modDocument,fields:{type:document,contentType:text/html,pagetitle:MaxPreps App,alias:maxprepsapp,published:1,parent:39,richtext:1,template:2,searchable:1,cacheable:1,publishedon:2016-11-18 22:57:00,publishedby:2,menutitle:MaxPreps App,class_key:modDocument,context_key:web,content_type:1,uri:maxprepsapp.html,show_in_tree:1},tvs:{0:{id:1},1:{id:8,value:iOS||Android},2:{id:13,value:cbsimaxprepsmobile},3:{id:21,value:Articles||Interaction (Login)},4:{id:22},5:{id:5,value:cbsimaxprepsmobile, cbsicbsiall},6:{id:6,value:cbsimaxprepsmobile-dev, cbsicbsiall-dev},7:{id:11,value:cbssports},8:{id:14,value:native app}}
+[2017-03-06 14:48:29] (ERROR @ /var/www/core/components/versionx/model/versionx.class.php : 603) [VersionX checkLastVersion] Exclude fields: Array
+(
+    [0] => version_id
+    [1] => saved
+    [2] => user
+    [3] => mode
+    [4] => marked
+    [fields] => Array
+        (
+            [0] => createdon
+            [1] => createdby
+            [2] => editedon
+            [3] => editedby
+        )
+
+)
+
+[2017-03-06 14:48:29] (ERROR @ /var/www/core/components/versionx/model/versionx.class.php : 624) [VersionX checkLastVersion] New: Array
+(
+    [version_id] => 
+    [content_id] => 4
+    [title] => CBS Sports App
+    [context_key] => web
+    [class] => modDocument
+    [content] => 
+    [fields] => Array
+        (
+            [type] => document
+            [contentType] => text/html
+            [pagetitle] => CBS Sports App
+            [longtitle] => CBS Sports App Omniture Tracking
+            [description] => 
+            [alias] => cbs-sports-app
+            [link_attributes] => 
+            [published] => 1
+            [pub_date] => 0
+            [unpub_date] => 0
+            [parent] => 8
+            [isfolder] => 
+            [introtext] => 
+            [richtext] => 1
+            [template] => 2
+            [menuindex] => 1
+            [searchable] => 1
+            [cacheable] => 1
+            [deleted] => 
+            [deletedon] => 0
+            [deletedby] => 0
+            [publishedon] => 2016-10-15 10:44:00
+            [publishedby] => 1
+            [menutitle] => CBS Sports App
+            [donthit] => 
+            [privateweb] => 
+            [privatemgr] => 
+            [content_dispo] => 0
+            [hidemenu] => 
+            [class_key] => modDocument
+            [context_key] => web
+            [content_type] => 1
+            [uri] => cbs-sports-app.html
+            [uri_override] => 0
+            [hide_children_in_tree] => 0
+            [show_in_tree] => 1
+            [properties] => 
+        )
+
+    [tvs] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [value] => https://owl.cbsi.com/jira/browse/OMNITURE-590
+                )
+
+            [1] => Array
+                (
+                    [id] => 8
+                    [value] => iOS||Android
+                )
+
+            [2] => Array
+                (
+                    [id] => 13
+                    [value] => cbsicbssportsapp
+                )
+
+            [3] => Array
+                (
+                    [id] => 21
+                    [value] => Articles||Events||Interaction (Login)||Click Tracking
+                )
+
+            [4] => Array
+                (
+                    [id] => 22
+                    [value] => 1A_P8i6-tk19Pfc-zFkvNFx0OyxCLgd8vgANMFsPVJ3s
+                )
+
+            [5] => Array
+                (
+                    [id] => 5
+                    [value] => cbsicbssportsapp,cbsicbsiall
+                )
+
+            [6] => Array
+                (
+                    [id] => 6
+                    [value] => cbsicbssportsapp-dev,cbsicbsiall-dev
+                )
+
+            [7] => Array
+                (
+                    [id] => 11
+                    [value] => cbssports
+                )
+
+            [8] => Array
+                (
+                    [id] => 14
+                    [value] => native app
+                )
+
+        )
+
+)
+
+[2017-03-06 14:48:29] (ERROR @ /var/www/core/components/versionx/model/versionx.class.php : 625) [VersionX checkLastVersion] New Flattened: content_id:4,title:CBS Sports App,context_key:web,class:modDocument,fields:{type:document,contentType:text/html,pagetitle:CBS Sports App,longtitle:CBS Sports App Omniture Tracking,alias:cbs-sports-app,published:1,parent:8,richtext:1,template:2,menuindex:1,searchable:1,cacheable:1,publishedon:2016-10-15 10:44:00,publishedby:1,menutitle:CBS Sports App,class_key:modDocument,context_key:web,content_type:1,uri:cbs-sports-app.html,show_in_tree:1},tvs:{0:{id:1,value:https://owl.cbsi.com/jira/browse/OMNITURE-590},1:{id:8,value:iOS||Android},2:{id:13,value:cbsicbssportsapp},3:{id:21,value:Articles||Events||Interaction (Login)||Click Tracking},4:{id:22,value:1A_P8i6-tk19Pfc-zFkvNFx0OyxCLgd8vgANMFsPVJ3s},5:{id:5,value:cbsicbssportsapp,cbsicbsiall},6:{id:6,value:cbsicbssportsapp-dev,cbsicbsiall-dev},7:{id:11,value:cbssports},8:{id:14,value:native app}}
+[2017-03-06 14:48:29] (ERROR @ /var/www/core/components/versionx/model/versionx.class.php : 626) [VersionX checkLastVersion] Last: Array
+(
+    [content_id] => 4
+    [title] => CBS Sports App
+    [context_key] => web
+    [class] => modDocument
+    [content] => 
+    [fields] => Array
+        (
+            [type] => document
+            [contentType] => text/html
+            [pagetitle] => CBS Sports App
+            [longtitle] => CBS Sports App Omniture Tracking
+            [description] => 
+            [alias] => cbs-sports-app
+            [link_attributes] => 
+            [published] => 1
+            [pub_date] => 0
+            [unpub_date] => 0
+            [parent] => 8
+            [isfolder] => 
+            [introtext] => 
+            [richtext] => 1
+            [template] => 2
+            [menuindex] => 1
+            [searchable] => 1
+            [cacheable] => 1
+            [deleted] => 
+            [deletedon] => 0
+            [deletedby] => 0
+            [publishedon] => 2016-10-15 10:44:00
+            [publishedby] => 1
+            [menutitle] => CBS Sports App
+            [donthit] => 
+            [privateweb] => 
+            [privatemgr] => 
+            [content_dispo] => 0
+            [hidemenu] => 
+            [class_key] => modDocument
+            [context_key] => web
+            [content_type] => 1
+            [uri] => cbs-sports-app.html
+            [uri_override] => 0
+            [hide_children_in_tree] => 0
+            [show_in_tree] => 1
+            [properties] => 
+        )
+
+    [tvs] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [value] => https://owl.cbsi.com/jira/browse/OMNITURE-590
+                )
+
+            [1] => Array
+                (
+                    [id] => 8
+                    [value] => iOS||Android
+                )
+
+            [2] => Array
+                (
+                    [id] => 13
+                    [value] => cbsicbssportsapp
+                )
+
+            [3] => Array
+                (
+                    [id] => 21
+                    [value] => Articles||Events||Interaction (Login)||Click Tracking
+                )
+
+            [4] => Array
+                (
+                    [id] => 22
+                    [value] => 1A_P8i6-tk19Pfc-zFkvNFx0OyxCLgd8vgANMFsPVJ3s
+                )
+
+            [5] => Array
+                (
+                    [id] => 5
+                    [value] => cbsicbssportsapp,cbsicbsiall
+                )
+
+            [6] => Array
+                (
+                    [id] => 6
+                    [value] => cbsicbssportsapp-dev,cbsicbsiall-dev
+                )
+
+            [7] => Array
+                (
+                    [id] => 11
+                    [value] => cbssports
+                )
+
+            [8] => Array
+                (
+                    [id] => 14
+                    [value] => native app
+                )
+
+        )
+
+)
+
+[2017-03-06 14:48:29] (ERROR @ /var/www/core/components/versionx/model/versionx.class.php : 627) [VersionX checkLastVersion] Last Flattened: content_id:4,title:CBS Sports App,context_key:web,class:modDocument,fields:{type:document,contentType:text/html,pagetitle:CBS Sports App,longtitle:CBS Sports App Omniture Tracking,alias:cbs-sports-app,published:1,parent:8,richtext:1,template:2,menuindex:1,searchable:1,cacheable:1,publishedon:2016-10-15 10:44:00,publishedby:1,menutitle:CBS Sports App,class_key:modDocument,context_key:web,content_type:1,uri:cbs-sports-app.html,show_in_tree:1},tvs:{0:{id:1,value:https://owl.cbsi.com/jira/browse/OMNITURE-590},1:{id:8,value:iOS||Android},2:{id:13,value:cbsicbssportsapp},3:{id:21,value:Articles||Events||Interaction (Login)||Click Tracking},4:{id:22,value:1A_P8i6-tk19Pfc-zFkvNFx0OyxCLgd8vgANMFsPVJ3s},5:{id:5,value:cbsicbssportsapp,cbsicbsiall},6:{id:6,value:cbsicbssportsapp-dev,cbsicbsiall-dev},7:{id:11,value:cbssports},8:{id:14,value:native app}}
+[2017-03-06 14:48:29] (ERROR @ /var/www/core/components/versionx/model/versionx.class.php : 635) [VersionX] Not saving a vxResource for ID 4: No changes found.
