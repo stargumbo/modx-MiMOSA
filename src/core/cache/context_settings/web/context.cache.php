@@ -12,8 +12,6 @@
     'cmg/' => 21,
     'cbs-sports-app.html' => 4,
     'googleapi.html' => 1,
-    'web.html' => 18,
-    'ott.html' => 19,
     'cbs-sports.html' => 24,
     'cbs-sports-fantasy/' => 25,
     'sportsline.html' => 26,
@@ -25,16 +23,30 @@
     'sports/' => 12,
     'news/' => 22,
     'entertainment/' => 23,
-    'b2b.html' => 34,
-    'games.html' => 35,
-    'media.html' => 36,
-    'ctd.html' => 37,
+    'b2b/' => 34,
+    'games/' => 35,
+    'media/' => 36,
+    'ctd/' => 37,
     'cbs-news.html' => 31,
     '60-minutes.html' => 32,
     'cbs.com.html' => 33,
     'cbssportsapps/' => 8,
     'cbssportsfantasyapps.html' => 38,
     'maxprepsapps.html' => 39,
+    'techrepublic.html' => 40,
+    'zdnet.html' => 41,
+    'gamespot.html' => 42,
+    'giant-bomb.html' => 43,
+    'gamefaqs.html' => 44,
+    'cnet.html' => 45,
+    'last.fm.html' => 46,
+    'metrolyrics.html' => 47,
+    'tv.com.html' => 48,
+    'tv-guide.html' => 49,
+    'metacritic.html' => 50,
+    'chowhound.html' => 51,
+    'dr-phil.html' => 52,
+    'inside-edition.html' => 53,
     'cbssportsfantasy-app.html' => 17,
     'draftmaster-app.html' => 11,
     'maxprepsapp.html' => 16,
@@ -63,15 +75,13 @@
     ),
     12 => 
     array (
-      0 => 18,
-      1 => 19,
-      2 => 24,
-      3 => 25,
-      4 => 26,
-      5 => 27,
-      6 => 28,
-      7 => 29,
-      8 => 30,
+      0 => 24,
+      1 => 25,
+      2 => 26,
+      3 => 27,
+      4 => 28,
+      5 => 29,
+      6 => 30,
     ),
     13 => 
     array (
@@ -110,6 +120,32 @@
     27 => 
     array (
       0 => 39,
+    ),
+    34 => 
+    array (
+      0 => 40,
+      1 => 41,
+    ),
+    35 => 
+    array (
+      0 => 42,
+      1 => 43,
+      2 => 44,
+    ),
+    36 => 
+    array (
+      0 => 45,
+      1 => 46,
+      2 => 47,
+      3 => 48,
+      4 => 49,
+      5 => 50,
+      6 => 51,
+    ),
+    37 => 
+    array (
+      0 => 52,
+      1 => 53,
     ),
     38 => 
     array (

@@ -1,8 +1,8 @@
 <?php
 return array (
-  'timestamp' => '2017-03-03 21:11:50',
+  'timestamp' => '2017-03-13 16:20:06',
   'level' => 'INFO',
-  'msg' => 'Regenerating system settings cache: Refresh successful!',
+  'msg' => 'Processing automatic publishing dates',
   'def' => '',
   'file' => '/connectors/index.php',
   'line' => '',
