@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2017-03-13 18:56:15
+<?php /* Smarty version 3.1.27, created on 2017-03-14 14:21:37
          compiled from "/var/www/core/components/migx/templates/mgr/setuptab.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:42903141258c6eb4f312218_81523470%%*/
+/*%%SmartyHeaderCode:105606506058c7fc71efe460_80933728%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5323259989913a07499f435cfbe39253a95097d8' => 
     array (
       0 => '/var/www/core/components/migx/templates/mgr/setuptab.tpl',
-      1 => 1488223479,
+      1 => 1489501234,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '42903141258c6eb4f312218_81523470',
+  'nocache_hash' => '105606506058c7fc71efe460_80933728',
   'variables' => 
   array (
     'cmptabcaption' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_58c6eb4f318458_38681558',
+  'unifunc' => 'content_58c7fc71f043a3_97095246',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58c6eb4f318458_38681558')) {
-function content_58c6eb4f318458_38681558 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58c7fc71f043a3_97095246')) {
+function content_58c7fc71f043a3_97095246 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '42903141258c6eb4f312218_81523470';
+$_smarty_tpl->properties['nocache_hash'] = '105606506058c7fc71efe460_80933728';
 ?>
  
 {

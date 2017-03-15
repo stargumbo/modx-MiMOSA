@@ -258,26 +258,6 @@
       ),
       2 => 
       array (
-        'text' => 'MIGX',
-        'parent' => 'components',
-        'action' => 'index',
-        'description' => '',
-        'icon' => '',
-        'menuindex' => 0,
-        'params' => '&configs=packagemanager||migxconfigs||setup',
-        'handler' => '',
-        'permissions' => '',
-        'namespace' => 'migx',
-        'action_controller' => NULL,
-        'action_namespace' => NULL,
-        'id' => 'migx',
-        'children' => 
-        array (
-        ),
-        'controller' => '',
-      ),
-      3 => 
-      array (
         'text' => 'VersionX',
         'parent' => 'components',
         'action' => '3',

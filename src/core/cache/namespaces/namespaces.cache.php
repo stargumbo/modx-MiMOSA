@@ -17,12 +17,6 @@
     'path' => '/var/www/core/components/gallery/',
     'assets_path' => '/Users/theboxer/www/modx/pkgs/gallery/assets/components/gallery/',
   ),
-  'migx' => 
-  array (
-    'name' => 'migx',
-    'path' => '/var/www/core/components/migx/',
-    'assets_path' => '/var/www/htdocs/assets/components/migx/',
-  ),
   'minifyx' => 
   array (
     'name' => 'minifyx',

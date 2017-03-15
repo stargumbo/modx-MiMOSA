@@ -25,7 +25,7 @@
     'createdby' => 1,
     'createdon' => 1476804838,
     'editedby' => 2,
-    'editedon' => 1489428884,
+    'editedon' => 1489518540,
     'deleted' => 0,
     'deletedon' => 0,
     'deletedby' => 0,
@@ -309,13 +309,14 @@ pre.line-numbers > code { position:relative; }
         <div class="inner-container container-{{@index}}">
             <div class="tabs">
                 <ul class="tab-links">
-                    <li class="active"><a href="#tab-web-{{@index}}">Web</a></li>
+                    <li><a href="#tab-web-{{@index}}">Web</a></li>
                     <li><a href="#tab-ios-{{@index}}">iOS</a></li>
                     <li><a href="#tab-and-{{@index}}">Android</a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="tab-web-{{@index}}" class="tab active">
-                        <pre class="line-numbers"><code class="language-json">utag_data = {    siteCode : \'cbssports\'
+    <pre class="line-numbers"><code class="language-json">utag_data = {
+    siteCode : \'cbssports\'
     sitePrimaryRsid : \'cbsicbssportsdraftmasterapp\'
     siteType : \'native app\'
     siteSection : \'{{this.gsx$sitesection.$t}}\'
@@ -331,9 +332,9 @@ pre.line-numbers > code { position:relative; }
     articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
     articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}
 }</code></pre>
-                    </div>
+</div>
                     <div id="tab-ios-{{@index}}" class="tab">
-                        <pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
+<pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
     @"siteCode": @"cbssports",
     @"sitePrimaryRsid": @"cbsicbssportsdraftmasterapp",
     @"siteType": @"native app",
@@ -351,9 +352,9 @@ pre.line-numbers > code { position:relative; }
     @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}
 };
 [ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
-                    </div>
+</div>
                     <div id="tab-and-{{@index}}" class="tab">
-                        <pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "cbssports");
+<pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "cbssports");
 cdata.put("sitePrimaryRsid", "cbsicbssportsdraftmasterapp");
 cdata.put("siteType", "native app");
 cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
@@ -368,7 +369,7 @@ cdata.put("articleType", "{{this.gsx$articletype.$t}}");
 cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
 cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}
 Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
-                    </div>
+</div>
                 </div>
             </div>
         </div>
@@ -394,7 +395,9 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             jQuery(this).parent(\'li\').addClass(\'active\').siblings().removeClass(\'active\');
             e.preventDefault();
         });
+        jQuery(\'.tab-links li:first-child, .tab-content div:first-child\').addClass(\'active\');
     };
+
     fireaccordion = function(i){
         jQuery(i).accordion({
             active: false,
@@ -404,6 +407,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             icons: icons
         });
     };
+
     firehandlebars = function(data, template, destination){
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
@@ -622,6 +626,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             <h2>DraftMaster App Overview</h2>
             <p>This is the tracking spec for the DraftMaster App using the latest version 4.0 SDK for:</p>
             <ul>
+                <li>Web</li>
                 <li>Android</li>
                 <li>iOS</li>
             </ul>
@@ -678,14 +683,15 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                         <a href="[[*iOSSDK]]" target="_blank">iOS</a>) for more information.</p>
                 </div>
 
+                <!-- Insert web_analyticsMethods -->
+
                 
                 <h2>Page/Screen Tracking</h2>
                 <div class="inner-container">
                     <p><strong>The contextData object</strong><br />The contextData is an object that contains a set of key-value pairs that is passed as the payload for the trackState and trackAction methods.</p>
-
                     <div class="tabs">
                         <ul class="tab-links">
-                            <li class="active"><a href="#tab0">Page</a></li>
+                            <li><a href="#tab0">Page</a></li>
                             <li><a href="#tab1">Site</a></li>
                             <li><a href="#tab2">Articles</a></li>
                             <li><a href="#tab3">Events</a></li>
@@ -693,7 +699,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                             
                         </ul>
                         <div class="tab-content">
-                                                        <div id="tab0" class="tab active">
+                                                        <div id="tab0" class="tab">
                                 <h3 style="margin:0;">Page Parameters</h3>
                                 <table>
                                     <tr>
@@ -852,34 +858,38 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                     <p>Send the following as the data object when a basic page is loaded</p>
                     <div class="tabs">
                         <ul class="tab-links">
-                            <li class="active"><a href="#tab100">iOS</a></li>
-                            <li class=""><a href="#tab101">Android</a></li>
+                            <li><a href="#tab100">Web</a></li>
+                            <li><a href="#tab101">iOS</a></li>
+                            <li><a href="#tab102">Android</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div id="tab100" class="tab active">
-                                <h3 style="margin:0;">iOS Data Object</h3>
-                                <pre class="language-objectivec line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
+                            <div id="tab100" class="tab"><h3 style="margin:0;">utag_data Object</h3><pre class="language-objectivec line-numbers"><code class="language-objectivec">utag_data = {
+    siteCode : "cbssports",
+    sitePrimaryRsid : "cbsicbssportsdraftmasterapp",
+    siteType": "native app",
+    siteSection": "project|channel|product/event|service level|feature|sub-feature",
+    siteHier": "project|channel|product/event|service level|feature|sub-feature",
+    pageType": "[pageType]",
+    screenName": "[screenName]"
+}</code></pre></div>
+                            <div id="tab101" class="tab"><h3 style="margin:0;">iOS Data Object</h3><pre class="language-objectivec line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
     @"siteCode": @"cbssports",
     @"sitePrimaryRsid": @"cbsicbssportsdraftmasterapp",
     @"siteType": @"native app",
     @"siteSection": @"project|channel|product/event|service level|feature|sub-feature",
     @"siteHier": @"project|channel|product/event|service level|feature|sub-feature",
-    @"pageType": @"pageType",
-    @"screenName": @"screenName"
+    @"pageType": @"[pageType]",
+    @"screenName": @"[screenName]"
 };
-[ADBMobile trackState:@"screenName", data:cdata];</code></pre>
-                            </div>
-                            <div id="tab101" class="tab ">
-                                <h3 style="margin:0;">Android Data Object</h3>
-                                <pre class="language-java line-numbers"><code class="language-java">cdata.put("siteCode", "cbssports");
+[ADBMobile trackState:@"screenName", data:cdata];</code></pre></div>
+                            <div id="tab102" class="tab"><h3 style="margin:0;">Android Data Object</h3><pre class="language-java line-numbers"><code class="language-java">cdata.put("siteCode", "cbssports");
 cdata.put("sitePrimaryRsid", "cbsicbssportsdraftmasterapp");
 cdata.put("siteType", "native app");
 cdata.put("siteSection", "project|channel|product/event|service level|feature|sub-feature");
 cdata.put("siteHier", "project|channel|product/event|service level|feature|sub-feature");
 cdata.put("pageType", "pageType");
 cdata.put("screenName", "screenName");
-Analytics.trackState("screenName", cdata);</code></pre>
-                            </div>
+Analytics.trackState("screenName", cdata);</code></pre></div>
                         </div>
                     </div>
                 </div>
@@ -890,11 +900,11 @@ Analytics.trackState("screenName", cdata);</code></pre>
                 <div class="inner-container ontology-tags">
                     <div class="tabs">
                         <ul class="tab-links">
-                            <li class="active"><a href="#tab-ontology-basic">Standard</a></li>
+                            <li><a href="#tab-ontology-basic">Standard</a></li>
                             <li><a href="#tab-ontology-articles">Articles</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div id="tab-ontology-basic" class="active"></div>
+                            <div id="tab-ontology-basic"></div>
                             <div id="tab-ontology-articles"></div>
                         </div>
                     </div>
@@ -1113,20 +1123,9 @@ pre.line-numbers > code { position:relative; }
  .line-numbers-rows > span { pointer-events:none; display:block; counter-increment:linenumber; }
  .line-numbers-rows > span:before { content:counter(linenumber); color:#999; display:block; padding-right:0.8em; text-align:right; }
 ',
-    '[[$mainCustomJS]]' => '<script id="app-code-template" type="text/x-handlebars-template">
-    {{#each entry}}
-    <div class="accordion2 {{#if this.gsx$articleid.$t}}ontology-article{{/if}} ontology-method-{{this.gsx$trackingmethod.$t}}">
-        <h2>{{this.gsx$node.$t}}</h2>
-        <div class="inner-container container-{{@index}}">
-            <div class="tabs">
-                <ul class="tab-links">
-                    <li class="active"><a href="#tab-web-{{@index}}">Web</a></li>
-                    <li><a href="#tab-ios-{{@index}}">iOS</a></li>
-                    <li><a href="#tab-and-{{@index}}">Android</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div id="tab-web-{{@index}}" class="tab active">
-                        <pre class="line-numbers"><code class="language-json">utag_data = {    siteCode : \'cbssports\'
+    '[[$spec_codeFormat_web]]' => '<div id="tab-web-{{@index}}" class="tab active">
+    <pre class="line-numbers"><code class="language-json">utag_data = {
+    siteCode : \'cbssports\'
     sitePrimaryRsid : \'cbsicbssportsdraftmasterapp\'
     siteType : \'native app\'
     siteSection : \'{{this.gsx$sitesection.$t}}\'
@@ -1142,9 +1141,9 @@ pre.line-numbers > code { position:relative; }
     articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
     articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}
 }</code></pre>
-                    </div>
-                    <div id="tab-ios-{{@index}}" class="tab">
-                        <pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
+</div>',
+    '[[$spec_codeFormat_iOS]]' => '<div id="tab-ios-{{@index}}" class="tab">
+<pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
     @"siteCode": @"cbssports",
     @"sitePrimaryRsid": @"cbsicbssportsdraftmasterapp",
     @"siteType": @"native app",
@@ -1162,9 +1161,9 @@ pre.line-numbers > code { position:relative; }
     @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}
 };
 [ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
-                    </div>
-                    <div id="tab-and-{{@index}}" class="tab">
-                        <pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "cbssports");
+</div>',
+    '[[$spec_codeFormat_android]]' => '<div id="tab-and-{{@index}}" class="tab">
+<pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "cbssports");
 cdata.put("sitePrimaryRsid", "cbsicbssportsdraftmasterapp");
 cdata.put("siteType", "native app");
 cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
@@ -1179,7 +1178,75 @@ cdata.put("articleType", "{{this.gsx$articletype.$t}}");
 cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
 cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}
 Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
-                    </div>
+</div>',
+    '[[$mainCustomJS]]' => '<script id="app-code-template" type="text/x-handlebars-template">
+    {{#each entry}}
+    <div class="accordion2 {{#if this.gsx$articleid.$t}}ontology-article{{/if}} ontology-method-{{this.gsx$trackingmethod.$t}}">
+        <h2>{{this.gsx$node.$t}}</h2>
+        <div class="inner-container container-{{@index}}">
+            <div class="tabs">
+                <ul class="tab-links">
+                    <li><a href="#tab-web-{{@index}}">Web</a></li>
+                    <li><a href="#tab-ios-{{@index}}">iOS</a></li>
+                    <li><a href="#tab-and-{{@index}}">Android</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab-web-{{@index}}" class="tab active">
+    <pre class="line-numbers"><code class="language-json">utag_data = {
+    siteCode : \'cbssports\'
+    sitePrimaryRsid : \'cbsicbssportsdraftmasterapp\'
+    siteType : \'native app\'
+    siteSection : \'{{this.gsx$sitesection.$t}}\'
+    siteHier : \'{{this.gsx$sitehier.$t}}\'
+    pageType : \'{{this.gsx$pagename.$t}}\'
+    screenName : \'{{this.gsx$pagename.$t}}\'
+    userType : \'{{this.gsx$usertype.$t}}\'
+    userState : \'{{this.gsx$userstate.$t}}\'
+    userStateIsAuthenticated : \'1\'{{#if this.gsx$articleid.$t}}
+    articleId : \'{{this.gsx$articleid.$t}}\'
+    articleTitle : \'{{this.gsx$articletitle.$t}}\'
+    articleType : \'{{this.gsx$articletype.$t}}\'
+    articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
+    articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}
+}</code></pre>
+</div>
+                    <div id="tab-ios-{{@index}}" class="tab">
+<pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
+    @"siteCode": @"cbssports",
+    @"sitePrimaryRsid": @"cbsicbssportsdraftmasterapp",
+    @"siteType": @"native app",
+    @"siteSection": @"{{this.gsx$sitesection.$t}}",
+    @"siteHier": @"{{this.gsx$sitehier.$t}}",
+    @"pageType": @"{{this.gsx$pagename.$t}}",
+    @"screenName": @"{{this.gsx$pagename.$t}}",
+    @"userType": @"{{this.gsx$usertype.$t}}",
+    @"userState": @"{{this.gsx$userstate.$t}}",
+    @"userStateIsAuthenticated": @"1"{{#if this.gsx$articleid.$t}},
+    @"articleId": @"{{this.gsx$articleid.$t}}",
+    @"articleTitle": @"{{this.gsx$articletitle.$t}}",
+    @"articleType": @"{{this.gsx$articletype.$t}}",
+    @"articleAuthorId": @"{{this.gsx$articleauthorid.$t}}",
+    @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}
+};
+[ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
+</div>
+                    <div id="tab-and-{{@index}}" class="tab">
+<pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "cbssports");
+cdata.put("sitePrimaryRsid", "cbsicbssportsdraftmasterapp");
+cdata.put("siteType", "native app");
+cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
+cdata.put("siteHier", "{{this.gsx$sitehier.$t}}");
+cdata.put("pageType", "{{this.gsx$pagename.$t}}");
+cdata.put("userType", "{{this.gsx$usertype.$t}}");
+cdata.put("userState", "{{this.gsx$userstate.$t}}");
+cdata.put("userStateIsAuthenticated", "1");{{#if this.gsx$articleid.$t}}
+cdata.put("articleId", "{{this.gsx$articleid.$t}}");
+cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}");
+cdata.put("articleType", "{{this.gsx$articletype.$t}}");
+cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
+cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}
+Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
+</div>
                 </div>
             </div>
         </div>
@@ -1205,7 +1272,9 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             jQuery(this).parent(\'li\').addClass(\'active\').siblings().removeClass(\'active\');
             e.preventDefault();
         });
+        jQuery(\'.tab-links li:first-child, .tab-content div:first-child\').addClass(\'active\');
     };
+
     fireaccordion = function(i){
         jQuery(i).accordion({
             active: false,
@@ -1215,6 +1284,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             icons: icons
         });
     };
+
     firehandlebars = function(data, template, destination){
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
@@ -1561,13 +1631,14 @@ pre.line-numbers > code { position:relative; }
         <div class="inner-container container-{{@index}}">
             <div class="tabs">
                 <ul class="tab-links">
-                    <li class="active"><a href="#tab-web-{{@index}}">Web</a></li>
+                    <li><a href="#tab-web-{{@index}}">Web</a></li>
                     <li><a href="#tab-ios-{{@index}}">iOS</a></li>
                     <li><a href="#tab-and-{{@index}}">Android</a></li>
                 </ul>
                 <div class="tab-content">
                     <div id="tab-web-{{@index}}" class="tab active">
-                        <pre class="line-numbers"><code class="language-json">utag_data = {    siteCode : \'cbssports\'
+    <pre class="line-numbers"><code class="language-json">utag_data = {
+    siteCode : \'cbssports\'
     sitePrimaryRsid : \'cbsicbssportsdraftmasterapp\'
     siteType : \'native app\'
     siteSection : \'{{this.gsx$sitesection.$t}}\'
@@ -1583,9 +1654,9 @@ pre.line-numbers > code { position:relative; }
     articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
     articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}
 }</code></pre>
-                    </div>
+</div>
                     <div id="tab-ios-{{@index}}" class="tab">
-                        <pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
+<pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
     @"siteCode": @"cbssports",
     @"sitePrimaryRsid": @"cbsicbssportsdraftmasterapp",
     @"siteType": @"native app",
@@ -1603,9 +1674,9 @@ pre.line-numbers > code { position:relative; }
     @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}
 };
 [ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
-                    </div>
+</div>
                     <div id="tab-and-{{@index}}" class="tab">
-                        <pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "cbssports");
+<pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "cbssports");
 cdata.put("sitePrimaryRsid", "cbsicbssportsdraftmasterapp");
 cdata.put("siteType", "native app");
 cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
@@ -1620,7 +1691,7 @@ cdata.put("articleType", "{{this.gsx$articletype.$t}}");
 cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
 cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}
 Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
-                    </div>
+</div>
                 </div>
             </div>
         </div>
@@ -1646,7 +1717,9 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             jQuery(this).parent(\'li\').addClass(\'active\').siblings().removeClass(\'active\');
             e.preventDefault();
         });
+        jQuery(\'.tab-links li:first-child, .tab-content div:first-child\').addClass(\'active\');
     };
+
     fireaccordion = function(i){
         jQuery(i).accordion({
             active: false,
@@ -1656,6 +1729,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             icons: icons
         });
     };
+
     firehandlebars = function(data, template, destination){
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
@@ -1954,7 +2028,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                     <p>Refer to the Analytics section of the SDK doc (<a href="[[*AndroidSDK]]" target="_blank">Android</a>
                         <a href="[[*iOSSDK]]" target="_blank">iOS</a>) for more information.</p>
                 </div>',
-    '[[$af_page]]' => '                            <div id="tab0" class="tab active">
+    '[[$af_page]]' => '                            <div id="tab0" class="tab">
                                 <h3 style="margin:0;">Page Parameters</h3>
                                 <table>
                                     <tr>
@@ -2131,6 +2205,33 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                                     </tr>
                                 </table>
                             </div>',
+    '[[$base_codeFormat_web]]' => '<div id="tab100" class="tab"><h3 style="margin:0;">utag_data Object</h3><pre class="language-objectivec line-numbers"><code class="language-objectivec">utag_data = {
+    siteCode : "cbssports",
+    sitePrimaryRsid : "cbsicbssportsdraftmasterapp",
+    siteType": "native app",
+    siteSection": "project|channel|product/event|service level|feature|sub-feature",
+    siteHier": "project|channel|product/event|service level|feature|sub-feature",
+    pageType": "[pageType]",
+    screenName": "[screenName]"
+}</code></pre></div>',
+    '[[$base_codeFormat_iOS]]' => '<div id="tab101" class="tab"><h3 style="margin:0;">iOS Data Object</h3><pre class="language-objectivec line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
+    @"siteCode": @"cbssports",
+    @"sitePrimaryRsid": @"cbsicbssportsdraftmasterapp",
+    @"siteType": @"native app",
+    @"siteSection": @"project|channel|product/event|service level|feature|sub-feature",
+    @"siteHier": @"project|channel|product/event|service level|feature|sub-feature",
+    @"pageType": @"[pageType]",
+    @"screenName": @"[screenName]"
+};
+[ADBMobile trackState:@"screenName", data:cdata];</code></pre></div>',
+    '[[$base_codeFormat_android]]' => '<div id="tab102" class="tab"><h3 style="margin:0;">Android Data Object</h3><pre class="language-java line-numbers"><code class="language-java">cdata.put("siteCode", "cbssports");
+cdata.put("sitePrimaryRsid", "cbsicbssportsdraftmasterapp");
+cdata.put("siteType", "native app");
+cdata.put("siteSection", "project|channel|product/event|service level|feature|sub-feature");
+cdata.put("siteHier", "project|channel|product/event|service level|feature|sub-feature");
+cdata.put("pageType", "pageType");
+cdata.put("screenName", "screenName");
+Analytics.trackState("screenName", cdata);</code></pre></div>',
   ),
   'sourceCache' => 
   array (
@@ -2597,67 +2698,14 @@ pre.line-numbers > code { position:relative; }
         <div class="inner-container container-{{@index}}">
             <div class="tabs">
                 <ul class="tab-links">
-                    [[*platform:contains=`Web`:then=`<li class="active"><a href="#tab-web-{{@index}}">Web</a></li>`:else=`<li class="active"><a href="#tab-basic-{{@index}}">Basic</a></li>`]]
+                    [[*platform:contains=`Web`:then=`<li><a href="#tab-web-{{@index}}">Web</a></li>`]]
                     [[*platform:contains=`iOS`:then=`<li><a href="#tab-ios-{{@index}}">iOS</a></li>`]]
                     [[*platform:contains=`Android`:then=`<li><a href="#tab-and-{{@index}}">Android</a></li>`]]
                 </ul>
                 <div class="tab-content">
-                    <div id="[[*platform:contains=`Web`:then=`tab-web-{{@index}}`:else=`tab-basic-{{@index}}`]]" class="tab active">
-                        <pre class="line-numbers"><code class="language-json">[[*platform:contains=`Web`:then=`utag_data = {
-`:else=``]]    siteCode : \'[[*siteCode]]\'
-    sitePrimaryRsid : \'[[*sitePrimaryRsid]]\'
-    siteType : \'[[*siteType]]\'
-    siteSection : \'{{this.gsx$sitesection.$t}}\'
-    siteHier : \'{{this.gsx$sitehier.$t}}\'
-    pageType : \'{{this.gsx$pagename.$t}}\'
-    screenName : \'{{this.gsx$pagename.$t}}\'[[*appfeatures:contains=`Interaction (Login)`:then=`
-    userType : \'{{this.gsx$usertype.$t}}\'
-    userState : \'{{this.gsx$userstate.$t}}\'
-    userStateIsAuthenticated : \'1\'`]]{{#if this.gsx$articleid.$t}}
-    articleId : \'{{this.gsx$articleid.$t}}\'
-    articleTitle : \'{{this.gsx$articletitle.$t}}\'
-    articleType : \'{{this.gsx$articletype.$t}}\'
-    articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
-    articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}
-[[*platform:contains=`Web`:then=`}`:else=``]]</code></pre>
-                    </div>
-                    [[*platform:contains=`iOS`:then=`<div id="tab-ios-{{@index}}" class="tab">
-                        <pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
-    @"siteCode": @"[[*siteCode]]",
-    @"sitePrimaryRsid": @"[[*sitePrimaryRsid]]",
-    @"siteType": @"[[*siteType]]",
-    @"siteSection": @"{{this.gsx$sitesection.$t}}",
-    @"siteHier": @"{{this.gsx$sitehier.$t}}",
-    @"pageType": @"{{this.gsx$pagename.$t}}",
-    @"screenName": @"{{this.gsx$pagename.$t}}"[[*appfeatures:contains=`Interaction (Login)`:then=`,
-    @"userType": @"{{this.gsx$usertype.$t}}",
-    @"userState": @"{{this.gsx$userstate.$t}}",
-    @"userStateIsAuthenticated": @"1"`]]{{#if this.gsx$articleid.$t}},
-    @"articleId": @"{{this.gsx$articleid.$t}}",
-    @"articleTitle": @"{{this.gsx$articletitle.$t}}",
-    @"articleType": @"{{this.gsx$articletype.$t}}",
-    @"articleAuthorId": @"{{this.gsx$articleauthorid.$t}}",
-    @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}
-};
-[ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
-                    </div>`]]
-                    [[*platform:contains=`Android`:then=`<div id="tab-and-{{@index}}" class="tab">
-                        <pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "[[*siteCode]]");
-cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
-cdata.put("siteType", "[[*siteType]]");
-cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
-cdata.put("siteHier", "{{this.gsx$sitehier.$t}}");
-cdata.put("pageType", "{{this.gsx$pagename.$t}}");[[*appfeatures:contains=`Interaction (Login)`:then=`
-cdata.put("userType", "{{this.gsx$usertype.$t}}");
-cdata.put("userState", "{{this.gsx$userstate.$t}}");
-cdata.put("userStateIsAuthenticated", "1");`]]{{#if this.gsx$articleid.$t}}
-cdata.put("articleId", "{{this.gsx$articleid.$t}}");
-cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}");
-cdata.put("articleType", "{{this.gsx$articletype.$t}}");
-cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
-cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}
-Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
-                    </div>`]]
+                    [[*platform:contains=`Web`:then=`[[$spec_codeFormat_web]]`]]
+                    [[*platform:contains=`iOS`:then=`[[$spec_codeFormat_iOS]]`]]
+                    [[*platform:contains=`Android`:then=`[[$spec_codeFormat_android]]`]]
                 </div>
             </div>
         </div>
@@ -2683,7 +2731,9 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             jQuery(this).parent(\'li\').addClass(\'active\').siblings().removeClass(\'active\');
             e.preventDefault();
         });
+        jQuery(\'.tab-links li:first-child, .tab-content div:first-child\').addClass(\'active\');
     };
+
     fireaccordion = function(i){
         jQuery(i).accordion({
             active: false,
@@ -2693,6 +2743,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             icons: icons
         });
     };
+
     firehandlebars = function(data, template, destination){
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
@@ -2862,67 +2913,14 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         <div class="inner-container container-{{@index}}">
             <div class="tabs">
                 <ul class="tab-links">
-                    [[*platform:contains=`Web`:then=`<li class="active"><a href="#tab-web-{{@index}}">Web</a></li>`:else=`<li class="active"><a href="#tab-basic-{{@index}}">Basic</a></li>`]]
+                    [[*platform:contains=`Web`:then=`<li><a href="#tab-web-{{@index}}">Web</a></li>`]]
                     [[*platform:contains=`iOS`:then=`<li><a href="#tab-ios-{{@index}}">iOS</a></li>`]]
                     [[*platform:contains=`Android`:then=`<li><a href="#tab-and-{{@index}}">Android</a></li>`]]
                 </ul>
                 <div class="tab-content">
-                    <div id="[[*platform:contains=`Web`:then=`tab-web-{{@index}}`:else=`tab-basic-{{@index}}`]]" class="tab active">
-                        <pre class="line-numbers"><code class="language-json">[[*platform:contains=`Web`:then=`utag_data = {
-`:else=``]]    siteCode : \'[[*siteCode]]\'
-    sitePrimaryRsid : \'[[*sitePrimaryRsid]]\'
-    siteType : \'[[*siteType]]\'
-    siteSection : \'{{this.gsx$sitesection.$t}}\'
-    siteHier : \'{{this.gsx$sitehier.$t}}\'
-    pageType : \'{{this.gsx$pagename.$t}}\'
-    screenName : \'{{this.gsx$pagename.$t}}\'[[*appfeatures:contains=`Interaction (Login)`:then=`
-    userType : \'{{this.gsx$usertype.$t}}\'
-    userState : \'{{this.gsx$userstate.$t}}\'
-    userStateIsAuthenticated : \'1\'`]]{{#if this.gsx$articleid.$t}}
-    articleId : \'{{this.gsx$articleid.$t}}\'
-    articleTitle : \'{{this.gsx$articletitle.$t}}\'
-    articleType : \'{{this.gsx$articletype.$t}}\'
-    articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
-    articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}
-[[*platform:contains=`Web`:then=`}`:else=``]]</code></pre>
-                    </div>
-                    [[*platform:contains=`iOS`:then=`<div id="tab-ios-{{@index}}" class="tab">
-                        <pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
-    @"siteCode": @"[[*siteCode]]",
-    @"sitePrimaryRsid": @"[[*sitePrimaryRsid]]",
-    @"siteType": @"[[*siteType]]",
-    @"siteSection": @"{{this.gsx$sitesection.$t}}",
-    @"siteHier": @"{{this.gsx$sitehier.$t}}",
-    @"pageType": @"{{this.gsx$pagename.$t}}",
-    @"screenName": @"{{this.gsx$pagename.$t}}"[[*appfeatures:contains=`Interaction (Login)`:then=`,
-    @"userType": @"{{this.gsx$usertype.$t}}",
-    @"userState": @"{{this.gsx$userstate.$t}}",
-    @"userStateIsAuthenticated": @"1"`]]{{#if this.gsx$articleid.$t}},
-    @"articleId": @"{{this.gsx$articleid.$t}}",
-    @"articleTitle": @"{{this.gsx$articletitle.$t}}",
-    @"articleType": @"{{this.gsx$articletype.$t}}",
-    @"articleAuthorId": @"{{this.gsx$articleauthorid.$t}}",
-    @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}
-};
-[ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
-                    </div>`]]
-                    [[*platform:contains=`Android`:then=`<div id="tab-and-{{@index}}" class="tab">
-                        <pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "[[*siteCode]]");
-cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
-cdata.put("siteType", "[[*siteType]]");
-cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
-cdata.put("siteHier", "{{this.gsx$sitehier.$t}}");
-cdata.put("pageType", "{{this.gsx$pagename.$t}}");[[*appfeatures:contains=`Interaction (Login)`:then=`
-cdata.put("userType", "{{this.gsx$usertype.$t}}");
-cdata.put("userState", "{{this.gsx$userstate.$t}}");
-cdata.put("userStateIsAuthenticated", "1");`]]{{#if this.gsx$articleid.$t}}
-cdata.put("articleId", "{{this.gsx$articleid.$t}}");
-cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}");
-cdata.put("articleType", "{{this.gsx$articletype.$t}}");
-cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
-cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}
-Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
-                    </div>`]]
+                    [[*platform:contains=`Web`:then=`[[$spec_codeFormat_web]]`]]
+                    [[*platform:contains=`iOS`:then=`[[$spec_codeFormat_iOS]]`]]
+                    [[*platform:contains=`Android`:then=`[[$spec_codeFormat_android]]`]]
                 </div>
             </div>
         </div>
@@ -2948,7 +2946,9 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             jQuery(this).parent(\'li\').addClass(\'active\').siblings().removeClass(\'active\');
             e.preventDefault();
         });
+        jQuery(\'.tab-links li:first-child, .tab-content div:first-child\').addClass(\'active\');
     };
+
     fireaccordion = function(i){
         jQuery(i).accordion({
             active: false,
@@ -2958,6 +2958,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             icons: icons
         });
     };
+
     firehandlebars = function(data, template, destination){
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
@@ -3128,6 +3129,196 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
           array (
           ),
           'is_stream' => true,
+        ),
+      ),
+      'spec_codeFormat_web' => 
+      array (
+        'fields' => 
+        array (
+          'id' => 33,
+          'source' => 0,
+          'property_preprocess' => false,
+          'name' => 'spec_codeFormat_web',
+          'description' => '',
+          'editor_type' => 0,
+          'category' => 26,
+          'cache_type' => 0,
+          'snippet' => '<div id="tab-web-{{@index}}" class="tab active">
+    <pre class="line-numbers"><code class="language-json">utag_data = {
+    siteCode : \'[[*siteCode]]\'
+    sitePrimaryRsid : \'[[*sitePrimaryRsid]]\'
+    siteType : \'[[*siteType]]\'
+    siteSection : \'{{this.gsx$sitesection.$t}}\'
+    siteHier : \'{{this.gsx$sitehier.$t}}\'
+    pageType : \'{{this.gsx$pagename.$t}}\'
+    screenName : \'{{this.gsx$pagename.$t}}\'[[*appfeatures:contains=`Interaction (Login)`:then=`
+    userType : \'{{this.gsx$usertype.$t}}\'
+    userState : \'{{this.gsx$userstate.$t}}\'
+    userStateIsAuthenticated : \'1\'`]]{{#if this.gsx$articleid.$t}}
+    articleId : \'{{this.gsx$articleid.$t}}\'
+    articleTitle : \'{{this.gsx$articletitle.$t}}\'
+    articleType : \'{{this.gsx$articletype.$t}}\'
+    articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
+    articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}
+}</code></pre>
+</div>',
+          'locked' => false,
+          'properties' => 
+          array (
+          ),
+          'static' => false,
+          'static_file' => '',
+          'content' => '<div id="tab-web-{{@index}}" class="tab active">
+    <pre class="line-numbers"><code class="language-json">utag_data = {
+    siteCode : \'[[*siteCode]]\'
+    sitePrimaryRsid : \'[[*sitePrimaryRsid]]\'
+    siteType : \'[[*siteType]]\'
+    siteSection : \'{{this.gsx$sitesection.$t}}\'
+    siteHier : \'{{this.gsx$sitehier.$t}}\'
+    pageType : \'{{this.gsx$pagename.$t}}\'
+    screenName : \'{{this.gsx$pagename.$t}}\'[[*appfeatures:contains=`Interaction (Login)`:then=`
+    userType : \'{{this.gsx$usertype.$t}}\'
+    userState : \'{{this.gsx$userstate.$t}}\'
+    userStateIsAuthenticated : \'1\'`]]{{#if this.gsx$articleid.$t}}
+    articleId : \'{{this.gsx$articleid.$t}}\'
+    articleTitle : \'{{this.gsx$articletitle.$t}}\'
+    articleType : \'{{this.gsx$articletype.$t}}\'
+    articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
+    articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}
+}</code></pre>
+</div>',
+        ),
+        'policies' => 
+        array (
+        ),
+        'source' => 
+        array (
+        ),
+      ),
+      'spec_codeFormat_iOS' => 
+      array (
+        'fields' => 
+        array (
+          'id' => 32,
+          'source' => 0,
+          'property_preprocess' => false,
+          'name' => 'spec_codeFormat_iOS',
+          'description' => '',
+          'editor_type' => 0,
+          'category' => 26,
+          'cache_type' => 0,
+          'snippet' => '<div id="tab-ios-{{@index}}" class="tab">
+<pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
+    @"siteCode": @"[[*siteCode]]",
+    @"sitePrimaryRsid": @"[[*sitePrimaryRsid]]",
+    @"siteType": @"[[*siteType]]",
+    @"siteSection": @"{{this.gsx$sitesection.$t}}",
+    @"siteHier": @"{{this.gsx$sitehier.$t}}",
+    @"pageType": @"{{this.gsx$pagename.$t}}",
+    @"screenName": @"{{this.gsx$pagename.$t}}"[[*appfeatures:contains=`Interaction (Login)`:then=`,
+    @"userType": @"{{this.gsx$usertype.$t}}",
+    @"userState": @"{{this.gsx$userstate.$t}}",
+    @"userStateIsAuthenticated": @"1"`]]{{#if this.gsx$articleid.$t}},
+    @"articleId": @"{{this.gsx$articleid.$t}}",
+    @"articleTitle": @"{{this.gsx$articletitle.$t}}",
+    @"articleType": @"{{this.gsx$articletype.$t}}",
+    @"articleAuthorId": @"{{this.gsx$articleauthorid.$t}}",
+    @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}
+};
+[ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
+</div>',
+          'locked' => false,
+          'properties' => 
+          array (
+          ),
+          'static' => false,
+          'static_file' => '',
+          'content' => '<div id="tab-ios-{{@index}}" class="tab">
+<pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
+    @"siteCode": @"[[*siteCode]]",
+    @"sitePrimaryRsid": @"[[*sitePrimaryRsid]]",
+    @"siteType": @"[[*siteType]]",
+    @"siteSection": @"{{this.gsx$sitesection.$t}}",
+    @"siteHier": @"{{this.gsx$sitehier.$t}}",
+    @"pageType": @"{{this.gsx$pagename.$t}}",
+    @"screenName": @"{{this.gsx$pagename.$t}}"[[*appfeatures:contains=`Interaction (Login)`:then=`,
+    @"userType": @"{{this.gsx$usertype.$t}}",
+    @"userState": @"{{this.gsx$userstate.$t}}",
+    @"userStateIsAuthenticated": @"1"`]]{{#if this.gsx$articleid.$t}},
+    @"articleId": @"{{this.gsx$articleid.$t}}",
+    @"articleTitle": @"{{this.gsx$articletitle.$t}}",
+    @"articleType": @"{{this.gsx$articletype.$t}}",
+    @"articleAuthorId": @"{{this.gsx$articleauthorid.$t}}",
+    @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}
+};
+[ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
+</div>',
+        ),
+        'policies' => 
+        array (
+        ),
+        'source' => 
+        array (
+        ),
+      ),
+      'spec_codeFormat_android' => 
+      array (
+        'fields' => 
+        array (
+          'id' => 31,
+          'source' => 0,
+          'property_preprocess' => false,
+          'name' => 'spec_codeFormat_android',
+          'description' => '',
+          'editor_type' => 0,
+          'category' => 26,
+          'cache_type' => 0,
+          'snippet' => '<div id="tab-and-{{@index}}" class="tab">
+<pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "[[*siteCode]]");
+cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
+cdata.put("siteType", "[[*siteType]]");
+cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
+cdata.put("siteHier", "{{this.gsx$sitehier.$t}}");
+cdata.put("pageType", "{{this.gsx$pagename.$t}}");[[*appfeatures:contains=`Interaction (Login)`:then=`
+cdata.put("userType", "{{this.gsx$usertype.$t}}");
+cdata.put("userState", "{{this.gsx$userstate.$t}}");
+cdata.put("userStateIsAuthenticated", "1");`]]{{#if this.gsx$articleid.$t}}
+cdata.put("articleId", "{{this.gsx$articleid.$t}}");
+cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}");
+cdata.put("articleType", "{{this.gsx$articletype.$t}}");
+cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
+cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}
+Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
+</div>',
+          'locked' => false,
+          'properties' => 
+          array (
+          ),
+          'static' => false,
+          'static_file' => '',
+          'content' => '<div id="tab-and-{{@index}}" class="tab">
+<pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "[[*siteCode]]");
+cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
+cdata.put("siteType", "[[*siteType]]");
+cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
+cdata.put("siteHier", "{{this.gsx$sitehier.$t}}");
+cdata.put("pageType", "{{this.gsx$pagename.$t}}");[[*appfeatures:contains=`Interaction (Login)`:then=`
+cdata.put("userType", "{{this.gsx$usertype.$t}}");
+cdata.put("userState", "{{this.gsx$userstate.$t}}");
+cdata.put("userStateIsAuthenticated", "1");`]]{{#if this.gsx$articleid.$t}}
+cdata.put("articleId", "{{this.gsx$articleid.$t}}");
+cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}");
+cdata.put("articleType", "{{this.gsx$articletype.$t}}");
+cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
+cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}
+Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
+</div>',
+        ),
+        'policies' => 
+        array (
+        ),
+        'source' => 
+        array (
         ),
       ),
       'mainHeader' => 
@@ -3406,7 +3597,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
           'editor_type' => 0,
           'category' => 17,
           'cache_type' => 0,
-          'snippet' => '                            <div id="tab0" class="tab active">
+          'snippet' => '                            <div id="tab0" class="tab">
                                 <h3 style="margin:0;">Page Parameters</h3>
                                 <table>
                                     <tr>
@@ -3472,7 +3663,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
           ),
           'static' => false,
           'static_file' => '',
-          'content' => '                            <div id="tab0" class="tab active">
+          'content' => '                            <div id="tab0" class="tab">
                                 <h3 style="margin:0;">Page Parameters</h3>
                                 <table>
                                     <tr>
@@ -3942,6 +4133,146 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
           array (
           ),
           'is_stream' => true,
+        ),
+      ),
+      'base_codeFormat_web' => 
+      array (
+        'fields' => 
+        array (
+          'id' => 28,
+          'source' => 1,
+          'property_preprocess' => false,
+          'name' => 'base_codeFormat_web',
+          'description' => '',
+          'editor_type' => 0,
+          'category' => 26,
+          'cache_type' => 0,
+          'snippet' => '<div id="tab100" class="tab"><h3 style="margin:0;">utag_data Object</h3><pre class="language-objectivec line-numbers"><code class="language-objectivec">utag_data = {
+    siteCode : "[[*siteCode]]",
+    sitePrimaryRsid : "[[*sitePrimaryRsid]]",
+    siteType": "[[*siteType]]",
+    siteSection": "project|channel|product/event|service level|feature|sub-feature",
+    siteHier": "project|channel|product/event|service level|feature|sub-feature",
+    pageType": "[pageType]",
+    screenName": "[screenName]"
+}</code></pre></div>',
+          'locked' => false,
+          'properties' => 
+          array (
+          ),
+          'static' => false,
+          'static_file' => '',
+          'content' => '<div id="tab100" class="tab"><h3 style="margin:0;">utag_data Object</h3><pre class="language-objectivec line-numbers"><code class="language-objectivec">utag_data = {
+    siteCode : "[[*siteCode]]",
+    sitePrimaryRsid : "[[*sitePrimaryRsid]]",
+    siteType": "[[*siteType]]",
+    siteSection": "project|channel|product/event|service level|feature|sub-feature",
+    siteHier": "project|channel|product/event|service level|feature|sub-feature",
+    pageType": "[pageType]",
+    screenName": "[screenName]"
+}</code></pre></div>',
+        ),
+        'policies' => 
+        array (
+        ),
+        'source' => 
+        array (
+          'id' => 1,
+          'name' => 'Filesystem',
+          'description' => '',
+          'class_key' => 'sources.modFileMediaSource',
+          'properties' => 
+          array (
+          ),
+          'is_stream' => true,
+        ),
+      ),
+      'base_codeFormat_iOS' => 
+      array (
+        'fields' => 
+        array (
+          'id' => 29,
+          'source' => 0,
+          'property_preprocess' => false,
+          'name' => 'base_codeFormat_iOS',
+          'description' => '',
+          'editor_type' => 0,
+          'category' => 26,
+          'cache_type' => 0,
+          'snippet' => '<div id="tab101" class="tab"><h3 style="margin:0;">iOS Data Object</h3><pre class="language-objectivec line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
+    @"siteCode": @"[[*siteCode]]",
+    @"sitePrimaryRsid": @"[[*sitePrimaryRsid]]",
+    @"siteType": @"[[*siteType]]",
+    @"siteSection": @"project|channel|product/event|service level|feature|sub-feature",
+    @"siteHier": @"project|channel|product/event|service level|feature|sub-feature",
+    @"pageType": @"[pageType]",
+    @"screenName": @"[screenName]"
+};
+[ADBMobile trackState:@"screenName", data:cdata];</code></pre></div>',
+          'locked' => false,
+          'properties' => 
+          array (
+          ),
+          'static' => false,
+          'static_file' => '',
+          'content' => '<div id="tab101" class="tab"><h3 style="margin:0;">iOS Data Object</h3><pre class="language-objectivec line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
+    @"siteCode": @"[[*siteCode]]",
+    @"sitePrimaryRsid": @"[[*sitePrimaryRsid]]",
+    @"siteType": @"[[*siteType]]",
+    @"siteSection": @"project|channel|product/event|service level|feature|sub-feature",
+    @"siteHier": @"project|channel|product/event|service level|feature|sub-feature",
+    @"pageType": @"[pageType]",
+    @"screenName": @"[screenName]"
+};
+[ADBMobile trackState:@"screenName", data:cdata];</code></pre></div>',
+        ),
+        'policies' => 
+        array (
+        ),
+        'source' => 
+        array (
+        ),
+      ),
+      'base_codeFormat_android' => 
+      array (
+        'fields' => 
+        array (
+          'id' => 30,
+          'source' => 0,
+          'property_preprocess' => false,
+          'name' => 'base_codeFormat_android',
+          'description' => '',
+          'editor_type' => 0,
+          'category' => 26,
+          'cache_type' => 0,
+          'snippet' => '<div id="tab102" class="tab"><h3 style="margin:0;">Android Data Object</h3><pre class="language-java line-numbers"><code class="language-java">cdata.put("siteCode", "[[*siteCode]]");
+cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
+cdata.put("siteType", "[[*siteType]]");
+cdata.put("siteSection", "project|channel|product/event|service level|feature|sub-feature");
+cdata.put("siteHier", "project|channel|product/event|service level|feature|sub-feature");
+cdata.put("pageType", "pageType");
+cdata.put("screenName", "screenName");
+Analytics.trackState("screenName", cdata);</code></pre></div>',
+          'locked' => false,
+          'properties' => 
+          array (
+          ),
+          'static' => false,
+          'static_file' => '',
+          'content' => '<div id="tab102" class="tab"><h3 style="margin:0;">Android Data Object</h3><pre class="language-java line-numbers"><code class="language-java">cdata.put("siteCode", "[[*siteCode]]");
+cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
+cdata.put("siteType", "[[*siteType]]");
+cdata.put("siteSection", "project|channel|product/event|service level|feature|sub-feature");
+cdata.put("siteHier", "project|channel|product/event|service level|feature|sub-feature");
+cdata.put("pageType", "pageType");
+cdata.put("screenName", "screenName");
+Analytics.trackState("screenName", cdata);</code></pre></div>',
+        ),
+        'policies' => 
+        array (
+        ),
+        'source' => 
+        array (
         ),
       ),
     ),

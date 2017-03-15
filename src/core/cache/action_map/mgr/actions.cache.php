@@ -12,19 +12,6 @@
     'namespace_path' => '/var/www/core/components/gallery/',
     'namespace_assets_path' => '/Users/theboxer/www/modx/pkgs/gallery/assets/components/gallery/',
   ),
-  5 => 
-  array (
-    'id' => '5',
-    'namespace' => 'migx',
-    'controller' => 'index',
-    'haslayout' => '0',
-    'lang_topics' => 'example:default',
-    'assets' => '',
-    'help_url' => '',
-    'namespace_name' => 'migx',
-    'namespace_path' => '/var/www/core/components/migx/',
-    'namespace_assets_path' => '{assets_path}components/migx/',
-  ),
   3 => 
   array (
     'id' => '3',

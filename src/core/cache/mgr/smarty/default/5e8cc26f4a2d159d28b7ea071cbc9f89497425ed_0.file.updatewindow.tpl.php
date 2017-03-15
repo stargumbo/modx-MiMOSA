@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2017-03-13 18:56:15
+<?php /* Smarty version 3.1.27, created on 2017-03-14 14:21:37
          compiled from "/var/www/core/components/migx/templates/mgr/updatewindow.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:104598150858c6eb4f2767b9_01246330%%*/
+/*%%SmartyHeaderCode:115147716358c7fc71e6b132_42443071%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5e8cc26f4a2d159d28b7ea071cbc9f89497425ed' => 
     array (
       0 => '/var/www/core/components/migx/templates/mgr/updatewindow.tpl',
-      1 => 1488223479,
+      1 => 1489501234,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '104598150858c6eb4f2767b9_01246330',
+  'nocache_hash' => '115147716358c7fc71e6b132_42443071',
   'variables' => 
   array (
     'update_win_title' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_58c6eb4f2939e4_74547996',
+  'unifunc' => 'content_58c7fc71e876e5_42234304',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58c6eb4f2939e4_74547996')) {
-function content_58c6eb4f2939e4_74547996 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_58c7fc71e876e5_42234304')) {
+function content_58c7fc71e876e5_42234304 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '104598150858c6eb4f2767b9_01246330';
+$_smarty_tpl->properties['nocache_hash'] = '115147716358c7fc71e6b132_42443071';
 ?>
 
 

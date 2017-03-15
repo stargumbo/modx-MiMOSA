@@ -177,9 +177,8 @@
     ),
     'OnDocFormPrerender' => 
     array (
-      2 => '2',
-      9 => '9',
       5 => '5',
+      2 => '2',
     ),
     'OnDocFormSave' => 
     array (
@@ -211,8 +210,8 @@
     ),
     'OnSiteRefresh' => 
     array (
-      8 => '8',
       7 => '7',
+      8 => '8',
     ),
     'OnSnipFormPrerender' => 
     array (
@@ -241,11 +240,9 @@
     'OnTVInputPropertiesList' => 
     array (
       2 => '2',
-      9 => '9',
     ),
     'OnTVInputRenderList' => 
     array (
-      9 => '9',
       2 => '2',
     ),
     'OnTVOutputRenderList' => 
@@ -490,11 +487,13 @@ switch ($modx->event->name) {
             foreach ($modx->config[\'fenom_jscripts\'] as $key => $value) {
                 unset($modx->resource->_jscripts[$key]);
             }
+            $modx->resource->_jscripts = array_values($modx->resource->_jscripts);
         }
         if (!empty($modx->config[\'fenom_sjscripts\'])) {
             foreach ($modx->config[\'fenom_sjscripts\'] as $key => $value) {
                 unset($modx->resource->_sjscripts[$key]);
             }
+            $modx->resource->_sjscripts = array_values($modx->resource->_sjscripts);
         }
         if (!empty($modx->config[\'fenom_loadedscripts\'])) {
             foreach ($modx->config[\'fenom_loadedscripts\'] as $key => $value) {
@@ -777,60 +776,6 @@ switch ($modx->event->name) {
       'moduleguid' => '',
       'static' => '0',
       'static_file' => 'core/components/minifyx/elements/plugins/plugin.minifyx.php',
-    ),
-    9 => 
-    array (
-      'id' => '9',
-      'source' => '0',
-      'property_preprocess' => '0',
-      'name' => 'MIGX',
-      'description' => '',
-      'editor_type' => '0',
-      'category' => '18',
-      'cache_type' => '0',
-      'plugincode' => '$corePath = $modx->getOption(\'migx.core_path\',null,$modx->getOption(\'core_path\').\'components/migx/\');
-$assetsUrl = $modx->getOption(\'migx.assets_url\', null, $modx->getOption(\'assets_url\') . \'components/migx/\');
-switch ($modx->event->name) {
-    case \'OnTVInputRenderList\':
-        $modx->event->output($corePath.\'elements/tv/input/\');
-        break;
-    case \'OnTVInputPropertiesList\':
-        $modx->event->output($corePath.\'elements/tv/inputoptions/\');
-        break;
-
-        case \'OnDocFormPrerender\':
-        $modx->controller->addCss($assetsUrl.\'css/mgr.css\');
-        break; 
- 
-    /*          
-    case \'OnTVOutputRenderList\':
-        $modx->event->output($corePath.\'elements/tv/output/\');
-        break;
-    case \'OnTVOutputRenderPropertiesList\':
-        $modx->event->output($corePath.\'elements/tv/properties/\');
-        break;
-    
-    case \'OnDocFormPrerender\':
-        $assetsUrl = $modx->getOption(\'colorpicker.assets_url\',null,$modx->getOption(\'assets_url\').\'components/colorpicker/\'); 
-        $modx->regClientStartupHTMLBlock(\'<script type="text/javascript">
-        Ext.onReady(function() {
-            
-        });
-        </script>\');
-        $modx->regClientStartupScript($assetsUrl.\'sources/ColorPicker.js\');
-        $modx->regClientStartupScript($assetsUrl.\'sources/ColorMenu.js\');
-        $modx->regClientStartupScript($assetsUrl.\'sources/ColorPickerField.js\');		
-        $modx->regClientCSS($assetsUrl.\'resources/css/colorpicker.css\');
-        break;
-     */
-}
-return;',
-      'locked' => '0',
-      'properties' => 'a:0:{}',
-      'disabled' => '0',
-      'moduleguid' => '',
-      'static' => '0',
-      'static_file' => '',
     ),
   ),
   'policies' => 
