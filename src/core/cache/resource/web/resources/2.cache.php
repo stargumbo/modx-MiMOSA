@@ -16,8 +16,9 @@
     'parent' => 0,
     'isfolder' => 0,
     'introtext' => '',
-    'content' => '<h1>Welcome Home!</h1>
-<p>Nothing to see here.  Click somewhere in the menu!</p>',
+    'content' => '<h1>Welcome to Mimosa!</h1>
+<p>Mimosa is an organizational tool, delivering a central repository for all things tracking and tagging.  This tool is used to gather information for Omniture, ComScore, Nielsen, DW, Bluekai, and GA - deployment information being generated depends on which sites / devices utilize the tags.</p>
+<p>We are currently in the beta phase of development, but some information is available in the menu above.</p>',
     'richtext' => 1,
     'template' => 1,
     'menuindex' => 1,
@@ -25,8 +26,8 @@
     'cacheable' => 1,
     'createdby' => 1,
     'createdon' => 1476110137,
-    'editedby' => 1,
-    'editedon' => 1476780111,
+    'editedby' => 2,
+    'editedon' => 1491520394,
     'deleted' => 0,
     'deletedon' => 0,
     'deletedby' => 0,
@@ -63,22 +64,22 @@ body { margin:0; padding:0; color:#333; background-color:#eee; font:.9em/1.2 "He
 h1,h2,h3,h4,h5,h6 { margin:0 0 .5em; font-weight:500; line-height:1.1; }
 h1 { font-size:2.25em; }
 
- /* 36px */
+/* 36px */
 h2 { font-size:1.75em; }
 
- /* 28px */
+/* 28px */
 h3 { font-size:1.375em; }
 
- /* 22px */
+/* 22px */
 h4 { font-size:1.125em; }
 
- /* 18px */
+/* 18px */
 h5 { font-size:1em; }
 
- /* 16px */
+/* 16px */
 h6 { font-size:.875em; }
 
- /* 14px */
+/* 14px */
 p { margin:0 0 1.5em; line-height:1.5; }
 blockquote { padding:1em 2em; margin:0 0 2em; border-left:5px solid #eee; }
 hr { height:0; margin-top:1em; margin-bottom:2em; border:0; border-top:1px solid #ddd; }
@@ -105,6 +106,7 @@ a:active { color:red; }
 .inner-container { border:1px solid #ccc; padding:1em; margin:1em auto; }
 
 /* -----------------------Accordion Custom Styles------------------------*/
+.accordion { margin-bottom: 15px; }
 .accordion .inner-container { margin:0 auto; }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover { border:1px solid #3883c9; background:#3883c9; }
 .ui-icon { margin-right:8px; }
@@ -115,18 +117,18 @@ nav { margin:0 auto; text-align:center; }
 nav ul ul { display:none; }
 nav ul li:hover > ul { display:block; }
 nav ul { background:#efefef; background:linear-gradient(top, #efefef 0%, #bbbbbb 100%); background:-moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); background:-webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); box-shadow:0px 0px 9px rgba(0,0,0,0.15); padding:0 20px; border-radius:10px; list-style:none; position:relative; display:inline-table; z-index:999; }
- nav ul:after { content:""; clear:both; display:block; }
- nav ul li { float:left; }
- nav ul li:hover { background:#4b545f; background:linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-moz-linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%); }
- nav ul li:hover a { color:#fff; }
- nav ul li a { display:block; padding:10px 30px; color:#757575; text-decoration:none; white-space:nowrap; }
- nav ul ul { background:#5f6975; border-radius:0px; padding:0; position:absolute; top:100%; }
- nav ul ul li { float:none; border-top:1px solid #6b727c; border-bottom:1px solid #575f6a; position:relative; }
- nav ul ul li a { padding:10px 30px; color:#fff; white-space:nowrap; }
- nav ul ul li a:hover { background:#4b545f; }
- nav ul ul ul { position:absolute; left:100%; top:0; }
+nav ul:after { content:""; clear:both; display:block; }
+nav ul li { float:left; }
+nav ul li:hover { background:#4b545f; background:linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-moz-linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%); }
+nav ul li:hover a { color:#fff; }
+nav ul li a { display:block; padding:10px 30px; color:#757575; text-decoration:none; white-space:nowrap; }
+nav ul ul { background:#5f6975; border-radius:0px; padding:0; position:absolute; top:100%; }
+nav ul ul li { float:none; border-top:1px solid #6b727c; border-bottom:1px solid #575f6a; position:relative; }
+nav ul ul li a { padding:10px 30px; color:#fff; white-space:nowrap; }
+nav ul ul li a:hover { background:#4b545f; }
+nav ul ul ul { position:absolute; left:100%; top:0; }
 
- /* -----------------------Single styles------------------------*/
+/* -----------------------Single styles------------------------*/
 .img-responsive { max-width:100%; }
 .btn { color:#fff !important; background-color:royalblue; border-color:#222; display:inline-block; padding:.5em 1em; margin-bottom:0; font-weight:400; line-height:1.2; text-align:center; white-space:nowrap; vertical-align:middle; cursor:pointer; border:1px solid transparent; border-radius:.2em; text-decoration:none; }
 .btn:hover { color:#fff !important; background-color:green; }
@@ -138,35 +140,40 @@ nav ul { background:#efefef; background:linear-gradient(top, #efefef 0%, #bbbbbb
 .list-inline > li { display:inline-block; padding-right:5px; padding-left:5px; }
 
 /* -----------------------Wide styles------------------------*/
-@media (min-width:55em) { 
- .header { padding:1em 3em; }
- .nav-bar { padding:0 3em; }
- .content { padding:2em 3em; }
- .main { float:left; width:65%; margin-right:5%; margin-bottom:1em; }
- .aside { float:left; width:30%; margin-bottom:1em; }
- .aside li { padding-bottom:10px; }
- .footer { padding:1.5em 3em; }
- .nav li { display:inline; margin:0 1em 0 0; }
- .nav a { display:inline; padding:0; border-bottom:0; }
+@media (min-width:55em) {
+    .header { padding:1em 3em; }
+    .nav-bar { padding:0 3em; }
+    .content { padding:2em 3em; }
+    .main { float:left; width:65%; margin-right:5%; margin-bottom:1em; }
+    .aside { float:left; width:30%; margin-bottom:1em; }
+    .aside li { padding-bottom:10px; }
+    .footer { padding:1.5em 3em; }
+    .nav li { display:inline; margin:0 1em 0 0; }
+    .nav a { display:inline; padding:0; border-bottom:0; }
 }
+
+/*----- Aside List -----*/
+.aside ul { padding: 0 0 0 15px; margin: 0 0 0 0; }
+    .aside li { list-style-type:none; padding: 10px 0 0 0; }
+    .aside li:first { padding:0 0 0 0; }
 
 /*----- Tabs -----*/
 .tabs { width:100%; display:inline-block; }
 
- /*----- Tab Links -----*/
- /* Clearfix */
- .tab-links { padding:0; margin:0; }
- .tab-links:after { display:block; clear:both; content:\'\'; }
- .tab-links li { margin:0px 5px; float:left; list-style:none; }
- .tab-links a { padding:9px 15px; display:inline-block; border-radius:5px 5px 0px 0px; background:#3883c9; /* font-size:16px; */
- font-weight:600; color:#EAEAF7; transition:all linear .15s; text-decoration:none; border-width:1px 1px 1px 1px; border-style:solid; border-color:#eaeaea #eaeaea #ffffff #eaeaea; margin-bottom:-1px; }
- .tab-links a:hover { background:#a7cce5; text-decoration:none; }
- .tabs li.active a, .tabs li.active a:hover { background:#fff; color:#393939; }
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links { padding:0; margin:0; }
+.tab-links:after { display:block; clear:both; content:\'\'; }
+.tab-links li { margin:0px 5px; float:left; list-style:none; }
+.tab-links a { padding:9px 15px; display:inline-block; border-radius:5px 5px 0px 0px; background:#3883c9; /* font-size:16px; */
+    font-weight:600; color:#EAEAF7; transition:all linear .15s; text-decoration:none; border-width:1px 1px 1px 1px; border-style:solid; border-color:#eaeaea #eaeaea #ffffff #eaeaea; margin-bottom:-1px; }
+.tab-links a:hover { background:#a7cce5; text-decoration:none; }
+.tabs li.active a, .tabs li.active a:hover { background:#fff; color:#393939; }
 
- /*----- Content of Tabs -----*/
- .tab-content { padding:15px; border-radius:5px; box-shadow:-1px 1px 1px rgba(0,0,0,.15); background:#fff; border-style:solid; border-width:1px; border-color:#f0f0f0; }
- .tab { display:none; }
- .tab.active { display:block; }
+/*----- Content of Tabs -----*/
+.tab-content { padding:15px; border-radius:5px; box-shadow:-1px 1px 1px rgba(0,0,0,.15); background:#fff; border-style:solid; border-width:1px; border-color:#f0f0f0; }
+.tab { display:none; }
+.tab.active { display:block; }
 
 /* http://prismjs.com/download.html?themes=prism-coy&languages=markup+css+clike+javascript+c+java+json+objectivec&plugins=line-highlight+line-numbers+highlight-keywords */
 /** * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML * Based on https://github.com/tshedor/workshop-wp-theme (Example:http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics); * @author Tim Shedor */
@@ -195,10 +202,10 @@ pre[class*="language-"]:before,pre[class*="language-"]:after { content:\'\'; z-i
 .token.italic { font-style:italic; }
 .token.entity { cursor:help; }
 .namespace { opacity:.7; }
-@media screen and (max-width:767px) { 
-  pre[class*="language-"]:before, pre[class*="language-"]:after { 
-    bottom:14px; box-shadow:none; 
-  } 
+@media screen and (max-width:767px) {
+    pre[class*="language-"]:before, pre[class*="language-"]:after {
+        bottom:14px; box-shadow:none;
+    }
 }
 
 /* Plugin styles */
@@ -215,15 +222,15 @@ pre[data-line] code { position:relative; padding-left:4em; }
 pre .line-highlight { margin-top:0; }
 pre[data-line] { position:relative; padding:1em 0 1em 3em; }
 .line-highlight { position:absolute; left:0; right:0; padding:inherit 0; margin-top:1em; /* Same as .prism’s padding-top */
- background:hsla(24, 20%, 50%,.08); background:linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0)); pointer-events:none; line-height:inherit; white-space:pre; }
- .line-highlight:before, .line-highlight[data-end]:after { content:attr(data-start); position:absolute; top:.4em; left:.6em; min-width:1em; padding:0 .5em; background-color:hsla(24, 20%, 50%,.4); color:hsl(24, 20%, 95%); font:bold 65%/1.5 sans-serif; text-align:center; vertical-align:.3em; border-radius:999px; text-shadow:none; box-shadow:0 1px white; }
- .line-highlight[data-end]:after { content:attr(data-end); top:auto; bottom:.4em; }
+    background:hsla(24, 20%, 50%,.08); background:linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0)); pointer-events:none; line-height:inherit; white-space:pre; }
+.line-highlight:before, .line-highlight[data-end]:after { content:attr(data-start); position:absolute; top:.4em; left:.6em; min-width:1em; padding:0 .5em; background-color:hsla(24, 20%, 50%,.4); color:hsl(24, 20%, 95%); font:bold 65%/1.5 sans-serif; text-align:center; vertical-align:.3em; border-radius:999px; text-shadow:none; box-shadow:0 1px white; }
+.line-highlight[data-end]:after { content:attr(data-end); top:auto; bottom:.4em; }
 pre.line-numbers { position:relative; padding-left:3.8em; counter-reset:linenumber; }
 pre.line-numbers > code { position:relative; }
 .line-numbers .line-numbers-rows { position:absolute; pointer-events:none; top:0; font-size:100%; left:-3.8em; width:3em; /* works for line-numbers below 1000 lines */
- letter-spacing:-1px; border-right:1px solid #999; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
- .line-numbers-rows > span { pointer-events:none; display:block; counter-increment:linenumber; }
- .line-numbers-rows > span:before { content:counter(linenumber); color:#999; display:block; padding-right:0.8em; text-align:right; }
+    letter-spacing:-1px; border-right:1px solid #999; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
+.line-numbers-rows > span { pointer-events:none; display:block; counter-increment:linenumber; }
+.line-numbers-rows > span:before { content:counter(linenumber); color:#999; display:block; padding-right:0.8em; text-align:right; }
 </style>
 
     <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
@@ -302,7 +309,7 @@ pre.line-numbers > code { position:relative; }
             feed = data.feed;
         });
 
-        fireaccordion(".accordion1");
+        fireaccordion(".accordion1, .accordion3, .accordion4, .accordion5");
         firetabs();
 
         jQuery(document).ajaxStart(function(){
@@ -326,54 +333,6 @@ pre.line-numbers > code { position:relative; }
             return this.gsx$trackingmethodaction.$t;
         }
     });
-
-    /*
-     $.getJSON(url, function(data) {
-     var html = \'\';
-
-     var entry = data.feed.entry;
-     var modx_platform = "";
-
-     html += \'<div class="accordion2">\';
-     for (var i = 0; i < entry.length; i++) {
-     var html_and=\'\',html_ios=\'\',html_list=\'\',page_and=\'\',page_ios=\'\',article_and=\'\',article_ios=\'\';
-
-     var dr = {
-     // Tracking Method
-     trackingmethod : entry[i][\'gsx$trackingmethod\'][\'$t\'],
-
-     // Basic pageview
-     page : {
-     node : entry[i][\'gsx$node\'][\'$t\'],
-     pagetype : entry[i][\'gsx$pagetype\'][\'$t\'],
-     pagename : entry[i][\'gsx$pagename\'][\'$t\'],
-     project : entry[i][\'gsx$project\'][\'$t\'],
-     channel : entry[i][\'gsx$channel\'][\'$t\'],
-     productline : entry[i][\'gsx$productline\'][\'$t\'],
-     servicelevel : entry[i][\'gsx$servicelevel\'][\'$t\'],
-     feature : entry[i][\'gsx$feature\'][\'$t\'],
-     subfeature : entry[i][\'gsx$subfeature\'][\'$t\']
-     },
-
-     // Article pageview
-     article : {
-     articleid : entry[i][\'gsx$articleid\'][\'$t\'],
-     articletitle : entry[i][\'gsx$articletitle\'][\'$t\'],
-     articletype : entry[i][\'gsx$articletype\'][\'$t\'],
-     articleauthorid : entry[i][\'gsx$articleauthorid\'][\'$t\'],
-     articleauthorname : entry[i][\'gsx$articleauthorname\'][\'$t\']
-     }
-     }
-     var hiertrim = dr.page.project + \'|\' + dr.page.channel + \'|\' + dr.page.productline + \'|\' + dr.page.servicelevel + \'|\' + dr.page.feature + \'|\' + dr.page.subfeature;
-     hiertrim = hiertrim.replace("||"||"|||"||"||||"||"|||||","|");
-
-     html += \'<h2>\' +dr.page.node+ \'</h2><div class="inner-container container-\'+i+\'"><div class="tabs"><ul class="tab-links">\'+html_list+\'</ul><div class="tab-content">\'+page_ios+page_and+\'</div></div></div>\';
-     }
-     html += "</div>";
-
-     $(\'.ontology-tags\').html(html);
-     });
-     */
 </script>
 
 <script type="text/javascript">
@@ -1132,25 +1091,18 @@ table.display tr.gradeU {
 
 <div class="nav-bar">    <div class="container">
         <nav><ul><li class="first active"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
-<li><a href="groups/" title="Groups" class=\'linkdisable\'>Groups</a><ul><li class="first"><a href="cdm/" title="CDM" class=\'linkdisable\'>CDM</a><ul><li class="first"><a href="sports/" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first"><a href="cbs-sports.html" title="CBS Sports" >CBS Sports</a><ul><li class="first"><a href="cbssportsapps/" title="Apps" class=\'linkdisable\'>Apps</a><ul><li class="first"><a href="cbs-sports-app.html" title="CBS Sports App" >CBS Sports App</a></li>
-</ul></li>
-</ul></li>
-<li><a href="cbs-sports-fantasy/" title="CBS Sports Fantasy" >CBS Sports Fantasy</a><ul><li class="first"><a href="cbssportsfantasyapps.html" title="Apps" >Apps</a><ul><li class="first"><a href="cbssportsfantasy-app.html" title="CBS Sports Fantasy App" >CBS Sports Fantasy App</a></li>
-<li class="last"><a href="draftmaster-app.html" title="DraftMaster App" >DraftMaster App</a></li>
-</ul></li>
-</ul></li>
+<li><a href="groups/" title="Groups" class=\'linkdisable\'>Groups</a><ul><li class="first"><a href="cdm/" title="CDM" class=\'linkdisable\'>CDM</a><ul><li class="first"><a href="sports/" title="Sports" >Sports</a><ul><li class="first"><a href="cbs-sports/" title="CBS Sports" >CBS Sports</a></li>
+<li><a href="cbs-sports-fantasy/" title="CBS Sports Fantasy" >CBS Sports Fantasy</a></li>
 <li><a href="sportsline.html" title="SportsLine" >SportsLine</a></li>
-<li><a href="maxpreps/" title="MaxPreps" >MaxPreps</a><ul><li class="first"><a href="maxprepsapps.html" title="Apps" >Apps</a><ul><li class="first"><a href="maxprepsapp.html" title="MaxPreps App" >MaxPreps App</a></li>
-</ul></li>
-</ul></li>
+<li><a href="maxpreps/" title="MaxPreps" >MaxPreps</a></li>
 <li><a href="trainerpass.html" title="TrainerPass" >TrainerPass</a></li>
 <li><a href="college-sports-live.html" title="College Sports Live" >College Sports Live</a></li>
-<li class="last"><a href="247sports.html" title="247Sports" >247Sports</a></li>
+<li class="last"><a href="247sports/" title="247Sports" >247Sports</a></li>
 </ul></li>
-<li><a href="news/" title="News" class=\'linkdisable\'>News</a><ul><li class="first"><a href="cbs-news.html" title="CBS News" >CBS News</a></li>
+<li><a href="news/" title="News" >News</a><ul><li class="first"><a href="cbs-news.html" title="CBS News" >CBS News</a></li>
 <li class="last"><a href="60-minutes.html" title="60 Minutes" >60 Minutes</a></li>
 </ul></li>
-<li class="last"><a href="entertainment/" title="Entertainment" class=\'linkdisable\'>Entertainment</a><ul><li class="first"><a href="cbs.com.html" title="CBS.com" >CBS.com</a></li>
+<li class="last"><a href="entertainment/" title="Entertainment" >Entertainment</a><ul><li class="first"><a href="cbs.com.html" title="CBS.com" >CBS.com</a></li>
 </ul></li>
 </ul></li>
 <li class="last"><a href="cmg/" title="CMG" class=\'linkdisable\'>CMG</a><ul><li class="first"><a href="b2b/" title="b2b" >b2b</a><ul><li class="first"><a href="techrepublic.html" title="TechRepublic" >TechRepublic</a></li>
@@ -1183,9 +1135,10 @@ table.display tr.gradeU {
 <div class="content">
     <div class="container">
         <div class="main">
-            <h2>Home Page Overview</h2>
-            <div class="inner-container"><h1>Welcome Home!</h1>
-<p>Nothing to see here.  Click somewhere in the menu!</p></div>
+            <!-- <h2>Home Page Overview</h2> -->
+            <div class="inner-container"><h1>Welcome to Mimosa!</h1>
+<p>Mimosa is an organizational tool, delivering a central repository for all things tracking and tagging.  This tool is used to gather information for Omniture, ComScore, Nielsen, DW, Bluekai, and GA - deployment information being generated depends on which sites / devices utilize the tags.</p>
+<p>We are currently in the beta phase of development, but some information is available in the menu above.</p></div>
         </div>
         <div class="aside">
             <h3>Quick Reference</h3>
@@ -1285,22 +1238,22 @@ body { margin:0; padding:0; color:#333; background-color:#eee; font:.9em/1.2 "He
 h1,h2,h3,h4,h5,h6 { margin:0 0 .5em; font-weight:500; line-height:1.1; }
 h1 { font-size:2.25em; }
 
- /* 36px */
+/* 36px */
 h2 { font-size:1.75em; }
 
- /* 28px */
+/* 28px */
 h3 { font-size:1.375em; }
 
- /* 22px */
+/* 22px */
 h4 { font-size:1.125em; }
 
- /* 18px */
+/* 18px */
 h5 { font-size:1em; }
 
- /* 16px */
+/* 16px */
 h6 { font-size:.875em; }
 
- /* 14px */
+/* 14px */
 p { margin:0 0 1.5em; line-height:1.5; }
 blockquote { padding:1em 2em; margin:0 0 2em; border-left:5px solid #eee; }
 hr { height:0; margin-top:1em; margin-bottom:2em; border:0; border-top:1px solid #ddd; }
@@ -1327,6 +1280,7 @@ a:active { color:red; }
 .inner-container { border:1px solid #ccc; padding:1em; margin:1em auto; }
 
 /* -----------------------Accordion Custom Styles------------------------*/
+.accordion { margin-bottom: 15px; }
 .accordion .inner-container { margin:0 auto; }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover { border:1px solid #3883c9; background:#3883c9; }
 .ui-icon { margin-right:8px; }
@@ -1337,18 +1291,18 @@ nav { margin:0 auto; text-align:center; }
 nav ul ul { display:none; }
 nav ul li:hover > ul { display:block; }
 nav ul { background:#efefef; background:linear-gradient(top, #efefef 0%, #bbbbbb 100%); background:-moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); background:-webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); box-shadow:0px 0px 9px rgba(0,0,0,0.15); padding:0 20px; border-radius:10px; list-style:none; position:relative; display:inline-table; z-index:999; }
- nav ul:after { content:""; clear:both; display:block; }
- nav ul li { float:left; }
- nav ul li:hover { background:#4b545f; background:linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-moz-linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%); }
- nav ul li:hover a { color:#fff; }
- nav ul li a { display:block; padding:10px 30px; color:#757575; text-decoration:none; white-space:nowrap; }
- nav ul ul { background:#5f6975; border-radius:0px; padding:0; position:absolute; top:100%; }
- nav ul ul li { float:none; border-top:1px solid #6b727c; border-bottom:1px solid #575f6a; position:relative; }
- nav ul ul li a { padding:10px 30px; color:#fff; white-space:nowrap; }
- nav ul ul li a:hover { background:#4b545f; }
- nav ul ul ul { position:absolute; left:100%; top:0; }
+nav ul:after { content:""; clear:both; display:block; }
+nav ul li { float:left; }
+nav ul li:hover { background:#4b545f; background:linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-moz-linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%); }
+nav ul li:hover a { color:#fff; }
+nav ul li a { display:block; padding:10px 30px; color:#757575; text-decoration:none; white-space:nowrap; }
+nav ul ul { background:#5f6975; border-radius:0px; padding:0; position:absolute; top:100%; }
+nav ul ul li { float:none; border-top:1px solid #6b727c; border-bottom:1px solid #575f6a; position:relative; }
+nav ul ul li a { padding:10px 30px; color:#fff; white-space:nowrap; }
+nav ul ul li a:hover { background:#4b545f; }
+nav ul ul ul { position:absolute; left:100%; top:0; }
 
- /* -----------------------Single styles------------------------*/
+/* -----------------------Single styles------------------------*/
 .img-responsive { max-width:100%; }
 .btn { color:#fff !important; background-color:royalblue; border-color:#222; display:inline-block; padding:.5em 1em; margin-bottom:0; font-weight:400; line-height:1.2; text-align:center; white-space:nowrap; vertical-align:middle; cursor:pointer; border:1px solid transparent; border-radius:.2em; text-decoration:none; }
 .btn:hover { color:#fff !important; background-color:green; }
@@ -1360,35 +1314,40 @@ nav ul { background:#efefef; background:linear-gradient(top, #efefef 0%, #bbbbbb
 .list-inline > li { display:inline-block; padding-right:5px; padding-left:5px; }
 
 /* -----------------------Wide styles------------------------*/
-@media (min-width:55em) { 
- .header { padding:1em 3em; }
- .nav-bar { padding:0 3em; }
- .content { padding:2em 3em; }
- .main { float:left; width:65%; margin-right:5%; margin-bottom:1em; }
- .aside { float:left; width:30%; margin-bottom:1em; }
- .aside li { padding-bottom:10px; }
- .footer { padding:1.5em 3em; }
- .nav li { display:inline; margin:0 1em 0 0; }
- .nav a { display:inline; padding:0; border-bottom:0; }
+@media (min-width:55em) {
+    .header { padding:1em 3em; }
+    .nav-bar { padding:0 3em; }
+    .content { padding:2em 3em; }
+    .main { float:left; width:65%; margin-right:5%; margin-bottom:1em; }
+    .aside { float:left; width:30%; margin-bottom:1em; }
+    .aside li { padding-bottom:10px; }
+    .footer { padding:1.5em 3em; }
+    .nav li { display:inline; margin:0 1em 0 0; }
+    .nav a { display:inline; padding:0; border-bottom:0; }
 }
+
+/*----- Aside List -----*/
+.aside ul { padding: 0 0 0 15px; margin: 0 0 0 0; }
+    .aside li { list-style-type:none; padding: 10px 0 0 0; }
+    .aside li:first { padding:0 0 0 0; }
 
 /*----- Tabs -----*/
 .tabs { width:100%; display:inline-block; }
 
- /*----- Tab Links -----*/
- /* Clearfix */
- .tab-links { padding:0; margin:0; }
- .tab-links:after { display:block; clear:both; content:\'\'; }
- .tab-links li { margin:0px 5px; float:left; list-style:none; }
- .tab-links a { padding:9px 15px; display:inline-block; border-radius:5px 5px 0px 0px; background:#3883c9; /* font-size:16px; */
- font-weight:600; color:#EAEAF7; transition:all linear .15s; text-decoration:none; border-width:1px 1px 1px 1px; border-style:solid; border-color:#eaeaea #eaeaea #ffffff #eaeaea; margin-bottom:-1px; }
- .tab-links a:hover { background:#a7cce5; text-decoration:none; }
- .tabs li.active a, .tabs li.active a:hover { background:#fff; color:#393939; }
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links { padding:0; margin:0; }
+.tab-links:after { display:block; clear:both; content:\'\'; }
+.tab-links li { margin:0px 5px; float:left; list-style:none; }
+.tab-links a { padding:9px 15px; display:inline-block; border-radius:5px 5px 0px 0px; background:#3883c9; /* font-size:16px; */
+    font-weight:600; color:#EAEAF7; transition:all linear .15s; text-decoration:none; border-width:1px 1px 1px 1px; border-style:solid; border-color:#eaeaea #eaeaea #ffffff #eaeaea; margin-bottom:-1px; }
+.tab-links a:hover { background:#a7cce5; text-decoration:none; }
+.tabs li.active a, .tabs li.active a:hover { background:#fff; color:#393939; }
 
- /*----- Content of Tabs -----*/
- .tab-content { padding:15px; border-radius:5px; box-shadow:-1px 1px 1px rgba(0,0,0,.15); background:#fff; border-style:solid; border-width:1px; border-color:#f0f0f0; }
- .tab { display:none; }
- .tab.active { display:block; }
+/*----- Content of Tabs -----*/
+.tab-content { padding:15px; border-radius:5px; box-shadow:-1px 1px 1px rgba(0,0,0,.15); background:#fff; border-style:solid; border-width:1px; border-color:#f0f0f0; }
+.tab { display:none; }
+.tab.active { display:block; }
 
 /* http://prismjs.com/download.html?themes=prism-coy&languages=markup+css+clike+javascript+c+java+json+objectivec&plugins=line-highlight+line-numbers+highlight-keywords */
 /** * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML * Based on https://github.com/tshedor/workshop-wp-theme (Example:http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics); * @author Tim Shedor */
@@ -1417,10 +1376,10 @@ pre[class*="language-"]:before,pre[class*="language-"]:after { content:\'\'; z-i
 .token.italic { font-style:italic; }
 .token.entity { cursor:help; }
 .namespace { opacity:.7; }
-@media screen and (max-width:767px) { 
-  pre[class*="language-"]:before, pre[class*="language-"]:after { 
-    bottom:14px; box-shadow:none; 
-  } 
+@media screen and (max-width:767px) {
+    pre[class*="language-"]:before, pre[class*="language-"]:after {
+        bottom:14px; box-shadow:none;
+    }
 }
 
 /* Plugin styles */
@@ -1437,15 +1396,15 @@ pre[data-line] code { position:relative; padding-left:4em; }
 pre .line-highlight { margin-top:0; }
 pre[data-line] { position:relative; padding:1em 0 1em 3em; }
 .line-highlight { position:absolute; left:0; right:0; padding:inherit 0; margin-top:1em; /* Same as .prism’s padding-top */
- background:hsla(24, 20%, 50%,.08); background:linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0)); pointer-events:none; line-height:inherit; white-space:pre; }
- .line-highlight:before, .line-highlight[data-end]:after { content:attr(data-start); position:absolute; top:.4em; left:.6em; min-width:1em; padding:0 .5em; background-color:hsla(24, 20%, 50%,.4); color:hsl(24, 20%, 95%); font:bold 65%/1.5 sans-serif; text-align:center; vertical-align:.3em; border-radius:999px; text-shadow:none; box-shadow:0 1px white; }
- .line-highlight[data-end]:after { content:attr(data-end); top:auto; bottom:.4em; }
+    background:hsla(24, 20%, 50%,.08); background:linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0)); pointer-events:none; line-height:inherit; white-space:pre; }
+.line-highlight:before, .line-highlight[data-end]:after { content:attr(data-start); position:absolute; top:.4em; left:.6em; min-width:1em; padding:0 .5em; background-color:hsla(24, 20%, 50%,.4); color:hsl(24, 20%, 95%); font:bold 65%/1.5 sans-serif; text-align:center; vertical-align:.3em; border-radius:999px; text-shadow:none; box-shadow:0 1px white; }
+.line-highlight[data-end]:after { content:attr(data-end); top:auto; bottom:.4em; }
 pre.line-numbers { position:relative; padding-left:3.8em; counter-reset:linenumber; }
 pre.line-numbers > code { position:relative; }
 .line-numbers .line-numbers-rows { position:absolute; pointer-events:none; top:0; font-size:100%; left:-3.8em; width:3em; /* works for line-numbers below 1000 lines */
- letter-spacing:-1px; border-right:1px solid #999; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
- .line-numbers-rows > span { pointer-events:none; display:block; counter-increment:linenumber; }
- .line-numbers-rows > span:before { content:counter(linenumber); color:#999; display:block; padding-right:0.8em; text-align:right; }
+    letter-spacing:-1px; border-right:1px solid #999; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
+.line-numbers-rows > span { pointer-events:none; display:block; counter-increment:linenumber; }
+.line-numbers-rows > span:before { content:counter(linenumber); color:#999; display:block; padding-right:0.8em; text-align:right; }
 ',
     '[[$spec_codeFormat_web]]' => '<div id="tab-web-{{@index}}" class="tab active">
     <pre class="line-numbers"><code class="language-json">utag_data = {
@@ -1565,7 +1524,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             feed = data.feed;
         });
 
-        fireaccordion(".accordion1");
+        fireaccordion(".accordion1, .accordion3, .accordion4, .accordion5");
         firetabs();
 
         jQuery(document).ajaxStart(function(){
@@ -1589,54 +1548,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             return this.gsx$trackingmethodaction.$t;
         }
     });
-
-    /*
-     $.getJSON(url, function(data) {
-     var html = \'\';
-
-     var entry = data.feed.entry;
-     var modx_platform = "";
-
-     html += \'<div class="accordion2">\';
-     for (var i = 0; i < entry.length; i++) {
-     var html_and=\'\',html_ios=\'\',html_list=\'\',page_and=\'\',page_ios=\'\',article_and=\'\',article_ios=\'\';
-
-     var dr = {
-     // Tracking Method
-     trackingmethod : entry[i][\'gsx$trackingmethod\'][\'$t\'],
-
-     // Basic pageview
-     page : {
-     node : entry[i][\'gsx$node\'][\'$t\'],
-     pagetype : entry[i][\'gsx$pagetype\'][\'$t\'],
-     pagename : entry[i][\'gsx$pagename\'][\'$t\'],
-     project : entry[i][\'gsx$project\'][\'$t\'],
-     channel : entry[i][\'gsx$channel\'][\'$t\'],
-     productline : entry[i][\'gsx$productline\'][\'$t\'],
-     servicelevel : entry[i][\'gsx$servicelevel\'][\'$t\'],
-     feature : entry[i][\'gsx$feature\'][\'$t\'],
-     subfeature : entry[i][\'gsx$subfeature\'][\'$t\']
-     },
-
-     // Article pageview
-     article : {
-     articleid : entry[i][\'gsx$articleid\'][\'$t\'],
-     articletitle : entry[i][\'gsx$articletitle\'][\'$t\'],
-     articletype : entry[i][\'gsx$articletype\'][\'$t\'],
-     articleauthorid : entry[i][\'gsx$articleauthorid\'][\'$t\'],
-     articleauthorname : entry[i][\'gsx$articleauthorname\'][\'$t\']
-     }
-     }
-     var hiertrim = dr.page.project + \'|\' + dr.page.channel + \'|\' + dr.page.productline + \'|\' + dr.page.servicelevel + \'|\' + dr.page.feature + \'|\' + dr.page.subfeature;
-     hiertrim = hiertrim.replace("||"||"|||"||"||||"||"|||||","|");
-
-     html += \'<h2>\' +dr.page.node+ \'</h2><div class="inner-container container-\'+i+\'"><div class="tabs"><ul class="tab-links">\'+html_list+\'</ul><div class="tab-content">\'+page_ios+page_and+\'</div></div></div>\';
-     }
-     html += "</div>";
-
-     $(\'.ontology-tags\').html(html);
-     });
-     */
 </script>
 
 <script type="text/javascript">
@@ -1718,22 +1629,22 @@ body { margin:0; padding:0; color:#333; background-color:#eee; font:.9em/1.2 "He
 h1,h2,h3,h4,h5,h6 { margin:0 0 .5em; font-weight:500; line-height:1.1; }
 h1 { font-size:2.25em; }
 
- /* 36px */
+/* 36px */
 h2 { font-size:1.75em; }
 
- /* 28px */
+/* 28px */
 h3 { font-size:1.375em; }
 
- /* 22px */
+/* 22px */
 h4 { font-size:1.125em; }
 
- /* 18px */
+/* 18px */
 h5 { font-size:1em; }
 
- /* 16px */
+/* 16px */
 h6 { font-size:.875em; }
 
- /* 14px */
+/* 14px */
 p { margin:0 0 1.5em; line-height:1.5; }
 blockquote { padding:1em 2em; margin:0 0 2em; border-left:5px solid #eee; }
 hr { height:0; margin-top:1em; margin-bottom:2em; border:0; border-top:1px solid #ddd; }
@@ -1760,6 +1671,7 @@ a:active { color:red; }
 .inner-container { border:1px solid #ccc; padding:1em; margin:1em auto; }
 
 /* -----------------------Accordion Custom Styles------------------------*/
+.accordion { margin-bottom: 15px; }
 .accordion .inner-container { margin:0 auto; }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover { border:1px solid #3883c9; background:#3883c9; }
 .ui-icon { margin-right:8px; }
@@ -1770,18 +1682,18 @@ nav { margin:0 auto; text-align:center; }
 nav ul ul { display:none; }
 nav ul li:hover > ul { display:block; }
 nav ul { background:#efefef; background:linear-gradient(top, #efefef 0%, #bbbbbb 100%); background:-moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); background:-webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); box-shadow:0px 0px 9px rgba(0,0,0,0.15); padding:0 20px; border-radius:10px; list-style:none; position:relative; display:inline-table; z-index:999; }
- nav ul:after { content:""; clear:both; display:block; }
- nav ul li { float:left; }
- nav ul li:hover { background:#4b545f; background:linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-moz-linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%); }
- nav ul li:hover a { color:#fff; }
- nav ul li a { display:block; padding:10px 30px; color:#757575; text-decoration:none; white-space:nowrap; }
- nav ul ul { background:#5f6975; border-radius:0px; padding:0; position:absolute; top:100%; }
- nav ul ul li { float:none; border-top:1px solid #6b727c; border-bottom:1px solid #575f6a; position:relative; }
- nav ul ul li a { padding:10px 30px; color:#fff; white-space:nowrap; }
- nav ul ul li a:hover { background:#4b545f; }
- nav ul ul ul { position:absolute; left:100%; top:0; }
+nav ul:after { content:""; clear:both; display:block; }
+nav ul li { float:left; }
+nav ul li:hover { background:#4b545f; background:linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-moz-linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%); }
+nav ul li:hover a { color:#fff; }
+nav ul li a { display:block; padding:10px 30px; color:#757575; text-decoration:none; white-space:nowrap; }
+nav ul ul { background:#5f6975; border-radius:0px; padding:0; position:absolute; top:100%; }
+nav ul ul li { float:none; border-top:1px solid #6b727c; border-bottom:1px solid #575f6a; position:relative; }
+nav ul ul li a { padding:10px 30px; color:#fff; white-space:nowrap; }
+nav ul ul li a:hover { background:#4b545f; }
+nav ul ul ul { position:absolute; left:100%; top:0; }
 
- /* -----------------------Single styles------------------------*/
+/* -----------------------Single styles------------------------*/
 .img-responsive { max-width:100%; }
 .btn { color:#fff !important; background-color:royalblue; border-color:#222; display:inline-block; padding:.5em 1em; margin-bottom:0; font-weight:400; line-height:1.2; text-align:center; white-space:nowrap; vertical-align:middle; cursor:pointer; border:1px solid transparent; border-radius:.2em; text-decoration:none; }
 .btn:hover { color:#fff !important; background-color:green; }
@@ -1793,35 +1705,40 @@ nav ul { background:#efefef; background:linear-gradient(top, #efefef 0%, #bbbbbb
 .list-inline > li { display:inline-block; padding-right:5px; padding-left:5px; }
 
 /* -----------------------Wide styles------------------------*/
-@media (min-width:55em) { 
- .header { padding:1em 3em; }
- .nav-bar { padding:0 3em; }
- .content { padding:2em 3em; }
- .main { float:left; width:65%; margin-right:5%; margin-bottom:1em; }
- .aside { float:left; width:30%; margin-bottom:1em; }
- .aside li { padding-bottom:10px; }
- .footer { padding:1.5em 3em; }
- .nav li { display:inline; margin:0 1em 0 0; }
- .nav a { display:inline; padding:0; border-bottom:0; }
+@media (min-width:55em) {
+    .header { padding:1em 3em; }
+    .nav-bar { padding:0 3em; }
+    .content { padding:2em 3em; }
+    .main { float:left; width:65%; margin-right:5%; margin-bottom:1em; }
+    .aside { float:left; width:30%; margin-bottom:1em; }
+    .aside li { padding-bottom:10px; }
+    .footer { padding:1.5em 3em; }
+    .nav li { display:inline; margin:0 1em 0 0; }
+    .nav a { display:inline; padding:0; border-bottom:0; }
 }
+
+/*----- Aside List -----*/
+.aside ul { padding: 0 0 0 15px; margin: 0 0 0 0; }
+    .aside li { list-style-type:none; padding: 10px 0 0 0; }
+    .aside li:first { padding:0 0 0 0; }
 
 /*----- Tabs -----*/
 .tabs { width:100%; display:inline-block; }
 
- /*----- Tab Links -----*/
- /* Clearfix */
- .tab-links { padding:0; margin:0; }
- .tab-links:after { display:block; clear:both; content:\'\'; }
- .tab-links li { margin:0px 5px; float:left; list-style:none; }
- .tab-links a { padding:9px 15px; display:inline-block; border-radius:5px 5px 0px 0px; background:#3883c9; /* font-size:16px; */
- font-weight:600; color:#EAEAF7; transition:all linear .15s; text-decoration:none; border-width:1px 1px 1px 1px; border-style:solid; border-color:#eaeaea #eaeaea #ffffff #eaeaea; margin-bottom:-1px; }
- .tab-links a:hover { background:#a7cce5; text-decoration:none; }
- .tabs li.active a, .tabs li.active a:hover { background:#fff; color:#393939; }
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links { padding:0; margin:0; }
+.tab-links:after { display:block; clear:both; content:\'\'; }
+.tab-links li { margin:0px 5px; float:left; list-style:none; }
+.tab-links a { padding:9px 15px; display:inline-block; border-radius:5px 5px 0px 0px; background:#3883c9; /* font-size:16px; */
+    font-weight:600; color:#EAEAF7; transition:all linear .15s; text-decoration:none; border-width:1px 1px 1px 1px; border-style:solid; border-color:#eaeaea #eaeaea #ffffff #eaeaea; margin-bottom:-1px; }
+.tab-links a:hover { background:#a7cce5; text-decoration:none; }
+.tabs li.active a, .tabs li.active a:hover { background:#fff; color:#393939; }
 
- /*----- Content of Tabs -----*/
- .tab-content { padding:15px; border-radius:5px; box-shadow:-1px 1px 1px rgba(0,0,0,.15); background:#fff; border-style:solid; border-width:1px; border-color:#f0f0f0; }
- .tab { display:none; }
- .tab.active { display:block; }
+/*----- Content of Tabs -----*/
+.tab-content { padding:15px; border-radius:5px; box-shadow:-1px 1px 1px rgba(0,0,0,.15); background:#fff; border-style:solid; border-width:1px; border-color:#f0f0f0; }
+.tab { display:none; }
+.tab.active { display:block; }
 
 /* http://prismjs.com/download.html?themes=prism-coy&languages=markup+css+clike+javascript+c+java+json+objectivec&plugins=line-highlight+line-numbers+highlight-keywords */
 /** * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML * Based on https://github.com/tshedor/workshop-wp-theme (Example:http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics); * @author Tim Shedor */
@@ -1850,10 +1767,10 @@ pre[class*="language-"]:before,pre[class*="language-"]:after { content:\'\'; z-i
 .token.italic { font-style:italic; }
 .token.entity { cursor:help; }
 .namespace { opacity:.7; }
-@media screen and (max-width:767px) { 
-  pre[class*="language-"]:before, pre[class*="language-"]:after { 
-    bottom:14px; box-shadow:none; 
-  } 
+@media screen and (max-width:767px) {
+    pre[class*="language-"]:before, pre[class*="language-"]:after {
+        bottom:14px; box-shadow:none;
+    }
 }
 
 /* Plugin styles */
@@ -1870,15 +1787,15 @@ pre[data-line] code { position:relative; padding-left:4em; }
 pre .line-highlight { margin-top:0; }
 pre[data-line] { position:relative; padding:1em 0 1em 3em; }
 .line-highlight { position:absolute; left:0; right:0; padding:inherit 0; margin-top:1em; /* Same as .prism’s padding-top */
- background:hsla(24, 20%, 50%,.08); background:linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0)); pointer-events:none; line-height:inherit; white-space:pre; }
- .line-highlight:before, .line-highlight[data-end]:after { content:attr(data-start); position:absolute; top:.4em; left:.6em; min-width:1em; padding:0 .5em; background-color:hsla(24, 20%, 50%,.4); color:hsl(24, 20%, 95%); font:bold 65%/1.5 sans-serif; text-align:center; vertical-align:.3em; border-radius:999px; text-shadow:none; box-shadow:0 1px white; }
- .line-highlight[data-end]:after { content:attr(data-end); top:auto; bottom:.4em; }
+    background:hsla(24, 20%, 50%,.08); background:linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0)); pointer-events:none; line-height:inherit; white-space:pre; }
+.line-highlight:before, .line-highlight[data-end]:after { content:attr(data-start); position:absolute; top:.4em; left:.6em; min-width:1em; padding:0 .5em; background-color:hsla(24, 20%, 50%,.4); color:hsl(24, 20%, 95%); font:bold 65%/1.5 sans-serif; text-align:center; vertical-align:.3em; border-radius:999px; text-shadow:none; box-shadow:0 1px white; }
+.line-highlight[data-end]:after { content:attr(data-end); top:auto; bottom:.4em; }
 pre.line-numbers { position:relative; padding-left:3.8em; counter-reset:linenumber; }
 pre.line-numbers > code { position:relative; }
 .line-numbers .line-numbers-rows { position:absolute; pointer-events:none; top:0; font-size:100%; left:-3.8em; width:3em; /* works for line-numbers below 1000 lines */
- letter-spacing:-1px; border-right:1px solid #999; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
- .line-numbers-rows > span { pointer-events:none; display:block; counter-increment:linenumber; }
- .line-numbers-rows > span:before { content:counter(linenumber); color:#999; display:block; padding-right:0.8em; text-align:right; }
+    letter-spacing:-1px; border-right:1px solid #999; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
+.line-numbers-rows > span { pointer-events:none; display:block; counter-increment:linenumber; }
+.line-numbers-rows > span:before { content:counter(linenumber); color:#999; display:block; padding-right:0.8em; text-align:right; }
 </style>
 
     <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
@@ -1957,7 +1874,7 @@ pre.line-numbers > code { position:relative; }
             feed = data.feed;
         });
 
-        fireaccordion(".accordion1");
+        fireaccordion(".accordion1, .accordion3, .accordion4, .accordion5");
         firetabs();
 
         jQuery(document).ajaxStart(function(){
@@ -1981,54 +1898,6 @@ pre.line-numbers > code { position:relative; }
             return this.gsx$trackingmethodaction.$t;
         }
     });
-
-    /*
-     $.getJSON(url, function(data) {
-     var html = \'\';
-
-     var entry = data.feed.entry;
-     var modx_platform = "";
-
-     html += \'<div class="accordion2">\';
-     for (var i = 0; i < entry.length; i++) {
-     var html_and=\'\',html_ios=\'\',html_list=\'\',page_and=\'\',page_ios=\'\',article_and=\'\',article_ios=\'\';
-
-     var dr = {
-     // Tracking Method
-     trackingmethod : entry[i][\'gsx$trackingmethod\'][\'$t\'],
-
-     // Basic pageview
-     page : {
-     node : entry[i][\'gsx$node\'][\'$t\'],
-     pagetype : entry[i][\'gsx$pagetype\'][\'$t\'],
-     pagename : entry[i][\'gsx$pagename\'][\'$t\'],
-     project : entry[i][\'gsx$project\'][\'$t\'],
-     channel : entry[i][\'gsx$channel\'][\'$t\'],
-     productline : entry[i][\'gsx$productline\'][\'$t\'],
-     servicelevel : entry[i][\'gsx$servicelevel\'][\'$t\'],
-     feature : entry[i][\'gsx$feature\'][\'$t\'],
-     subfeature : entry[i][\'gsx$subfeature\'][\'$t\']
-     },
-
-     // Article pageview
-     article : {
-     articleid : entry[i][\'gsx$articleid\'][\'$t\'],
-     articletitle : entry[i][\'gsx$articletitle\'][\'$t\'],
-     articletype : entry[i][\'gsx$articletype\'][\'$t\'],
-     articleauthorid : entry[i][\'gsx$articleauthorid\'][\'$t\'],
-     articleauthorname : entry[i][\'gsx$articleauthorname\'][\'$t\']
-     }
-     }
-     var hiertrim = dr.page.project + \'|\' + dr.page.channel + \'|\' + dr.page.productline + \'|\' + dr.page.servicelevel + \'|\' + dr.page.feature + \'|\' + dr.page.subfeature;
-     hiertrim = hiertrim.replace("||"||"|||"||"||||"||"|||||","|");
-
-     html += \'<h2>\' +dr.page.node+ \'</h2><div class="inner-container container-\'+i+\'"><div class="tabs"><ul class="tab-links">\'+html_list+\'</ul><div class="tab-content">\'+page_ios+page_and+\'</div></div></div>\';
-     }
-     html += "</div>";
-
-     $(\'.ontology-tags\').html(html);
-     });
-     */
 </script>
 
 <script type="text/javascript">
@@ -3463,26 +3332,19 @@ table.display tr.gradeU {
         <h1 class="header-heading"><a href="http://util274.mia2.cbsig.net/" title="CBSi" class="logo">CBSi</a></h1>
     </div>
 ',
-    '[[Wayfinder? &startId=`0`]]' => '<ul><li class="first active"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
-<li><a href="groups/" title="Groups" class=\'linkdisable\'>Groups</a><ul><li class="first"><a href="cdm/" title="CDM" class=\'linkdisable\'>CDM</a><ul><li class="first"><a href="sports/" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first"><a href="cbs-sports.html" title="CBS Sports" >CBS Sports</a><ul><li class="first"><a href="cbssportsapps/" title="Apps" class=\'linkdisable\'>Apps</a><ul><li class="first"><a href="cbs-sports-app.html" title="CBS Sports App" >CBS Sports App</a></li>
-</ul></li>
-</ul></li>
-<li><a href="cbs-sports-fantasy/" title="CBS Sports Fantasy" >CBS Sports Fantasy</a><ul><li class="first"><a href="cbssportsfantasyapps.html" title="Apps" >Apps</a><ul><li class="first"><a href="cbssportsfantasy-app.html" title="CBS Sports Fantasy App" >CBS Sports Fantasy App</a></li>
-<li class="last"><a href="draftmaster-app.html" title="DraftMaster App" >DraftMaster App</a></li>
-</ul></li>
-</ul></li>
+    '[[Wayfinder? &startId=`0` &level=`4`]]' => '<ul><li class="first active"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
+<li><a href="groups/" title="Groups" class=\'linkdisable\'>Groups</a><ul><li class="first"><a href="cdm/" title="CDM" class=\'linkdisable\'>CDM</a><ul><li class="first"><a href="sports/" title="Sports" >Sports</a><ul><li class="first"><a href="cbs-sports/" title="CBS Sports" >CBS Sports</a></li>
+<li><a href="cbs-sports-fantasy/" title="CBS Sports Fantasy" >CBS Sports Fantasy</a></li>
 <li><a href="sportsline.html" title="SportsLine" >SportsLine</a></li>
-<li><a href="maxpreps/" title="MaxPreps" >MaxPreps</a><ul><li class="first"><a href="maxprepsapps.html" title="Apps" >Apps</a><ul><li class="first"><a href="maxprepsapp.html" title="MaxPreps App" >MaxPreps App</a></li>
-</ul></li>
-</ul></li>
+<li><a href="maxpreps/" title="MaxPreps" >MaxPreps</a></li>
 <li><a href="trainerpass.html" title="TrainerPass" >TrainerPass</a></li>
 <li><a href="college-sports-live.html" title="College Sports Live" >College Sports Live</a></li>
-<li class="last"><a href="247sports.html" title="247Sports" >247Sports</a></li>
+<li class="last"><a href="247sports/" title="247Sports" >247Sports</a></li>
 </ul></li>
-<li><a href="news/" title="News" class=\'linkdisable\'>News</a><ul><li class="first"><a href="cbs-news.html" title="CBS News" >CBS News</a></li>
+<li><a href="news/" title="News" >News</a><ul><li class="first"><a href="cbs-news.html" title="CBS News" >CBS News</a></li>
 <li class="last"><a href="60-minutes.html" title="60 Minutes" >60 Minutes</a></li>
 </ul></li>
-<li class="last"><a href="entertainment/" title="Entertainment" class=\'linkdisable\'>Entertainment</a><ul><li class="first"><a href="cbs.com.html" title="CBS.com" >CBS.com</a></li>
+<li class="last"><a href="entertainment/" title="Entertainment" >Entertainment</a><ul><li class="first"><a href="cbs.com.html" title="CBS.com" >CBS.com</a></li>
 </ul></li>
 </ul></li>
 <li class="last"><a href="cmg/" title="CMG" class=\'linkdisable\'>CMG</a><ul><li class="first"><a href="b2b/" title="b2b" >b2b</a><ul><li class="first"><a href="techrepublic.html" title="TechRepublic" >TechRepublic</a></li>
@@ -3512,25 +3374,18 @@ table.display tr.gradeU {
 </ul>',
     '[[$mainNavbar]]' => '    <div class="container">
         <nav><ul><li class="first active"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
-<li><a href="groups/" title="Groups" class=\'linkdisable\'>Groups</a><ul><li class="first"><a href="cdm/" title="CDM" class=\'linkdisable\'>CDM</a><ul><li class="first"><a href="sports/" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first"><a href="cbs-sports.html" title="CBS Sports" >CBS Sports</a><ul><li class="first"><a href="cbssportsapps/" title="Apps" class=\'linkdisable\'>Apps</a><ul><li class="first"><a href="cbs-sports-app.html" title="CBS Sports App" >CBS Sports App</a></li>
-</ul></li>
-</ul></li>
-<li><a href="cbs-sports-fantasy/" title="CBS Sports Fantasy" >CBS Sports Fantasy</a><ul><li class="first"><a href="cbssportsfantasyapps.html" title="Apps" >Apps</a><ul><li class="first"><a href="cbssportsfantasy-app.html" title="CBS Sports Fantasy App" >CBS Sports Fantasy App</a></li>
-<li class="last"><a href="draftmaster-app.html" title="DraftMaster App" >DraftMaster App</a></li>
-</ul></li>
-</ul></li>
+<li><a href="groups/" title="Groups" class=\'linkdisable\'>Groups</a><ul><li class="first"><a href="cdm/" title="CDM" class=\'linkdisable\'>CDM</a><ul><li class="first"><a href="sports/" title="Sports" >Sports</a><ul><li class="first"><a href="cbs-sports/" title="CBS Sports" >CBS Sports</a></li>
+<li><a href="cbs-sports-fantasy/" title="CBS Sports Fantasy" >CBS Sports Fantasy</a></li>
 <li><a href="sportsline.html" title="SportsLine" >SportsLine</a></li>
-<li><a href="maxpreps/" title="MaxPreps" >MaxPreps</a><ul><li class="first"><a href="maxprepsapps.html" title="Apps" >Apps</a><ul><li class="first"><a href="maxprepsapp.html" title="MaxPreps App" >MaxPreps App</a></li>
-</ul></li>
-</ul></li>
+<li><a href="maxpreps/" title="MaxPreps" >MaxPreps</a></li>
 <li><a href="trainerpass.html" title="TrainerPass" >TrainerPass</a></li>
 <li><a href="college-sports-live.html" title="College Sports Live" >College Sports Live</a></li>
-<li class="last"><a href="247sports.html" title="247Sports" >247Sports</a></li>
+<li class="last"><a href="247sports/" title="247Sports" >247Sports</a></li>
 </ul></li>
-<li><a href="news/" title="News" class=\'linkdisable\'>News</a><ul><li class="first"><a href="cbs-news.html" title="CBS News" >CBS News</a></li>
+<li><a href="news/" title="News" >News</a><ul><li class="first"><a href="cbs-news.html" title="CBS News" >CBS News</a></li>
 <li class="last"><a href="60-minutes.html" title="60 Minutes" >60 Minutes</a></li>
 </ul></li>
-<li class="last"><a href="entertainment/" title="Entertainment" class=\'linkdisable\'>Entertainment</a><ul><li class="first"><a href="cbs.com.html" title="CBS.com" >CBS.com</a></li>
+<li class="last"><a href="entertainment/" title="Entertainment" >Entertainment</a><ul><li class="first"><a href="cbs.com.html" title="CBS.com" >CBS.com</a></li>
 </ul></li>
 </ul></li>
 <li class="last"><a href="cmg/" title="CMG" class=\'linkdisable\'>CMG</a><ul><li class="first"><a href="b2b/" title="b2b" >b2b</a><ul><li class="first"><a href="techrepublic.html" title="TechRepublic" >TechRepublic</a></li>
@@ -3655,22 +3510,22 @@ body { margin:0; padding:0; color:#333; background-color:#eee; font:.9em/1.2 "He
 h1,h2,h3,h4,h5,h6 { margin:0 0 .5em; font-weight:500; line-height:1.1; }
 h1 { font-size:2.25em; }
 
- /* 36px */
+/* 36px */
 h2 { font-size:1.75em; }
 
- /* 28px */
+/* 28px */
 h3 { font-size:1.375em; }
 
- /* 22px */
+/* 22px */
 h4 { font-size:1.125em; }
 
- /* 18px */
+/* 18px */
 h5 { font-size:1em; }
 
- /* 16px */
+/* 16px */
 h6 { font-size:.875em; }
 
- /* 14px */
+/* 14px */
 p { margin:0 0 1.5em; line-height:1.5; }
 blockquote { padding:1em 2em; margin:0 0 2em; border-left:5px solid #eee; }
 hr { height:0; margin-top:1em; margin-bottom:2em; border:0; border-top:1px solid #ddd; }
@@ -3697,6 +3552,7 @@ a:active { color:red; }
 .inner-container { border:1px solid #ccc; padding:1em; margin:1em auto; }
 
 /* -----------------------Accordion Custom Styles------------------------*/
+.accordion { margin-bottom: 15px; }
 .accordion .inner-container { margin:0 auto; }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover { border:1px solid #3883c9; background:#3883c9; }
 .ui-icon { margin-right:8px; }
@@ -3707,18 +3563,18 @@ nav { margin:0 auto; text-align:center; }
 nav ul ul { display:none; }
 nav ul li:hover > ul { display:block; }
 nav ul { background:#efefef; background:linear-gradient(top, #efefef 0%, #bbbbbb 100%); background:-moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); background:-webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); box-shadow:0px 0px 9px rgba(0,0,0,0.15); padding:0 20px; border-radius:10px; list-style:none; position:relative; display:inline-table; z-index:999; }
- nav ul:after { content:""; clear:both; display:block; }
- nav ul li { float:left; }
- nav ul li:hover { background:#4b545f; background:linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-moz-linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%); }
- nav ul li:hover a { color:#fff; }
- nav ul li a { display:block; padding:10px 30px; color:#757575; text-decoration:none; white-space:nowrap; }
- nav ul ul { background:#5f6975; border-radius:0px; padding:0; position:absolute; top:100%; }
- nav ul ul li { float:none; border-top:1px solid #6b727c; border-bottom:1px solid #575f6a; position:relative; }
- nav ul ul li a { padding:10px 30px; color:#fff; white-space:nowrap; }
- nav ul ul li a:hover { background:#4b545f; }
- nav ul ul ul { position:absolute; left:100%; top:0; }
+nav ul:after { content:""; clear:both; display:block; }
+nav ul li { float:left; }
+nav ul li:hover { background:#4b545f; background:linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-moz-linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%); }
+nav ul li:hover a { color:#fff; }
+nav ul li a { display:block; padding:10px 30px; color:#757575; text-decoration:none; white-space:nowrap; }
+nav ul ul { background:#5f6975; border-radius:0px; padding:0; position:absolute; top:100%; }
+nav ul ul li { float:none; border-top:1px solid #6b727c; border-bottom:1px solid #575f6a; position:relative; }
+nav ul ul li a { padding:10px 30px; color:#fff; white-space:nowrap; }
+nav ul ul li a:hover { background:#4b545f; }
+nav ul ul ul { position:absolute; left:100%; top:0; }
 
- /* -----------------------Single styles------------------------*/
+/* -----------------------Single styles------------------------*/
 .img-responsive { max-width:100%; }
 .btn { color:#fff !important; background-color:royalblue; border-color:#222; display:inline-block; padding:.5em 1em; margin-bottom:0; font-weight:400; line-height:1.2; text-align:center; white-space:nowrap; vertical-align:middle; cursor:pointer; border:1px solid transparent; border-radius:.2em; text-decoration:none; }
 .btn:hover { color:#fff !important; background-color:green; }
@@ -3730,35 +3586,40 @@ nav ul { background:#efefef; background:linear-gradient(top, #efefef 0%, #bbbbbb
 .list-inline > li { display:inline-block; padding-right:5px; padding-left:5px; }
 
 /* -----------------------Wide styles------------------------*/
-@media (min-width:55em) { 
- .header { padding:1em 3em; }
- .nav-bar { padding:0 3em; }
- .content { padding:2em 3em; }
- .main { float:left; width:65%; margin-right:5%; margin-bottom:1em; }
- .aside { float:left; width:30%; margin-bottom:1em; }
- .aside li { padding-bottom:10px; }
- .footer { padding:1.5em 3em; }
- .nav li { display:inline; margin:0 1em 0 0; }
- .nav a { display:inline; padding:0; border-bottom:0; }
+@media (min-width:55em) {
+    .header { padding:1em 3em; }
+    .nav-bar { padding:0 3em; }
+    .content { padding:2em 3em; }
+    .main { float:left; width:65%; margin-right:5%; margin-bottom:1em; }
+    .aside { float:left; width:30%; margin-bottom:1em; }
+    .aside li { padding-bottom:10px; }
+    .footer { padding:1.5em 3em; }
+    .nav li { display:inline; margin:0 1em 0 0; }
+    .nav a { display:inline; padding:0; border-bottom:0; }
 }
+
+/*----- Aside List -----*/
+.aside ul { padding: 0 0 0 15px; margin: 0 0 0 0; }
+    .aside li { list-style-type:none; padding: 10px 0 0 0; }
+    .aside li:first { padding:0 0 0 0; }
 
 /*----- Tabs -----*/
 .tabs { width:100%; display:inline-block; }
 
- /*----- Tab Links -----*/
- /* Clearfix */
- .tab-links { padding:0; margin:0; }
- .tab-links:after { display:block; clear:both; content:\'\'; }
- .tab-links li { margin:0px 5px; float:left; list-style:none; }
- .tab-links a { padding:9px 15px; display:inline-block; border-radius:5px 5px 0px 0px; background:#3883c9; /* font-size:16px; */
- font-weight:600; color:#EAEAF7; transition:all linear .15s; text-decoration:none; border-width:1px 1px 1px 1px; border-style:solid; border-color:#eaeaea #eaeaea #ffffff #eaeaea; margin-bottom:-1px; }
- .tab-links a:hover { background:#a7cce5; text-decoration:none; }
- .tabs li.active a, .tabs li.active a:hover { background:#fff; color:#393939; }
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links { padding:0; margin:0; }
+.tab-links:after { display:block; clear:both; content:\'\'; }
+.tab-links li { margin:0px 5px; float:left; list-style:none; }
+.tab-links a { padding:9px 15px; display:inline-block; border-radius:5px 5px 0px 0px; background:#3883c9; /* font-size:16px; */
+    font-weight:600; color:#EAEAF7; transition:all linear .15s; text-decoration:none; border-width:1px 1px 1px 1px; border-style:solid; border-color:#eaeaea #eaeaea #ffffff #eaeaea; margin-bottom:-1px; }
+.tab-links a:hover { background:#a7cce5; text-decoration:none; }
+.tabs li.active a, .tabs li.active a:hover { background:#fff; color:#393939; }
 
- /*----- Content of Tabs -----*/
- .tab-content { padding:15px; border-radius:5px; box-shadow:-1px 1px 1px rgba(0,0,0,.15); background:#fff; border-style:solid; border-width:1px; border-color:#f0f0f0; }
- .tab { display:none; }
- .tab.active { display:block; }
+/*----- Content of Tabs -----*/
+.tab-content { padding:15px; border-radius:5px; box-shadow:-1px 1px 1px rgba(0,0,0,.15); background:#fff; border-style:solid; border-width:1px; border-color:#f0f0f0; }
+.tab { display:none; }
+.tab.active { display:block; }
 
 /* http://prismjs.com/download.html?themes=prism-coy&languages=markup+css+clike+javascript+c+java+json+objectivec&plugins=line-highlight+line-numbers+highlight-keywords */
 /** * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML * Based on https://github.com/tshedor/workshop-wp-theme (Example:http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics); * @author Tim Shedor */
@@ -3787,10 +3648,10 @@ pre[class*="language-"]:before,pre[class*="language-"]:after { content:\'\'; z-i
 .token.italic { font-style:italic; }
 .token.entity { cursor:help; }
 .namespace { opacity:.7; }
-@media screen and (max-width:767px) { 
-  pre[class*="language-"]:before, pre[class*="language-"]:after { 
-    bottom:14px; box-shadow:none; 
-  } 
+@media screen and (max-width:767px) {
+    pre[class*="language-"]:before, pre[class*="language-"]:after {
+        bottom:14px; box-shadow:none;
+    }
 }
 
 /* Plugin styles */
@@ -3807,15 +3668,15 @@ pre[data-line] code { position:relative; padding-left:4em; }
 pre .line-highlight { margin-top:0; }
 pre[data-line] { position:relative; padding:1em 0 1em 3em; }
 .line-highlight { position:absolute; left:0; right:0; padding:inherit 0; margin-top:1em; /* Same as .prism’s padding-top */
- background:hsla(24, 20%, 50%,.08); background:linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0)); pointer-events:none; line-height:inherit; white-space:pre; }
- .line-highlight:before, .line-highlight[data-end]:after { content:attr(data-start); position:absolute; top:.4em; left:.6em; min-width:1em; padding:0 .5em; background-color:hsla(24, 20%, 50%,.4); color:hsl(24, 20%, 95%); font:bold 65%/1.5 sans-serif; text-align:center; vertical-align:.3em; border-radius:999px; text-shadow:none; box-shadow:0 1px white; }
- .line-highlight[data-end]:after { content:attr(data-end); top:auto; bottom:.4em; }
+    background:hsla(24, 20%, 50%,.08); background:linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0)); pointer-events:none; line-height:inherit; white-space:pre; }
+.line-highlight:before, .line-highlight[data-end]:after { content:attr(data-start); position:absolute; top:.4em; left:.6em; min-width:1em; padding:0 .5em; background-color:hsla(24, 20%, 50%,.4); color:hsl(24, 20%, 95%); font:bold 65%/1.5 sans-serif; text-align:center; vertical-align:.3em; border-radius:999px; text-shadow:none; box-shadow:0 1px white; }
+.line-highlight[data-end]:after { content:attr(data-end); top:auto; bottom:.4em; }
 pre.line-numbers { position:relative; padding-left:3.8em; counter-reset:linenumber; }
 pre.line-numbers > code { position:relative; }
 .line-numbers .line-numbers-rows { position:absolute; pointer-events:none; top:0; font-size:100%; left:-3.8em; width:3em; /* works for line-numbers below 1000 lines */
- letter-spacing:-1px; border-right:1px solid #999; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
- .line-numbers-rows > span { pointer-events:none; display:block; counter-increment:linenumber; }
- .line-numbers-rows > span:before { content:counter(linenumber); color:#999; display:block; padding-right:0.8em; text-align:right; }
+    letter-spacing:-1px; border-right:1px solid #999; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
+.line-numbers-rows > span { pointer-events:none; display:block; counter-increment:linenumber; }
+.line-numbers-rows > span:before { content:counter(linenumber); color:#999; display:block; padding-right:0.8em; text-align:right; }
 ',
           'locked' => false,
           'properties' => 
@@ -3828,22 +3689,22 @@ body { margin:0; padding:0; color:#333; background-color:#eee; font:.9em/1.2 "He
 h1,h2,h3,h4,h5,h6 { margin:0 0 .5em; font-weight:500; line-height:1.1; }
 h1 { font-size:2.25em; }
 
- /* 36px */
+/* 36px */
 h2 { font-size:1.75em; }
 
- /* 28px */
+/* 28px */
 h3 { font-size:1.375em; }
 
- /* 22px */
+/* 22px */
 h4 { font-size:1.125em; }
 
- /* 18px */
+/* 18px */
 h5 { font-size:1em; }
 
- /* 16px */
+/* 16px */
 h6 { font-size:.875em; }
 
- /* 14px */
+/* 14px */
 p { margin:0 0 1.5em; line-height:1.5; }
 blockquote { padding:1em 2em; margin:0 0 2em; border-left:5px solid #eee; }
 hr { height:0; margin-top:1em; margin-bottom:2em; border:0; border-top:1px solid #ddd; }
@@ -3870,6 +3731,7 @@ a:active { color:red; }
 .inner-container { border:1px solid #ccc; padding:1em; margin:1em auto; }
 
 /* -----------------------Accordion Custom Styles------------------------*/
+.accordion { margin-bottom: 15px; }
 .accordion .inner-container { margin:0 auto; }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active, a.ui-button:active, .ui-button:active, .ui-button.ui-state-active:hover { border:1px solid #3883c9; background:#3883c9; }
 .ui-icon { margin-right:8px; }
@@ -3880,18 +3742,18 @@ nav { margin:0 auto; text-align:center; }
 nav ul ul { display:none; }
 nav ul li:hover > ul { display:block; }
 nav ul { background:#efefef; background:linear-gradient(top, #efefef 0%, #bbbbbb 100%); background:-moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); background:-webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); box-shadow:0px 0px 9px rgba(0,0,0,0.15); padding:0 20px; border-radius:10px; list-style:none; position:relative; display:inline-table; z-index:999; }
- nav ul:after { content:""; clear:both; display:block; }
- nav ul li { float:left; }
- nav ul li:hover { background:#4b545f; background:linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-moz-linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%); }
- nav ul li:hover a { color:#fff; }
- nav ul li a { display:block; padding:10px 30px; color:#757575; text-decoration:none; white-space:nowrap; }
- nav ul ul { background:#5f6975; border-radius:0px; padding:0; position:absolute; top:100%; }
- nav ul ul li { float:none; border-top:1px solid #6b727c; border-bottom:1px solid #575f6a; position:relative; }
- nav ul ul li a { padding:10px 30px; color:#fff; white-space:nowrap; }
- nav ul ul li a:hover { background:#4b545f; }
- nav ul ul ul { position:absolute; left:100%; top:0; }
+nav ul:after { content:""; clear:both; display:block; }
+nav ul li { float:left; }
+nav ul li:hover { background:#4b545f; background:linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-moz-linear-gradient(top, #4f5964 0%, #5f6975 40%); background:-webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%); }
+nav ul li:hover a { color:#fff; }
+nav ul li a { display:block; padding:10px 30px; color:#757575; text-decoration:none; white-space:nowrap; }
+nav ul ul { background:#5f6975; border-radius:0px; padding:0; position:absolute; top:100%; }
+nav ul ul li { float:none; border-top:1px solid #6b727c; border-bottom:1px solid #575f6a; position:relative; }
+nav ul ul li a { padding:10px 30px; color:#fff; white-space:nowrap; }
+nav ul ul li a:hover { background:#4b545f; }
+nav ul ul ul { position:absolute; left:100%; top:0; }
 
- /* -----------------------Single styles------------------------*/
+/* -----------------------Single styles------------------------*/
 .img-responsive { max-width:100%; }
 .btn { color:#fff !important; background-color:royalblue; border-color:#222; display:inline-block; padding:.5em 1em; margin-bottom:0; font-weight:400; line-height:1.2; text-align:center; white-space:nowrap; vertical-align:middle; cursor:pointer; border:1px solid transparent; border-radius:.2em; text-decoration:none; }
 .btn:hover { color:#fff !important; background-color:green; }
@@ -3903,35 +3765,40 @@ nav ul { background:#efefef; background:linear-gradient(top, #efefef 0%, #bbbbbb
 .list-inline > li { display:inline-block; padding-right:5px; padding-left:5px; }
 
 /* -----------------------Wide styles------------------------*/
-@media (min-width:55em) { 
- .header { padding:1em 3em; }
- .nav-bar { padding:0 3em; }
- .content { padding:2em 3em; }
- .main { float:left; width:65%; margin-right:5%; margin-bottom:1em; }
- .aside { float:left; width:30%; margin-bottom:1em; }
- .aside li { padding-bottom:10px; }
- .footer { padding:1.5em 3em; }
- .nav li { display:inline; margin:0 1em 0 0; }
- .nav a { display:inline; padding:0; border-bottom:0; }
+@media (min-width:55em) {
+    .header { padding:1em 3em; }
+    .nav-bar { padding:0 3em; }
+    .content { padding:2em 3em; }
+    .main { float:left; width:65%; margin-right:5%; margin-bottom:1em; }
+    .aside { float:left; width:30%; margin-bottom:1em; }
+    .aside li { padding-bottom:10px; }
+    .footer { padding:1.5em 3em; }
+    .nav li { display:inline; margin:0 1em 0 0; }
+    .nav a { display:inline; padding:0; border-bottom:0; }
 }
+
+/*----- Aside List -----*/
+.aside ul { padding: 0 0 0 15px; margin: 0 0 0 0; }
+    .aside li { list-style-type:none; padding: 10px 0 0 0; }
+    .aside li:first { padding:0 0 0 0; }
 
 /*----- Tabs -----*/
 .tabs { width:100%; display:inline-block; }
 
- /*----- Tab Links -----*/
- /* Clearfix */
- .tab-links { padding:0; margin:0; }
- .tab-links:after { display:block; clear:both; content:\'\'; }
- .tab-links li { margin:0px 5px; float:left; list-style:none; }
- .tab-links a { padding:9px 15px; display:inline-block; border-radius:5px 5px 0px 0px; background:#3883c9; /* font-size:16px; */
- font-weight:600; color:#EAEAF7; transition:all linear .15s; text-decoration:none; border-width:1px 1px 1px 1px; border-style:solid; border-color:#eaeaea #eaeaea #ffffff #eaeaea; margin-bottom:-1px; }
- .tab-links a:hover { background:#a7cce5; text-decoration:none; }
- .tabs li.active a, .tabs li.active a:hover { background:#fff; color:#393939; }
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links { padding:0; margin:0; }
+.tab-links:after { display:block; clear:both; content:\'\'; }
+.tab-links li { margin:0px 5px; float:left; list-style:none; }
+.tab-links a { padding:9px 15px; display:inline-block; border-radius:5px 5px 0px 0px; background:#3883c9; /* font-size:16px; */
+    font-weight:600; color:#EAEAF7; transition:all linear .15s; text-decoration:none; border-width:1px 1px 1px 1px; border-style:solid; border-color:#eaeaea #eaeaea #ffffff #eaeaea; margin-bottom:-1px; }
+.tab-links a:hover { background:#a7cce5; text-decoration:none; }
+.tabs li.active a, .tabs li.active a:hover { background:#fff; color:#393939; }
 
- /*----- Content of Tabs -----*/
- .tab-content { padding:15px; border-radius:5px; box-shadow:-1px 1px 1px rgba(0,0,0,.15); background:#fff; border-style:solid; border-width:1px; border-color:#f0f0f0; }
- .tab { display:none; }
- .tab.active { display:block; }
+/*----- Content of Tabs -----*/
+.tab-content { padding:15px; border-radius:5px; box-shadow:-1px 1px 1px rgba(0,0,0,.15); background:#fff; border-style:solid; border-width:1px; border-color:#f0f0f0; }
+.tab { display:none; }
+.tab.active { display:block; }
 
 /* http://prismjs.com/download.html?themes=prism-coy&languages=markup+css+clike+javascript+c+java+json+objectivec&plugins=line-highlight+line-numbers+highlight-keywords */
 /** * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML * Based on https://github.com/tshedor/workshop-wp-theme (Example:http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics); * @author Tim Shedor */
@@ -3960,10 +3827,10 @@ pre[class*="language-"]:before,pre[class*="language-"]:after { content:\'\'; z-i
 .token.italic { font-style:italic; }
 .token.entity { cursor:help; }
 .namespace { opacity:.7; }
-@media screen and (max-width:767px) { 
-  pre[class*="language-"]:before, pre[class*="language-"]:after { 
-    bottom:14px; box-shadow:none; 
-  } 
+@media screen and (max-width:767px) {
+    pre[class*="language-"]:before, pre[class*="language-"]:after {
+        bottom:14px; box-shadow:none;
+    }
 }
 
 /* Plugin styles */
@@ -3980,15 +3847,15 @@ pre[data-line] code { position:relative; padding-left:4em; }
 pre .line-highlight { margin-top:0; }
 pre[data-line] { position:relative; padding:1em 0 1em 3em; }
 .line-highlight { position:absolute; left:0; right:0; padding:inherit 0; margin-top:1em; /* Same as .prism’s padding-top */
- background:hsla(24, 20%, 50%,.08); background:linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0)); pointer-events:none; line-height:inherit; white-space:pre; }
- .line-highlight:before, .line-highlight[data-end]:after { content:attr(data-start); position:absolute; top:.4em; left:.6em; min-width:1em; padding:0 .5em; background-color:hsla(24, 20%, 50%,.4); color:hsl(24, 20%, 95%); font:bold 65%/1.5 sans-serif; text-align:center; vertical-align:.3em; border-radius:999px; text-shadow:none; box-shadow:0 1px white; }
- .line-highlight[data-end]:after { content:attr(data-end); top:auto; bottom:.4em; }
+    background:hsla(24, 20%, 50%,.08); background:linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0)); pointer-events:none; line-height:inherit; white-space:pre; }
+.line-highlight:before, .line-highlight[data-end]:after { content:attr(data-start); position:absolute; top:.4em; left:.6em; min-width:1em; padding:0 .5em; background-color:hsla(24, 20%, 50%,.4); color:hsl(24, 20%, 95%); font:bold 65%/1.5 sans-serif; text-align:center; vertical-align:.3em; border-radius:999px; text-shadow:none; box-shadow:0 1px white; }
+.line-highlight[data-end]:after { content:attr(data-end); top:auto; bottom:.4em; }
 pre.line-numbers { position:relative; padding-left:3.8em; counter-reset:linenumber; }
 pre.line-numbers > code { position:relative; }
 .line-numbers .line-numbers-rows { position:absolute; pointer-events:none; top:0; font-size:100%; left:-3.8em; width:3em; /* works for line-numbers below 1000 lines */
- letter-spacing:-1px; border-right:1px solid #999; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
- .line-numbers-rows > span { pointer-events:none; display:block; counter-increment:linenumber; }
- .line-numbers-rows > span:before { content:counter(linenumber); color:#999; display:block; padding-right:0.8em; text-align:right; }
+    letter-spacing:-1px; border-right:1px solid #999; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
+.line-numbers-rows > span { pointer-events:none; display:block; counter-increment:linenumber; }
+.line-numbers-rows > span:before { content:counter(linenumber); color:#999; display:block; padding-right:0.8em; text-align:right; }
 ',
         ),
         'policies' => 
@@ -4089,7 +3956,7 @@ pre.line-numbers > code { position:relative; }
             feed = data.feed;
         });
 
-        fireaccordion(".accordion1");
+        fireaccordion(".accordion1, .accordion3, .accordion4, .accordion5");
         firetabs();
 
         jQuery(document).ajaxStart(function(){
@@ -4113,54 +3980,6 @@ pre.line-numbers > code { position:relative; }
             return this.gsx$trackingmethodaction.$t;
         }
     });
-
-    /*
-     $.getJSON(url, function(data) {
-     var html = \'\';
-
-     var entry = data.feed.entry;
-     var modx_platform = "[[*platform]]";
-
-     html += \'<div class="accordion2">\';
-     for (var i = 0; i < entry.length; i++) {
-     var html_and=\'\',html_ios=\'\',html_list=\'\',page_and=\'\',page_ios=\'\',article_and=\'\',article_ios=\'\';
-
-     var dr = {
-     // Tracking Method
-     trackingmethod : entry[i][\'gsx$trackingmethod\'][\'$t\'],
-
-     // Basic pageview
-     page : {
-     node : entry[i][\'gsx$node\'][\'$t\'],
-     pagetype : entry[i][\'gsx$pagetype\'][\'$t\'],
-     pagename : entry[i][\'gsx$pagename\'][\'$t\'],
-     project : entry[i][\'gsx$project\'][\'$t\'],
-     channel : entry[i][\'gsx$channel\'][\'$t\'],
-     productline : entry[i][\'gsx$productline\'][\'$t\'],
-     servicelevel : entry[i][\'gsx$servicelevel\'][\'$t\'],
-     feature : entry[i][\'gsx$feature\'][\'$t\'],
-     subfeature : entry[i][\'gsx$subfeature\'][\'$t\']
-     },
-
-     // Article pageview
-     article : {
-     articleid : entry[i][\'gsx$articleid\'][\'$t\'],
-     articletitle : entry[i][\'gsx$articletitle\'][\'$t\'],
-     articletype : entry[i][\'gsx$articletype\'][\'$t\'],
-     articleauthorid : entry[i][\'gsx$articleauthorid\'][\'$t\'],
-     articleauthorname : entry[i][\'gsx$articleauthorname\'][\'$t\']
-     }
-     }
-     var hiertrim = dr.page.project + \'|\' + dr.page.channel + \'|\' + dr.page.productline + \'|\' + dr.page.servicelevel + \'|\' + dr.page.feature + \'|\' + dr.page.subfeature;
-     hiertrim = hiertrim.replace("||"||"|||"||"||||"||"|||||","|");
-
-     html += \'<h2>\' +dr.page.node+ \'</h2><div class="inner-container container-\'+i+\'"><div class="tabs"><ul class="tab-links">\'+html_list+\'</ul><div class="tab-content">\'+page_ios+page_and+\'</div></div></div>\';
-     }
-     html += "</div>";
-
-     $(\'.ontology-tags\').html(html);
-     });
-     */
 </script>
 
 <script type="text/javascript">
@@ -4304,7 +4123,7 @@ pre.line-numbers > code { position:relative; }
             feed = data.feed;
         });
 
-        fireaccordion(".accordion1");
+        fireaccordion(".accordion1, .accordion3, .accordion4, .accordion5");
         firetabs();
 
         jQuery(document).ajaxStart(function(){
@@ -4328,54 +4147,6 @@ pre.line-numbers > code { position:relative; }
             return this.gsx$trackingmethodaction.$t;
         }
     });
-
-    /*
-     $.getJSON(url, function(data) {
-     var html = \'\';
-
-     var entry = data.feed.entry;
-     var modx_platform = "[[*platform]]";
-
-     html += \'<div class="accordion2">\';
-     for (var i = 0; i < entry.length; i++) {
-     var html_and=\'\',html_ios=\'\',html_list=\'\',page_and=\'\',page_ios=\'\',article_and=\'\',article_ios=\'\';
-
-     var dr = {
-     // Tracking Method
-     trackingmethod : entry[i][\'gsx$trackingmethod\'][\'$t\'],
-
-     // Basic pageview
-     page : {
-     node : entry[i][\'gsx$node\'][\'$t\'],
-     pagetype : entry[i][\'gsx$pagetype\'][\'$t\'],
-     pagename : entry[i][\'gsx$pagename\'][\'$t\'],
-     project : entry[i][\'gsx$project\'][\'$t\'],
-     channel : entry[i][\'gsx$channel\'][\'$t\'],
-     productline : entry[i][\'gsx$productline\'][\'$t\'],
-     servicelevel : entry[i][\'gsx$servicelevel\'][\'$t\'],
-     feature : entry[i][\'gsx$feature\'][\'$t\'],
-     subfeature : entry[i][\'gsx$subfeature\'][\'$t\']
-     },
-
-     // Article pageview
-     article : {
-     articleid : entry[i][\'gsx$articleid\'][\'$t\'],
-     articletitle : entry[i][\'gsx$articletitle\'][\'$t\'],
-     articletype : entry[i][\'gsx$articletype\'][\'$t\'],
-     articleauthorid : entry[i][\'gsx$articleauthorid\'][\'$t\'],
-     articleauthorname : entry[i][\'gsx$articleauthorname\'][\'$t\']
-     }
-     }
-     var hiertrim = dr.page.project + \'|\' + dr.page.channel + \'|\' + dr.page.productline + \'|\' + dr.page.servicelevel + \'|\' + dr.page.feature + \'|\' + dr.page.subfeature;
-     hiertrim = hiertrim.replace("||"||"|||"||"||||"||"|||||","|");
-
-     html += \'<h2>\' +dr.page.node+ \'</h2><div class="inner-container container-\'+i+\'"><div class="tabs"><ul class="tab-links">\'+html_list+\'</ul><div class="tab-content">\'+page_ios+page_and+\'</div></div></div>\';
-     }
-     html += "</div>";
-
-     $(\'.ontology-tags\').html(html);
-     });
-     */
 </script>
 
 <script type="text/javascript">
@@ -6173,7 +5944,7 @@ table.display tr.gradeU {
           'category' => 7,
           'cache_type' => 0,
           'snippet' => '    <div class="container">
-        <nav>[[Wayfinder? &startId=`0`]]</nav>
+        <nav>[[Wayfinder? &startId=`0` &level=`4`]]</nav>
     </div>',
           'locked' => false,
           'properties' => 
@@ -6182,7 +5953,7 @@ table.display tr.gradeU {
           'static' => false,
           'static_file' => '',
           'content' => '    <div class="container">
-        <nav>[[Wayfinder? &startId=`0`]]</nav>
+        <nav>[[Wayfinder? &startId=`0` &level=`4`]]</nav>
     </div>',
         ),
         'policies' => 
