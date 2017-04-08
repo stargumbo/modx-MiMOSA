@@ -1,2 +1,2 @@
 <?php
-return 'modx-resource-isfolder';
+return 'modx-resource-published';

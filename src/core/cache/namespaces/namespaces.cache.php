@@ -17,6 +17,18 @@
     'path' => '/var/www/core/components/gallery/',
     'assets_path' => '/Users/theboxer/www/modx/pkgs/gallery/assets/components/gallery/',
   ),
+  'getresourcefield' => 
+  array (
+    'name' => 'getresourcefield',
+    'path' => '/var/www/core/components/getresourcefield/',
+    'assets_path' => '',
+  ),
+  'if' => 
+  array (
+    'name' => 'if',
+    'path' => '/var/www/core/components/if/',
+    'assets_path' => '',
+  ),
   'minifyx' => 
   array (
     'name' => 'minifyx',
