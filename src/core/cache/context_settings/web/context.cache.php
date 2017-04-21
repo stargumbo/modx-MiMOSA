@@ -34,11 +34,11 @@
     'cbssportsapps/' => 8,
     'cbssportsfantasyapps/' => 38,
     'maxprepsapps/' => 39,
-    'techrepublic.html' => 40,
-    'zdnet.html' => 41,
-    'gamespot.html' => 42,
-    'giant-bomb.html' => 43,
-    'gamefaqs.html' => 44,
+    'techrepublic/' => 40,
+    'zdnet/' => 41,
+    'gamespot/' => 42,
+    'giant-bomb/' => 43,
+    'gamefaqs/' => 44,
     'cnet.html' => 45,
     'last.fm.html' => 46,
     'metrolyrics.html' => 47,
@@ -51,7 +51,17 @@
     'cbssportsfantasy-app.html' => 17,
     'draftmaster-app.html' => 11,
     'maxprepsapp.html' => 16,
+    'web-techrepublic/' => 57,
+    'web-zdnet/' => 59,
+    'web-gamespot/' => 61,
+    'web-giantbomb/' => 63,
+    'web-gamefaqs/' => 65,
     'cbssports.com-website.html' => 56,
+    'techrepublic.com.html' => 58,
+    'zdnet.com.html' => 60,
+    'gamespot.com.html' => 62,
+    'giantbomb.com/' => 64,
+    'gamefaqs.com/' => 66,
   ),
   'resourceMap' => 
   array (
@@ -159,9 +169,49 @@
     array (
       0 => 16,
     ),
+    40 => 
+    array (
+      0 => 57,
+    ),
+    41 => 
+    array (
+      0 => 59,
+    ),
+    42 => 
+    array (
+      0 => 61,
+    ),
+    43 => 
+    array (
+      0 => 63,
+    ),
+    44 => 
+    array (
+      0 => 65,
+    ),
     55 => 
     array (
       0 => 56,
+    ),
+    57 => 
+    array (
+      0 => 58,
+    ),
+    59 => 
+    array (
+      0 => 60,
+    ),
+    61 => 
+    array (
+      0 => 62,
+    ),
+    63 => 
+    array (
+      0 => 64,
+    ),
+    65 => 
+    array (
+      0 => 66,
     ),
   ),
   'webLinkMap' => 
