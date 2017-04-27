@@ -5,6 +5,12 @@
     'path' => '/var/www/core/components/articles/',
     'assets_path' => '/var/www/htdocs/assets/components/articles/',
   ),
+  'clientconfig' => 
+  array (
+    'name' => 'clientconfig',
+    'path' => '/var/www/core/components/clientconfig/',
+    'assets_path' => '',
+  ),
   'core' => 
   array (
     'name' => 'core',
@@ -23,11 +29,23 @@
     'path' => '/var/www/core/components/getresourcefield/',
     'assets_path' => '',
   ),
+  'gitifywatch' => 
+  array (
+    'name' => 'gitifywatch',
+    'path' => '/var/www/core/components/gitifywatch/',
+    'assets_path' => '',
+  ),
   'if' => 
   array (
     'name' => 'if',
     'path' => '/var/www/core/components/if/',
     'assets_path' => '',
+  ),
+  'migx' => 
+  array (
+    'name' => 'migx',
+    'path' => '/var/www/core/components/migx/',
+    'assets_path' => '/var/www/htdocs/assets/components/migx/',
   ),
   'minifyx' => 
   array (
@@ -40,6 +58,12 @@
     'name' => 'pdotools',
     'path' => '/var/www/core/components/pdotools/',
     'assets_path' => '',
+  ),
+  'scheduler' => 
+  array (
+    'name' => 'scheduler',
+    'path' => '/var/www/core/components/scheduler/',
+    'assets_path' => '/var/www/htdocs/_ad/scheduler/assets/components/scheduler/',
   ),
   'tinymce' => 
   array (

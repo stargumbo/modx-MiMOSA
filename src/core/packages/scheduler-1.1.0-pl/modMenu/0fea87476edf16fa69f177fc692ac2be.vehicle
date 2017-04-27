@@ -1,0 +1,72 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'related_objects' => 
+  array (
+    'Action' => 
+    array (
+      'cdc040d55f382da6a3c236fe77cbf28c' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 
+        array (
+          0 => 'namespace',
+          1 => 'controller',
+        ),
+        'class' => 'modAction',
+        'object' => '{"id":1,"namespace":"scheduler","controller":"controllers\\/index","haslayout":1,"lang_topics":"scheduler:default","assets":"","help_url":"","parent":0}',
+        'guid' => '4e7116c06bcf4911ec2c9bb5472a8402',
+        'native_key' => 1,
+        'signature' => '33e298a32b42269c02e38340328a4b17',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Action' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'namespace',
+        1 => 'controller',
+      ),
+    ),
+  ),
+  'namespace' => 'scheduler',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"scheduler-1.1.0-pl\\/modMenu\\/0fea87476edf16fa69f177fc692ac2be\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"scheduler"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"scheduler-1.1.0-pl\\/modMenu\\/0fea87476edf16fa69f177fc692ac2be\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"scheduler"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"scheduler-1.1.0-pl\\/modMenu\\/0fea87476edf16fa69f177fc692ac2be.resolve.tables.resolver","type":"php","name":"resolve.tables"}',
+    ),
+    3 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"scheduler-1.1.0-pl\\/modMenu\\/0fea87476edf16fa69f177fc692ac2be.resolve.dbchanges.resolver","type":"php","name":"resolve.dbchanges"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'ca91c6541041f669b715f698fb071844',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => '0fea87476edf16fa69f177fc692ac2be',
+  'native_key' => 'scheduler',
+  'object' => '{"text":"scheduler","parent":"components","action":1,"description":"scheduler.menu_desc","icon":"images\\/icons\\/plugin.gif","menuindex":0,"params":"","handler":"","permissions":"","namespace":"core"}',
+);

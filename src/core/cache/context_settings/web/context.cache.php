@@ -39,7 +39,7 @@
     'gamespot/' => 42,
     'giant-bomb/' => 43,
     'gamefaqs/' => 44,
-    'cnet.html' => 45,
+    'cnet/' => 45,
     'last.fm.html' => 46,
     'metrolyrics.html' => 47,
     'tv.com.html' => 48,
@@ -50,18 +50,20 @@
     'inside-edition.html' => 53,
     'cbssportsfantasy-app.html' => 17,
     'draftmaster-app.html' => 11,
-    'maxprepsapp.html' => 16,
+    'maxprepsteamsapp.html' => 16,
     'web-techrepublic/' => 57,
     'web-zdnet/' => 59,
     'web-gamespot/' => 61,
     'web-giantbomb/' => 63,
     'web-gamefaqs/' => 65,
+    'web-cnet/' => 67,
     'cbssports.com-website.html' => 56,
     'techrepublic.com.html' => 58,
     'zdnet.com.html' => 60,
     'gamespot.com.html' => 62,
     'giantbomb.com/' => 64,
     'gamefaqs.com/' => 66,
+    'cnet.com.html' => 68,
   ),
   'resourceMap' => 
   array (
@@ -134,6 +136,10 @@
     array (
       0 => 39,
     ),
+    29 => 
+    array (
+      0 => 69,
+    ),
     34 => 
     array (
       0 => 40,
@@ -189,6 +195,10 @@
     array (
       0 => 65,
     ),
+    45 => 
+    array (
+      0 => 67,
+    ),
     55 => 
     array (
       0 => 56,
@@ -213,6 +223,10 @@
     array (
       0 => 66,
     ),
+    67 => 
+    array (
+      0 => 68,
+    ),
   ),
   'webLinkMap' => 
   array (
@@ -224,6 +238,10 @@
     array (
       7 => '7',
     ),
+    'OnChunkFormDelete' => 
+    array (
+      27 => '27',
+    ),
     'OnChunkFormPrerender' => 
     array (
       5 => '5',
@@ -231,19 +249,27 @@
     'OnChunkFormSave' => 
     array (
       5 => '5',
+      27 => '27',
     ),
     'OnDocFormPrerender' => 
     array (
-      5 => '5',
+      23 => '23',
       2 => '2',
+      5 => '5',
     ),
     'OnDocFormSave' => 
     array (
       5 => '5',
+      27 => '27',
     ),
     'OnMODXInit' => 
     array (
       7 => '7',
+      26 => '26',
+    ),
+    'OnPluginFormDelete' => 
+    array (
+      27 => '27',
     ),
     'OnPluginFormPrerender' => 
     array (
@@ -252,6 +278,7 @@
     'OnPluginFormSave' => 
     array (
       5 => '5',
+      27 => '27',
     ),
     'OnRichTextBrowserInit' => 
     array (
@@ -267,8 +294,12 @@
     ),
     'OnSiteRefresh' => 
     array (
-      7 => '7',
       8 => '8',
+      7 => '7',
+    ),
+    'OnSnipFormDelete' => 
+    array (
+      27 => '27',
     ),
     'OnSnipFormPrerender' => 
     array (
@@ -277,6 +308,11 @@
     'OnSnipFormSave' => 
     array (
       5 => '5',
+      27 => '27',
+    ),
+    'OnTempFormDelete' => 
+    array (
+      27 => '27',
     ),
     'OnTempFormPrerender' => 
     array (
@@ -285,6 +321,11 @@
     'OnTempFormSave' => 
     array (
       5 => '5',
+      27 => '27',
+    ),
+    'OnTVFormDelete' => 
+    array (
+      27 => '27',
     ),
     'OnTVFormPrerender' => 
     array (
@@ -293,13 +334,16 @@
     'OnTVFormSave' => 
     array (
       5 => '5',
+      27 => '27',
     ),
     'OnTVInputPropertiesList' => 
     array (
       2 => '2',
+      23 => '23',
     ),
     'OnTVInputRenderList' => 
     array (
+      23 => '23',
       2 => '2',
     ),
     'OnTVOutputRenderList' => 
@@ -485,6 +529,79 @@ switch ($modx->event->name) {
         $modx->controller->addCss($gallery->config[\'cssUrl\'].\'mgr.css\');
         break;
 }
+return;',
+      'locked' => '0',
+      'properties' => NULL,
+      'disabled' => '0',
+      'moduleguid' => '',
+      'static' => '0',
+      'static_file' => '',
+    ),
+    26 => 
+    array (
+      'id' => '26',
+      'source' => '0',
+      'property_preprocess' => '0',
+      'name' => 'ClientConfig',
+      'description' => 'Sets system settings from the Client Config CMP.',
+      'editor_type' => '0',
+      'category' => '0',
+      'cache_type' => '0',
+      'plugincode' => '/**
+ * ClientConfig
+ *
+ * Copyright 2011-2014 by Mark Hamstra <hello@markhamstra.com>
+ *
+ * ClientConfig is free software; you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 2 of the License, or (at your option) any later
+ * version.
+ *
+ * ClientConfig is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * ClientConfig; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * Place, Suite 330, Boston, MA 02111-1307 USA
+ *
+ * @package clientconfig
+ *
+ * @var modX $modx
+ * @var int $id
+ * @var string $mode
+ * @var modResource $resource
+ * @var modTemplate $template
+ * @var modTemplateVar $tv
+ * @var modChunk $chunk
+ * @var modSnippet $snippet
+ * @var modPlugin $plugin
+*/
+
+$eventName = $modx->event->name;
+
+switch($eventName) {
+    case \'OnMODXInit\':
+        /* Grab the class */
+        $path = $modx->getOption(\'clientconfig.core_path\', null, $modx->getOption(\'core_path\') . \'components/clientconfig/\');
+        $path .= \'model/clientconfig/\';
+        $clientConfig = $modx->getService(\'clientconfig\',\'ClientConfig\', $path);
+
+        /* If we got the class (gotta be careful of failed migrations), grab settings and go! */
+        if ($clientConfig instanceof ClientConfig) {
+            $settings = $clientConfig->getSettings();
+
+            /* Make settings available as [[++tags]] */
+            $modx->setPlaceholders($settings, \'+\');
+
+            /* Make settings available for $modx->getOption() */
+            foreach ($settings as $key => $value) {
+                $modx->setOption($key, $value);
+            }
+        }
+        break;
+}
+
 return;',
       'locked' => '0',
       'properties' => NULL,
@@ -833,6 +950,278 @@ switch ($modx->event->name) {
       'moduleguid' => '',
       'static' => '0',
       'static_file' => 'core/components/minifyx/elements/plugins/plugin.minifyx.php',
+    ),
+    23 => 
+    array (
+      'id' => '23',
+      'source' => '0',
+      'property_preprocess' => '0',
+      'name' => 'MIGX',
+      'description' => '',
+      'editor_type' => '0',
+      'category' => '38',
+      'cache_type' => '0',
+      'plugincode' => '$corePath = $modx->getOption(\'migx.core_path\',null,$modx->getOption(\'core_path\').\'components/migx/\');
+$assetsUrl = $modx->getOption(\'migx.assets_url\', null, $modx->getOption(\'assets_url\') . \'components/migx/\');
+switch ($modx->event->name) {
+    case \'OnTVInputRenderList\':
+        $modx->event->output($corePath.\'elements/tv/input/\');
+        break;
+    case \'OnTVInputPropertiesList\':
+        $modx->event->output($corePath.\'elements/tv/inputoptions/\');
+        break;
+
+        case \'OnDocFormPrerender\':
+        $modx->controller->addCss($assetsUrl.\'css/mgr.css\');
+        break; 
+ 
+    /*          
+    case \'OnTVOutputRenderList\':
+        $modx->event->output($corePath.\'elements/tv/output/\');
+        break;
+    case \'OnTVOutputRenderPropertiesList\':
+        $modx->event->output($corePath.\'elements/tv/properties/\');
+        break;
+    
+    case \'OnDocFormPrerender\':
+        $assetsUrl = $modx->getOption(\'colorpicker.assets_url\',null,$modx->getOption(\'assets_url\').\'components/colorpicker/\'); 
+        $modx->regClientStartupHTMLBlock(\'<script type="text/javascript">
+        Ext.onReady(function() {
+            
+        });
+        </script>\');
+        $modx->regClientStartupScript($assetsUrl.\'sources/ColorPicker.js\');
+        $modx->regClientStartupScript($assetsUrl.\'sources/ColorMenu.js\');
+        $modx->regClientStartupScript($assetsUrl.\'sources/ColorPickerField.js\');		
+        $modx->regClientCSS($assetsUrl.\'resources/css/colorpicker.css\');
+        break;
+     */
+}
+return;',
+      'locked' => '0',
+      'properties' => 'a:0:{}',
+      'disabled' => '0',
+      'moduleguid' => '',
+      'static' => '0',
+      'static_file' => '',
+    ),
+    27 => 
+    array (
+      'id' => '27',
+      'source' => '0',
+      'property_preprocess' => '0',
+      'name' => 'GitifyWatch',
+      'description' => 'Watches for changes in resources and elements to automatically run Gitify and git to commit & push changes.',
+      'editor_type' => '0',
+      'category' => '40',
+      'cache_type' => '0',
+      'plugincode' => '/**
+ * @var modX $modx
+ * @var array $scriptProperties
+ * @var GitifyWatch $gitifywatch
+ */
+
+use mhwd\\GitifyWatch;
+
+$path = $modx->getOption(\'gitifywatch.core_path\', null, MODX_CORE_PATH  . \'components/gitifywatch/\', true);
+require_once($path . \'model/gitifywatch/gitifywatch.class.php\');
+$gitifywatch = $modx->getService(\'gitifywatch\', \'mhwd\\GitifyWatch\', $path . \'model/gitifywatch/\');
+
+if (!$gitifywatch) {
+    $modx->log(modX::LOG_LEVEL_ERROR, \'Could not load gitifywatch service from \' . $path);
+    return;
+}
+
+$path = $modx->getOption(\'scheduler.core_path\', null, $modx->getOption(\'core_path\') . \'components/scheduler/\');
+$scheduler = $modx->getService(\'scheduler\', \'Scheduler\', $path . \'model/scheduler/\');
+if (!$scheduler) {
+    $modx->log(modX::LOG_LEVEL_ERROR, \'Could not load Scheduler service from \' . $path);
+    return;
+}
+
+$environment = $gitifywatch->getEnvironment();
+$trigger = false;
+$username = ($modx->user) ? $modx->user->get(\'username\') : \'Anonymous\';
+
+if (!$environment || !$environment[\'auto_commit_and_push\']) {
+    $modx->log(modX::LOG_LEVEL_WARN, \'[GitifyWatch] Not allowed to commit and push on this environment: \' . print_r($environment, true), \'\', \'GitifyWatch plugin\', __FILE__, __LINE__);
+    return;
+}
+
+switch ($modx->event->name) {
+    case \'OnDocFormSave\':
+        /**
+         * @var int $mode
+         * @var modResource $resource
+         */
+        $trigger = array(
+            \'username\' => $username,
+            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',
+            \'target\' => $resource->get(\'pagetitle\'),
+            \'partition\' => $environment[\'partitions\'][\'modResource\'],
+        );
+        break;
+
+    case \'OnTempFormSave\':
+        /**
+         * @var int $mode
+         * @var modTemplate $template
+         */
+        $trigger = array(
+            \'username\' => $username,
+            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',
+            \'target\' => $template->get(\'templatename\'),
+            \'partition\' => $environment[\'partitions\'][\'modTemplate\'],
+        );
+        break;
+
+    case \'OnTempFormDelete\':
+        /**
+         * @var modTemplate $template
+         */
+        $trigger = array(
+            \'username\' => $username,
+            \'mode\' => \'deleted\',
+            \'target\' => $template->get(\'templatename\'),
+            \'partition\' => $environment[\'partitions\'][\'modTemplate\'],
+        );
+        break;
+
+    case \'OnTVFormSave\':
+        /**
+         * @var int $mode
+         * @var modTemplateVar $tv
+         */
+        $trigger = array(
+            \'username\' => $username,
+            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',
+            \'target\' => $tv->get(\'name\'),
+            \'partition\' => $environment[\'partitions\'][\'modTemplateVar\'],
+        );
+        break;
+    case \'OnTVFormDelete\':
+        /**
+         * @var modTemplateVar $tv
+         */
+        $trigger = array(
+            \'username\' => $username,
+            \'mode\' => \'deleted\',
+            \'target\' => $tv->get(\'name\'),
+            \'partition\' => $environment[\'partitions\'][\'modTemplateVar\'],
+        );
+        break;
+
+    case \'OnChunkFormSave\':
+        /**
+         * @var int $mode
+         * @var modChunk $chunk
+         */
+        $trigger = array(
+            \'username\' => $username,
+            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',
+            \'target\' => $chunk->get(\'name\'),
+            \'partition\' => $environment[\'partitions\'][\'modChunk\'],
+        );
+        break;
+    case \'OnChunkFormDelete\':
+        /**
+         * @var modChunk $chunk
+         */
+        $trigger = array(
+            \'username\' => $username,
+            \'mode\' => \'deleted\',
+            \'target\' => $chunk->get(\'name\'),
+            \'partition\' => $environment[\'partitions\'][\'modChunk\'],
+        );
+        break;
+    
+    case \'OnSnipFormSave\':
+        /**
+         * @var int $mode
+         * @var modSnippet $snippet
+         */
+        $trigger = array(
+            \'username\' => $username,
+            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',
+            \'target\' => $snippet->get(\'name\'),
+            \'partition\' => $environment[\'partitions\'][\'modSnippet\'],
+        );
+        break;
+    case \'OnSnipFormDelete\':
+        /**
+         * @var modSnippet $snippet
+         */
+        $trigger = array(
+            \'username\' => $username,
+            \'mode\' => \'deleted\',
+            \'target\' => $snippet->get(\'name\'),
+            \'partition\' => $environment[\'partitions\'][\'modSnippet\'],
+        );
+        break;
+    case \'OnPluginFormSave\':
+        /**
+         * @var int $mode
+         * @var modPlugin $plugin
+         */
+        $trigger = array(
+            \'username\' => $username,
+            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',
+            \'target\' => $plugin->get(\'name\'),
+            \'partition\' => $environment[\'partitions\'][\'modPlugin\'],
+        );
+        break;
+    case \'OnPluginFormDelete\':
+        /**
+         * @var modPlugin $plugin
+         */
+        $trigger = array(
+            \'username\' => $username,
+            \'mode\' => \'deleted\',
+            \'target\' => $plugin->get(\'name\'),
+            \'partition\' => $environment[\'partitions\'][\'modPlugin\'],
+        );
+        break;
+}
+
+if ($trigger) {
+    /** @var sTask $task */
+    $task = $scheduler->getTask(\'gitifywatch\', \'extract\');
+    if ($task instanceof sTask) {
+        // Try to find one already scheduled
+        $run = $modx->getObject(\'sTaskRun\', array(
+            \'task\' => $task->get(\'id\'),
+            \'status\' => sTaskRun::STATUS_SCHEDULED,
+        ));
+
+        if ($run instanceof sTaskRun) {
+            $data = $run->get(\'data\');
+            $data[\'triggers\'][] = $trigger;
+            $run->set(\'data\', $data);
+            $run->save();
+        } else {
+            $commitDelay = isset($environment[\'commit_delay\']) ? $environment[\'commit_delay\'] : \'instant\';
+            if ($commitDelay == \'instant\') {
+                $time = time() - 60;
+            }
+            else {
+                $time = time() + ($commitDelay * 60);
+            }
+
+            $task->schedule($time, array(
+                \'triggers\' => array($trigger),
+            ));
+        }
+    }
+    else {
+        $modx->log(modX::LOG_LEVEL_ERROR, \'Could not find sTask gitifywatch:extract\');
+    }
+}',
+      'locked' => '0',
+      'properties' => NULL,
+      'disabled' => '0',
+      'moduleguid' => '',
+      'static' => '0',
+      'static_file' => '',
     ),
   ),
   'policies' => 

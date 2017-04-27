@@ -1,0 +1,219 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'related_objects' => 
+  array (
+    'Plugins' => 
+    array (
+      'dbbca40017d9f551798423db509dd572' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            '30ff4c2c4a16ddce04e60709b7a6387a' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnDocFormSave","priority":10,"propertyset":0}',
+              'guid' => 'cfa3051aaa2c6a5079c46e11c29929f9',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnDocFormSave',
+              ),
+              'signature' => '02660bad93237ff458772433d8e6d0f3',
+            ),
+            '1f14689c1056b5b6902b0fc51a93091b' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnTempFormSave","priority":10,"propertyset":0}',
+              'guid' => '35423ffdf7a27492f68124e7bb9beeb4',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnTempFormSave',
+              ),
+              'signature' => 'ec2bf9c3609bea79678f9133e460cedb',
+            ),
+            'e806401a2e2aaf65984b5b960a9ab947' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnTempFormDelete","priority":10,"propertyset":0}',
+              'guid' => 'bd2622b0d5864897f6d2b819e9e17462',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnTempFormDelete',
+              ),
+              'signature' => '263e2e37a5e7d11235ff2dc379895539',
+            ),
+            '8b29288011379fd729f0fcdbbb39f6b6' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnTVFormSave","priority":10,"propertyset":0}',
+              'guid' => '6a3547152858c6698e77f92f0bf95f77',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnTVFormSave',
+              ),
+              'signature' => '52ecad467f21515fdf04f0a986a59e4b',
+            ),
+            '3dbed9816869b90c1fe93b819de4cff2' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnTVFormDelete","priority":10,"propertyset":0}',
+              'guid' => '7fc409d44fd5bed7fc31b2ccef612345',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnTVFormDelete',
+              ),
+              'signature' => '091edbbe457803348cf410ccbb27ae97',
+            ),
+            '25f13a67ac4882337adb20c0330acae6' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnChunkFormSave","priority":10,"propertyset":0}',
+              'guid' => '487da0dc1abfe8921400f06109bfe965',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnChunkFormSave',
+              ),
+              'signature' => '80884b11daa5f05244215bf80a3acd23',
+            ),
+            '88d96f3b8169b5343e19676e051a47e8' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnChunkFormDelete","priority":10,"propertyset":0}',
+              'guid' => 'ac9a703d4e571abdbc7b4bfc631f664d',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnChunkFormDelete',
+              ),
+              'signature' => 'da9ef8166b7e3441ad5c721ce65149b6',
+            ),
+            '74db9dd50ecd67aa5ed0f2fd3a909697' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnSnipFormSave","priority":10,"propertyset":0}',
+              'guid' => '764bf0ab10c773722cd9f538d9104c69',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnSnipFormSave',
+              ),
+              'signature' => '4ace31f06020ff9626f30a1ced57afdd',
+            ),
+            '8dbc0ed61f4a5414befc3cedaa8ff662' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnSnipFormDelete","priority":10,"propertyset":0}',
+              'guid' => '3149a1d534bf7b23c760a9b8e3b5eb64',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnSnipFormDelete',
+              ),
+              'signature' => '031cfe16c5274801e3fa37db9d93bbd7',
+            ),
+            '34a75432304df8095989a4eef106cfd5' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnPluginFormSave","priority":10,"propertyset":0}',
+              'guid' => '451db0bdfe02a5d98a308ab0411c6e94',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnPluginFormSave',
+              ),
+              'signature' => 'bd3fc756010f259c627e04feb51764df',
+            ),
+            'a16b9c8491d61fc39f1efce13d010de4' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnPluginFormDelete","priority":10,"propertyset":0}',
+              'guid' => '7705d6a9c2a78a969a76803470078dde',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnPluginFormDelete',
+              ),
+              'signature' => '13b0a5942602a902d84076942b5d6f60',
+            ),
+          ),
+        ),
+        'related_object_attributes' => 
+        array (
+          'PluginEvents' => 
+          array (
+            'preserve_keys' => true,
+            'update_object' => false,
+            'unique_key' => 
+            array (
+              0 => 'pluginid',
+              1 => 'event',
+            ),
+          ),
+        ),
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"GitifyWatch","description":"Watches for changes in resources and elements to automatically run Gitify and git to commit & push changes.","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/**\\n * @var modX $modx\\n * @var array $scriptProperties\\n * @var GitifyWatch $gitifywatch\\n *\\/\\n\\nuse mhwd\\\\GitifyWatch;\\n\\n$path = $modx->getOption(\'gitifywatch.core_path\', null, MODX_CORE_PATH  . \'components\\/gitifywatch\\/\', true);\\nrequire_once($path . \'model\\/gitifywatch\\/gitifywatch.class.php\');\\n$gitifywatch = $modx->getService(\'gitifywatch\', \'mhwd\\\\GitifyWatch\', $path . \'model\\/gitifywatch\\/\');\\n\\nif (!$gitifywatch) {\\n    $modx->log(modX::LOG_LEVEL_ERROR, \'Could not load gitifywatch service from \' . $path);\\n    return;\\n}\\n\\n$path = $modx->getOption(\'scheduler.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/scheduler\\/\');\\n$scheduler = $modx->getService(\'scheduler\', \'Scheduler\', $path . \'model\\/scheduler\\/\');\\nif (!$scheduler) {\\n    $modx->log(modX::LOG_LEVEL_ERROR, \'Could not load Scheduler service from \' . $path);\\n    return;\\n}\\n\\n$environment = $gitifywatch->getEnvironment();\\n$trigger = false;\\n$username = ($modx->user) ? $modx->user->get(\'username\') : \'Anonymous\';\\n\\nif (!$environment || !$environment[\'auto_commit_and_push\']) {\\n    $modx->log(modX::LOG_LEVEL_WARN, \'[GitifyWatch] Not allowed to commit and push on this environment: \' . print_r($environment, true), \'\', \'GitifyWatch plugin\', __FILE__, __LINE__);\\n    return;\\n}\\n\\nswitch ($modx->event->name) {\\n    case \'OnDocFormSave\':\\n        \\/**\\n         * @var int $mode\\n         * @var modResource $resource\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',\\n            \'target\' => $resource->get(\'pagetitle\'),\\n            \'partition\' => $environment[\'partitions\'][\'modResource\'],\\n        );\\n        break;\\n\\n    case \'OnTempFormSave\':\\n        \\/**\\n         * @var int $mode\\n         * @var modTemplate $template\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',\\n            \'target\' => $template->get(\'templatename\'),\\n            \'partition\' => $environment[\'partitions\'][\'modTemplate\'],\\n        );\\n        break;\\n\\n    case \'OnTempFormDelete\':\\n        \\/**\\n         * @var modTemplate $template\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => \'deleted\',\\n            \'target\' => $template->get(\'templatename\'),\\n            \'partition\' => $environment[\'partitions\'][\'modTemplate\'],\\n        );\\n        break;\\n\\n    case \'OnTVFormSave\':\\n        \\/**\\n         * @var int $mode\\n         * @var modTemplateVar $tv\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',\\n            \'target\' => $tv->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modTemplateVar\'],\\n        );\\n        break;\\n    case \'OnTVFormDelete\':\\n        \\/**\\n         * @var modTemplateVar $tv\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => \'deleted\',\\n            \'target\' => $tv->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modTemplateVar\'],\\n        );\\n        break;\\n\\n    case \'OnChunkFormSave\':\\n        \\/**\\n         * @var int $mode\\n         * @var modChunk $chunk\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',\\n            \'target\' => $chunk->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modChunk\'],\\n        );\\n        break;\\n    case \'OnChunkFormDelete\':\\n        \\/**\\n         * @var modChunk $chunk\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => \'deleted\',\\n            \'target\' => $chunk->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modChunk\'],\\n        );\\n        break;\\n    \\n    case \'OnSnipFormSave\':\\n        \\/**\\n         * @var int $mode\\n         * @var modSnippet $snippet\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',\\n            \'target\' => $snippet->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modSnippet\'],\\n        );\\n        break;\\n    case \'OnSnipFormDelete\':\\n        \\/**\\n         * @var modSnippet $snippet\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => \'deleted\',\\n            \'target\' => $snippet->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modSnippet\'],\\n        );\\n        break;\\n    case \'OnPluginFormSave\':\\n        \\/**\\n         * @var int $mode\\n         * @var modPlugin $plugin\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',\\n            \'target\' => $plugin->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modPlugin\'],\\n        );\\n        break;\\n    case \'OnPluginFormDelete\':\\n        \\/**\\n         * @var modPlugin $plugin\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => \'deleted\',\\n            \'target\' => $plugin->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modPlugin\'],\\n        );\\n        break;\\n}\\n\\nif ($trigger) {\\n    \\/** @var sTask $task *\\/\\n    $task = $scheduler->getTask(\'gitifywatch\', \'extract\');\\n    if ($task instanceof sTask) {\\n        \\/\\/ Try to find one already scheduled\\n        $run = $modx->getObject(\'sTaskRun\', array(\\n            \'task\' => $task->get(\'id\'),\\n            \'status\' => sTaskRun::STATUS_SCHEDULED,\\n        ));\\n\\n        if ($run instanceof sTaskRun) {\\n            $data = $run->get(\'data\');\\n            $data[\'triggers\'][] = $trigger;\\n            $run->set(\'data\', $data);\\n            $run->save();\\n        } else {\\n            $commitDelay = isset($environment[\'commit_delay\']) ? $environment[\'commit_delay\'] : \'instant\';\\n            if ($commitDelay == \'instant\') {\\n                $time = time() - 60;\\n            }\\n            else {\\n                $time = time() + ($commitDelay * 60);\\n            }\\n\\n            $task->schedule($time, array(\\n                \'triggers\' => array($trigger),\\n            ));\\n        }\\n    }\\n    else {\\n        $modx->log(modX::LOG_LEVEL_ERROR, \'Could not find sTask gitifywatch:extract\');\\n    }\\n}","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * @var modX $modx\\n * @var array $scriptProperties\\n * @var GitifyWatch $gitifywatch\\n *\\/\\n\\nuse mhwd\\\\GitifyWatch;\\n\\n$path = $modx->getOption(\'gitifywatch.core_path\', null, MODX_CORE_PATH  . \'components\\/gitifywatch\\/\', true);\\nrequire_once($path . \'model\\/gitifywatch\\/gitifywatch.class.php\');\\n$gitifywatch = $modx->getService(\'gitifywatch\', \'mhwd\\\\GitifyWatch\', $path . \'model\\/gitifywatch\\/\');\\n\\nif (!$gitifywatch) {\\n    $modx->log(modX::LOG_LEVEL_ERROR, \'Could not load gitifywatch service from \' . $path);\\n    return;\\n}\\n\\n$path = $modx->getOption(\'scheduler.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/scheduler\\/\');\\n$scheduler = $modx->getService(\'scheduler\', \'Scheduler\', $path . \'model\\/scheduler\\/\');\\nif (!$scheduler) {\\n    $modx->log(modX::LOG_LEVEL_ERROR, \'Could not load Scheduler service from \' . $path);\\n    return;\\n}\\n\\n$environment = $gitifywatch->getEnvironment();\\n$trigger = false;\\n$username = ($modx->user) ? $modx->user->get(\'username\') : \'Anonymous\';\\n\\nif (!$environment || !$environment[\'auto_commit_and_push\']) {\\n    $modx->log(modX::LOG_LEVEL_WARN, \'[GitifyWatch] Not allowed to commit and push on this environment: \' . print_r($environment, true), \'\', \'GitifyWatch plugin\', __FILE__, __LINE__);\\n    return;\\n}\\n\\nswitch ($modx->event->name) {\\n    case \'OnDocFormSave\':\\n        \\/**\\n         * @var int $mode\\n         * @var modResource $resource\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',\\n            \'target\' => $resource->get(\'pagetitle\'),\\n            \'partition\' => $environment[\'partitions\'][\'modResource\'],\\n        );\\n        break;\\n\\n    case \'OnTempFormSave\':\\n        \\/**\\n         * @var int $mode\\n         * @var modTemplate $template\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',\\n            \'target\' => $template->get(\'templatename\'),\\n            \'partition\' => $environment[\'partitions\'][\'modTemplate\'],\\n        );\\n        break;\\n\\n    case \'OnTempFormDelete\':\\n        \\/**\\n         * @var modTemplate $template\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => \'deleted\',\\n            \'target\' => $template->get(\'templatename\'),\\n            \'partition\' => $environment[\'partitions\'][\'modTemplate\'],\\n        );\\n        break;\\n\\n    case \'OnTVFormSave\':\\n        \\/**\\n         * @var int $mode\\n         * @var modTemplateVar $tv\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',\\n            \'target\' => $tv->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modTemplateVar\'],\\n        );\\n        break;\\n    case \'OnTVFormDelete\':\\n        \\/**\\n         * @var modTemplateVar $tv\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => \'deleted\',\\n            \'target\' => $tv->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modTemplateVar\'],\\n        );\\n        break;\\n\\n    case \'OnChunkFormSave\':\\n        \\/**\\n         * @var int $mode\\n         * @var modChunk $chunk\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',\\n            \'target\' => $chunk->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modChunk\'],\\n        );\\n        break;\\n    case \'OnChunkFormDelete\':\\n        \\/**\\n         * @var modChunk $chunk\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => \'deleted\',\\n            \'target\' => $chunk->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modChunk\'],\\n        );\\n        break;\\n    \\n    case \'OnSnipFormSave\':\\n        \\/**\\n         * @var int $mode\\n         * @var modSnippet $snippet\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',\\n            \'target\' => $snippet->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modSnippet\'],\\n        );\\n        break;\\n    case \'OnSnipFormDelete\':\\n        \\/**\\n         * @var modSnippet $snippet\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => \'deleted\',\\n            \'target\' => $snippet->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modSnippet\'],\\n        );\\n        break;\\n    case \'OnPluginFormSave\':\\n        \\/**\\n         * @var int $mode\\n         * @var modPlugin $plugin\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => ($mode === modSystemEvent::MODE_NEW) ? \'created\' : \'edited\',\\n            \'target\' => $plugin->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modPlugin\'],\\n        );\\n        break;\\n    case \'OnPluginFormDelete\':\\n        \\/**\\n         * @var modPlugin $plugin\\n         *\\/\\n        $trigger = array(\\n            \'username\' => $username,\\n            \'mode\' => \'deleted\',\\n            \'target\' => $plugin->get(\'name\'),\\n            \'partition\' => $environment[\'partitions\'][\'modPlugin\'],\\n        );\\n        break;\\n}\\n\\nif ($trigger) {\\n    \\/** @var sTask $task *\\/\\n    $task = $scheduler->getTask(\'gitifywatch\', \'extract\');\\n    if ($task instanceof sTask) {\\n        \\/\\/ Try to find one already scheduled\\n        $run = $modx->getObject(\'sTaskRun\', array(\\n            \'task\' => $task->get(\'id\'),\\n            \'status\' => sTaskRun::STATUS_SCHEDULED,\\n        ));\\n\\n        if ($run instanceof sTaskRun) {\\n            $data = $run->get(\'data\');\\n            $data[\'triggers\'][] = $trigger;\\n            $run->set(\'data\', $data);\\n            $run->save();\\n        } else {\\n            $commitDelay = isset($environment[\'commit_delay\']) ? $environment[\'commit_delay\'] : \'instant\';\\n            if ($commitDelay == \'instant\') {\\n                $time = time() - 60;\\n            }\\n            else {\\n                $time = time() + ($commitDelay * 60);\\n            }\\n\\n            $task->schedule($time, array(\\n                \'triggers\' => array($trigger),\\n            ));\\n        }\\n    }\\n    else {\\n        $modx->log(modX::LOG_LEVEL_ERROR, \'Could not find sTask gitifywatch:extract\');\\n    }\\n}"}',
+        'guid' => 'c7de3f021c2bc56c02d32ddbf9727e55',
+        'native_key' => NULL,
+        'signature' => '3d0fe93e4e8cba175a08f0c523323925',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Plugins' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => true,
+      'unique_key' => 'name',
+      'related_objects' => true,
+      'related_object_attributes' => 
+      array (
+        'PluginEvents' => 
+        array (
+          'preserve_keys' => true,
+          'update_object' => false,
+          'unique_key' => 
+          array (
+            0 => 'pluginid',
+            1 => 'event',
+          ),
+        ),
+      ),
+    ),
+  ),
+  'namespace' => 'gitifywatch',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"gitifywatch-1.0.0-rc3\\/modCategory\\/6a980745940c12a571d287c35e331e24\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"gitifywatch"}',
+    ),
+    1 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"gitifywatch-1.0.0-rc3\\/modCategory\\/6a980745940c12a571d287c35e331e24.scheduler.resolver.resolver","type":"php","name":"scheduler.resolver"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'c254597b7b70ed48d13aeb2688670f2b',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '6a980745940c12a571d287c35e331e24',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"Gitify Watch"}',
+);

@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'gitifywatch',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '92ae19d192f96727da8ede02eca25cf2',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '94130c6f29b8babc9aff283313a4c6fc',
+  'native_key' => 'gitifywatch.repository_path',
+  'object' => '{"key":"gitifywatch.repository_path","value":"{base_path}","xtype":"textfield","namespace":"gitifywatch","area":"Gitify","editedon":1444252255}',
+);
