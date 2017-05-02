@@ -34,18 +34,19 @@
     'cbssportsapps/' => 8,
     'cbssportsfantasyapps/' => 38,
     'maxprepsapps/' => 39,
+    '247sportsweb/' => 85,
     'techrepublic/' => 40,
     'zdnet/' => 41,
     'gamespot/' => 42,
     'giant-bomb/' => 43,
     'gamefaqs/' => 44,
     'cnet/' => 45,
-    'last.fm.html' => 46,
-    'metrolyrics.html' => 47,
-    'tv.com.html' => 48,
-    'tv-guide.html' => 49,
-    'metacritic.html' => 50,
-    'chowhound.html' => 51,
+    'last.fm/' => 46,
+    'metrolyrics/' => 47,
+    'tv.com/' => 48,
+    'tvguide/' => 49,
+    'metacritic/' => 50,
+    'chowhound/' => 51,
     'dr-phil.html' => 52,
     'inside-edition.html' => 53,
     'cbssportsfantasy-app.html' => 17,
@@ -57,6 +58,12 @@
     'web-giantbomb/' => 63,
     'web-gamefaqs/' => 65,
     'web-cnet/' => 67,
+    'web-last.fm/' => 71,
+    'web-metrolyrics/' => 73,
+    'web-tv.com/' => 75,
+    'web-tvguide/' => 77,
+    'w-metacritic/' => 79,
+    'web-chowhound/' => 83,
     'cbssports.com-website.html' => 56,
     'techrepublic.com.html' => 58,
     'zdnet.com.html' => 60,
@@ -64,6 +71,13 @@
     'giantbomb.com/' => 64,
     'gamefaqs.com/' => 66,
     'cnet.com.html' => 68,
+    'last.fm.html' => 72,
+    'metrolyrics.com.html' => 74,
+    'tv.com.html' => 76,
+    'tvguide.com/' => 78,
+    'metacritic.com.html' => 81,
+    'chowhound.com.html' => 84,
+    '247sports-site.html' => 86,
   ),
   'resourceMap' => 
   array (
@@ -140,6 +154,10 @@
     array (
       0 => 69,
     ),
+    30 => 
+    array (
+      0 => 85,
+    ),
     34 => 
     array (
       0 => 40,
@@ -199,6 +217,30 @@
     array (
       0 => 67,
     ),
+    46 => 
+    array (
+      0 => 71,
+    ),
+    47 => 
+    array (
+      0 => 73,
+    ),
+    48 => 
+    array (
+      0 => 75,
+    ),
+    49 => 
+    array (
+      0 => 77,
+    ),
+    50 => 
+    array (
+      0 => 79,
+    ),
+    51 => 
+    array (
+      0 => 83,
+    ),
     55 => 
     array (
       0 => 56,
@@ -227,6 +269,34 @@
     array (
       0 => 68,
     ),
+    71 => 
+    array (
+      0 => 72,
+    ),
+    73 => 
+    array (
+      0 => 74,
+    ),
+    75 => 
+    array (
+      0 => 76,
+    ),
+    77 => 
+    array (
+      0 => 78,
+    ),
+    79 => 
+    array (
+      0 => 81,
+    ),
+    83 => 
+    array (
+      0 => 84,
+    ),
+    85 => 
+    array (
+      0 => 86,
+    ),
   ),
   'webLinkMap' => 
   array (
@@ -253,9 +323,9 @@
     ),
     'OnDocFormPrerender' => 
     array (
-      23 => '23',
       2 => '2',
       5 => '5',
+      23 => '23',
     ),
     'OnDocFormSave' => 
     array (
@@ -294,8 +364,8 @@
     ),
     'OnSiteRefresh' => 
     array (
-      8 => '8',
       7 => '7',
+      8 => '8',
     ),
     'OnSnipFormDelete' => 
     array (
@@ -338,8 +408,8 @@
     ),
     'OnTVInputPropertiesList' => 
     array (
-      2 => '2',
       23 => '23',
+      2 => '2',
     ),
     'OnTVInputRenderList' => 
     array (

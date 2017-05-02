@@ -24,8 +24,8 @@
     'cacheable' => 1,
     'createdby' => 1,
     'createdon' => 1476123632,
-    'editedby' => 2,
-    'editedon' => 1491679665,
+    'editedby' => 4,
+    'editedon' => 1493409736,
     'deleted' => 0,
     'deletedon' => 0,
     'deletedby' => 0,
@@ -541,7 +541,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
     var feed = "";
     var url = "https://spreadsheets.google.com/feeds/list/1A_P8i6-tk19Pfc-zFkvNFx0OyxCLgd8vgANMFsPVJ3s/od6/public/values?alt=json";
 
-    jQuery.post("json.php", {json : JSON.stringify(url)});
+    //jQuery.post("json.php", {json : JSON.stringify(url)});
 
     // Accordion Content
     var icons = {
@@ -573,7 +573,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 collapsible: true,
                 header: "h2",
                 heightStyle: "content"
-//                icons: icons
             });
         }
     };
@@ -761,12 +760,12 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
 <li class="last"><a href="gamefaqs/" title="GameFAQs" >GameFAQs</a></li>
 </ul></li>
 <li><a href="media/" title="Media" class=\'linkdisable\'>Media</a><ul><li class="first"><a href="cnet/" title="CNET" >CNET</a></li>
-<li><a href="last.fm.html" title="Last.fm" >Last.fm</a></li>
-<li><a href="metrolyrics.html" title="MetroLyrics" >MetroLyrics</a></li>
-<li><a href="tv.com.html" title="TV.com" >TV.com</a></li>
-<li><a href="tv-guide.html" title="TV Guide" >TV Guide</a></li>
-<li><a href="metacritic.html" title="Metacritic" >Metacritic</a></li>
-<li class="last"><a href="chowhound.html" title="Chowhound" >Chowhound</a></li>
+<li><a href="last.fm/" title="Last.fm" >Last.fm</a></li>
+<li><a href="metrolyrics/" title="MetroLyrics" >MetroLyrics</a></li>
+<li><a href="tv.com/" title="TV.com" >TV.com</a></li>
+<li><a href="tvguide/" title="TV Guide" >TV Guide</a></li>
+<li><a href="metacritic/" title="Metacritic" >Metacritic</a></li>
+<li class="last"><a href="chowhound/" title="Chowhound" >Chowhound</a></li>
 </ul></li>
 <li class="last"><a href="ctd/" title="CTD" class=\'linkdisable\'>CTD</a><ul><li class="first"><a href="dr-phil.html" title="Dr Phil" >Dr Phil</a></li>
 <li class="last"><a href="inside-edition.html" title="Inside Edition" >Inside Edition</a></li>
@@ -1499,7 +1498,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
     var feed = "";
     var url = "https://spreadsheets.google.com/feeds/list/1A_P8i6-tk19Pfc-zFkvNFx0OyxCLgd8vgANMFsPVJ3s/od6/public/values?alt=json";
 
-    jQuery.post("json.php", {json : JSON.stringify(url)});
+    //jQuery.post("json.php", {json : JSON.stringify(url)});
 
     // Accordion Content
     var icons = {
@@ -1531,7 +1530,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 collapsible: true,
                 header: "h2",
                 heightStyle: "content"
-//                icons: icons
             });
         }
     };
@@ -1990,7 +1988,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
     var feed = "";
     var url = "https://spreadsheets.google.com/feeds/list/1A_P8i6-tk19Pfc-zFkvNFx0OyxCLgd8vgANMFsPVJ3s/od6/public/values?alt=json";
 
-    jQuery.post("json.php", {json : JSON.stringify(url)});
+    //jQuery.post("json.php", {json : JSON.stringify(url)});
 
     // Accordion Content
     var icons = {
@@ -2022,7 +2020,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 collapsible: true,
                 header: "h2",
                 heightStyle: "content"
-//                icons: icons
             });
         }
     };
@@ -2208,12 +2205,12 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
 <li class="last"><a href="gamefaqs/" title="GameFAQs" >GameFAQs</a></li>
 </ul></li>
 <li><a href="media/" title="Media" class=\'linkdisable\'>Media</a><ul><li class="first"><a href="cnet/" title="CNET" >CNET</a></li>
-<li><a href="last.fm.html" title="Last.fm" >Last.fm</a></li>
-<li><a href="metrolyrics.html" title="MetroLyrics" >MetroLyrics</a></li>
-<li><a href="tv.com.html" title="TV.com" >TV.com</a></li>
-<li><a href="tv-guide.html" title="TV Guide" >TV Guide</a></li>
-<li><a href="metacritic.html" title="Metacritic" >Metacritic</a></li>
-<li class="last"><a href="chowhound.html" title="Chowhound" >Chowhound</a></li>
+<li><a href="last.fm/" title="Last.fm" >Last.fm</a></li>
+<li><a href="metrolyrics/" title="MetroLyrics" >MetroLyrics</a></li>
+<li><a href="tv.com/" title="TV.com" >TV.com</a></li>
+<li><a href="tvguide/" title="TV Guide" >TV Guide</a></li>
+<li><a href="metacritic/" title="Metacritic" >Metacritic</a></li>
+<li class="last"><a href="chowhound/" title="Chowhound" >Chowhound</a></li>
 </ul></li>
 <li class="last"><a href="ctd/" title="CTD" class=\'linkdisable\'>CTD</a><ul><li class="first"><a href="dr-phil.html" title="Dr Phil" >Dr Phil</a></li>
 <li class="last"><a href="inside-edition.html" title="Inside Edition" >Inside Edition</a></li>
@@ -2247,12 +2244,12 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
 <li class="last"><a href="gamefaqs/" title="GameFAQs" >GameFAQs</a></li>
 </ul></li>
 <li><a href="media/" title="Media" class=\'linkdisable\'>Media</a><ul><li class="first"><a href="cnet/" title="CNET" >CNET</a></li>
-<li><a href="last.fm.html" title="Last.fm" >Last.fm</a></li>
-<li><a href="metrolyrics.html" title="MetroLyrics" >MetroLyrics</a></li>
-<li><a href="tv.com.html" title="TV.com" >TV.com</a></li>
-<li><a href="tv-guide.html" title="TV Guide" >TV Guide</a></li>
-<li><a href="metacritic.html" title="Metacritic" >Metacritic</a></li>
-<li class="last"><a href="chowhound.html" title="Chowhound" >Chowhound</a></li>
+<li><a href="last.fm/" title="Last.fm" >Last.fm</a></li>
+<li><a href="metrolyrics/" title="MetroLyrics" >MetroLyrics</a></li>
+<li><a href="tv.com/" title="TV.com" >TV.com</a></li>
+<li><a href="tvguide/" title="TV Guide" >TV Guide</a></li>
+<li><a href="metacritic/" title="Metacritic" >Metacritic</a></li>
+<li class="last"><a href="chowhound/" title="Chowhound" >Chowhound</a></li>
 </ul></li>
 <li class="last"><a href="ctd/" title="CTD" class=\'linkdisable\'>CTD</a><ul><li class="first"><a href="dr-phil.html" title="Dr Phil" >Dr Phil</a></li>
 <li class="last"><a href="inside-edition.html" title="Inside Edition" >Inside Edition</a></li>
@@ -2577,9 +2574,6 @@ Analytics.trackState("screenName", cdata);</code></pre></div>',
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -2960,9 +2954,6 @@ pre.line-numbers > code { position:relative; }
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -3016,7 +3007,7 @@ pre.line-numbers > code { position:relative; }
     var feed = "";
     var url = "https://spreadsheets.google.com/feeds/list/[[*gen_ontologyID]]/od6/public/values?alt=json";
 
-    jQuery.post("json.php", {json : JSON.stringify(url)});
+    //jQuery.post("json.php", {json : JSON.stringify(url)});
 
     // Accordion Content
     var icons = {
@@ -3048,7 +3039,6 @@ pre.line-numbers > code { position:relative; }
                 collapsible: true,
                 header: "h2",
                 heightStyle: "content"
-//                icons: icons
             });
         }
     };
@@ -3209,8 +3199,8 @@ pre.line-numbers > code { position:relative; }
           'properties' => 
           array (
           ),
-          'static' => false,
-          'static_file' => '',
+          'static' => true,
+          'static_file' => 'assets/chunks/structure/mainCustomJS',
           'content' => '<script id="app-code-template" type="text/x-handlebars-template">
     {{#each entry}}
     <div class="accordion2 ontology-row ontologymethod-{{this.gsx$trackingmethod.$t}} ontologycategory-{{#if this.gsx$mediapartnerid.$t}}video{{else if this.gsx$articleid.$t}}article{{else}}basic{{/if}}">
@@ -3239,7 +3229,7 @@ pre.line-numbers > code { position:relative; }
     var feed = "";
     var url = "https://spreadsheets.google.com/feeds/list/[[*gen_ontologyID]]/od6/public/values?alt=json";
 
-    jQuery.post("json.php", {json : JSON.stringify(url)});
+    //jQuery.post("json.php", {json : JSON.stringify(url)});
 
     // Accordion Content
     var icons = {
@@ -3271,7 +3261,6 @@ pre.line-numbers > code { position:relative; }
                 collapsible: true,
                 header: "h2",
                 heightStyle: "content"
-//                icons: icons
             });
         }
     };
@@ -3431,9 +3420,6 @@ pre.line-numbers > code { position:relative; }
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -3528,9 +3514,6 @@ pre.line-numbers > code { position:relative; }
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -3619,9 +3602,6 @@ pre.line-numbers > code { position:relative; }
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -3704,9 +3684,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -3741,9 +3718,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -3784,9 +3758,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -3845,9 +3816,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -3926,9 +3894,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -3983,9 +3948,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4140,9 +4102,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4225,9 +4184,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4304,9 +4260,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4367,9 +4320,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4456,9 +4406,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4551,9 +4498,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4606,9 +4550,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4663,9 +4604,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4708,9 +4646,6 @@ Analytics.trackState("screenName", cdata);</code></pre></div>',
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -5523,9 +5458,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -5569,9 +5501,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -5623,9 +5552,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -5677,9 +5603,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -5731,9 +5654,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -5782,9 +5702,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -5836,9 +5753,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -5885,9 +5799,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -5939,9 +5850,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -5993,9 +5901,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (

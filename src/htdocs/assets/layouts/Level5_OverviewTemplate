@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>[[$basicHead]]</head>
+<body>
+<div class="header">[[$mainHeader]]</div>
+<div class="nav-bar">[[$mainNavbar]]</div>
+<div class="content">
+    <div class="container">
+        <div class="main">
+            <h2>[[*longtitle:default=`[[*pagetitle]]`]]</h2>
+            <p>This is the tracking spec for [[*longtitle:default=`[[*pagetitle]]`]] using the latest tracking implementation for -</p>
+            <ul>
+                [[*platform:contains=`Web`:then=`<li>Web</li>`]]
+                [[*platform:contains=`Android`:then=`<li>Android</li>`]]
+                [[*platform:contains=`iOS`:then=`<li>iOS</li>`]]
+            </ul>
+            <!-- [[*MainJiraTicket:!empty=`<p>The JIRA ticket for this project is at <a href="[[*MainJiraTicket]]" target="_blank">[[*MainJiraTicket]]</a></p>`]] -->
+
+            [[*platform:contains=`iOS`:or:contains=`Android`:then=`<h3>App Tracking Implementation</h3>
+            <div class="accordion accordion1">
+                <!-- App tracking -->
+                <h2>App Tracking Documentation</h2>
+                <div class="inner-container">
+                    <h3>App Implementation</h3>
+                    <p>The SDK documentation below covers all aspects of App tracking using the Adobe Marketing Cloud solution.</p>
+                    <ul>
+                        [[*platform:contains=`Android`:then=`<li><a href="//microsite.omniture.com/t2/help/en_US/mobile/android/" target="_blank">Android SDK </a></li>`]]
+                        [[*platform:contains=`iOS`:then=`<li><a href="https://microsite.omniture.com/t2/help/en_US/mobile/ios/" target="_blank">iOS SDK</a></li>`]]
+                    </ul>
+                </div>
+                <h2>The ADBMobileConfig.json Config File</h2>
+                <div class="inner-container">
+                    <p>The ADBMobileConfig.json can be placed anywhere that it is accessible in the bundle. This file contains the global SDK settings.</p>
+                    <p>These are the suggested values.</p>
+                    <pre id="ADBMobilejson" class="language-json line-numbers"><code class="language-json">[[$json_ADBMobileConfig]]</code></pre>
+                    <p>For production environment, change rsids to "[[*prodrsids]]"</p>
+                    <p>All test builds should use "[[*devrsids]]"</p>
+                </div>
+                [[$app_analyticsMethods]]
+            </div>`]]
+
+            [[*platform:contains=`Web`:then=`<h3>Web Tracking Implementation</h3>
+            <div class="accordion accordion4">
+                <!-- Web Tracking -->
+                <h2>Web Tracking Documentation</h2>
+                <div class="inner-container">
+                    <h3>Web Implementation</h3>
+                    <p>The documentation below shows the basics about Tealium, the platform needed for CBS Analytics Implementation -<br /><br /><a href="https://docs.google.com/a/cbsinteractive.com/document/d/1OD8FoOsFljc4MImuQrIzBZCnbHUYvyFGl7FOASxvDZI/edit">Tealium Implementation</a></p>
+                </div>
+                <h2>Tealium Tag Installation</h2>
+                <div class="inner-container">
+                    <p>This installation applies to both the www and mweb site</p>
+                    <h3>Page Code</h3>
+                    <p>To install Tealium on a site, the following code is needed on all pages, and should be placed as close to the "&lt;body&gt;" tag as possible.  It is important to keep this script on the main page source vs. called from within nested scripts to avoid race condtions.</p>
+                    <pre id="ADBMobilejs" class="line-numbers"><code class="language-markup">[[$js_basicTealiumCode]]</code></pre>
+                    <p>There are 3 tealium environments - dev, qa, prod<br /><br />It is recommended to set as follows:<br />dev/staging site - use ‘qa’<br />live site - use ‘prod’</p>
+                </div>
+            </div>`]]
+
+            <h3>Implementation Basics</h3>
+            <div class="accordion accordion5">
+                <!-- Insert web_analyticsMethods -->
+                <h2>Page/Screen Tracking</h2>
+                <div class="inner-container">
+                    <p><strong>The contextData object</strong><br />The contextData is an object that contains a set of key-value pairs that is passed as the payload for the trackState and trackAction methods.</p>
+                    <div class="tabs">
+                        <ul class="tab-links">
+                            <li><a href="#tab0">Page</a></li>
+                            <li><a href="#tab1">Site</a></li>
+                            [[*appfeatures:contains=`Articles`:then=`<li><a href="#tab2">Articles</a></li>`]]
+                            [[*appfeatures:contains=`Events`:then=`<li><a href="#tab3">Events</a></li>`]]
+                            [[*appfeatures:contains=`Interaction (Login)`:then=`<li><a href="#tab4">Interaction</a></li>`]]
+                            [[*appfeatures:contains=`Teams`:then=`<li><a href="#tab5">Teams</a></li>`]]
+                        </ul>
+                        <div class="tab-content">
+                            [[$af_page]]
+                            [[$af_site]]
+                            [[*appfeatures:contains=`Articles`:then=`[[$af_articles]]`]]
+                            [[*appfeatures:contains=`Events`:then=`[[$af_events]]`]]
+                            [[*appfeatures:contains=`Interaction (Login)`:then=`[[$af_interaction]]`]]
+                            [[*appfeatures:contains=`Teams`:then=`[[$af_teams]]`]]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page Tagging -->
+                <h2>Basic Page Tagging</h2>
+                <div class="inner-container">
+                    <p>Create the following data object when a page or tracking event is invoked</p>
+                    <div class="tabs">
+                        <ul class="tab-links">
+                            [[*platform:contains=`Web`:then=`<li><a href="#tab100">Web</a></li>`]]
+                            [[*platform:contains=`iOS`:then=`<li><a href="#tab101">iOS</a></li>`]]
+                            [[*platform:contains=`Android`:then=`<li><a href="#tab102">Android</a></li>`]]
+                        </ul>
+                        <div class="tab-content">
+                            [[*platform:contains=`Web`:then=`[[$base_codeFormat_web]]`]]
+                            [[*platform:contains=`iOS`:then=`[[$base_codeFormat_iOS]]`]]
+                            [[*platform:contains=`Android`:then=`[[$base_codeFormat_android]]`]]
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ontology Integration -->
+            [[*gen_ontologyID:!empty=`<h3>Ontology Integration</h3>
+            <div id="ontologyplaceholder" class="accordion accordion3">
+                <h2>trackState Tags</h2>
+                <div class="inner-container ontology-tags" id="ontology-methodmethod-trackState">
+                    <div class="tabs">
+                        <ul class="tab-links">
+                            <li class="trackstate1"><a href="#tab-ontologymethod-trackState-ontologycategory-basic">Standard</a></li>
+                            <li class="trackstate2"><a href="#tab-ontologymethod-trackState-ontologycategory-article">Articles</a></li>
+                            <li class="trackstate3"><a href="#tab-ontologymethod-trackState-ontologycategory-video">Video</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="trackstate1" id="tab-ontologymethod-trackState-ontologycategory-basic"></div>
+                            <div class="trackstate2" id="tab-ontologymethod-trackState-ontologycategory-article"></div>
+                            <div class="trackstate3" id="tab-ontologymethod-trackState-ontologycategory-video"></div>
+                        </div>
+                    </div>
+                </div>
+                <h2>trackAction Tags</h2>
+                <div class="inner-container ontology-tags" id="ontology-methodmethod-trackAction">
+                    <div class="tabs">
+                        <ul class="tab-links">
+                            <li class="trackaction1"><a href="#tab-ontologymethod-trackAction-ontologycategory-basic">Standard</a></li>
+                            <li class="trackaction2"><a href="#tab-ontologymethod-trackAction-ontologycategory-article">Articles</a></li>
+                            <li class="trackaction3"><a href="#tab-ontologymethod-trackAction-ontologycategory-video">Video</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="trackaction1" id="tab-ontologymethod-trackAction-ontologycategory-basic"></div>
+                            <div class="trackaction2" id="tab-ontologymethod-trackAction-ontologycategory-article"></div>
+                            <div class="trackaction3" id="tab-ontologymethod-trackAction-ontologycategory-video"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>`]]
+            [[*content:!empty=`<div class="inner-container">[[*content]]</div>`]]
+        </div>
+
+        <div class="aside">
+            <h3>Quick Reference</h3>
+            <ul>
+                [[*siteCode:!empty=`<li>Site Code:<br /><em>[[*siteCode]]</em></li>`]]
+                [[*siteType:!empty=`<li>Site Type:<br /><em>[[*siteType]]</em></li>`]]
+                [[*prodrsids:!empty=`<li>Prod RSIDs:<br /><em>[[*prodrsids]]</em></li>`]]
+                [[*devrsids:!empty=`<li>Dev RSIDs:<br /><em>[[*devrsids]]</em></li>`]]
+                <!-- [[*MainJiraTicket:!empty=`<li>JIRA Ticket(s):<br /><em>[[*MainJiraTicket]]</em></li>`]] -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        &copy; Copyright 2017
+    </div>
+</div>
+<div id="dataplaceholder" style="display:none";></div>
+</body>
+</html>
