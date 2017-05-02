@@ -2,43 +2,37 @@
   'resourceClass' => 'modDocument',
   'resource' => 
   array (
-    'id' => 1,
+    'id' => 2,
     'type' => 'document',
     'contentType' => 'text/html',
-    'pagetitle' => 'Google API',
-    'longtitle' => 'Congratulations!',
+    'pagetitle' => 'Home',
+    'longtitle' => 'Home Page',
     'description' => '',
-    'alias' => 'googleapi',
+    'alias' => 'index',
     'link_attributes' => '',
     'published' => 1,
     'pub_date' => 0,
     'unpub_date' => 0,
-    'parent' => 9,
+    'parent' => 0,
     'isfolder' => 0,
     'introtext' => '',
-    'content' => '<h1>Google API</h1>
-<p>Below is the Sheets API</p>
-<p><a title="some title" href="[[~2]]">Home</a></p>
-<div id="authorize-div" style="display: none;"><span>Authorize access to Google Sheets API</span> <!--Button for the user to click to initiate auth sequence --> <button id="authorize-button" onclick="handleAuthClick(event)"> Authorize </button></div>
-<div class="row-fluid">
-<div class="span12">
-<div id="api_demo">Give it a minute...</div>
-</div>
-</div>',
+    'content' => '<h1>Welcome to Mimosa!</h1>
+<p>Mimosa is an organizational tool, delivering a central repository for all things tracking and tagging.  This tool is used to gather information for Omniture, ComScore, Nielsen, DW, Bluekai, and GA - deployment information being generated depends on which sites / devices utilize the tags.</p>
+<p>We are currently in the beta phase of development, but some information is available in the menu above.</p>',
     'richtext' => 1,
     'template' => 1,
-    'menuindex' => 0,
+    'menuindex' => 1,
     'searchable' => 1,
     'cacheable' => 1,
     'createdby' => 1,
-    'createdon' => 1471473687,
+    'createdon' => 1476110137,
     'editedby' => 2,
-    'editedon' => 1492805146,
+    'editedon' => 1491520394,
     'deleted' => 0,
     'deletedon' => 0,
     'deletedby' => 0,
-    'publishedon' => 0,
-    'publishedby' => 0,
+    'publishedon' => 1476110160,
+    'publishedby' => 1,
     'menutitle' => '',
     'donthit' => 0,
     'privateweb' => 0,
@@ -48,7 +42,7 @@
     'class_key' => 'modDocument',
     'context_key' => 'web',
     'content_type' => 1,
-    'uri' => 'googleapi.html',
+    'uri' => 'index.html',
     'uri_override' => 0,
     'hide_children_in_tree' => 0,
     'show_in_tree' => 1,
@@ -56,7 +50,7 @@
     'MIGX aggregate TV' => 
     array (
       0 => 'MIGX aggregate TV',
-      1 => '[{"MIGX_id":"1","title":"Test Item","description":"<p>Whoa - A description!</p>","image":"assets/images/cbs_desktop_logo.png"},{"MIGX_id":"2","title":"Test Item 2","description":"<p>Whoa - A description 2!</p>","image":"assets/images/cbs_desktop_logo.png"}]',
+      1 => '',
       2 => 'default',
       3 => NULL,
       4 => 'migx',
@@ -71,7 +65,7 @@
     ),
     '_content' => '<!doctype html>
 <html lang="en">
-<head>    <title>Google API - MiMOSA</title>
+<head>    <title>Home - MiMOSA</title>
 
     <base href="[[!++site_url]]" />
 
@@ -313,7 +307,7 @@ pre.line-numbers > code { position:relative; }
     var feed = "";
     var url = "https://spreadsheets.google.com/feeds/list//od6/public/values?alt=json";
 
-    jQuery.post("json.php", {json : JSON.stringify(url)});
+    //jQuery.post("json.php", {json : JSON.stringify(url)});
 
     // Accordion Content
     var icons = {
@@ -345,7 +339,6 @@ pre.line-numbers > code { position:relative; }
                 collapsible: true,
                 header: "h2",
                 heightStyle: "content"
-//                icons: icons
             });
         }
     };
@@ -1193,7 +1186,7 @@ table.display tr.gradeU {
 </div>
 
 <div class="nav-bar">    <div class="container">
-        <nav><ul><li class="first"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
+        <nav><ul><li class="first active"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
 <li><a href="groups/" title="Groups" class=\'linkdisable\'>Groups</a><ul><li class="first"><a href="cdm/" title="CDM" class=\'linkdisable\'>CDM</a><ul><li class="first"><a href="sports/" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first"><a href="cbs-sports/" title="CBS Sports" >CBS Sports</a></li>
 <li><a href="cbs-sports-fantasy/" title="CBS Sports Fantasy" >CBS Sports Fantasy</a></li>
 <li><a href="sportsline.html" title="SportsLine" >SportsLine</a></li>
@@ -1216,12 +1209,12 @@ table.display tr.gradeU {
 <li class="last"><a href="gamefaqs/" title="GameFAQs" >GameFAQs</a></li>
 </ul></li>
 <li><a href="media/" title="Media" class=\'linkdisable\'>Media</a><ul><li class="first"><a href="cnet/" title="CNET" >CNET</a></li>
-<li><a href="last.fm.html" title="Last.fm" >Last.fm</a></li>
-<li><a href="metrolyrics.html" title="MetroLyrics" >MetroLyrics</a></li>
-<li><a href="tv.com.html" title="TV.com" >TV.com</a></li>
-<li><a href="tv-guide.html" title="TV Guide" >TV Guide</a></li>
-<li><a href="metacritic.html" title="Metacritic" >Metacritic</a></li>
-<li class="last"><a href="chowhound.html" title="Chowhound" >Chowhound</a></li>
+<li><a href="last.fm/" title="Last.fm" >Last.fm</a></li>
+<li><a href="metrolyrics/" title="MetroLyrics" >MetroLyrics</a></li>
+<li><a href="tv.com/" title="TV.com" >TV.com</a></li>
+<li><a href="tvguide/" title="TV Guide" >TV Guide</a></li>
+<li><a href="metacritic/" title="Metacritic" >Metacritic</a></li>
+<li class="last"><a href="chowhound/" title="Chowhound" >Chowhound</a></li>
 </ul></li>
 <li class="last"><a href="ctd/" title="CTD" class=\'linkdisable\'>CTD</a><ul><li class="first"><a href="dr-phil.html" title="Dr Phil" >Dr Phil</a></li>
 <li class="last"><a href="inside-edition.html" title="Inside Edition" >Inside Edition</a></li>
@@ -1236,16 +1229,10 @@ table.display tr.gradeU {
 <div class="content">
     <div class="container">
         <div class="main">
-            <!-- <h2>Congratulations! Overview</h2> -->
-            <div class="inner-container"><h1>Google API</h1>
-<p>Below is the Sheets API</p>
-<p><a title="some title" href="http://util274.mia2.cbsig.net/">Home</a></p>
-<div id="authorize-div" style="display: none;"><span>Authorize access to Google Sheets API</span> <!--Button for the user to click to initiate auth sequence --> <button id="authorize-button" onclick="handleAuthClick(event)"> Authorize </button></div>
-<div class="row-fluid">
-<div class="span12">
-<div id="api_demo">Give it a minute...</div>
-</div>
-</div></div>
+            <!-- <h2>Home Page Overview</h2> -->
+            <div class="inner-container"><h1>Welcome to Mimosa!</h1>
+<p>Mimosa is an organizational tool, delivering a central repository for all things tracking and tagging.  This tool is used to gather information for Omniture, ComScore, Nielsen, DW, Bluekai, and GA - deployment information being generated depends on which sites / devices utilize the tags.</p>
+<p>We are currently in the beta phase of development, but some information is available in the menu above.</p></div>
         </div>
         <div class="aside">
             <h3>Quick Reference</h3>
@@ -1323,7 +1310,7 @@ $(document)
 
 </body>
 </html>',
-    '_isForward' => true,
+    '_isForward' => false,
   ),
   'contentType' => 
   array (
@@ -1645,7 +1632,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
     var feed = "";
     var url = "https://spreadsheets.google.com/feeds/list//od6/public/values?alt=json";
 
-    jQuery.post("json.php", {json : JSON.stringify(url)});
+    //jQuery.post("json.php", {json : JSON.stringify(url)});
 
     // Accordion Content
     var icons = {
@@ -1677,7 +1664,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 collapsible: true,
                 header: "h2",
                 heightStyle: "content"
-//                icons: icons
             });
         }
     };
@@ -1834,7 +1820,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
 </script>
 
 ',
-    '[[$basicHead]]' => '    <title>Google API - MiMOSA</title>
+    '[[$basicHead]]' => '    <title>Home - MiMOSA</title>
 
     <base href="[[!++site_url]]" />
 
@@ -2076,7 +2062,7 @@ pre.line-numbers > code { position:relative; }
     var feed = "";
     var url = "https://spreadsheets.google.com/feeds/list//od6/public/values?alt=json";
 
-    jQuery.post("json.php", {json : JSON.stringify(url)});
+    //jQuery.post("json.php", {json : JSON.stringify(url)});
 
     // Accordion Content
     var icons = {
@@ -2108,7 +2094,6 @@ pre.line-numbers > code { position:relative; }
                 collapsible: true,
                 header: "h2",
                 heightStyle: "content"
-//                icons: icons
             });
         }
     };
@@ -3633,7 +3618,7 @@ table.display tr.gradeU {
         <h1 class="header-heading"><a href="http://util274.mia2.cbsig.net/" title="CBSi" class="logo">CBSi</a></h1>
     </div>
 ',
-    '[[Wayfinder? &startId=`0` &level=`4`]]' => '<ul><li class="first"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
+    '[[Wayfinder? &startId=`0` &level=`4`]]' => '<ul><li class="first active"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
 <li><a href="groups/" title="Groups" class=\'linkdisable\'>Groups</a><ul><li class="first"><a href="cdm/" title="CDM" class=\'linkdisable\'>CDM</a><ul><li class="first"><a href="sports/" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first"><a href="cbs-sports/" title="CBS Sports" >CBS Sports</a></li>
 <li><a href="cbs-sports-fantasy/" title="CBS Sports Fantasy" >CBS Sports Fantasy</a></li>
 <li><a href="sportsline.html" title="SportsLine" >SportsLine</a></li>
@@ -3656,12 +3641,12 @@ table.display tr.gradeU {
 <li class="last"><a href="gamefaqs/" title="GameFAQs" >GameFAQs</a></li>
 </ul></li>
 <li><a href="media/" title="Media" class=\'linkdisable\'>Media</a><ul><li class="first"><a href="cnet/" title="CNET" >CNET</a></li>
-<li><a href="last.fm.html" title="Last.fm" >Last.fm</a></li>
-<li><a href="metrolyrics.html" title="MetroLyrics" >MetroLyrics</a></li>
-<li><a href="tv.com.html" title="TV.com" >TV.com</a></li>
-<li><a href="tv-guide.html" title="TV Guide" >TV Guide</a></li>
-<li><a href="metacritic.html" title="Metacritic" >Metacritic</a></li>
-<li class="last"><a href="chowhound.html" title="Chowhound" >Chowhound</a></li>
+<li><a href="last.fm/" title="Last.fm" >Last.fm</a></li>
+<li><a href="metrolyrics/" title="MetroLyrics" >MetroLyrics</a></li>
+<li><a href="tv.com/" title="TV.com" >TV.com</a></li>
+<li><a href="tvguide/" title="TV Guide" >TV Guide</a></li>
+<li><a href="metacritic/" title="Metacritic" >Metacritic</a></li>
+<li class="last"><a href="chowhound/" title="Chowhound" >Chowhound</a></li>
 </ul></li>
 <li class="last"><a href="ctd/" title="CTD" class=\'linkdisable\'>CTD</a><ul><li class="first"><a href="dr-phil.html" title="Dr Phil" >Dr Phil</a></li>
 <li class="last"><a href="inside-edition.html" title="Inside Edition" >Inside Edition</a></li>
@@ -3672,7 +3657,7 @@ table.display tr.gradeU {
 </ul></li>
 </ul>',
     '[[$mainNavbar]]' => '    <div class="container">
-        <nav><ul><li class="first"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
+        <nav><ul><li class="first active"><a href="http://util274.mia2.cbsig.net/" title="Home" >Home</a></li>
 <li><a href="groups/" title="Groups" class=\'linkdisable\'>Groups</a><ul><li class="first"><a href="cdm/" title="CDM" class=\'linkdisable\'>CDM</a><ul><li class="first"><a href="sports/" title="Sports" class=\'linkdisable\'>Sports</a><ul><li class="first"><a href="cbs-sports/" title="CBS Sports" >CBS Sports</a></li>
 <li><a href="cbs-sports-fantasy/" title="CBS Sports Fantasy" >CBS Sports Fantasy</a></li>
 <li><a href="sportsline.html" title="SportsLine" >SportsLine</a></li>
@@ -3695,12 +3680,12 @@ table.display tr.gradeU {
 <li class="last"><a href="gamefaqs/" title="GameFAQs" >GameFAQs</a></li>
 </ul></li>
 <li><a href="media/" title="Media" class=\'linkdisable\'>Media</a><ul><li class="first"><a href="cnet/" title="CNET" >CNET</a></li>
-<li><a href="last.fm.html" title="Last.fm" >Last.fm</a></li>
-<li><a href="metrolyrics.html" title="MetroLyrics" >MetroLyrics</a></li>
-<li><a href="tv.com.html" title="TV.com" >TV.com</a></li>
-<li><a href="tv-guide.html" title="TV Guide" >TV Guide</a></li>
-<li><a href="metacritic.html" title="Metacritic" >Metacritic</a></li>
-<li class="last"><a href="chowhound.html" title="Chowhound" >Chowhound</a></li>
+<li><a href="last.fm/" title="Last.fm" >Last.fm</a></li>
+<li><a href="metrolyrics/" title="MetroLyrics" >MetroLyrics</a></li>
+<li><a href="tv.com/" title="TV.com" >TV.com</a></li>
+<li><a href="tvguide/" title="TV Guide" >TV Guide</a></li>
+<li><a href="metacritic/" title="Metacritic" >Metacritic</a></li>
+<li class="last"><a href="chowhound/" title="Chowhound" >Chowhound</a></li>
 </ul></li>
 <li class="last"><a href="ctd/" title="CTD" class=\'linkdisable\'>CTD</a><ul><li class="first"><a href="dr-phil.html" title="Dr Phil" >Dr Phil</a></li>
 <li class="last"><a href="inside-edition.html" title="Inside Edition" >Inside Edition</a></li>
@@ -3777,9 +3762,6 @@ table.display tr.gradeU {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4160,9 +4142,6 @@ pre.line-numbers > code { position:relative; }
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4216,7 +4195,7 @@ pre.line-numbers > code { position:relative; }
     var feed = "";
     var url = "https://spreadsheets.google.com/feeds/list/[[*gen_ontologyID]]/od6/public/values?alt=json";
 
-    jQuery.post("json.php", {json : JSON.stringify(url)});
+    //jQuery.post("json.php", {json : JSON.stringify(url)});
 
     // Accordion Content
     var icons = {
@@ -4248,7 +4227,6 @@ pre.line-numbers > code { position:relative; }
                 collapsible: true,
                 header: "h2",
                 heightStyle: "content"
-//                icons: icons
             });
         }
     };
@@ -4409,8 +4387,8 @@ pre.line-numbers > code { position:relative; }
           'properties' => 
           array (
           ),
-          'static' => false,
-          'static_file' => '',
+          'static' => true,
+          'static_file' => 'assets/chunks/structure/mainCustomJS',
           'content' => '<script id="app-code-template" type="text/x-handlebars-template">
     {{#each entry}}
     <div class="accordion2 ontology-row ontologymethod-{{this.gsx$trackingmethod.$t}} ontologycategory-{{#if this.gsx$mediapartnerid.$t}}video{{else if this.gsx$articleid.$t}}article{{else}}basic{{/if}}">
@@ -4439,7 +4417,7 @@ pre.line-numbers > code { position:relative; }
     var feed = "";
     var url = "https://spreadsheets.google.com/feeds/list/[[*gen_ontologyID]]/od6/public/values?alt=json";
 
-    jQuery.post("json.php", {json : JSON.stringify(url)});
+    //jQuery.post("json.php", {json : JSON.stringify(url)});
 
     // Accordion Content
     var icons = {
@@ -4471,7 +4449,6 @@ pre.line-numbers > code { position:relative; }
                 collapsible: true,
                 header: "h2",
                 heightStyle: "content"
-//                icons: icons
             });
         }
     };
@@ -4631,9 +4608,6 @@ pre.line-numbers > code { position:relative; }
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4728,9 +4702,6 @@ pre.line-numbers > code { position:relative; }
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4819,9 +4790,6 @@ pre.line-numbers > code { position:relative; }
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4904,9 +4872,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -4941,9 +4906,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -5200,9 +5162,6 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -6375,9 +6334,6 @@ table.display tr.gradeU {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -6420,9 +6376,6 @@ table.display tr.gradeU {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -6463,9 +6416,6 @@ table.display tr.gradeU {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -7286,9 +7236,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -7332,9 +7279,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -7386,9 +7330,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -7440,9 +7381,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -7494,9 +7432,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -7545,9 +7480,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (
@@ -7599,9 +7531,6 @@ if ($wf->_config[\'ph\']) {
         ),
         'policies' => 
         array (
-          'web' => 
-          array (
-          ),
         ),
         'source' => 
         array (

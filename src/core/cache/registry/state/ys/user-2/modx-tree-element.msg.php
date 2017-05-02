@@ -13,4 +13,5 @@ return array (
   10 => '/root/n_type_chunk/n_chunk_category_7/n_chunk_category_32',
   11 => '/root/n_type_tv/n_tv_category_2',
   12 => '/root/n_type_chunk/n_chunk_category_7/n_chunk_category_26',
+  13 => '/root/n_type_tv/n_tv_category_28',
 );

@@ -1,4 +1,12 @@
-db:
+mongo:
+  image: sameersbn/mongodb
+  ports:
+    - "27017:27017"
+  volumes:
+    - ./src/docker/mongodb:/var/lib/mongodb
+  restart: always
+
+mysql:
   image: sameersbn/mysql
   volumes:
    - ./src/dbdump:/var/lib/mysql
@@ -17,7 +25,8 @@ php:
     - ./src/php-fpm.conf:/etc/php5/fpm/php-fpm.conf
     - ./src:/var/www
   links:
-    - db
+    - mysql
+    - mongo
 
 web:
   image: tkoscinski/nginx

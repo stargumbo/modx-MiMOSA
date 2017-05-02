@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>[[$basicHead]]</head>
+<body>
+<div class="header">[[$mainHeader]]</div>
+<div class="nav-bar">[[$mainNavbar]]</div>
+<div class="content">
+    <div class="container">
+        <div class="main">
+            <h2>[[*longtitle:default=`[[*pagetitle]]`]]</h2>
+            <p>This is basic tracking information related to [[*longtitle:default=`[[*pagetitle]]`]] -</p>
+            [[getResources? &parents=`[[*id]]` &depth=`0` &debug=`1` &tpl=`level4_installationDetails`]]
+            [[*content:!empty=`<div class="inner-container">[[*content]]</div>`]]
+        </div>
+
+        <div class="aside">
+            <h3>Deployment Specs</h3>
+            [[Wayfinder? &startId=`[[*id]]` &level=`2` &parentRowTpl=`li_noLink`]]
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        &copy; Copyright 2016
+    </div>
+</div>
+
+</body>
+</html>

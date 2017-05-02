@@ -5,7 +5,7 @@ CMD ["/sbin/my_init"]
 
 RUN apt-get update && apt-get install -y python-software-properties
 RUN add-apt-repository ppa:nginx/stable
-RUN apt-get update && apt-get install -y nginx git
+RUN apt-get update && apt-get install -y nginx git php-mongodb nodejs npm
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
