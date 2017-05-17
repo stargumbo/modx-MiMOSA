@@ -238,10 +238,10 @@
       ),
       1 => 
       array (
-        'text' => 'gallery',
+        'text' => 'Gallery',
         'parent' => 'components',
         'action' => '1',
-        'description' => 'gallery.menu_desc',
+        'description' => 'A dynamic gallery system.',
         'icon' => 'images/icons/plugin.gif',
         'menuindex' => 0,
         'params' => '',

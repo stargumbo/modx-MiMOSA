@@ -31,9 +31,9 @@
     ),
     'OnDocFormPrerender' => 
     array (
+      5 => '5',
       2 => '2',
       23 => '23',
-      5 => '5',
     ),
     'OnDocFormSave' => 
     array (
