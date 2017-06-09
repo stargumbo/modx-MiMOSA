@@ -1,0 +1,45 @@
+<div id="tab-web-{{@index}}" class="tab active">
+    <pre class="line-numbers"><code class="language-json">[[*platform:contains=`Web`:then=`utag_data = {
+`]]    siteCode : '[[*siteCode]]'
+    sitePrimaryRsid : '[[*sitePrimaryRsid]]'
+    siteType : '[[*siteType]]'
+    siteSection : '{{this.gsx$sitesection.$t}}'
+    siteHier : '{{this.gsx$sitehier.$t}}'
+    pageType : '{{this.gsx$pagetype.$t}}'
+    screenName : '{{this.gsx$pagename.$t}}'{{#if this.gsx$directionscrolled.$t}}
+    directionScrolled : '{{this.gsx$directionscrolled.$t}}'
+    percentScrolled : '{{this.gsx$percentscrolled.$t}}'{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`
+    userID : '{{this.gsx$userid.$t}}'
+    userType : '{{this.gsx$usertype.$t}}'
+    userState : '{{this.gsx$userstate.$t}}'
+    userTeamRole : '{{this.gsx$userteamrole.$t}}'
+    userStateIsAuthenticated : '1'`]]{{#if this.gsx$articleid.$t}}
+    articleId : '{{this.gsx$articleid.$t}}'
+    articleTitle : '{{this.gsx$articletitle.$t}}'
+    articleType : '{{this.gsx$articletype.$t}}'
+    articleAuthorId : '{{this.gsx$articleauthorid.$t}}'
+    articleAuthorName : '{{this.gsx$articleauthorname.$t}}'{{/if}}{{#if this.gsx$sporttype.$t}}
+    sportType : '{{this.gsx$sporttype.$t}}'
+    sportGender : '{{this.gsx$sportgender.$t}}'
+    sportLevel : '{{this.gsx$sportlevel.$t}}'
+    sportSeason : '{{this.gsx$sportseason.$t}}'{{/if}}{{#if this.gsx$schoolid.$t}}
+    schoolId : '{{this.gsx$schoolid.$t}}'
+    schoolName : '{{this.gsx$schoolname.$t}}'
+    schoolState : '{{this.gsx$schoolstate.$t}}'
+    schoolYear : '{{this.gsx$schoolyear.$t}}'{{/if}}{{#if this.gsx$teamid.$t}}
+    teamId : '{{this.gsx$teamid.$t}}'
+    teamName : '{{this.gsx$teamname.$t}}'
+    teamArena : '{{this.gsx$teamarena.$t}}'{{/if}}{{#if this.gsx$playerid.$t}}
+    playerId : '{{this.gsx$playerid.$t}}'
+    playerName : '{{this.gsx$playername.$t}}'
+    playerGrade : '{{this.gsx$playergrade.$t}}'{{/if}}{{#if this.gsx$eventid.$t}}
+    eventId : '{{this.gsx$eventid.$t}}'
+    eventName : '{{this.gsx$eventname.$t}}'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    mediaPartnerId : '{{this.gsx$mediapartnerid.$t}}'
+    mediaTitle : '{{this.gsx$mediatitle.$t}}'
+    mediaId : '{{this.gsx$mediaid.$t}}'
+    mediaMuted : '{{this.gsx$mediamuted.$t}}'
+    mediaAutoPlay : '{{this.gsx$mediaautoplay.$t}}'
+    mediaContentType : '{{this.gsx$mediacontenttype.$t}}'{{/if}}
+[[*platform:contains=`Web`:then=`}`]]</code></pre>
+</div>

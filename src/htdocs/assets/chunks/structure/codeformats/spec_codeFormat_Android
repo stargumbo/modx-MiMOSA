@@ -1,0 +1,45 @@
+
+<div id="tab-and-{{@index}}" class="tab">
+<pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "[[*siteCode]]");
+cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
+cdata.put("siteType", "[[*siteType]]");
+cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
+cdata.put("siteHier", "{{this.gsx$sitehier.$t}}");
+cdata.put("pageType", "{{this.gsx$pagetype.$t}}");
+cdata.put("screenName", "{{this.gsx$screenname.$t}}");{{#if this.gsx$directionscrolled.$t}}
+cdata.put("directionScrolled", "{{this.gsx$directionscrolled.$t}}";
+cdata.put("percentScrolled", "{{this.gsx$dpercentscrolled.$t}}";{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`
+cdata.put("userID", "{{this.gsx$userid.$t}}");
+cdata.put("userType", "{{this.gsx$usertype.$t}}");
+cdata.put("userState", "{{this.gsx$userstate.$t}}");
+cdata.put("userTeamRole", "{{this.gsx$userteamrole.$t}}");
+cdata.put("userStateIsAuthenticated", "1");`]]{{#if this.gsx$articleid.$t}}
+cdata.put("articleId", "{{this.gsx$articleid.$t}}");
+cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}");
+cdata.put("articleType", "{{this.gsx$articletype.$t}}");
+cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
+cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}{{#if this.gsx$sporttype.$t}}
+cdata.put("sportType", "{{this.gsx$sporttype.$t}}");
+cdata.put("sportGender", "{{this.gsx$sportgender.$t}}");
+cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}");
+cdata.put("sportSeason", "{{this.gsx$sportseason.$t}}");{{/if}}{{#if this.gsx$schoolid.$t}}
+cdata.put("schoolId", "{{this.gsx$schoolid.$t}}");
+cdata.put("schoolName", "{{this.gsx$schoolname.$t}}");
+cdata.put("schoolState", "{{this.gsx$schoolstate.$t}}");
+cdata.put("schoolYear", "{{this.gsx$schoolyear.$t}}");{{/if}}{{#if this.gsx$teamid.$t}}
+cdata.put("teamId", "{{this.gsx$teamid.$t}}");
+cdata.put("teamName", "{{this.gsx$teamname.$t}}");
+cdata.put("teamArena", "{{this.gsx$teamarena.$t}}");{{/if}}{{#if this.gsx$playerid.$t}}
+cdata.put("playerId", "{{this.gsx$playerid.$t}}");
+cdata.put("playerName", "{{this.gsx$playername.$t}}");
+cdata.put("playerGrade", "{{this.gsx$playergrade.$t}}");{{/if}}{{#if this.gsx$eventid.$t}}
+cdata.put("eventId", "{{this.gsx$playerid.$t}}");
+cdata.put("eventName", "{{this.gsx$playerid.$t}}");{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+cdata.put("mediaPartnerId", "{{this.gsx$mediapartnerid.$t}}");
+cdata.put("mediaTitle", "{{this.gsx$mediatitle.$t}}");
+cdata.put("mediaId", "{{this.gsx$mediaid.$t}}");
+cdata.put("mediaMuted", "{{this.gsx$mediamuted.$t}}");
+cdata.put("mediaAutoPlay", "{{this.gsx$mediaautoplay.$t}}");
+cdata.put("mediaContentType", "{{this.gsx$mediacontenttype.$t}}");{{/if}}
+Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
+</div>

@@ -10,7 +10,7 @@
                 </ul>
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
-                    <p>Along with the visitor ID, we will need to pass the App Prod RSID, as indicated in the left column of the spec page.</p>
+                    <p>Along with the visitor ID, we will need to append <em>[[*sitePrimaryRsid]]</em> to the apprsid parameter in the URL.</p>
                     <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
                 </div>
                 {{else}}
@@ -74,7 +74,7 @@
     };
 
     /* Remove Empty Containers */
-    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4"];
+    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4", "#ontology-methodmethod-trackAction", "#ontology-methodmethod-trackState"];
     trimempty = function(params){
         for (i=0; i<params.length; i++) {
             if(!jQuery.trim(jQuery('div'+params[i]).html()).length){

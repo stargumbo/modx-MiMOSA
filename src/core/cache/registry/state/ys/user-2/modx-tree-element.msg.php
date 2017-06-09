@@ -11,6 +11,9 @@ return array (
   8 => '/root/n_type_chunk/n_chunk_category_7',
   9 => '/root/n_category/n_category_7',
   10 => '/root/n_type_chunk/n_chunk_category_7/n_chunk_category_32',
-  11 => '/root/n_type_tv/n_tv_category_2',
-  12 => '/root/n_type_tv/n_tv_category_28',
+  11 => '/root/n_type_chunk/n_chunk_category_17',
+  12 => '/root/n_type_chunk/n_chunk_category_3',
+  13 => '/root/n_type_chunk/n_chunk_category_7/n_chunk_category_26',
+  14 => '/root/n_type_tv/n_tv_category_6',
+  15 => '/root/n_type_tv/n_tv_category_8',
 );

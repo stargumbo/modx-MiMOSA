@@ -61,14 +61,6 @@
       3 => NULL,
       4 => 'migx',
     ),
-    'testFileTV' => 
-    array (
-      0 => 'testFileTV',
-      1 => '',
-      2 => 'default',
-      3 => NULL,
-      4 => 'file',
-    ),
     '_content' => '<!doctype html>
 <html lang="en">
 <head>    <title>Google API - MiMOSA</title>
@@ -272,7 +264,7 @@ pre.line-numbers > code { position:relative; }
                 </ul>
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
-                    <p>Along with the visitor ID, we will need to pass the App Prod RSID, as indicated in the left column of the spec page.</p>
+                    <p>Along with the visitor ID, we will need to append <em></em> to the apprsid parameter in the URL.</p>
                     <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
                 </div>
                 {{else}}
@@ -299,7 +291,20 @@ pre.line-numbers > code { position:relative; }
     articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}{{#if this.gsx$sporttype.$t}}
     sportType : \'{{this.gsx$sporttype.$t}}\'
     sportGender : \'{{this.gsx$sportgender.$t}}\'
-    sportLevel : \'{{this.gsx$sportlevel.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    sportLevel : \'{{this.gsx$sportlevel.$t}}\'
+    sportSeason : \'{{this.gsx$sportseason.$t}}\'{{/if}}{{#if this.gsx$schoolid.$t}}
+    schoolId : \'{{this.gsx$schoolid.$t}}\'
+    schoolName : \'{{this.gsx$schoolname.$t}}\'
+    schoolState : \'{{this.gsx$schoolstate.$t}}\'
+    schoolYear : \'{{this.gsx$schoolyear.$t}}\'{{/if}}{{#if this.gsx$teamid.$t}}
+    teamId : \'{{this.gsx$teamid.$t}}\'
+    teamName : \'{{this.gsx$teamname.$t}}\'
+    teamArena : \'{{this.gsx$teamarena.$t}}\'{{/if}}{{#if this.gsx$playerid.$t}}
+    playerId : \'{{this.gsx$playerid.$t}}\'
+    playerName : \'{{this.gsx$playername.$t}}\'
+    playerGrade : \'{{this.gsx$playergrade.$t}}\'{{/if}}{{#if this.gsx$eventid.$t}}
+    eventId : \'{{this.gsx$eventid.$t}}\'
+    eventName : \'{{this.gsx$eventname.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
     mediaPartnerId : \'{{this.gsx$mediapartnerid.$t}}\'
     mediaTitle : \'{{this.gsx$mediatitle.$t}}\'
     mediaId : \'{{this.gsx$mediaid.$t}}\'
@@ -361,7 +366,7 @@ pre.line-numbers > code { position:relative; }
     };
 
     /* Remove Empty Containers */
-    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4"];
+    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4", "#ontology-methodmethod-trackAction", "#ontology-methodmethod-trackState"];
     trimempty = function(params){
         for (i=0; i<params.length; i++) {
             if(!jQuery.trim(jQuery(\'div\'+params[i]).html()).length){
@@ -1540,7 +1545,20 @@ pre.line-numbers > code { position:relative; }
     articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}{{#if this.gsx$sporttype.$t}}
     sportType : \'{{this.gsx$sporttype.$t}}\'
     sportGender : \'{{this.gsx$sportgender.$t}}\'
-    sportLevel : \'{{this.gsx$sportlevel.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    sportLevel : \'{{this.gsx$sportlevel.$t}}\'
+    sportSeason : \'{{this.gsx$sportseason.$t}}\'{{/if}}{{#if this.gsx$schoolid.$t}}
+    schoolId : \'{{this.gsx$schoolid.$t}}\'
+    schoolName : \'{{this.gsx$schoolname.$t}}\'
+    schoolState : \'{{this.gsx$schoolstate.$t}}\'
+    schoolYear : \'{{this.gsx$schoolyear.$t}}\'{{/if}}{{#if this.gsx$teamid.$t}}
+    teamId : \'{{this.gsx$teamid.$t}}\'
+    teamName : \'{{this.gsx$teamname.$t}}\'
+    teamArena : \'{{this.gsx$teamarena.$t}}\'{{/if}}{{#if this.gsx$playerid.$t}}
+    playerId : \'{{this.gsx$playerid.$t}}\'
+    playerName : \'{{this.gsx$playername.$t}}\'
+    playerGrade : \'{{this.gsx$playergrade.$t}}\'{{/if}}{{#if this.gsx$eventid.$t}}
+    eventId : \'{{this.gsx$eventid.$t}}\'
+    eventName : \'{{this.gsx$eventname.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
     mediaPartnerId : \'{{this.gsx$mediapartnerid.$t}}\'
     mediaTitle : \'{{this.gsx$mediatitle.$t}}\'
     mediaId : \'{{this.gsx$mediaid.$t}}\'
@@ -1567,7 +1585,20 @@ pre.line-numbers > code { position:relative; }
     @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}},
     @"sportType": @"{{this.gsx$sporttype.$t}}",
     @"sportGender": @"{{this.gsx$sportgender.$t}}",
-    @"sportLevel": @"{{this.gsx$sportlevel.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}},
+    @"sportLevel": @"{{this.gsx$sportlevel.$t}}",
+    @"sportSeason": @"{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}},
+    @"schoolId" : @"{{this.gsx$schoolid.$t}}",
+    @"schoolName" : @"{{this.gsx$schoolname.$t}}",
+    @"schoolState" : @"{{this.gsx$schoolstate.$t}}",
+    @"schoolYear" : @"{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}},
+    @"teamId" : @"{{this.gsx$teamid.$t}}",
+    @"teamName" : @"{{this.gsx$teamname.$t}}",
+    @"teamArena" : @"{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}},
+    @"playerId" : @"{{this.gsx$playerid.$t}}",
+    @"playerName" : @"{{this.gsx$playername.$t}}",
+    @"playerGrade" : @"{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}},
+    @"eventId" : @"{{this.gsx$eventid.$t}}",
+    @"eventName" : @"{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}},
     @"mediaPartnerId" : @"{{this.gsx$mediapartnerid.$t}}",
     @"mediaTitle" : @"{{this.gsx$mediatitle.$t}}",
     @"mediaId" : @"{{this.gsx$mediaid.$t}}",
@@ -1577,13 +1608,15 @@ pre.line-numbers > code { position:relative; }
 };
 [ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
 </div>',
-    '[[$spec_codeFormat_android]]' => '<div id="tab-and-{{@index}}" class="tab">
+    '[[$spec_codeFormat_android]]' => '
+<div id="tab-and-{{@index}}" class="tab">
 <pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "");
 cdata.put("sitePrimaryRsid", "");
 cdata.put("siteType", "");
 cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
 cdata.put("siteHier", "{{this.gsx$sitehier.$t}}");
-cdata.put("pageType", "{{this.gsx$pagetype.$t}}");{{#if this.gsx$directionscrolled.$t}}
+cdata.put("pageType", "{{this.gsx$pagetype.$t}}");
+cdata.put("screenName", "{{this.gsx$screenname.$t}}");{{#if this.gsx$directionscrolled.$t}}
 cdata.put("directionScrolled", "{{this.gsx$directionscrolled.$t}}";
 cdata.put("percentScrolled", "{{this.gsx$dpercentscrolled.$t}}";{{/if}}{{#if this.gsx$articleid.$t}}
 cdata.put("articleId", "{{this.gsx$articleid.$t}}");
@@ -1593,7 +1626,20 @@ cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
 cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}{{#if this.gsx$sporttype.$t}}
 cdata.put("sportType", "{{this.gsx$sporttype.$t}}");
 cdata.put("sportGender", "{{this.gsx$sportgender.$t}}");
-cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}");{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}");
+cdata.put("sportSeason", "{{this.gsx$sportseason.$t}}");{{/if}}{{#if this.gsx$schoolid.$t}}
+cdata.put("schoolId", "{{this.gsx$schoolid.$t}}");
+cdata.put("schoolName", "{{this.gsx$schoolname.$t}}");
+cdata.put("schoolState", "{{this.gsx$schoolstate.$t}}");
+cdata.put("schoolYear", "{{this.gsx$schoolyear.$t}}");{{/if}}{{#if this.gsx$teamid.$t}}
+cdata.put("teamId", "{{this.gsx$teamid.$t}}");
+cdata.put("teamName", "{{this.gsx$teamname.$t}}");
+cdata.put("teamArena", "{{this.gsx$teamarena.$t}}");{{/if}}{{#if this.gsx$playerid.$t}}
+cdata.put("playerId", "{{this.gsx$playerid.$t}}");
+cdata.put("playerName", "{{this.gsx$playername.$t}}");
+cdata.put("playerGrade", "{{this.gsx$playergrade.$t}}");{{/if}}{{#if this.gsx$eventid.$t}}
+cdata.put("eventId", "{{this.gsx$playerid.$t}}");
+cdata.put("eventName", "{{this.gsx$playerid.$t}}");{{/if}}{{#if this.gsx$mediapartnerid.$t}}
 cdata.put("mediaPartnerId", "{{this.gsx$mediapartnerid.$t}}");
 cdata.put("mediaTitle", "{{this.gsx$mediatitle.$t}}");
 cdata.put("mediaId", "{{this.gsx$mediaid.$t}}");
@@ -1614,7 +1660,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 </ul>
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
-                    <p>Along with the visitor ID, we will need to pass the App Prod RSID, as indicated in the left column of the spec page.</p>
+                    <p>Along with the visitor ID, we will need to append <em></em> to the apprsid parameter in the URL.</p>
                     <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
                 </div>
                 {{else}}
@@ -1641,7 +1687,20 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
     articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}{{#if this.gsx$sporttype.$t}}
     sportType : \'{{this.gsx$sporttype.$t}}\'
     sportGender : \'{{this.gsx$sportgender.$t}}\'
-    sportLevel : \'{{this.gsx$sportlevel.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    sportLevel : \'{{this.gsx$sportlevel.$t}}\'
+    sportSeason : \'{{this.gsx$sportseason.$t}}\'{{/if}}{{#if this.gsx$schoolid.$t}}
+    schoolId : \'{{this.gsx$schoolid.$t}}\'
+    schoolName : \'{{this.gsx$schoolname.$t}}\'
+    schoolState : \'{{this.gsx$schoolstate.$t}}\'
+    schoolYear : \'{{this.gsx$schoolyear.$t}}\'{{/if}}{{#if this.gsx$teamid.$t}}
+    teamId : \'{{this.gsx$teamid.$t}}\'
+    teamName : \'{{this.gsx$teamname.$t}}\'
+    teamArena : \'{{this.gsx$teamarena.$t}}\'{{/if}}{{#if this.gsx$playerid.$t}}
+    playerId : \'{{this.gsx$playerid.$t}}\'
+    playerName : \'{{this.gsx$playername.$t}}\'
+    playerGrade : \'{{this.gsx$playergrade.$t}}\'{{/if}}{{#if this.gsx$eventid.$t}}
+    eventId : \'{{this.gsx$eventid.$t}}\'
+    eventName : \'{{this.gsx$eventname.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
     mediaPartnerId : \'{{this.gsx$mediapartnerid.$t}}\'
     mediaTitle : \'{{this.gsx$mediatitle.$t}}\'
     mediaId : \'{{this.gsx$mediaid.$t}}\'
@@ -1703,7 +1762,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
     };
 
     /* Remove Empty Containers */
-    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4"];
+    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4", "#ontology-methodmethod-trackAction", "#ontology-methodmethod-trackState"];
     trimempty = function(params){
         for (i=0; i<params.length; i++) {
             if(!jQuery.trim(jQuery(\'div\'+params[i]).html()).length){
@@ -2055,7 +2114,7 @@ pre.line-numbers > code { position:relative; }
                 </ul>
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
-                    <p>Along with the visitor ID, we will need to pass the App Prod RSID, as indicated in the left column of the spec page.</p>
+                    <p>Along with the visitor ID, we will need to append <em></em> to the apprsid parameter in the URL.</p>
                     <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
                 </div>
                 {{else}}
@@ -2082,7 +2141,20 @@ pre.line-numbers > code { position:relative; }
     articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}{{#if this.gsx$sporttype.$t}}
     sportType : \'{{this.gsx$sporttype.$t}}\'
     sportGender : \'{{this.gsx$sportgender.$t}}\'
-    sportLevel : \'{{this.gsx$sportlevel.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    sportLevel : \'{{this.gsx$sportlevel.$t}}\'
+    sportSeason : \'{{this.gsx$sportseason.$t}}\'{{/if}}{{#if this.gsx$schoolid.$t}}
+    schoolId : \'{{this.gsx$schoolid.$t}}\'
+    schoolName : \'{{this.gsx$schoolname.$t}}\'
+    schoolState : \'{{this.gsx$schoolstate.$t}}\'
+    schoolYear : \'{{this.gsx$schoolyear.$t}}\'{{/if}}{{#if this.gsx$teamid.$t}}
+    teamId : \'{{this.gsx$teamid.$t}}\'
+    teamName : \'{{this.gsx$teamname.$t}}\'
+    teamArena : \'{{this.gsx$teamarena.$t}}\'{{/if}}{{#if this.gsx$playerid.$t}}
+    playerId : \'{{this.gsx$playerid.$t}}\'
+    playerName : \'{{this.gsx$playername.$t}}\'
+    playerGrade : \'{{this.gsx$playergrade.$t}}\'{{/if}}{{#if this.gsx$eventid.$t}}
+    eventId : \'{{this.gsx$eventid.$t}}\'
+    eventName : \'{{this.gsx$eventname.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
     mediaPartnerId : \'{{this.gsx$mediapartnerid.$t}}\'
     mediaTitle : \'{{this.gsx$mediatitle.$t}}\'
     mediaId : \'{{this.gsx$mediaid.$t}}\'
@@ -2144,7 +2216,7 @@ pre.line-numbers > code { position:relative; }
     };
 
     /* Remove Empty Containers */
-    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4"];
+    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4", "#ontology-methodmethod-trackAction", "#ontology-methodmethod-trackState"];
     trimempty = function(params){
         for (i=0; i<params.length; i++) {
             if(!jQuery.trim(jQuery(\'div\'+params[i]).html()).length){
@@ -4230,7 +4302,7 @@ pre.line-numbers > code { position:relative; }
                 </ul>
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
-                    <p>Along with the visitor ID, we will need to pass the App Prod RSID, as indicated in the left column of the spec page.</p>
+                    <p>Along with the visitor ID, we will need to append <em>[[*sitePrimaryRsid]]</em> to the apprsid parameter in the URL.</p>
                     <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
                 </div>
                 {{else}}
@@ -4294,7 +4366,7 @@ pre.line-numbers > code { position:relative; }
     };
 
     /* Remove Empty Containers */
-    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4"];
+    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4", "#ontology-methodmethod-trackAction", "#ontology-methodmethod-trackState"];
     trimempty = function(params){
         for (i=0; i<params.length; i++) {
             if(!jQuery.trim(jQuery(\'div\'+params[i]).html()).length){
@@ -4463,7 +4535,7 @@ pre.line-numbers > code { position:relative; }
                 </ul>
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
-                    <p>Along with the visitor ID, we will need to pass the App Prod RSID, as indicated in the left column of the spec page.</p>
+                    <p>Along with the visitor ID, we will need to append <em>[[*sitePrimaryRsid]]</em> to the apprsid parameter in the URL.</p>
                     <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
                 </div>
                 {{else}}
@@ -4527,7 +4599,7 @@ pre.line-numbers > code { position:relative; }
     };
 
     /* Remove Empty Containers */
-    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4"];
+    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4", "#ontology-methodmethod-trackAction", "#ontology-methodmethod-trackState"];
     trimempty = function(params){
         for (i=0; i<params.length; i++) {
             if(!jQuery.trim(jQuery(\'div\'+params[i]).html()).length){
@@ -4702,7 +4774,7 @@ pre.line-numbers > code { position:relative; }
         'fields' => 
         array (
           'id' => 33,
-          'source' => 0,
+          'source' => 1,
           'property_preprocess' => false,
           'name' => 'spec_codeFormat_web',
           'description' => '',
@@ -4720,8 +4792,10 @@ pre.line-numbers > code { position:relative; }
     screenName : \'{{this.gsx$pagename.$t}}\'{{#if this.gsx$directionscrolled.$t}}
     directionScrolled : \'{{this.gsx$directionscrolled.$t}}\'
     percentScrolled : \'{{this.gsx$percentscrolled.$t}}\'{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`
+    userID : \'{{this.gsx$userid.$t}}\'
     userType : \'{{this.gsx$usertype.$t}}\'
     userState : \'{{this.gsx$userstate.$t}}\'
+    userTeamRole : \'{{this.gsx$userteamrole.$t}}\'
     userStateIsAuthenticated : \'1\'`]]{{#if this.gsx$articleid.$t}}
     articleId : \'{{this.gsx$articleid.$t}}\'
     articleTitle : \'{{this.gsx$articletitle.$t}}\'
@@ -4730,7 +4804,20 @@ pre.line-numbers > code { position:relative; }
     articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}{{#if this.gsx$sporttype.$t}}
     sportType : \'{{this.gsx$sporttype.$t}}\'
     sportGender : \'{{this.gsx$sportgender.$t}}\'
-    sportLevel : \'{{this.gsx$sportlevel.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    sportLevel : \'{{this.gsx$sportlevel.$t}}\'
+    sportSeason : \'{{this.gsx$sportseason.$t}}\'{{/if}}{{#if this.gsx$schoolid.$t}}
+    schoolId : \'{{this.gsx$schoolid.$t}}\'
+    schoolName : \'{{this.gsx$schoolname.$t}}\'
+    schoolState : \'{{this.gsx$schoolstate.$t}}\'
+    schoolYear : \'{{this.gsx$schoolyear.$t}}\'{{/if}}{{#if this.gsx$teamid.$t}}
+    teamId : \'{{this.gsx$teamid.$t}}\'
+    teamName : \'{{this.gsx$teamname.$t}}\'
+    teamArena : \'{{this.gsx$teamarena.$t}}\'{{/if}}{{#if this.gsx$playerid.$t}}
+    playerId : \'{{this.gsx$playerid.$t}}\'
+    playerName : \'{{this.gsx$playername.$t}}\'
+    playerGrade : \'{{this.gsx$playergrade.$t}}\'{{/if}}{{#if this.gsx$eventid.$t}}
+    eventId : \'{{this.gsx$eventid.$t}}\'
+    eventName : \'{{this.gsx$eventname.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
     mediaPartnerId : \'{{this.gsx$mediapartnerid.$t}}\'
     mediaTitle : \'{{this.gsx$mediatitle.$t}}\'
     mediaId : \'{{this.gsx$mediaid.$t}}\'
@@ -4743,8 +4830,8 @@ pre.line-numbers > code { position:relative; }
           'properties' => 
           array (
           ),
-          'static' => false,
-          'static_file' => '',
+          'static' => true,
+          'static_file' => 'assets/chunks/structure/codeformats/spec_codeFormat_web',
           'content' => '<div id="tab-web-{{@index}}" class="tab active">
     <pre class="line-numbers"><code class="language-json">[[*platform:contains=`Web`:then=`utag_data = {
 `]]    siteCode : \'[[*siteCode]]\'
@@ -4756,8 +4843,10 @@ pre.line-numbers > code { position:relative; }
     screenName : \'{{this.gsx$pagename.$t}}\'{{#if this.gsx$directionscrolled.$t}}
     directionScrolled : \'{{this.gsx$directionscrolled.$t}}\'
     percentScrolled : \'{{this.gsx$percentscrolled.$t}}\'{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`
+    userID : \'{{this.gsx$userid.$t}}\'
     userType : \'{{this.gsx$usertype.$t}}\'
     userState : \'{{this.gsx$userstate.$t}}\'
+    userTeamRole : \'{{this.gsx$userteamrole.$t}}\'
     userStateIsAuthenticated : \'1\'`]]{{#if this.gsx$articleid.$t}}
     articleId : \'{{this.gsx$articleid.$t}}\'
     articleTitle : \'{{this.gsx$articletitle.$t}}\'
@@ -4766,7 +4855,20 @@ pre.line-numbers > code { position:relative; }
     articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}{{#if this.gsx$sporttype.$t}}
     sportType : \'{{this.gsx$sporttype.$t}}\'
     sportGender : \'{{this.gsx$sportgender.$t}}\'
-    sportLevel : \'{{this.gsx$sportlevel.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    sportLevel : \'{{this.gsx$sportlevel.$t}}\'
+    sportSeason : \'{{this.gsx$sportseason.$t}}\'{{/if}}{{#if this.gsx$schoolid.$t}}
+    schoolId : \'{{this.gsx$schoolid.$t}}\'
+    schoolName : \'{{this.gsx$schoolname.$t}}\'
+    schoolState : \'{{this.gsx$schoolstate.$t}}\'
+    schoolYear : \'{{this.gsx$schoolyear.$t}}\'{{/if}}{{#if this.gsx$teamid.$t}}
+    teamId : \'{{this.gsx$teamid.$t}}\'
+    teamName : \'{{this.gsx$teamname.$t}}\'
+    teamArena : \'{{this.gsx$teamarena.$t}}\'{{/if}}{{#if this.gsx$playerid.$t}}
+    playerId : \'{{this.gsx$playerid.$t}}\'
+    playerName : \'{{this.gsx$playername.$t}}\'
+    playerGrade : \'{{this.gsx$playergrade.$t}}\'{{/if}}{{#if this.gsx$eventid.$t}}
+    eventId : \'{{this.gsx$eventid.$t}}\'
+    eventName : \'{{this.gsx$eventname.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
     mediaPartnerId : \'{{this.gsx$mediapartnerid.$t}}\'
     mediaTitle : \'{{this.gsx$mediatitle.$t}}\'
     mediaId : \'{{this.gsx$mediaid.$t}}\'
@@ -4784,6 +4886,14 @@ pre.line-numbers > code { position:relative; }
         ),
         'source' => 
         array (
+          'id' => 1,
+          'name' => 'Filesystem',
+          'description' => '',
+          'class_key' => 'sources.modFileMediaSource',
+          'properties' => 
+          array (
+          ),
+          'is_stream' => true,
         ),
       ),
       'spec_codeFormat_iOS' => 
@@ -4809,8 +4919,10 @@ pre.line-numbers > code { position:relative; }
     @"screenName": @"{{this.gsx$pagename.$t}}",{{#if this.gsx$directionscrolled.$t}}
     @"directionScrolled" : @"{{this.gsx$directionscrolled.$t}}",
     @"percentScrolled" : @"{{this.gsx$percentscrolled.$t}}"{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`,
+    @"userID": @"{{this.gsx$userid.$t}}",
     @"userType": @"{{this.gsx$usertype.$t}}",
     @"userState": @"{{this.gsx$userstate.$t}}",
+    @"userTeamRole": @"{{this.gsx$userteamrole.$t}}",
     @"userStateIsAuthenticated": @"1"`]]{{#if this.gsx$articleid.$t}},
     @"articleId": @"{{this.gsx$articleid.$t}}",
     @"articleTitle": @"{{this.gsx$articletitle.$t}}",
@@ -4819,7 +4931,20 @@ pre.line-numbers > code { position:relative; }
     @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}},
     @"sportType": @"{{this.gsx$sporttype.$t}}",
     @"sportGender": @"{{this.gsx$sportgender.$t}}",
-    @"sportLevel": @"{{this.gsx$sportlevel.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}},
+    @"sportLevel": @"{{this.gsx$sportlevel.$t}}",
+    @"sportSeason": @"{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}},
+    @"schoolId" : @"{{this.gsx$schoolid.$t}}",
+    @"schoolName" : @"{{this.gsx$schoolname.$t}}",
+    @"schoolState" : @"{{this.gsx$schoolstate.$t}}",
+    @"schoolYear" : @"{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}},
+    @"teamId" : @"{{this.gsx$teamid.$t}}",
+    @"teamName" : @"{{this.gsx$teamname.$t}}",
+    @"teamArena" : @"{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}},
+    @"playerId" : @"{{this.gsx$playerid.$t}}",
+    @"playerName" : @"{{this.gsx$playername.$t}}",
+    @"playerGrade" : @"{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}},
+    @"eventId" : @"{{this.gsx$eventid.$t}}",
+    @"eventName" : @"{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}},
     @"mediaPartnerId" : @"{{this.gsx$mediapartnerid.$t}}",
     @"mediaTitle" : @"{{this.gsx$mediatitle.$t}}",
     @"mediaId" : @"{{this.gsx$mediaid.$t}}",
@@ -4833,8 +4958,8 @@ pre.line-numbers > code { position:relative; }
           'properties' => 
           array (
           ),
-          'static' => false,
-          'static_file' => '',
+          'static' => true,
+          'static_file' => 'assets/chunks/structure/codeformats/spec_codeFormat_iOS',
           'content' => '<div id="tab-ios-{{@index}}" class="tab">
 <pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
     @"siteCode": @"[[*siteCode]]",
@@ -4846,8 +4971,10 @@ pre.line-numbers > code { position:relative; }
     @"screenName": @"{{this.gsx$pagename.$t}}",{{#if this.gsx$directionscrolled.$t}}
     @"directionScrolled" : @"{{this.gsx$directionscrolled.$t}}",
     @"percentScrolled" : @"{{this.gsx$percentscrolled.$t}}"{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`,
+    @"userID": @"{{this.gsx$userid.$t}}",
     @"userType": @"{{this.gsx$usertype.$t}}",
     @"userState": @"{{this.gsx$userstate.$t}}",
+    @"userTeamRole": @"{{this.gsx$userteamrole.$t}}",
     @"userStateIsAuthenticated": @"1"`]]{{#if this.gsx$articleid.$t}},
     @"articleId": @"{{this.gsx$articleid.$t}}",
     @"articleTitle": @"{{this.gsx$articletitle.$t}}",
@@ -4856,7 +4983,20 @@ pre.line-numbers > code { position:relative; }
     @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}},
     @"sportType": @"{{this.gsx$sporttype.$t}}",
     @"sportGender": @"{{this.gsx$sportgender.$t}}",
-    @"sportLevel": @"{{this.gsx$sportlevel.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}},
+    @"sportLevel": @"{{this.gsx$sportlevel.$t}}",
+    @"sportSeason": @"{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}},
+    @"schoolId" : @"{{this.gsx$schoolid.$t}}",
+    @"schoolName" : @"{{this.gsx$schoolname.$t}}",
+    @"schoolState" : @"{{this.gsx$schoolstate.$t}}",
+    @"schoolYear" : @"{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}},
+    @"teamId" : @"{{this.gsx$teamid.$t}}",
+    @"teamName" : @"{{this.gsx$teamname.$t}}",
+    @"teamArena" : @"{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}},
+    @"playerId" : @"{{this.gsx$playerid.$t}}",
+    @"playerName" : @"{{this.gsx$playername.$t}}",
+    @"playerGrade" : @"{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}},
+    @"eventId" : @"{{this.gsx$eventid.$t}}",
+    @"eventName" : @"{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}},
     @"mediaPartnerId" : @"{{this.gsx$mediapartnerid.$t}}",
     @"mediaTitle" : @"{{this.gsx$mediatitle.$t}}",
     @"mediaId" : @"{{this.gsx$mediaid.$t}}",
@@ -4882,24 +5022,28 @@ pre.line-numbers > code { position:relative; }
         'fields' => 
         array (
           'id' => 31,
-          'source' => 0,
+          'source' => 1,
           'property_preprocess' => false,
           'name' => 'spec_codeFormat_android',
           'description' => '',
           'editor_type' => 0,
           'category' => 26,
           'cache_type' => 0,
-          'snippet' => '<div id="tab-and-{{@index}}" class="tab">
+          'snippet' => '
+<div id="tab-and-{{@index}}" class="tab">
 <pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "[[*siteCode]]");
 cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
 cdata.put("siteType", "[[*siteType]]");
 cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
 cdata.put("siteHier", "{{this.gsx$sitehier.$t}}");
-cdata.put("pageType", "{{this.gsx$pagetype.$t}}");{{#if this.gsx$directionscrolled.$t}}
+cdata.put("pageType", "{{this.gsx$pagetype.$t}}");
+cdata.put("screenName", "{{this.gsx$screenname.$t}}");{{#if this.gsx$directionscrolled.$t}}
 cdata.put("directionScrolled", "{{this.gsx$directionscrolled.$t}}";
 cdata.put("percentScrolled", "{{this.gsx$dpercentscrolled.$t}}";{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`
+cdata.put("userID", "{{this.gsx$userid.$t}}");
 cdata.put("userType", "{{this.gsx$usertype.$t}}");
 cdata.put("userState", "{{this.gsx$userstate.$t}}");
+cdata.put("userTeamRole", "{{this.gsx$userteamrole.$t}}");
 cdata.put("userStateIsAuthenticated", "1");`]]{{#if this.gsx$articleid.$t}}
 cdata.put("articleId", "{{this.gsx$articleid.$t}}");
 cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}");
@@ -4908,7 +5052,20 @@ cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
 cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}{{#if this.gsx$sporttype.$t}}
 cdata.put("sportType", "{{this.gsx$sporttype.$t}}");
 cdata.put("sportGender", "{{this.gsx$sportgender.$t}}");
-cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}");{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}");
+cdata.put("sportSeason", "{{this.gsx$sportseason.$t}}");{{/if}}{{#if this.gsx$schoolid.$t}}
+cdata.put("schoolId", "{{this.gsx$schoolid.$t}}");
+cdata.put("schoolName", "{{this.gsx$schoolname.$t}}");
+cdata.put("schoolState", "{{this.gsx$schoolstate.$t}}");
+cdata.put("schoolYear", "{{this.gsx$schoolyear.$t}}");{{/if}}{{#if this.gsx$teamid.$t}}
+cdata.put("teamId", "{{this.gsx$teamid.$t}}");
+cdata.put("teamName", "{{this.gsx$teamname.$t}}");
+cdata.put("teamArena", "{{this.gsx$teamarena.$t}}");{{/if}}{{#if this.gsx$playerid.$t}}
+cdata.put("playerId", "{{this.gsx$playerid.$t}}");
+cdata.put("playerName", "{{this.gsx$playername.$t}}");
+cdata.put("playerGrade", "{{this.gsx$playergrade.$t}}");{{/if}}{{#if this.gsx$eventid.$t}}
+cdata.put("eventId", "{{this.gsx$playerid.$t}}");
+cdata.put("eventName", "{{this.gsx$playerid.$t}}");{{/if}}{{#if this.gsx$mediapartnerid.$t}}
 cdata.put("mediaPartnerId", "{{this.gsx$mediapartnerid.$t}}");
 cdata.put("mediaTitle", "{{this.gsx$mediatitle.$t}}");
 cdata.put("mediaId", "{{this.gsx$mediaid.$t}}");
@@ -4921,19 +5078,23 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
           'properties' => 
           array (
           ),
-          'static' => false,
-          'static_file' => '',
-          'content' => '<div id="tab-and-{{@index}}" class="tab">
+          'static' => true,
+          'static_file' => 'assets/chunks/structure/codeformats/spec_codeFormat_Android',
+          'content' => '
+<div id="tab-and-{{@index}}" class="tab">
 <pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "[[*siteCode]]");
 cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
 cdata.put("siteType", "[[*siteType]]");
 cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
 cdata.put("siteHier", "{{this.gsx$sitehier.$t}}");
-cdata.put("pageType", "{{this.gsx$pagetype.$t}}");{{#if this.gsx$directionscrolled.$t}}
+cdata.put("pageType", "{{this.gsx$pagetype.$t}}");
+cdata.put("screenName", "{{this.gsx$screenname.$t}}");{{#if this.gsx$directionscrolled.$t}}
 cdata.put("directionScrolled", "{{this.gsx$directionscrolled.$t}}";
 cdata.put("percentScrolled", "{{this.gsx$dpercentscrolled.$t}}";{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`
+cdata.put("userID", "{{this.gsx$userid.$t}}");
 cdata.put("userType", "{{this.gsx$usertype.$t}}");
 cdata.put("userState", "{{this.gsx$userstate.$t}}");
+cdata.put("userTeamRole", "{{this.gsx$userteamrole.$t}}");
 cdata.put("userStateIsAuthenticated", "1");`]]{{#if this.gsx$articleid.$t}}
 cdata.put("articleId", "{{this.gsx$articleid.$t}}");
 cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}");
@@ -4942,7 +5103,20 @@ cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
 cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}{{#if this.gsx$sporttype.$t}}
 cdata.put("sportType", "{{this.gsx$sporttype.$t}}");
 cdata.put("sportGender", "{{this.gsx$sportgender.$t}}");
-cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}");{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}");
+cdata.put("sportSeason", "{{this.gsx$sportseason.$t}}");{{/if}}{{#if this.gsx$schoolid.$t}}
+cdata.put("schoolId", "{{this.gsx$schoolid.$t}}");
+cdata.put("schoolName", "{{this.gsx$schoolname.$t}}");
+cdata.put("schoolState", "{{this.gsx$schoolstate.$t}}");
+cdata.put("schoolYear", "{{this.gsx$schoolyear.$t}}");{{/if}}{{#if this.gsx$teamid.$t}}
+cdata.put("teamId", "{{this.gsx$teamid.$t}}");
+cdata.put("teamName", "{{this.gsx$teamname.$t}}");
+cdata.put("teamArena", "{{this.gsx$teamarena.$t}}");{{/if}}{{#if this.gsx$playerid.$t}}
+cdata.put("playerId", "{{this.gsx$playerid.$t}}");
+cdata.put("playerName", "{{this.gsx$playername.$t}}");
+cdata.put("playerGrade", "{{this.gsx$playergrade.$t}}");{{/if}}{{#if this.gsx$eventid.$t}}
+cdata.put("eventId", "{{this.gsx$playerid.$t}}");
+cdata.put("eventName", "{{this.gsx$playerid.$t}}");{{/if}}{{#if this.gsx$mediapartnerid.$t}}
 cdata.put("mediaPartnerId", "{{this.gsx$mediapartnerid.$t}}");
 cdata.put("mediaTitle", "{{this.gsx$mediatitle.$t}}");
 cdata.put("mediaId", "{{this.gsx$mediaid.$t}}");
@@ -4960,6 +5134,14 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
         ),
         'source' => 
         array (
+          'id' => 1,
+          'name' => 'Filesystem',
+          'description' => '',
+          'class_key' => 'sources.modFileMediaSource',
+          'properties' => 
+          array (
+          ),
+          'is_stream' => true,
         ),
       ),
       'googleAPIhead' => 
