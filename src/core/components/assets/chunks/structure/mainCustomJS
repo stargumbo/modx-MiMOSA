@@ -1,0 +1,226 @@
+<script id="app-code-template" type="text/x-handlebars-template">
+    {{#each entry}}
+    <div class="accordion2 ontology-row ontologymethod-{{this.gsx$trackingmethod.$t}} ontologycategory-{{#if this.gsx$mediapartnerid.$t}}video{{else if this.gsx$articleid.$t}}article{{else if this.gsx$webviewurl.$t}}webview{{else}}basic{{/if}}">
+        <h2>{{@index}} - {{this.gsx$node.$t}}</h2>
+        <div class="inner-container2 container-{{@index}}">
+            <div class="tabs">
+                {{#if this.gsx$webviewurl.$t}}
+                <ul class="tab-links webview-links">
+                    <li><a href="#tab-web-{{@index}}">Webview</a></li>
+                </ul>
+                <div class="tab-content webview-content">
+                    <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
+                    <p>Along with the visitor ID, we will need to pass the App Prod RSID, as indicated in the left column of the spec page.</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
+                </div>
+                {{else}}
+                <ul class="tab-links main-links">
+                    <li><a href="#tab-web-{{@index}}">[[*platform:contains=`Web`:then=`Web`:else=`Basic`]]</a></li>
+                    [[*platform:contains=`iOS`:then=`<li><a href="#tab-ios-{{@index}}">iOS</a></li>`]]
+                    [[*platform:contains=`Android`:then=`<li><a href="#tab-and-{{@index}}">Android</a></li>`]]
+                </ul>
+                <div class="tab-content main-content">
+                    [[$spec_codeFormat_web]]
+                    [[*platform:contains=`iOS`:then=`[[$spec_codeFormat_iOS]]`]]
+                    [[*platform:contains=`Android`:then=`[[$spec_codeFormat_android]]`]]
+                </div>
+                {{#if this.gsx$comments.$t}}<h3><strong>Comments:</strong></h3><p>{{this.gsx$comments.$t}}</p>{{/if}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</script>
+
+<script type="text/javascript">
+    // JSON feed
+    var feed = "";
+    var url = "https://spreadsheets.google.com/feeds/list/[[*gen_ontologyID]]/od6/public/values?alt=json";
+
+    //jQuery.post("json.php", {json : JSON.stringify(url)});
+
+    // Accordion Content
+    var icons = {
+        header: "ui-icon-circle-arrow-e",
+        activeHeader: "ui-icon-circle-arrow-s"
+    };
+
+    /* Classes Function */
+    ;!function(e){e.fn.classes=function(t){var n=[];e.each(this,function(e,t){var r=t.className.split(/\s+/);for(var i in r){var s=r[i];if(-1===n.indexOf(s)){n.push(s)}}});if("function"===typeof t){for(var r in n){t(n[r])}}return n}}(jQuery);
+
+    /* Build Tabs */
+    firetabs = function(){
+        jQuery('.tabs .tab-links a, .tabs .tab-links-top a').on('click', function(e){
+            var currentAttrValue = jQuery(this).attr('href');
+            jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+            jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+            e.preventDefault();
+        });
+        jQuery('.tab-links li:first-child, .tab-content div:first-child, .tab-links-top li:first-child, .tab-content-top div:first-child').addClass('active');
+    };
+
+    /* Build Accordions */
+    var accordion_preajax = [".accordion1", ".accordion3", ".accordion4", ".accordion5"];
+    var accordion_postajax = [".accordion2"];
+    fireaccordion = function(params){
+        for (i=0; i<params.length; i++) {
+            jQuery(params[i]).accordion({
+                active: false,
+                collapsible: true,
+                header: "h2",
+                heightStyle: "content"
+            });
+        }
+    };
+
+    /* Remove Empty Containers */
+    var trimparams = [".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4", "#ontology-methodmethod-trackAction", "#ontology-methodmethod-trackState"];
+    trimempty = function(params){
+        for (i=0; i<params.length; i++) {
+            if(!jQuery.trim(jQuery('div'+params[i]).html()).length){
+                jQuery(params[i]).remove();
+            }
+        }
+    };
+
+    /* Style Ontology */
+    firehandlebars = function(data, template, destination){
+        Handlebars.registerHelper('trackingMethodPage', function(trackingmethod){
+            if(trackingmethod === 'trackState'){
+                return this.gsx$pagename.$t;
+            } else {
+                return this.gsx$trackingmethodaction.$t;
+            }
+        });
+        var theTemplateScript = jQuery(template).html();
+        var theTemplate = Handlebars.compile(theTemplateScript);
+        var theCompiledHtml = theTemplate(data);
+        jQuery(destination).html(theCompiledHtml);
+    };
+
+    /* Allocate Ontology Resources */
+    classifyontology = function(element){
+        var methodArray = [];
+        var categoryArray = ['basic'];
+
+        jQuery(element).each(function(){
+            jQuery(this).classes(function(c){
+                if (c.match("^ontologymethod")){
+                    methodArray.push(c.substr(c.indexOf("-") + 1));
+                } else if (c.match("^ontologycategory")){
+                    categoryArray.push(c.substr(c.indexOf("-") + 1));
+                }
+            });
+        });
+
+        var uniqueMethods = methodArray.filter(function(item, i, ar){ return ar.indexOf(item) === i; });
+        var uniqueCategories = categoryArray.filter(function(item, i, ar){ return ar.indexOf(item) === i; });
+        for(var i = 0; i < uniqueMethods.length; i++) {
+            //jQuery('#ontologyplaceholder').append('<h2>'+ uniqueMethods[i] +' Tags</h2><div id="tabs-ontologymethod-'+ uniqueMethods[i] +'" class="inner-container ontology-tags"><div class="tabs"><ul class="tab-links-top"></ul><div class="tab-content-top"></div></div></div>');
+            for(var j = 0; j < uniqueCategories.length; j++) {
+                var currentMethod = 'ontologymethod-' + uniqueMethods[i];
+                var currentCategory = 'ontologycategory-' + uniqueCategories[j];
+                //jQuery('#tabs-'+currentMethod+' .tab-links-top').append('<li class="' + uniqueMethods[i] + j + '"><a href="#tab-' + currentMethod + '-' + currentCategory + '">' + uniqueCategories[j] + '</a></li>');
+                //jQuery('#tabs-'+currentMethod+' .tab-content-top').append('<div class="' + uniqueMethods[i] + j +'" id="tab-' + currentMethod + '-' + currentCategory + '"></div>');
+
+                jQuery('.' + currentMethod + '.' + currentCategory).detach().appendTo('#tab-' + currentMethod + '-' + currentCategory);
+                //console.log("jQuery(." + currentMethod + "." + currentCategory + ").detach().appendTo(#tab-"+ currentMethod + "-" + currentCategory + ");");
+            }
+        }
+    };
+
+    /* jQuery onload */
+    jQuery(function(){
+        // Kill empty menu clicks
+        jQuery('.linkdisable').click(function(e){
+            e.preventDefault();
+            return false;
+        });
+
+        jQuery.getJSON(url, function(data){
+            feed = data.feed;
+        });
+
+        fireaccordion(accordion_preajax);
+        firetabs();
+
+        jQuery(document).ajaxStop(function(){
+            //console.log('ajaxStop');
+            firehandlebars(feed, "#app-code-template", "#dataplaceholder");
+            classifyontology('.ontology-row');
+
+            fireaccordion(accordion_postajax);
+            firetabs();
+            trimempty(trimparams);
+            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
+            fireprism();
+
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var $;
+
+        $ = jQuery;
+
+        $.fn.sieve = function(options) {
+            var compact;
+            compact = function(array) {
+                var item, _i, _len, _results;
+                _results = [];
+                for (_i = 0, _len = array.length; _i < _len; _i++) {
+                    item = array[_i];
+                    if (item) {
+                        _results.push(item);
+                    }
+                }
+                return _results;
+            };
+            return this.each(function() {
+                var container, searchBar, settings;
+                container = $(this);
+                settings = $.extend({
+                    searchInput: null,
+                    searchTemplate: "<div><label>Search: <input type='text'></label></div>",
+                    itemSelector: "tbody tr",
+                    textSelector: null,
+                    toggle: function(item, match) {
+                        return item.toggle(match);
+                    },
+                    complete: function() {}
+                }, options);
+                if (!settings.searchInput) {
+                    searchBar = $(settings.searchTemplate);
+                    settings.searchInput = searchBar.find("input");
+                    container.before(searchBar);
+                }
+                return settings.searchInput.on("keyup.sieve change.sieve", function() {
+                    var items, query;
+                    query = compact($(this).val().toLowerCase().split(/\s+/));
+                    items = container.find(settings.itemSelector);
+                    items.each(function() {
+                        var cells, item, match, q, text, _i, _len;
+                        item = $(this);
+                        if (settings.textSelector) {
+                            cells = item.find(settings.textSelector);
+                            text = cells.text().toLowerCase();
+                        } else {
+                            text = item.text().toLowerCase();
+                        }
+                        match = true;
+                        for (_i = 0, _len = query.length; _i < _len; _i++) {
+                            q = query[_i];
+                            match && (match = text.indexOf(q) >= 0);
+                        }
+                        return settings.toggle(item, match);
+                    });
+                    return settings.complete();
+                });
+            });
+        };
+
+    }).call(this);
+</script>
+
