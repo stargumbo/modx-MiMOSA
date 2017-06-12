@@ -52,6 +52,7 @@
     'cbssportsfantasy-app.html' => 17,
     'draftmaster-app.html' => 11,
     'maxprepsteamsapp.html' => 16,
+    'maxpreps-app.html' => 87,
     'web-techrepublic/' => 57,
     'web-zdnet/' => 59,
     'web-gamespot/' => 61,
@@ -192,6 +193,7 @@
     39 => 
     array (
       0 => 16,
+      1 => 87,
     ),
     40 => 
     array (
