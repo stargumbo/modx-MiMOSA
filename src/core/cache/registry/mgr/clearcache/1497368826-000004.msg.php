@@ -1,8 +1,8 @@
 <?php
 return array (
-  'timestamp' => '2017-06-08 20:13:42',
+  'timestamp' => '2017-06-13 15:47:06',
   'level' => 'INFO',
-  'msg' => 'Processing automatic publishing dates',
+  'msg' => '-> <strong>0</strong> documents were unpublished.',
   'def' => '',
   'file' => '/connectors/index.php',
   'line' => '',

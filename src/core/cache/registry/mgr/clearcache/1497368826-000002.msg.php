@@ -1,8 +1,8 @@
 <?php
 return array (
-  'timestamp' => '2017-06-08 20:13:41',
+  'timestamp' => '2017-06-13 15:47:06',
   'level' => 'INFO',
-  'msg' => 'Clearing the default cache: MinifyX',
+  'msg' => 'Processing automatic publishing dates',
   'def' => '',
   'file' => '/connectors/index.php',
   'line' => '',

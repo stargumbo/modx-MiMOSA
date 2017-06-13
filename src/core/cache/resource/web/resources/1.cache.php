@@ -265,7 +265,7 @@ pre.line-numbers > code { position:relative; }
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em></em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -384,6 +384,13 @@ pre.line-numbers > code { position:relative; }
                 return this.gsx$trackingmethodaction.$t;
             }
         });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
+            }
+        });
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
@@ -444,76 +451,9 @@ pre.line-numbers > code { position:relative; }
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
             fireprism();
-
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 
@@ -1661,7 +1601,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em></em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -1780,6 +1720,13 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 return this.gsx$trackingmethodaction.$t;
             }
         });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
+            }
+        });
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
@@ -1840,76 +1787,9 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
             fireprism();
-
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 ',
@@ -2115,7 +1995,7 @@ pre.line-numbers > code { position:relative; }
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em></em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -2234,6 +2114,13 @@ pre.line-numbers > code { position:relative; }
                 return this.gsx$trackingmethodaction.$t;
             }
         });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
+            }
+        });
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
@@ -2294,76 +2181,9 @@ pre.line-numbers > code { position:relative; }
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
             fireprism();
-
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 
@@ -4303,7 +4123,7 @@ pre.line-numbers > code { position:relative; }
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em>[[*sitePrimaryRsid]]</em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -4384,6 +4204,13 @@ pre.line-numbers > code { position:relative; }
                 return this.gsx$trackingmethodaction.$t;
             }
         });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
+            }
+        });
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
@@ -4444,76 +4271,9 @@ pre.line-numbers > code { position:relative; }
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
             fireprism();
-
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 ',
@@ -4536,7 +4296,7 @@ pre.line-numbers > code { position:relative; }
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em>[[*sitePrimaryRsid]]</em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -4617,6 +4377,13 @@ pre.line-numbers > code { position:relative; }
                 return this.gsx$trackingmethodaction.$t;
             }
         });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
+            }
+        });
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
@@ -4677,76 +4444,9 @@ pre.line-numbers > code { position:relative; }
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
             fireprism();
-
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 ',

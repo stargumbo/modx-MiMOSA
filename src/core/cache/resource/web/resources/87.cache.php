@@ -2,13 +2,13 @@
   'resourceClass' => 'modDocument',
   'resource' => 
   array (
-    'id' => 16,
+    'id' => 87,
     'type' => 'document',
     'contentType' => 'text/html',
-    'pagetitle' => 'MaxPreps Teams App',
-    'longtitle' => 'MaxPreps Teams App Tracking',
+    'pagetitle' => 'MaxPreps App',
+    'longtitle' => 'MaxPreps App Tracking',
     'description' => '',
-    'alias' => 'maxprepsteamsapp',
+    'alias' => 'maxpreps-app',
     'link_attributes' => '',
     'published' => 1,
     'pub_date' => 0,
@@ -22,16 +22,16 @@
     'menuindex' => 0,
     'searchable' => 1,
     'cacheable' => 1,
-    'createdby' => 2,
-    'createdon' => 1479509853,
+    'createdby' => 4,
+    'createdon' => 1496168198,
     'editedby' => 2,
-    'editedon' => 1496957735,
+    'editedon' => 1497296095,
     'deleted' => 0,
     'deletedon' => 0,
     'deletedby' => 0,
     'publishedon' => 1479509820,
     'publishedby' => 2,
-    'menutitle' => 'MaxPreps Teams App',
+    'menutitle' => 'MaxPreps App',
     'donthit' => 0,
     'privateweb' => 0,
     'privatemgr' => 0,
@@ -40,7 +40,7 @@
     'class_key' => 'modDocument',
     'context_key' => 'web',
     'content_type' => 1,
-    'uri' => 'maxprepsteamsapp.html',
+    'uri' => 'maxpreps-app.html',
     'uri_override' => 0,
     'hide_children_in_tree' => 0,
     'show_in_tree' => 1,
@@ -64,7 +64,7 @@
     'appfeatures' => 
     array (
       0 => 'appfeatures',
-      1 => 'Interaction (Login)',
+      1 => 'Articles||Interaction (Login)||Teams',
       2 => 'default',
       3 => NULL,
       4 => 'checkbox',
@@ -104,7 +104,7 @@
     'gen_ontologyID' => 
     array (
       0 => 'gen_ontologyID',
-      1 => '1MzI9NHccwFDMqaTZmhHlm_qeygaF6ySjkV6UzcnlWzA',
+      1 => '1IMTI69x-3g46jUtI1lrn3Nar2Um3KT5lxxeK7UimyJA',
       2 => 'default',
       3 => NULL,
       4 => 'text',
@@ -208,7 +208,7 @@
     'prodrsids' => 
     array (
       0 => 'prodrsids',
-      1 => 'cbsimaxprepsteamsapp, cbsicbsiall',
+      1 => 'cbsimaxprepsapp, cbsicbsiall',
       2 => 'default',
       3 => NULL,
       4 => 'text',
@@ -216,7 +216,7 @@
     'devrsids' => 
     array (
       0 => 'devrsids',
-      1 => 'cbsimaxprepsteamsapp-dev, cbsicbsiall-dev',
+      1 => 'cbsimaxprepsapp-dev, cbsicbsiall-dev',
       2 => 'default',
       3 => NULL,
       4 => 'text',
@@ -239,7 +239,7 @@
     ),
     '_content' => '<!doctype html>
 <html lang="en">
-<head>    <title>MaxPreps Teams App - MiMOSA</title>
+<head>    <title>MaxPreps App - MiMOSA</title>
 
     <base href="[[!++site_url]]" />
 
@@ -441,7 +441,7 @@ pre.line-numbers > code { position:relative; }
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em>cbsimaxprepsteamsapp</em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=cbsimaxprepsteamsapp</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=cbsimaxprepsteamsapp</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -597,7 +597,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
 <script type="text/javascript">
     // JSON feed
     var feed = "";
-    var url = "https://spreadsheets.google.com/feeds/list/1MzI9NHccwFDMqaTZmhHlm_qeygaF6ySjkV6UzcnlWzA/od6/public/values?alt=json";
+    var url = "https://spreadsheets.google.com/feeds/list/1IMTI69x-3g46jUtI1lrn3Nar2Um3KT5lxxeK7UimyJA/od6/public/values?alt=json";
 
     //jQuery.post("json.php", {json : JSON.stringify(url)});
 
@@ -652,6 +652,13 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 return this.gsx$pagename.$t;
             } else {
                 return this.gsx$trackingmethodaction.$t;
+            }
+        });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
             }
         });
         var theTemplateScript = jQuery(template).html();
@@ -714,76 +721,9 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
             fireprism();
-
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 
@@ -837,8 +777,8 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
 <div class="content">
     <div class="container">
         <div class="main">
-            <h2>MaxPreps Teams App Tracking</h2>
-            <p>This is the tracking spec for MaxPreps Teams App Tracking using the latest tracking implementation for -</p>
+            <h2>MaxPreps App Tracking</h2>
+            <p>This is the tracking spec for MaxPreps App Tracking using the latest tracking implementation for -</p>
             <ul>
                 
                 <li>Android</li>
@@ -865,7 +805,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                     <pre id="ADBMobilejson" class="language-json line-numbers"><code class="language-json">{
  "version" : "1.0",
  "analytics" : {
-   "rsids" : "cbsimaxprepsteamsapp, cbsicbsiall",
+   "rsids" : "cbsimaxprepsapp, cbsicbsiall",
    "server" : "om.cbsi.com",
    "charset" : "UTF-8",
    "ssl" : false,
@@ -874,8 +814,8 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
    "privacyDefault" : "optedin"
  }
 }</code></pre>
-                    <p>For production environment, change rsids to "cbsimaxprepsteamsapp, cbsicbsiall"</p>
-                    <p>All test builds should use "cbsimaxprepsteamsapp-dev, cbsicbsiall-dev"</p>
+                    <p>For production environment, change rsids to "cbsimaxprepsapp, cbsicbsiall"</p>
+                    <p>All test builds should use "cbsimaxprepsapp-dev, cbsicbsiall-dev"</p>
                 </div>
                                 <h2>The Analytics methods</h2>
                 <div class="inner-container">
@@ -913,10 +853,10 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                         <ul class="tab-links">
                             <li><a href="#tab0">Page</a></li>
                             <li><a href="#tab1">Site</a></li>
-                            
+                            <li><a href="#tab2">Articles</a></li>
                             
                             <li><a href="#tab4">Interaction</a></li>
-                            
+                            <li><a href="#tab5">Teams</a></li>
                         </ul>
                         <div class="tab-content">
                                                         <div id="tab0" class="tab">
@@ -1003,7 +943,31 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                                     </tr>
                                 </table>
                             </div>
-                            
+                                                    <div id="tab2" class="tab">
+                            <h3 style="margin:0;">Article Parameters</h3>
+                            <table>
+                                <tr>
+                                    <td>articleId</td>
+                                    <td>This key should contain the ID value of any editorially created content that has been viewed.</td>
+                                </tr>
+                                <tr>
+                                    <td>articleTitle</td>
+                                    <td>This key should contain the Title of any editorially created content that has been viewed, for a given Article ID</td>
+                                </tr>
+                                <tr>
+                                    <td>articleType</td>
+                                    <td>This key should contain the type of editorial content that has been viewed, for a given Article ID</td>
+                                </tr>
+                                <tr>
+                                    <td>articleAuthorId</td>
+                                    <td>This key should contain the Author’s ID of any editorially created content that has been viewed, for a given Article ID</td>
+                                </tr>
+                                <tr>
+                                    <td>articleAuthorName</td>
+                                    <td>This key should contain the Author’s Name of any editorially created content that has been viewed, for a given Article ID</td>
+                                </tr>
+                            </table>
+                        </div>
                             
                                                     <div id="tab4" class="tab">
                             <h3 style="margin:0;">Interaction (Login) Parameters</h3>
@@ -1031,7 +995,35 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                             </table>
 <p>Upon successful login send the following tracking call. This call should be made in context to the screen that the call was triggered from.</p>
                         </div>
-                            
+                                                        <div id="tab5" class="tab">
+                                <h3 style="margin:0;">Teams Parameters</h3>
+                                <table>
+                                    <tr>
+                                        <td>leagueId</td>
+                                        <td>This key should contain the ID value of the league that is being viewed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>leagueName</td>
+                                        <td>This key should contain the Name value of the league that is being viewed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>playerId</td>
+                                        <td>This key should contain the ID value of a person that is being viewed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>playerName</td>
+                                        <td>This key should contain the Name value of a person that is being viewed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>teamId</td>
+                                        <td>This key should contain the ID value of a team that is being viewed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>teamName</td>
+                                        <td>This key should contain the Name value of a team that is being  viewed</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1115,8 +1107,8 @@ Analytics.trackState("screenName", cdata);</code></pre></div>
             <ul>
                 <li>Site Code:<br /><em>maxpreps</em></li>
                 <li>Site Type:<br /><em>native app</em></li>
-                <li>Prod RSIDs:<br /><em>cbsimaxprepsteamsapp, cbsicbsiall</em></li>
-                <li>Dev RSIDs:<br /><em>cbsimaxprepsteamsapp-dev, cbsicbsiall-dev</em></li>
+                <li>Prod RSIDs:<br /><em>cbsimaxprepsapp, cbsicbsiall</em></li>
+                <li>Dev RSIDs:<br /><em>cbsimaxprepsapp-dev, cbsicbsiall-dev</em></li>
                 <!--  -->
             </ul>
         </div>
@@ -1469,7 +1461,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em>cbsimaxprepsteamsapp</em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=cbsimaxprepsteamsapp</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=cbsimaxprepsteamsapp</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -1625,7 +1617,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
 <script type="text/javascript">
     // JSON feed
     var feed = "";
-    var url = "https://spreadsheets.google.com/feeds/list/1MzI9NHccwFDMqaTZmhHlm_qeygaF6ySjkV6UzcnlWzA/od6/public/values?alt=json";
+    var url = "https://spreadsheets.google.com/feeds/list/1IMTI69x-3g46jUtI1lrn3Nar2Um3KT5lxxeK7UimyJA/od6/public/values?alt=json";
 
     //jQuery.post("json.php", {json : JSON.stringify(url)});
 
@@ -1680,6 +1672,13 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 return this.gsx$pagename.$t;
             } else {
                 return this.gsx$trackingmethodaction.$t;
+            }
+        });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
             }
         });
         var theTemplateScript = jQuery(template).html();
@@ -1742,80 +1741,13 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
             fireprism();
-
         });
     });
 </script>
 
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
-</script>
-
 ',
-    '[[$basicHead]]' => '    <title>MaxPreps Teams App - MiMOSA</title>
+    '[[$basicHead]]' => '    <title>MaxPreps App - MiMOSA</title>
 
     <base href="[[!++site_url]]" />
 
@@ -2017,7 +1949,7 @@ pre.line-numbers > code { position:relative; }
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em>cbsimaxprepsteamsapp</em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=cbsimaxprepsteamsapp</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=cbsimaxprepsteamsapp</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -2173,7 +2105,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
 <script type="text/javascript">
     // JSON feed
     var feed = "";
-    var url = "https://spreadsheets.google.com/feeds/list/1MzI9NHccwFDMqaTZmhHlm_qeygaF6ySjkV6UzcnlWzA/od6/public/values?alt=json";
+    var url = "https://spreadsheets.google.com/feeds/list/1IMTI69x-3g46jUtI1lrn3Nar2Um3KT5lxxeK7UimyJA/od6/public/values?alt=json";
 
     //jQuery.post("json.php", {json : JSON.stringify(url)});
 
@@ -2228,6 +2160,13 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 return this.gsx$pagename.$t;
             } else {
                 return this.gsx$trackingmethodaction.$t;
+            }
+        });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
             }
         });
         var theTemplateScript = jQuery(template).html();
@@ -2290,76 +2229,9 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
             fireprism();
-
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 
@@ -2450,7 +2322,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
     '[[$json_ADBMobileConfig]]' => '{
  "version" : "1.0",
  "analytics" : {
-   "rsids" : "cbsimaxprepsteamsapp, cbsicbsiall",
+   "rsids" : "cbsimaxprepsapp, cbsicbsiall",
    "server" : "om.cbsi.com",
    "charset" : "UTF-8",
    "ssl" : false,
@@ -3179,7 +3051,7 @@ pre.line-numbers > code { position:relative; }
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em>[[*sitePrimaryRsid]]</em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -3260,6 +3132,13 @@ pre.line-numbers > code { position:relative; }
                 return this.gsx$trackingmethodaction.$t;
             }
         });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'?\';
+            } else {
+                return this.gsx$webviewurl.$t + \'&amp;\';
+            }
+        });
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
@@ -3320,76 +3199,9 @@ pre.line-numbers > code { position:relative; }
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
             fireprism();
-
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 ',
@@ -3412,7 +3224,7 @@ pre.line-numbers > code { position:relative; }
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em>[[*sitePrimaryRsid]]</em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -3493,6 +3305,13 @@ pre.line-numbers > code { position:relative; }
                 return this.gsx$trackingmethodaction.$t;
             }
         });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'?\';
+            } else {
+                return this.gsx$webviewurl.$t + \'&amp;\';
+            }
+        });
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
@@ -3553,76 +3372,9 @@ pre.line-numbers > code { position:relative; }
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
             fireprism();
-
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 ',
