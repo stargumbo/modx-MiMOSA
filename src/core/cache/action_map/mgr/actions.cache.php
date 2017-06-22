@@ -1,0 +1,67 @@
+<?php  return array (
+  13 => 
+  array (
+    'id' => '13',
+    'namespace' => 'clientconfig',
+    'controller' => 'index',
+    'haslayout' => '1',
+    'lang_topics' => 'clientconfig:default',
+    'assets' => '',
+    'help_url' => '',
+    'namespace_name' => 'clientconfig',
+    'namespace_path' => '/var/www/core/components/clientconfig/',
+    'namespace_assets_path' => '',
+  ),
+  1 => 
+  array (
+    'id' => '1',
+    'namespace' => 'gallery',
+    'controller' => 'index',
+    'haslayout' => '1',
+    'lang_topics' => 'gallery:default',
+    'assets' => '',
+    'help_url' => '',
+    'namespace_name' => 'gallery',
+    'namespace_path' => '/var/www/core/components/gallery/',
+    'namespace_assets_path' => '/Users/theboxer/www/modx/pkgs/gallery/assets/components/gallery/',
+  ),
+  12 => 
+  array (
+    'id' => '12',
+    'namespace' => 'migx',
+    'controller' => 'index',
+    'haslayout' => '0',
+    'lang_topics' => 'example:default',
+    'assets' => '',
+    'help_url' => '',
+    'namespace_name' => 'migx',
+    'namespace_path' => '/var/www/core/components/migx/',
+    'namespace_assets_path' => '{assets_path}components/migx/',
+  ),
+  14 => 
+  array (
+    'id' => '14',
+    'namespace' => 'scheduler',
+    'controller' => 'controllers/index',
+    'haslayout' => '1',
+    'lang_topics' => 'scheduler:default',
+    'assets' => '',
+    'help_url' => '',
+    'namespace_name' => 'scheduler',
+    'namespace_path' => '/var/www/core/components/scheduler/',
+    'namespace_assets_path' => '{base_path}_ad/scheduler/assets/components/scheduler/',
+  ),
+  3 => 
+  array (
+    'id' => '3',
+    'namespace' => 'versionx',
+    'controller' => 'controllers/index',
+    'haslayout' => '1',
+    'lang_topics' => 'versionx:default',
+    'assets' => '',
+    'help_url' => '',
+    'namespace_name' => 'versionx',
+    'namespace_path' => '/var/www/core/components/versionx/',
+    'namespace_assets_path' => '',
+  ),
+);

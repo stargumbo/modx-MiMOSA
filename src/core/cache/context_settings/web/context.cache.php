@@ -17,7 +17,7 @@
     'sportsline.html' => 26,
     'maxpreps/' => 27,
     'trainerpass.html' => 28,
-    'college-sports-live.html' => 29,
+    'college-sports/' => 29,
     '247sports/' => 30,
     'cbsi-omniture-variables-2016.html' => 14,
     'sports/' => 12,
@@ -29,12 +29,16 @@
     'ctd/' => 37,
     'cbs-news.html' => 31,
     '60-minutes.html' => 32,
-    'cbs.com.html' => 33,
+    'cbs/' => 33,
     'web/' => 55,
     'cbssportsapps/' => 8,
     'cbssportsfantasyapps/' => 38,
     'maxprepsapps/' => 39,
+    'web-cs/' => 69,
+    'apps/' => 88,
     '247sportsweb/' => 85,
+    'web-cbs/' => 90,
+    'apps-cbs/' => 92,
     'techrepublic/' => 40,
     'zdnet/' => 41,
     'gamespot/' => 42,
@@ -79,6 +83,9 @@
     'metacritic.com.html' => 81,
     'chowhound.com.html' => 84,
     '247sports-site.html' => 86,
+    'gamedaylive-hopscotch-app.html' => 89,
+    'cbs.com-website.html' => 91,
+    'cbsapp-all-access.html' => 93,
   ),
   'resourceMap' => 
   array (
@@ -154,10 +161,16 @@
     29 => 
     array (
       0 => 69,
+      1 => 88,
     ),
     30 => 
     array (
       0 => 85,
+    ),
+    33 => 
+    array (
+      0 => 90,
+      1 => 92,
     ),
     34 => 
     array (
@@ -298,6 +311,18 @@
     85 => 
     array (
       0 => 86,
+    ),
+    88 => 
+    array (
+      0 => 89,
+    ),
+    90 => 
+    array (
+      0 => 91,
+    ),
+    92 => 
+    array (
+      0 => 93,
     ),
   ),
   'webLinkMap' => 

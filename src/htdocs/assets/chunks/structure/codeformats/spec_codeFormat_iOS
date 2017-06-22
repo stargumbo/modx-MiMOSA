@@ -2,45 +2,112 @@
 <pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
     @"siteCode": @"[[*siteCode]]",
     @"sitePrimaryRsid": @"[[*sitePrimaryRsid]]",
-    @"siteType": @"[[*siteType]]",
-    @"siteSection": @"{{this.gsx$sitesection.$t}}",
-    @"siteHier": @"{{this.gsx$sitehier.$t}}",
-    @"pageType": @"{{this.gsx$pagetype.$t}}",
-    @"screenName": @"{{this.gsx$pagename.$t}}",{{#if this.gsx$directionscrolled.$t}}
-    @"directionScrolled" : @"{{this.gsx$directionscrolled.$t}}",
-    @"percentScrolled" : @"{{this.gsx$percentscrolled.$t}}"{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`,
-    @"userID": @"{{this.gsx$userid.$t}}",
-    @"userType": @"{{this.gsx$usertype.$t}}",
-    @"userState": @"{{this.gsx$userstate.$t}}",
-    @"userTeamRole": @"{{this.gsx$userteamrole.$t}}",
-    @"userStateIsAuthenticated": @"1"`]]{{#if this.gsx$articleid.$t}},
-    @"articleId": @"{{this.gsx$articleid.$t}}",
-    @"articleTitle": @"{{this.gsx$articletitle.$t}}",
-    @"articleType": @"{{this.gsx$articletype.$t}}",
-    @"articleAuthorId": @"{{this.gsx$articleauthorid.$t}}",
-    @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}},
-    @"sportType": @"{{this.gsx$sporttype.$t}}",
-    @"sportGender": @"{{this.gsx$sportgender.$t}}",
-    @"sportLevel": @"{{this.gsx$sportlevel.$t}}",
-    @"sportSeason": @"{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}},
-    @"schoolId" : @"{{this.gsx$schoolid.$t}}",
-    @"schoolName" : @"{{this.gsx$schoolname.$t}}",
-    @"schoolState" : @"{{this.gsx$schoolstate.$t}}",
-    @"schoolYear" : @"{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}},
-    @"teamId" : @"{{this.gsx$teamid.$t}}",
-    @"teamName" : @"{{this.gsx$teamname.$t}}",
-    @"teamArena" : @"{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}},
-    @"playerId" : @"{{this.gsx$playerid.$t}}",
-    @"playerName" : @"{{this.gsx$playername.$t}}",
-    @"playerGrade" : @"{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}},
-    @"eventId" : @"{{this.gsx$eventid.$t}}",
-    @"eventName" : @"{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}},
-    @"mediaPartnerId" : @"{{this.gsx$mediapartnerid.$t}}",
-    @"mediaTitle" : @"{{this.gsx$mediatitle.$t}}",
-    @"mediaId" : @"{{this.gsx$mediaid.$t}}",
-    @"mediaMuted" : @"{{this.gsx$mediamuted.$t}}",
-    @"mediaAutoPlay" : @"{{this.gsx$mediaautoplay.$t}}",
-    @"mediaContentType" : @"{{this.gsx$mediacontenttype.$t}}"{{/if}}
+    @"siteType": @"[[*siteType]]",{{#if this.gsx$sitesection.$t}}
+    @"pageType": @"{{this.gsx$pagetype.$t}}",{{/if}}{{#if this.gsx$pagename.$t}}
+    @"pagename": @"{{this.gsx$pagename.$t}}",{{/if}}{{#if this.gsx$pageviewguid.$t}}
+    @"pageViewGuid": @"{{this.gsx$pageviewguid.$t}}",{{/if}}{{#if this.gsx$clicktext.$t}}
+    @"clickText": @"{{this.gsx$clicktext.$t}}",{{/if}}{{#if this.gsx$sitehier.$t}}
+    @"sitehier": @"{{this.gsx$sitehier.$t}}",{{/if}}{{#if this.gsx$siteedition.$t}}
+    @"siteEdition": @"{{this.gsx$siteedition.$t}}",{{/if}}{{#if this.gsx$project.$t}}
+    @"project": @"{{this.gsx$project.$t}}",{{/if}}{{#if this.gsx$channel.$t}}
+    @"channel": @"{{this.gsx$channel.$t}}",{{/if}}{{#if this.gsx$feature.$t}}
+    @"feature": @"{{this.gsx$feature.$t}}",{{/if}}{{#if this.gsx$subfeature.$t}}
+    @"subfeature": @"{{this.gsx$subfeature.$t}}",{{/if}}{{#if this.gsx$sitesection.$t}}
+    @"sitesection": @"{{this.gsx$sitesection.$t}}",{{/if}}{{#if this.gsx$servicelevel.$t}}
+    @"servicelevel": @"{{this.gsx$servicelevel.$t}}",{{/if}}{{#if this.gsx$productline.$t}}
+    @"productline": @"{{this.gsx$productline.$t}}",{{/if}}{{#if this.gsx$user.$t}}
+    @"user": @"{{this.gsx$user.$t}}",{{/if}}{{#if this.gsx$userstatus.$t}}
+    @"userStatus": @"{{this.gsx$userstatus.$t}}",{{/if}}{{#if this.gsx$userregid.$t}}
+    @"userRegId": @"{{this.gsx$userregid.$t}}",{{/if}}{{#if this.gsx$userid.$t}}
+    @"userid": @"{{this.gsx$userid.$t}}",{{/if}}{{#if this.gsx$userregservice.$t}}
+    @"userRegService": @"{{this.gsx$userregservice.$t}}",{{/if}}{{#if this.gsx$usertype.$t}}
+    @"usertype": @"{{this.gsx$usertype.$t}}",{{/if}}{{#if this.gsx$userstate.$t}}
+    @"userstate": @"{{this.gsx$userstate.$t}}",{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+    @"userEventRegistrationSuccess": @"{{this.gsx$usereventregistrationsuccess.$t}}",{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+    @"userEventLoginSuccess": @"{{this.gsx$usereventloginsuccess.$t}}",{{/if}}{{#if this.gsx$userteamrole.$t}}
+    @"userTeamRole": @"{{this.gsx$userteamrole.$t}}",{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    @"mediaPartnerId": @"{{this.gsx$mediapartnerid.$t}}",{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+    @"mediaAutoPlay": @"{{this.gsx$mediaautoplay.$t}}",{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+    @"mediaContentType": @"{{this.gsx$mediacontenttype.$t}}",{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+    @"mediaEndCardUi": @"{{this.gsx$mediaendcardui.$t}}",{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+    @"mediaDistNetwork": @"{{this.gsx$mediadistnetwork.$t}}",{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+    @"mediaSvodContentType": @"{{this.gsx$mediasvodcontenttype.$t}}",{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+    @"mediaDynamicPlay": @"{{this.gsx$mediadynamicplay.$t}}",{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+    @"mediaRelatedShows": @"{{this.gsx$mediarelatedshows.$t}}",{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+    @"mediaDeviceId": @"{{this.gsx$mediadeviceid.$t}}",{{/if}}{{#if this.gsx$mediaresume.$t}}
+    @"mediaResume": @"{{this.gsx$mediaresume.$t}}",{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+    @"mediaViewMode": @"{{this.gsx$mediaviewmode.$t}}",{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+    @"mediaDvrTitleLong": @"{{this.gsx$mediadvrtitlelong.$t}}",{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+    @"mediaDvrTitleShort": @"{{this.gsx$mediadvrtitleshort.$t}}",{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+    @"mediaDvrSlugLabel": @"{{this.gsx$mediadvrsluglabel.$t}}",{{/if}}{{#if this.gsx$mediatitle.$t}}
+    @"mediaTitle": @"{{this.gsx$mediatitle.$t}}",{{/if}}{{#if this.gsx$mediaid.$t}}
+    @"mediaId": @"{{this.gsx$mediaid.$t}}",{{/if}}{{#if this.gsx$mediamuted.$t}}
+    @"mediaMuted": @"{{this.gsx$mediamuted.$t}}",{{/if}}{{#if this.gsx$articleid.$t}}
+    @"articleId": @"{{this.gsx$articleid.$t}}",{{/if}}{{#if this.gsx$articletype.$t}}
+    @"articleType": @"{{this.gsx$articletype.$t}}",{{/if}}{{#if this.gsx$articletitle.$t}}
+    @"articleTitle": @"{{this.gsx$articletitle.$t}}",{{/if}}{{#if this.gsx$articleauthorid.$t}}
+    @"articleauthorid": @"{{this.gsx$articleauthorid.$t}}",{{/if}}{{#if this.gsx$articleauthorname.$t}}
+    @"articleauthorname": @"{{this.gsx$articleauthorname.$t}}",{{/if}}{{#if this.gsx$podtype.$t}}
+    @"podType": @"{{this.gsx$podtype.$t}}",{{/if}}{{#if this.gsx$podtext.$t}}
+    @"podText": @"{{this.gsx$podtext.$t}}",{{/if}}{{#if this.gsx$podsection.$t}}
+    @"podSection": @"{{this.gsx$podsection.$t}}",{{/if}}{{#if this.gsx$podposition.$t}}
+    @"podPosition": @"{{this.gsx$podposition.$t}}",{{/if}}{{#if this.gsx$podtitle.$t}}
+    @"podTitle": @"{{this.gsx$podtitle.$t}}",{{/if}}{{#if this.gsx$showid.$t}}
+    @"showId": @"{{this.gsx$showid.$t}}",{{/if}}{{#if this.gsx$showtitle.$t}}
+    @"showTitle": @"{{this.gsx$showtitle.$t}}",{{/if}}{{#if this.gsx$showepisodeid.$t}}
+    @"showEpisodeId": @"{{this.gsx$showepisodeid.$t}}",{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+    @"showEpisodeTitle": @"{{this.gsx$showepisodetitle.$t}}",{{/if}}{{#if this.gsx$searchterm.$t}}
+    @"searchTerm": @"{{this.gsx$searchterm.$t}}",{{/if}}{{#if this.gsx$searcheventstart.$t}}
+    @"searchEventStart": @"{{this.gsx$searcheventstart.$t}}",{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+    @"searchEventSearch": @"{{this.gsx$searcheventsearch.$t}}",{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+    @"mvpdPartner": @"{{this.gsx$mvpdpartner.$t}}",{{/if}}{{#if this.gsx$mvpdid.$t}}
+    @"mvpdId": @"{{this.gsx$mvpdid.$t}}",{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+    @"purchaseEventBillingStart": @"{{this.gsx$purchaseeventbillingstart.$t}}",{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+    @"purchaseEventOrderComplete": @"{{this.gsx$purchaseeventordercomplete.$t}}",{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+    @"purchaseOrderId": @"{{this.gsx$purchaseorderid.$t}}",{{/if}}{{#if this.gsx$purchasecategory.$t}}
+    @"purchaseCategory": @"{{this.gsx$purchasecategory.$t}}",{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+    @"purchaseProduct": @"{{this.gsx$purchaseproduct.$t}}",{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+    @"purchaseProductName": @"{{this.gsx$purchaseproductname.$t}}",{{/if}}{{#if this.gsx$purchasequantity.$t}}
+    @"purchaseQuantity": @"{{this.gsx$purchasequantity.$t}}",{{/if}}{{#if this.gsx$purchaseprice.$t}}
+    @"purchasePrice": @"{{this.gsx$purchaseprice.$t}}",{{/if}}{{#if this.gsx$products.$t}}
+    @"&&products": @"{{this.gsx$products.$t}}",{{/if}}{{#if this.gsx$productpricingplan.$t}}
+    @"productPricingPlan": @"{{this.gsx$productpricingplan.$t}}",{{/if}}{{#if this.gsx$productofferperiod.$t}}
+    @"productOfferPeriod": @"{{this.gsx$productofferperiod.$t}}",{{/if}}{{#if this.gsx$intcid.$t}}
+    @"intcid": @"{{this.gsx$intcid.$t}}",{{/if}}{{#if this.gsx$campaign.$t}}
+    @"campaign": @"{{this.gsx$campaign.$t}}",{{/if}}{{#if this.gsx$upselltype.$t}}
+    @"upsellType": @"{{this.gsx$upselltype.$t}}",{{/if}}{{#if this.gsx$errorcode.$t}}
+    @"errorCode": @"{{this.gsx$errorcode.$t}}",{{/if}}{{#if this.gsx$launchtype.$t}}
+    @"launchType": @"{{this.gsx$launchtype.$t}}",{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+    @"deepLink/searchReferral": @"{{this.gsx$deeplink/searchreferral.$t}}",{{/if}}{{#if this.gsx$caststate.$t}}
+    @"castState": @"{{this.gsx$caststate.$t}}",{{/if}}{{#if this.gsx$applog.$t}}
+    @"appLog": @"{{this.gsx$applog.$t}}",{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+    @"taplyticsUserId": @"{{this.gsx$taplyticsuserid.$t}}",{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+    @"taplyticsSessionId": @"{{this.gsx$taplyticssessionid.$t}}",{{/if}}{{#if this.gsx$schoolid.$t}}
+    @"schoolId": @"{{this.gsx$schoolid.$t}}",{{/if}}{{#if this.gsx$schoolname.$t}}
+    @"schoolName": @"{{this.gsx$schoolname.$t}}",{{/if}}{{#if this.gsx$schoolstate.$t}}
+    @"schoolState": @"{{this.gsx$schoolstate.$t}}",{{/if}}{{#if this.gsx$schoolyear.$t}}
+    @"schoolYear": @"{{this.gsx$schoolyear.$t}}",{{/if}}{{#if this.gsx$teamid.$t}}
+    @"teamId": @"{{this.gsx$teamid.$t}}",{{/if}}{{#if this.gsx$teamname.$t}}
+    @"teamName": @"{{this.gsx$teamname.$t}}",{{/if}}{{#if this.gsx$teamarena.$t}}
+    @"teamArena": @"{{this.gsx$teamarena.$t}}",{{/if}}{{#if this.gsx$playerid.$t}}
+    @"playerId": @"{{this.gsx$playerid.$t}}",{{/if}}{{#if this.gsx$playername.$t}}
+    @"playerName": @"{{this.gsx$playername.$t}}",{{/if}}{{#if this.gsx$playergrade.$t}}
+    @"playerGrade": @"{{this.gsx$playergrade.$t}}",{{/if}}{{#if this.gsx$eventid.$t}}
+    @"eventId": @"{{this.gsx$eventid.$t}}",{{/if}}{{#if this.gsx$eventname.$t}}
+    @"eventName": @"{{this.gsx$eventname.$t}}",{{/if}}{{#if this.gsx$sporttype.$t}}
+    @"sportType": @"{{this.gsx$sporttype.$t}}",{{/if}}{{#if this.gsx$sportgender.$t}}
+    @"sportGender": @"{{this.gsx$sportgender.$t}}",{{/if}}{{#if this.gsx$sportlevel.$t}}
+    @"sportLevel": @"{{this.gsx$sportlevel.$t}}",{{/if}}{{#if this.gsx$sportseason.$t}}
+    @"sportSeason": @"{{this.gsx$sportseason.$t}}",{{/if}}{{#if this.gsx$photoeventview.$t}}
+    @"photoEventView": @"{{this.gsx$photoeventview.$t}}",{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+    @"topicPrimaryId": @"{{this.gsx$topicprimaryid.$t}}",{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+    @"topicPrimaryName": @"{{this.gsx$topicprimaryname.$t}}",{{/if}}{{#if this.gsx$collectionid.$t}}
+    @"collectionId": @"{{this.gsx$collectionid.$t}}",{{/if}}{{#if this.gsx$collectionname.$t}}
+    @"collectionName": @"{{this.gsx$collectionname.$t}}",{{/if}}{{#if this.gsx$socialsharetype.$t}}
+    @"socialShareType": @"{{this.gsx$socialsharetype.$t}}",{{/if}}{{#if this.gsx$traystatus.$t}}
+    @"trayStatus": @"{{this.gsx$traystatus.$t}}",{{/if}}{{#if this.gsx$playlisttitle.$t}}
+    @"playListTitle": @"{{this.gsx$playlisttitle.$t}}",{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+    @"bookMarkTitle": @"{{this.gsx$bookmarktitle.$t}}",{{/if}}
 };
 [ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
 </div>
