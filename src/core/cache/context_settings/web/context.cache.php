@@ -37,6 +37,8 @@
     'web-cs/' => 69,
     'apps/' => 88,
     '247sportsweb/' => 85,
+    'apps-news/' => 94,
+    'apps-cbsnews/' => 95,
     'web-cbs/' => 90,
     'apps-cbs/' => 92,
     'techrepublic/' => 40,
@@ -86,6 +88,7 @@
     'gamedaylive-hopscotch-app.html' => 89,
     'cbs.com-website.html' => 91,
     'cbsapp-all-access.html' => 93,
+    'app-cbsnews.html' => 96,
   ),
   'resourceMap' => 
   array (
@@ -166,6 +169,14 @@
     30 => 
     array (
       0 => 85,
+    ),
+    31 => 
+    array (
+      0 => 94,
+    ),
+    32 => 
+    array (
+      0 => 95,
     ),
     33 => 
     array (
@@ -323,6 +334,10 @@
     92 => 
     array (
       0 => 93,
+    ),
+    94 => 
+    array (
+      0 => 96,
     ),
   ),
   'webLinkMap' => 
