@@ -31,9 +31,9 @@
     ),
     'OnDocFormPrerender' => 
     array (
-      5 => '5',
       2 => '2',
       23 => '23',
+      5 => '5',
     ),
     'OnDocFormSave' => 
     array (
@@ -76,8 +76,8 @@
     ),
     'OnSiteRefresh' => 
     array (
-      7 => '7',
       8 => '8',
+      7 => '7',
     ),
     'OnSnipFormDelete' => 
     array (
@@ -120,8 +120,8 @@
     ),
     'OnTVInputPropertiesList' => 
     array (
-      23 => '23',
       2 => '2',
+      23 => '23',
     ),
     'OnTVInputRenderList' => 
     array (
