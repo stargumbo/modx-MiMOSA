@@ -3,24 +3,24 @@
  *  MODX Configuration file
  */
 $database_type = 'mysql';
-$database_server = '172.17.0.1';
+$database_server = '172.20.0.1';
 $database_user = 'tkoscinski';
 $database_password = 'past0123!';
 $database_connection_charset = 'utf8';
 $dbase = 'modx';
 $table_prefix = 'modx_';
-$database_dsn = 'mysql:host=172.17.0.1;dbname=modx;charset=utf8';
+$database_dsn = 'mysql:host=172.20.0.1;dbname=modx;charset=utf8';
 $config_options = array (
 );
 $driver_options = array (
 );
 
-$lastInstallTime = 1488224051;
+$lastInstallTime = 1497377511;
 
-$site_id = 'modx58b47f339e9651.10306431';
+$site_id = 'modx59402ae740e519.84015522';
 $site_sessionname = 'SN587bca6d27347';
 $https_port = '443';
-$uuid = 'ccc62abf-5ce9-4f55-9291-e4da29117489';
+$uuid = '4c8c1896-fa9e-420b-b7ec-5a8c6508564e';
 
 if (!defined('MODX_CORE_PATH')) {
     $modx_core_path= '/var/www/core/';
@@ -59,10 +59,10 @@ if (!defined('MODX_URL_SCHEME')) {
 }
 if (!defined('MODX_HTTP_HOST')) {
     if(defined('PHP_SAPI') && (PHP_SAPI == "cli" || PHP_SAPI == "embed")) {
-        $http_host='util274.mia2.cbsig.net';
+        $http_host='util222.mia2.cbsig.net';
         define('MODX_HTTP_HOST', $http_host);
     } else {
-        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? $_SERVER['HTTP_HOST'] : 'util274.mia2.cbsig.net';
+        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? $_SERVER['HTTP_HOST'] : 'util222.mia2.cbsig.net';
         if ($_SERVER['SERVER_PORT'] != 80) {
             $http_host= str_replace(':' . $_SERVER['SERVER_PORT'], '', $http_host); // remove port from HTTP_HOST
         }
