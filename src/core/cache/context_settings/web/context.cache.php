@@ -29,12 +29,14 @@
     'ctd/' => 37,
     'cbs-news.html' => 31,
     '60-minutes.html' => 32,
-    'cbs.com.html' => 33,
+    'cbs.com/' => 33,
     'web/' => 55,
     'cbssportsapps/' => 8,
     'cbssportsfantasyapps/' => 38,
     'maxprepsapps/' => 39,
     '247sportsweb/' => 85,
+    'web-cbs/' => 88,
+    'apps-cbs/' => 90,
     'techrepublic/' => 40,
     'zdnet/' => 41,
     'gamespot/' => 42,
@@ -79,6 +81,8 @@
     'metacritic.com.html' => 81,
     'chowhound.com.html' => 84,
     '247sports-site.html' => 86,
+    'cbs.com.html' => 89,
+    'cbsapp-all-access.html' => 91,
   ),
   'resourceMap' => 
   array (
@@ -158,6 +162,11 @@
     30 => 
     array (
       0 => 85,
+    ),
+    33 => 
+    array (
+      0 => 88,
+      1 => 90,
     ),
     34 => 
     array (
@@ -299,6 +308,14 @@
     array (
       0 => 86,
     ),
+    88 => 
+    array (
+      0 => 89,
+    ),
+    90 => 
+    array (
+      0 => 91,
+    ),
   ),
   'webLinkMap' => 
   array (
@@ -415,8 +432,8 @@
     ),
     'OnTVInputRenderList' => 
     array (
-      2 => '2',
       23 => '23',
+      2 => '2',
     ),
     'OnTVOutputRenderList' => 
     array (
