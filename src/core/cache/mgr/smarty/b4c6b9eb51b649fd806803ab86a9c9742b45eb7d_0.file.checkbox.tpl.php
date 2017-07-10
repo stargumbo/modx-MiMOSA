@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2017-03-14 16:43:45
+<?php /* Smarty version 3.1.27, created on 2017-07-05 16:49:08
          compiled from "/var/www/htdocs/manager/templates/default/element/tv/renders/inputproperties/checkbox.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:5431251458c81dc1e73c68_18019134%%*/
+/*%%SmartyHeaderCode:1563721408595d1884718cb9_58132152%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '5431251458c81dc1e73c68_18019134',
+  'nocache_hash' => '1563721408595d1884718cb9_58132152',
   'variables' => 
   array (
     'tv' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_58c81dc1e99217_26606694',
+  'unifunc' => 'content_595d18847485b9_25631629',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_58c81dc1e99217_26606694')) {
-function content_58c81dc1e99217_26606694 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_595d18847485b9_25631629')) {
+function content_595d18847485b9_25631629 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '5431251458c81dc1e73c68_18019134';
+$_smarty_tpl->properties['nocache_hash'] = '1563721408595d1884718cb9_58132152';
 ?>
 <div id="tv-input-properties-form<?php echo (($tmp = @$_smarty_tpl->tpl_vars['tv']->value)===null||$tmp==='' ? '' : $tmp);?>
 "></div>

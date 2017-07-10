@@ -99,11 +99,21 @@
                 return this.gsx$webviewurl.$t + '?';
             }
         });
+        Handlebars.registerHelper("highlightDynamic", function(column){
+            if(/(\[.*?\])/gi.test(column)) {
+                return '<mark>' + column + '</mark>';
+                fireprism();
+            } else {
+                return column;
+            }
+        })
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
         jQuery(destination).html(theCompiledHtml);
     };
+
+
 
     /* Allocate Ontology Resources */
     classifyontology = function(element){

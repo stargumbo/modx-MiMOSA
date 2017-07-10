@@ -12,6 +12,7 @@
     'cmg/' => 21,
     'cbs-sports-app.html' => 4,
     'googleapi.html' => 1,
+    'migxtestattributes.html' => 97,
     'cbs-sports/' => 24,
     'cbs-sports-fantasy/' => 25,
     'sportsline.html' => 26,
@@ -33,6 +34,7 @@
     'web/' => 55,
     'cbssportsapps/' => 8,
     'cbssportsfantasyapps/' => 38,
+    'cbssportsfantasy-web/' => 99,
     'maxprepsapps/' => 39,
     'web-cs/' => 69,
     'apps/' => 88,
@@ -57,6 +59,7 @@
     'inside-edition.html' => 53,
     'cbssportsfantasy-app.html' => 17,
     'draftmaster-app.html' => 11,
+    'opm-opc-app.html' => 98,
     'maxprepsteamsapp.html' => 16,
     'maxpreps-app.html' => 87,
     'web-techrepublic/' => 57,
@@ -89,6 +92,7 @@
     'cbs.com-website.html' => 91,
     'cbsapp-all-access.html' => 93,
     'app-cbsnews.html' => 96,
+    'opm-opc-desktop.html' => 100,
   ),
   'resourceMap' => 
   array (
@@ -111,6 +115,7 @@
     9 => 
     array (
       0 => 1,
+      1 => 97,
     ),
     12 => 
     array (
@@ -156,6 +161,7 @@
     25 => 
     array (
       0 => 38,
+      1 => 99,
     ),
     27 => 
     array (
@@ -213,6 +219,7 @@
     array (
       0 => 17,
       1 => 11,
+      2 => 98,
     ),
     39 => 
     array (
@@ -338,6 +345,10 @@
     94 => 
     array (
       0 => 96,
+    ),
+    99 => 
+    array (
+      0 => 100,
     ),
   ),
   'webLinkMap' => 
@@ -641,79 +652,6 @@ switch ($modx->event->name) {
         $modx->controller->addCss($gallery->config[\'cssUrl\'].\'mgr.css\');
         break;
 }
-return;',
-      'locked' => '0',
-      'properties' => NULL,
-      'disabled' => '0',
-      'moduleguid' => '',
-      'static' => '0',
-      'static_file' => '',
-    ),
-    26 => 
-    array (
-      'id' => '26',
-      'source' => '0',
-      'property_preprocess' => '0',
-      'name' => 'ClientConfig',
-      'description' => 'Sets system settings from the Client Config CMP.',
-      'editor_type' => '0',
-      'category' => '0',
-      'cache_type' => '0',
-      'plugincode' => '/**
- * ClientConfig
- *
- * Copyright 2011-2014 by Mark Hamstra <hello@markhamstra.com>
- *
- * ClientConfig is free software; you can redistribute it and/or modify it under the
- * terms of the GNU General Public License as published by the Free Software
- * Foundation; either version 2 of the License, or (at your option) any later
- * version.
- *
- * ClientConfig is distributed in the hope that it will be useful, but WITHOUT ANY
- * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
- * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along with
- * ClientConfig; if not, write to the Free Software Foundation, Inc., 59 Temple
- * Place, Suite 330, Boston, MA 02111-1307 USA
- *
- * @package clientconfig
- *
- * @var modX $modx
- * @var int $id
- * @var string $mode
- * @var modResource $resource
- * @var modTemplate $template
- * @var modTemplateVar $tv
- * @var modChunk $chunk
- * @var modSnippet $snippet
- * @var modPlugin $plugin
-*/
-
-$eventName = $modx->event->name;
-
-switch($eventName) {
-    case \'OnMODXInit\':
-        /* Grab the class */
-        $path = $modx->getOption(\'clientconfig.core_path\', null, $modx->getOption(\'core_path\') . \'components/clientconfig/\');
-        $path .= \'model/clientconfig/\';
-        $clientConfig = $modx->getService(\'clientconfig\',\'ClientConfig\', $path);
-
-        /* If we got the class (gotta be careful of failed migrations), grab settings and go! */
-        if ($clientConfig instanceof ClientConfig) {
-            $settings = $clientConfig->getSettings();
-
-            /* Make settings available as [[++tags]] */
-            $modx->setPlaceholders($settings, \'+\');
-
-            /* Make settings available for $modx->getOption() */
-            foreach ($settings as $key => $value) {
-                $modx->setOption($key, $value);
-            }
-        }
-        break;
-}
-
 return;',
       'locked' => '0',
       'properties' => NULL,
@@ -1112,6 +1050,79 @@ switch ($modx->event->name) {
 return;',
       'locked' => '0',
       'properties' => 'a:0:{}',
+      'disabled' => '0',
+      'moduleguid' => '',
+      'static' => '0',
+      'static_file' => '',
+    ),
+    26 => 
+    array (
+      'id' => '26',
+      'source' => '0',
+      'property_preprocess' => '0',
+      'name' => 'ClientConfig',
+      'description' => 'Sets system settings from the Client Config CMP.',
+      'editor_type' => '0',
+      'category' => '0',
+      'cache_type' => '0',
+      'plugincode' => '/**
+ * ClientConfig
+ *
+ * Copyright 2011-2014 by Mark Hamstra <hello@markhamstra.com>
+ *
+ * ClientConfig is free software; you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 2 of the License, or (at your option) any later
+ * version.
+ *
+ * ClientConfig is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * ClientConfig; if not, write to the Free Software Foundation, Inc., 59 Temple
+ * Place, Suite 330, Boston, MA 02111-1307 USA
+ *
+ * @package clientconfig
+ *
+ * @var modX $modx
+ * @var int $id
+ * @var string $mode
+ * @var modResource $resource
+ * @var modTemplate $template
+ * @var modTemplateVar $tv
+ * @var modChunk $chunk
+ * @var modSnippet $snippet
+ * @var modPlugin $plugin
+*/
+
+$eventName = $modx->event->name;
+
+switch($eventName) {
+    case \'OnMODXInit\':
+        /* Grab the class */
+        $path = $modx->getOption(\'clientconfig.core_path\', null, $modx->getOption(\'core_path\') . \'components/clientconfig/\');
+        $path .= \'model/clientconfig/\';
+        $clientConfig = $modx->getService(\'clientconfig\',\'ClientConfig\', $path);
+
+        /* If we got the class (gotta be careful of failed migrations), grab settings and go! */
+        if ($clientConfig instanceof ClientConfig) {
+            $settings = $clientConfig->getSettings();
+
+            /* Make settings available as [[++tags]] */
+            $modx->setPlaceholders($settings, \'+\');
+
+            /* Make settings available for $modx->getOption() */
+            foreach ($settings as $key => $value) {
+                $modx->setOption($key, $value);
+            }
+        }
+        break;
+}
+
+return;',
+      'locked' => '0',
+      'properties' => NULL,
       'disabled' => '0',
       'moduleguid' => '',
       'static' => '0',

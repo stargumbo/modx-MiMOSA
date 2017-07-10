@@ -59,6 +59,7 @@
 
             <h3>Implementation Basics</h3>
             <div class="accordion accordion5">
+                [[*mvt_override:contains=`MVT`:then=``:else=`
                 <!-- Insert web_analyticsMethods -->
                 <h2>Page/Screen Tracking</h2>
                 <div class="inner-container">
@@ -81,7 +82,7 @@
                             [[*appfeatures:contains=`Teams`:then=`[[$af_teams]]`]]
                         </div>
                     </div>
-                </div>
+                </div>`]]
 
                 <!-- Page Tagging -->
                 <h2>Basic Page Tagging</h2>

@@ -12,4 +12,9 @@ return array (
   9 => '/root/n_type_chunk/n_chunk_category_7/n_chunk_category_26',
   10 => '/root/n_type_tv/n_tv_category_6',
   11 => '/root/n_type_tv/n_tv_category_8',
+  12 => '/root/n_type_tv/n_tv_category_38',
+  13 => '/root/n_category',
+  14 => '/root/n_type_tv/n_tv_category_41',
+  15 => '/root/n_type_snippet',
+  16 => '/root/n_type_plugin',
 );

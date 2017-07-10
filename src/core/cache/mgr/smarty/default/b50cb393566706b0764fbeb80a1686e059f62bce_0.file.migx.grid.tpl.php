@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2017-05-04 14:07:05
+<?php /* Smarty version 3.1.27, created on 2017-06-30 00:11:34
          compiled from "/var/www/core/components/migx/templates/mgr/grids/migx.grid.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:447172232590b3589c0aa52_03483249%%*/
+/*%%SmartyHeaderCode:81596150659559736d3cc04_46269448%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '447172232590b3589c0aa52_03483249',
+  'nocache_hash' => '81596150659559736d3cc04_46269448',
   'variables' => 
   array (
     'tv' => 0,
@@ -29,13 +29,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_590b3589cc1971_06760166',
+  'unifunc' => 'content_59559736df6684_54891304',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_590b3589cc1971_06760166')) {
-function content_590b3589cc1971_06760166 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_59559736df6684_54891304')) {
+function content_59559736df6684_54891304 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '447172232590b3589c0aa52_03483249';
+$_smarty_tpl->properties['nocache_hash'] = '81596150659559736d3cc04_46269448';
 ?>
 
 MODx.grid.multiTVgrid<?php echo $_smarty_tpl->tpl_vars['tv']->value->id;?>
