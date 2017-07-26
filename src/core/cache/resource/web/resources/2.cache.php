@@ -243,9 +243,9 @@ pre.line-numbers > code { position:relative; }
 
     <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/js/prism.js"></script>
     <script src="assets/js/colorbox.js"></script>
     <script src="assets/js/handlebars.js"></script>
-    <script src="assets/js/prism.js"></script>
     <script id="app-code-template" type="text/x-handlebars-template">
     {{#each entry}}
     <div class="accordion2 ontology-row ontologymethod-{{this.gsx$trackingmethod.$t}} ontologycategory-{{#if this.gsx$mediapartnerid.$t}}video{{else if this.gsx$articleid.$t}}article{{else if this.gsx$webviewurl.$t}}webview{{else}}basic{{/if}}">
@@ -259,7 +259,7 @@ pre.line-numbers > code { position:relative; }
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em></em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -269,42 +269,115 @@ pre.line-numbers > code { position:relative; }
                 </ul>
                 <div class="tab-content main-content">
                     <div id="tab-web-{{@index}}" class="tab active">
-    <pre class="line-numbers"><code class="language-json">    siteCode : \'\'
-    sitePrimaryRsid : \'\'
-    siteType : \'\'
-    siteSection : \'{{this.gsx$sitesection.$t}}\'
-    siteHier : \'{{this.gsx$sitehier.$t}}\'
-    pageType : \'{{this.gsx$pagetype.$t}}\'
-    screenName : \'{{this.gsx$pagename.$t}}\'{{#if this.gsx$directionscrolled.$t}}
-    directionScrolled : \'{{this.gsx$directionscrolled.$t}}\'
-    percentScrolled : \'{{this.gsx$percentscrolled.$t}}\'{{/if}}{{#if this.gsx$articleid.$t}}
-    articleId : \'{{this.gsx$articleid.$t}}\'
-    articleTitle : \'{{this.gsx$articletitle.$t}}\'
-    articleType : \'{{this.gsx$articletype.$t}}\'
-    articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
-    articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}{{#if this.gsx$sporttype.$t}}
-    sportType : \'{{this.gsx$sporttype.$t}}\'
-    sportGender : \'{{this.gsx$sportgender.$t}}\'
-    sportLevel : \'{{this.gsx$sportlevel.$t}}\'
-    sportSeason : \'{{this.gsx$sportseason.$t}}\'{{/if}}{{#if this.gsx$schoolid.$t}}
-    schoolId : \'{{this.gsx$schoolid.$t}}\'
-    schoolName : \'{{this.gsx$schoolname.$t}}\'
-    schoolState : \'{{this.gsx$schoolstate.$t}}\'
-    schoolYear : \'{{this.gsx$schoolyear.$t}}\'{{/if}}{{#if this.gsx$teamid.$t}}
-    teamId : \'{{this.gsx$teamid.$t}}\'
-    teamName : \'{{this.gsx$teamname.$t}}\'
-    teamArena : \'{{this.gsx$teamarena.$t}}\'{{/if}}{{#if this.gsx$playerid.$t}}
-    playerId : \'{{this.gsx$playerid.$t}}\'
-    playerName : \'{{this.gsx$playername.$t}}\'
-    playerGrade : \'{{this.gsx$playergrade.$t}}\'{{/if}}{{#if this.gsx$eventid.$t}}
-    eventId : \'{{this.gsx$eventid.$t}}\'
-    eventName : \'{{this.gsx$eventname.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
-    mediaPartnerId : \'{{this.gsx$mediapartnerid.$t}}\'
-    mediaTitle : \'{{this.gsx$mediatitle.$t}}\'
-    mediaId : \'{{this.gsx$mediaid.$t}}\'
-    mediaMuted : \'{{this.gsx$mediamuted.$t}}\'
-    mediaAutoPlay : \'{{this.gsx$mediaautoplay.$t}}\'
-    mediaContentType : \'{{this.gsx$mediacontenttype.$t}}\'{{/if}}
+    <pre class="line-numbers"><code class="language-json">    "siteCode" : ""
+    "sitePrimaryRsid" : ""
+    "siteType" : ""{{#if this.gsx$pagetype.$t}}
+    "pageType" : "{{this.gsx$pagetype.$t}}"{{/if}}{{#if this.gsx$pagename.$t}}
+    "pagename" : "{{this.gsx$pagename.$t}}"{{/if}}{{#if this.gsx$screenname.$t}}
+    "screenZname" : "{{this.gsx$screenname.$t}}"{{/if}}{{#if this.gsx$pageviewguid.$t}}
+    "pageViewGuid" : "{{this.gsx$pageviewguid.$t}}"{{/if}}{{#if this.gsx$clicktext.$t}}
+    "clickText" : "{{this.gsx$clicktext.$t}}"{{/if}}{{#if this.gsx$sitehier.$t}}
+    "sitehier" : "{{this.gsx$sitehier.$t}}"{{/if}}{{#if this.gsx$siteedition.$t}}
+    "siteEdition" : "{{this.gsx$siteedition.$t}}"{{/if}}{{#if this.gsx$project.$t}}
+    "project" : "{{this.gsx$project.$t}}"{{/if}}{{#if this.gsx$channel.$t}}
+    "channel" : "{{this.gsx$channel.$t}}"{{/if}}{{#if this.gsx$feature.$t}}
+    "feature" : "{{this.gsx$feature.$t}}"{{/if}}{{#if this.gsx$subfeature.$t}}
+    "subfeature" : "{{this.gsx$subfeature.$t}}"{{/if}}{{#if this.gsx$sitesection.$t}}
+    "sitesection" : "{{this.gsx$sitesection.$t}}"{{/if}}{{#if this.gsx$servicelevel.$t}}
+    "servicelevel" : "{{this.gsx$servicelevel.$t}}"{{/if}}{{#if this.gsx$productline.$t}}
+    "productline" : "{{this.gsx$productline.$t}}"{{/if}}{{#if this.gsx$user.$t}}
+    "user" : "{{this.gsx$user.$t}}"{{/if}}{{#if this.gsx$userstatus.$t}}
+    "userStatus" : "{{this.gsx$userstatus.$t}}"{{/if}}{{#if this.gsx$userregid.$t}}
+    "userRegId" : "{{this.gsx$userregid.$t}}"{{/if}}{{#if this.gsx$userid.$t}}
+    "userid" : "{{this.gsx$userid.$t}}"{{/if}}{{#if this.gsx$userregservice.$t}}
+    "userRegService" : "{{this.gsx$userregservice.$t}}"{{/if}}{{#if this.gsx$usertype.$t}}
+    "usertype" : "{{this.gsx$usertype.$t}}"{{/if}}{{#if this.gsx$userstate.$t}}
+    "userstate" : "{{this.gsx$userstate.$t}}"{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+    "userEventRegistrationSuccess" : "{{this.gsx$usereventregistrationsuccess.$t}}"{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+    "userEventLoginSuccess" : "{{this.gsx$usereventloginsuccess.$t}}"{{/if}}{{#if this.gsx$userteamrole.$t}}
+    "userTeamRole" : "{{this.gsx$userteamrole.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    "mediaPartnerId" : "{{this.gsx$mediapartnerid.$t}}"{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+    "mediaAutoPlay" : "{{this.gsx$mediaautoplay.$t}}"{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+    "mediaContentType" : "{{this.gsx$mediacontenttype.$t}}"{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+    "mediaEndCardUi" : "{{this.gsx$mediaendcardui.$t}}"{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+    "mediaDistNetwork" : "{{this.gsx$mediadistnetwork.$t}}"{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+    "mediaSvodContentType" : "{{this.gsx$mediasvodcontenttype.$t}}"{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+    "mediaDynamicPlay" : "{{this.gsx$mediadynamicplay.$t}}"{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+    "mediaRelatedShows" : "{{this.gsx$mediarelatedshows.$t}}"{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+    "mediaDeviceId" : "{{this.gsx$mediadeviceid.$t}}"{{/if}}{{#if this.gsx$mediaresume.$t}}
+    "mediaResume" : "{{this.gsx$mediaresume.$t}}"{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+    "mediaViewMode" : "{{this.gsx$mediaviewmode.$t}}"{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+    "mediaDvrTitleLong" : "{{this.gsx$mediadvrtitlelong.$t}}"{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+    "mediaDvrTitleShort" : "{{this.gsx$mediadvrtitleshort.$t}}"{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+    "mediaDvrSlugLabel" : "{{this.gsx$mediadvrsluglabel.$t}}"{{/if}}{{#if this.gsx$mediatitle.$t}}
+    "mediaTitle" : "{{this.gsx$mediatitle.$t}}"{{/if}}{{#if this.gsx$mediaid.$t}}
+    "mediaId" : "{{this.gsx$mediaid.$t}}"{{/if}}{{#if this.gsx$mediamuted.$t}}
+    "mediaMuted" : "{{this.gsx$mediamuted.$t}}"{{/if}}{{#if this.gsx$articleid.$t}}
+    "articleId" : "{{this.gsx$articleid.$t}}"{{/if}}{{#if this.gsx$articletype.$t}}
+    "articleType" : "{{this.gsx$articletype.$t}}"{{/if}}{{#if this.gsx$articletitle.$t}}
+    "articleTitle" : "{{this.gsx$articletitle.$t}}"{{/if}}{{#if this.gsx$articleauthorid.$t}}
+    "articleauthorid" : "{{this.gsx$articleauthorid.$t}}"{{/if}}{{#if this.gsx$articleauthorname.$t}}
+    "articleauthorname" : "{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$podtype.$t}}
+    "podType" : "{{this.gsx$podtype.$t}}"{{/if}}{{#if this.gsx$podtext.$t}}
+    "podText" : "{{this.gsx$podtext.$t}}"{{/if}}{{#if this.gsx$podsection.$t}}
+    "podSection" : "{{this.gsx$podsection.$t}}"{{/if}}{{#if this.gsx$podposition.$t}}
+    "podPosition" : "{{this.gsx$podposition.$t}}"{{/if}}{{#if this.gsx$podtitle.$t}}
+    "podTitle" : "{{this.gsx$podtitle.$t}}"{{/if}}{{#if this.gsx$showid.$t}}
+    "showId" : "{{this.gsx$showid.$t}}"{{/if}}{{#if this.gsx$showtitle.$t}}
+    "showTitle" : "{{this.gsx$showtitle.$t}}"{{/if}}{{#if this.gsx$showepisodeid.$t}}
+    "showEpisodeId" : "{{this.gsx$showepisodeid.$t}}"{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+    "showEpisodeTitle" : "{{this.gsx$showepisodetitle.$t}}"{{/if}}{{#if this.gsx$searchterm.$t}}
+    "searchTerm" : "{{this.gsx$searchterm.$t}}"{{/if}}{{#if this.gsx$searcheventstart.$t}}
+    "searchEventStart" : "{{this.gsx$searcheventstart.$t}}"{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+    "searchEventSearch" : "{{this.gsx$searcheventsearch.$t}}"{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+    "mvpdPartner" : "{{this.gsx$mvpdpartner.$t}}"{{/if}}{{#if this.gsx$mvpdid.$t}}
+    "mvpdId" : "{{this.gsx$mvpdid.$t}}"{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+    "purchaseEventBillingStart" : "{{this.gsx$purchaseeventbillingstart.$t}}"{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+    "purchaseEventOrderComplete" : "{{this.gsx$purchaseeventordercomplete.$t}}"{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+    "purchaseOrderId" : "{{this.gsx$purchaseorderid.$t}}"{{/if}}{{#if this.gsx$purchasecategory.$t}}
+    "purchaseCategory" : "{{this.gsx$purchasecategory.$t}}"{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+    "purchaseProduct" : "{{this.gsx$purchaseproduct.$t}}"{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+    "purchaseProductName" : "{{this.gsx$purchaseproductname.$t}}"{{/if}}{{#if this.gsx$purchasequantity.$t}}
+    "purchaseQuantity" : "{{this.gsx$purchasequantity.$t}}"{{/if}}{{#if this.gsx$purchaseprice.$t}}
+    "purchasePrice" : "{{this.gsx$purchaseprice.$t}}"{{/if}}{{#if this.gsx$products.$t}}
+    "&&products" : "{{this.gsx$products.$t}}"{{/if}}{{#if this.gsx$productpricingplan.$t}}
+    "productPricingPlan" : "{{this.gsx$productpricingplan.$t}}"{{/if}}{{#if this.gsx$productofferperiod.$t}}
+    "productOfferPeriod" : "{{this.gsx$productofferperiod.$t}}"{{/if}}{{#if this.gsx$intcid.$t}}
+    "intcid" : "{{this.gsx$intcid.$t}}"{{/if}}{{#if this.gsx$campaign.$t}}
+    "campaign" : "{{this.gsx$campaign.$t}}"{{/if}}{{#if this.gsx$upselltype.$t}}
+    "upsellType" : "{{this.gsx$upselltype.$t}}"{{/if}}{{#if this.gsx$errorcode.$t}}
+    "errorCode" : "{{this.gsx$errorcode.$t}}"{{/if}}{{#if this.gsx$launchtype.$t}}
+    "launchType" : "{{this.gsx$launchtype.$t}}"{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+    "deepLink/searchReferral" : "{{this.gsx$deeplink/searchreferral.$t}}"{{/if}}{{#if this.gsx$caststate.$t}}
+    "castState" : "{{this.gsx$caststate.$t}}"{{/if}}{{#if this.gsx$applog.$t}}
+    "appLog" : "{{this.gsx$applog.$t}}"{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+    "taplyticsUserId" : "{{this.gsx$taplyticsuserid.$t}}"{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+    "taplyticsSessionId" : "{{this.gsx$taplyticssessionid.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}}
+    "schoolId" : "{{this.gsx$schoolid.$t}}"{{/if}}{{#if this.gsx$schoolname.$t}}
+    "schoolName" : "{{this.gsx$schoolname.$t}}"{{/if}}{{#if this.gsx$schoolstate.$t}}
+    "schoolState" : "{{this.gsx$schoolstate.$t}}"{{/if}}{{#if this.gsx$schoolyear.$t}}
+    "schoolYear" : "{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}}
+    "teamId" : "{{this.gsx$teamid.$t}}"{{/if}}{{#if this.gsx$teamname.$t}}
+    "teamName" : "{{this.gsx$teamname.$t}}"{{/if}}{{#if this.gsx$teamarena.$t}}
+    "teamArena" : "{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}}
+    "playerId" : "{{this.gsx$playerid.$t}}"{{/if}}{{#if this.gsx$playername.$t}}
+    "playerName" : "{{this.gsx$playername.$t}}"{{/if}}{{#if this.gsx$playergrade.$t}}
+    "playerGrade" : "{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}}
+    "eventId" : "{{this.gsx$eventid.$t}}"{{/if}}{{#if this.gsx$eventname.$t}}
+    "eventName" : "{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}}
+    "sportType" : "{{this.gsx$sporttype.$t}}"{{/if}}{{#if this.gsx$sportgender.$t}}
+    "sportGender" : "{{this.gsx$sportgender.$t}}"{{/if}}{{#if this.gsx$sportlevel.$t}}
+    "sportLevel" : "{{this.gsx$sportlevel.$t}}"{{/if}}{{#if this.gsx$sportseason.$t}}
+    "sportSeason" : "{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$photoeventview.$t}}
+    "photoEventView" : "{{this.gsx$photoeventview.$t}}"{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+    "topicPrimaryId" : "{{this.gsx$topicprimaryid.$t}}"{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+    "topicPrimaryName" : "{{this.gsx$topicprimaryname.$t}}"{{/if}}{{#if this.gsx$collectionid.$t}}
+    "collectionId" : "{{this.gsx$collectionid.$t}}"{{/if}}{{#if this.gsx$collectionname.$t}}
+    "collectionName" : "{{this.gsx$collectionname.$t}}"{{/if}}{{#if this.gsx$socialsharetype.$t}}
+    "socialShareType" : "{{this.gsx$socialsharetype.$t}}"{{/if}}{{#if this.gsx$traystatus.$t}}
+    "trayStatus" : "{{this.gsx$traystatus.$t}}"{{/if}}{{#if this.gsx$playlisttitle.$t}}
+    "playListTitle" : "{{this.gsx$playlisttitle.$t}}"{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+    "bookMarkTitle" : "{{this.gsx$bookmarktitle.$t}}"{{/if}}
 </code></pre>
 </div>
                     
@@ -373,16 +446,36 @@ pre.line-numbers > code { position:relative; }
     firehandlebars = function(data, template, destination){
         Handlebars.registerHelper(\'trackingMethodPage\', function(trackingmethod){
             if(trackingmethod === \'trackState\'){
-                return this.gsx$pagename.$t;
+                if (this.gsx$pagename){
+                    return this.gsx$pagename.$t;
+                } else if (this.gsx$screenname) {
+                    return this.gsx$screenname.$t;
+                }
             } else {
                 return this.gsx$trackingmethodaction.$t;
             }
         });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
+            }
+        });
+        Handlebars.registerHelper("highlightDynamic", function(column){
+            if(/(\\[.*?\\])/gi.test(column)) {
+                return \'<mark>\' + column + \'</mark>\';
+            } else {
+                return column;
+            }
+        })
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
         jQuery(destination).html(theCompiledHtml);
     };
+
+
 
     /* Allocate Ontology Resources */
     classifyontology = function(element){
@@ -438,76 +531,9 @@ pre.line-numbers > code { position:relative; }
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
-            fireprism();
-
+            Prism.highlightAll();
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 
@@ -1517,82 +1543,228 @@ pre.line-numbers > code { position:relative; }
 .line-numbers-rows > span:before { content:counter(linenumber); color:#999; display:block; padding-right:0.8em; text-align:right; }
 ',
     '[[$spec_codeFormat_web]]' => '<div id="tab-web-{{@index}}" class="tab active">
-    <pre class="line-numbers"><code class="language-json">    siteCode : \'\'
-    sitePrimaryRsid : \'\'
-    siteType : \'\'
-    siteSection : \'{{this.gsx$sitesection.$t}}\'
-    siteHier : \'{{this.gsx$sitehier.$t}}\'
-    pageType : \'{{this.gsx$pagetype.$t}}\'
-    screenName : \'{{this.gsx$pagename.$t}}\'{{#if this.gsx$directionscrolled.$t}}
-    directionScrolled : \'{{this.gsx$directionscrolled.$t}}\'
-    percentScrolled : \'{{this.gsx$percentscrolled.$t}}\'{{/if}}{{#if this.gsx$articleid.$t}}
-    articleId : \'{{this.gsx$articleid.$t}}\'
-    articleTitle : \'{{this.gsx$articletitle.$t}}\'
-    articleType : \'{{this.gsx$articletype.$t}}\'
-    articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
-    articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}{{#if this.gsx$sporttype.$t}}
-    sportType : \'{{this.gsx$sporttype.$t}}\'
-    sportGender : \'{{this.gsx$sportgender.$t}}\'
-    sportLevel : \'{{this.gsx$sportlevel.$t}}\'
-    sportSeason : \'{{this.gsx$sportseason.$t}}\'{{/if}}{{#if this.gsx$schoolid.$t}}
-    schoolId : \'{{this.gsx$schoolid.$t}}\'
-    schoolName : \'{{this.gsx$schoolname.$t}}\'
-    schoolState : \'{{this.gsx$schoolstate.$t}}\'
-    schoolYear : \'{{this.gsx$schoolyear.$t}}\'{{/if}}{{#if this.gsx$teamid.$t}}
-    teamId : \'{{this.gsx$teamid.$t}}\'
-    teamName : \'{{this.gsx$teamname.$t}}\'
-    teamArena : \'{{this.gsx$teamarena.$t}}\'{{/if}}{{#if this.gsx$playerid.$t}}
-    playerId : \'{{this.gsx$playerid.$t}}\'
-    playerName : \'{{this.gsx$playername.$t}}\'
-    playerGrade : \'{{this.gsx$playergrade.$t}}\'{{/if}}{{#if this.gsx$eventid.$t}}
-    eventId : \'{{this.gsx$eventid.$t}}\'
-    eventName : \'{{this.gsx$eventname.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
-    mediaPartnerId : \'{{this.gsx$mediapartnerid.$t}}\'
-    mediaTitle : \'{{this.gsx$mediatitle.$t}}\'
-    mediaId : \'{{this.gsx$mediaid.$t}}\'
-    mediaMuted : \'{{this.gsx$mediamuted.$t}}\'
-    mediaAutoPlay : \'{{this.gsx$mediaautoplay.$t}}\'
-    mediaContentType : \'{{this.gsx$mediacontenttype.$t}}\'{{/if}}
+    <pre class="line-numbers"><code class="language-json">    "siteCode" : ""
+    "sitePrimaryRsid" : ""
+    "siteType" : ""{{#if this.gsx$pagetype.$t}}
+    "pageType" : "{{this.gsx$pagetype.$t}}"{{/if}}{{#if this.gsx$pagename.$t}}
+    "pagename" : "{{this.gsx$pagename.$t}}"{{/if}}{{#if this.gsx$screenname.$t}}
+    "screenZname" : "{{this.gsx$screenname.$t}}"{{/if}}{{#if this.gsx$pageviewguid.$t}}
+    "pageViewGuid" : "{{this.gsx$pageviewguid.$t}}"{{/if}}{{#if this.gsx$clicktext.$t}}
+    "clickText" : "{{this.gsx$clicktext.$t}}"{{/if}}{{#if this.gsx$sitehier.$t}}
+    "sitehier" : "{{this.gsx$sitehier.$t}}"{{/if}}{{#if this.gsx$siteedition.$t}}
+    "siteEdition" : "{{this.gsx$siteedition.$t}}"{{/if}}{{#if this.gsx$project.$t}}
+    "project" : "{{this.gsx$project.$t}}"{{/if}}{{#if this.gsx$channel.$t}}
+    "channel" : "{{this.gsx$channel.$t}}"{{/if}}{{#if this.gsx$feature.$t}}
+    "feature" : "{{this.gsx$feature.$t}}"{{/if}}{{#if this.gsx$subfeature.$t}}
+    "subfeature" : "{{this.gsx$subfeature.$t}}"{{/if}}{{#if this.gsx$sitesection.$t}}
+    "sitesection" : "{{this.gsx$sitesection.$t}}"{{/if}}{{#if this.gsx$servicelevel.$t}}
+    "servicelevel" : "{{this.gsx$servicelevel.$t}}"{{/if}}{{#if this.gsx$productline.$t}}
+    "productline" : "{{this.gsx$productline.$t}}"{{/if}}{{#if this.gsx$user.$t}}
+    "user" : "{{this.gsx$user.$t}}"{{/if}}{{#if this.gsx$userstatus.$t}}
+    "userStatus" : "{{this.gsx$userstatus.$t}}"{{/if}}{{#if this.gsx$userregid.$t}}
+    "userRegId" : "{{this.gsx$userregid.$t}}"{{/if}}{{#if this.gsx$userid.$t}}
+    "userid" : "{{this.gsx$userid.$t}}"{{/if}}{{#if this.gsx$userregservice.$t}}
+    "userRegService" : "{{this.gsx$userregservice.$t}}"{{/if}}{{#if this.gsx$usertype.$t}}
+    "usertype" : "{{this.gsx$usertype.$t}}"{{/if}}{{#if this.gsx$userstate.$t}}
+    "userstate" : "{{this.gsx$userstate.$t}}"{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+    "userEventRegistrationSuccess" : "{{this.gsx$usereventregistrationsuccess.$t}}"{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+    "userEventLoginSuccess" : "{{this.gsx$usereventloginsuccess.$t}}"{{/if}}{{#if this.gsx$userteamrole.$t}}
+    "userTeamRole" : "{{this.gsx$userteamrole.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    "mediaPartnerId" : "{{this.gsx$mediapartnerid.$t}}"{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+    "mediaAutoPlay" : "{{this.gsx$mediaautoplay.$t}}"{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+    "mediaContentType" : "{{this.gsx$mediacontenttype.$t}}"{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+    "mediaEndCardUi" : "{{this.gsx$mediaendcardui.$t}}"{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+    "mediaDistNetwork" : "{{this.gsx$mediadistnetwork.$t}}"{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+    "mediaSvodContentType" : "{{this.gsx$mediasvodcontenttype.$t}}"{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+    "mediaDynamicPlay" : "{{this.gsx$mediadynamicplay.$t}}"{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+    "mediaRelatedShows" : "{{this.gsx$mediarelatedshows.$t}}"{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+    "mediaDeviceId" : "{{this.gsx$mediadeviceid.$t}}"{{/if}}{{#if this.gsx$mediaresume.$t}}
+    "mediaResume" : "{{this.gsx$mediaresume.$t}}"{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+    "mediaViewMode" : "{{this.gsx$mediaviewmode.$t}}"{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+    "mediaDvrTitleLong" : "{{this.gsx$mediadvrtitlelong.$t}}"{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+    "mediaDvrTitleShort" : "{{this.gsx$mediadvrtitleshort.$t}}"{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+    "mediaDvrSlugLabel" : "{{this.gsx$mediadvrsluglabel.$t}}"{{/if}}{{#if this.gsx$mediatitle.$t}}
+    "mediaTitle" : "{{this.gsx$mediatitle.$t}}"{{/if}}{{#if this.gsx$mediaid.$t}}
+    "mediaId" : "{{this.gsx$mediaid.$t}}"{{/if}}{{#if this.gsx$mediamuted.$t}}
+    "mediaMuted" : "{{this.gsx$mediamuted.$t}}"{{/if}}{{#if this.gsx$articleid.$t}}
+    "articleId" : "{{this.gsx$articleid.$t}}"{{/if}}{{#if this.gsx$articletype.$t}}
+    "articleType" : "{{this.gsx$articletype.$t}}"{{/if}}{{#if this.gsx$articletitle.$t}}
+    "articleTitle" : "{{this.gsx$articletitle.$t}}"{{/if}}{{#if this.gsx$articleauthorid.$t}}
+    "articleauthorid" : "{{this.gsx$articleauthorid.$t}}"{{/if}}{{#if this.gsx$articleauthorname.$t}}
+    "articleauthorname" : "{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$podtype.$t}}
+    "podType" : "{{this.gsx$podtype.$t}}"{{/if}}{{#if this.gsx$podtext.$t}}
+    "podText" : "{{this.gsx$podtext.$t}}"{{/if}}{{#if this.gsx$podsection.$t}}
+    "podSection" : "{{this.gsx$podsection.$t}}"{{/if}}{{#if this.gsx$podposition.$t}}
+    "podPosition" : "{{this.gsx$podposition.$t}}"{{/if}}{{#if this.gsx$podtitle.$t}}
+    "podTitle" : "{{this.gsx$podtitle.$t}}"{{/if}}{{#if this.gsx$showid.$t}}
+    "showId" : "{{this.gsx$showid.$t}}"{{/if}}{{#if this.gsx$showtitle.$t}}
+    "showTitle" : "{{this.gsx$showtitle.$t}}"{{/if}}{{#if this.gsx$showepisodeid.$t}}
+    "showEpisodeId" : "{{this.gsx$showepisodeid.$t}}"{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+    "showEpisodeTitle" : "{{this.gsx$showepisodetitle.$t}}"{{/if}}{{#if this.gsx$searchterm.$t}}
+    "searchTerm" : "{{this.gsx$searchterm.$t}}"{{/if}}{{#if this.gsx$searcheventstart.$t}}
+    "searchEventStart" : "{{this.gsx$searcheventstart.$t}}"{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+    "searchEventSearch" : "{{this.gsx$searcheventsearch.$t}}"{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+    "mvpdPartner" : "{{this.gsx$mvpdpartner.$t}}"{{/if}}{{#if this.gsx$mvpdid.$t}}
+    "mvpdId" : "{{this.gsx$mvpdid.$t}}"{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+    "purchaseEventBillingStart" : "{{this.gsx$purchaseeventbillingstart.$t}}"{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+    "purchaseEventOrderComplete" : "{{this.gsx$purchaseeventordercomplete.$t}}"{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+    "purchaseOrderId" : "{{this.gsx$purchaseorderid.$t}}"{{/if}}{{#if this.gsx$purchasecategory.$t}}
+    "purchaseCategory" : "{{this.gsx$purchasecategory.$t}}"{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+    "purchaseProduct" : "{{this.gsx$purchaseproduct.$t}}"{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+    "purchaseProductName" : "{{this.gsx$purchaseproductname.$t}}"{{/if}}{{#if this.gsx$purchasequantity.$t}}
+    "purchaseQuantity" : "{{this.gsx$purchasequantity.$t}}"{{/if}}{{#if this.gsx$purchaseprice.$t}}
+    "purchasePrice" : "{{this.gsx$purchaseprice.$t}}"{{/if}}{{#if this.gsx$products.$t}}
+    "&&products" : "{{this.gsx$products.$t}}"{{/if}}{{#if this.gsx$productpricingplan.$t}}
+    "productPricingPlan" : "{{this.gsx$productpricingplan.$t}}"{{/if}}{{#if this.gsx$productofferperiod.$t}}
+    "productOfferPeriod" : "{{this.gsx$productofferperiod.$t}}"{{/if}}{{#if this.gsx$intcid.$t}}
+    "intcid" : "{{this.gsx$intcid.$t}}"{{/if}}{{#if this.gsx$campaign.$t}}
+    "campaign" : "{{this.gsx$campaign.$t}}"{{/if}}{{#if this.gsx$upselltype.$t}}
+    "upsellType" : "{{this.gsx$upselltype.$t}}"{{/if}}{{#if this.gsx$errorcode.$t}}
+    "errorCode" : "{{this.gsx$errorcode.$t}}"{{/if}}{{#if this.gsx$launchtype.$t}}
+    "launchType" : "{{this.gsx$launchtype.$t}}"{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+    "deepLink/searchReferral" : "{{this.gsx$deeplink/searchreferral.$t}}"{{/if}}{{#if this.gsx$caststate.$t}}
+    "castState" : "{{this.gsx$caststate.$t}}"{{/if}}{{#if this.gsx$applog.$t}}
+    "appLog" : "{{this.gsx$applog.$t}}"{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+    "taplyticsUserId" : "{{this.gsx$taplyticsuserid.$t}}"{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+    "taplyticsSessionId" : "{{this.gsx$taplyticssessionid.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}}
+    "schoolId" : "{{this.gsx$schoolid.$t}}"{{/if}}{{#if this.gsx$schoolname.$t}}
+    "schoolName" : "{{this.gsx$schoolname.$t}}"{{/if}}{{#if this.gsx$schoolstate.$t}}
+    "schoolState" : "{{this.gsx$schoolstate.$t}}"{{/if}}{{#if this.gsx$schoolyear.$t}}
+    "schoolYear" : "{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}}
+    "teamId" : "{{this.gsx$teamid.$t}}"{{/if}}{{#if this.gsx$teamname.$t}}
+    "teamName" : "{{this.gsx$teamname.$t}}"{{/if}}{{#if this.gsx$teamarena.$t}}
+    "teamArena" : "{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}}
+    "playerId" : "{{this.gsx$playerid.$t}}"{{/if}}{{#if this.gsx$playername.$t}}
+    "playerName" : "{{this.gsx$playername.$t}}"{{/if}}{{#if this.gsx$playergrade.$t}}
+    "playerGrade" : "{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}}
+    "eventId" : "{{this.gsx$eventid.$t}}"{{/if}}{{#if this.gsx$eventname.$t}}
+    "eventName" : "{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}}
+    "sportType" : "{{this.gsx$sporttype.$t}}"{{/if}}{{#if this.gsx$sportgender.$t}}
+    "sportGender" : "{{this.gsx$sportgender.$t}}"{{/if}}{{#if this.gsx$sportlevel.$t}}
+    "sportLevel" : "{{this.gsx$sportlevel.$t}}"{{/if}}{{#if this.gsx$sportseason.$t}}
+    "sportSeason" : "{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$photoeventview.$t}}
+    "photoEventView" : "{{this.gsx$photoeventview.$t}}"{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+    "topicPrimaryId" : "{{this.gsx$topicprimaryid.$t}}"{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+    "topicPrimaryName" : "{{this.gsx$topicprimaryname.$t}}"{{/if}}{{#if this.gsx$collectionid.$t}}
+    "collectionId" : "{{this.gsx$collectionid.$t}}"{{/if}}{{#if this.gsx$collectionname.$t}}
+    "collectionName" : "{{this.gsx$collectionname.$t}}"{{/if}}{{#if this.gsx$socialsharetype.$t}}
+    "socialShareType" : "{{this.gsx$socialsharetype.$t}}"{{/if}}{{#if this.gsx$traystatus.$t}}
+    "trayStatus" : "{{this.gsx$traystatus.$t}}"{{/if}}{{#if this.gsx$playlisttitle.$t}}
+    "playListTitle" : "{{this.gsx$playlisttitle.$t}}"{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+    "bookMarkTitle" : "{{this.gsx$bookmarktitle.$t}}"{{/if}}
 </code></pre>
 </div>',
     '[[$spec_codeFormat_iOS]]' => '<div id="tab-ios-{{@index}}" class="tab">
 <pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
     @"siteCode": @"",
     @"sitePrimaryRsid": @"",
-    @"siteType": @"",
-    @"siteSection": @"{{this.gsx$sitesection.$t}}",
-    @"siteHier": @"{{this.gsx$sitehier.$t}}",
-    @"pageType": @"{{this.gsx$pagetype.$t}}",
-    @"screenName": @"{{this.gsx$pagename.$t}}",{{#if this.gsx$directionscrolled.$t}}
-    @"directionScrolled" : @"{{this.gsx$directionscrolled.$t}}",
-    @"percentScrolled" : @"{{this.gsx$percentscrolled.$t}}"{{/if}}{{#if this.gsx$articleid.$t}},
-    @"articleId": @"{{this.gsx$articleid.$t}}",
-    @"articleTitle": @"{{this.gsx$articletitle.$t}}",
-    @"articleType": @"{{this.gsx$articletype.$t}}",
-    @"articleAuthorId": @"{{this.gsx$articleauthorid.$t}}",
-    @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}},
-    @"sportType": @"{{this.gsx$sporttype.$t}}",
-    @"sportGender": @"{{this.gsx$sportgender.$t}}",
-    @"sportLevel": @"{{this.gsx$sportlevel.$t}}",
-    @"sportSeason": @"{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}},
-    @"schoolId" : @"{{this.gsx$schoolid.$t}}",
-    @"schoolName" : @"{{this.gsx$schoolname.$t}}",
-    @"schoolState" : @"{{this.gsx$schoolstate.$t}}",
-    @"schoolYear" : @"{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}},
-    @"teamId" : @"{{this.gsx$teamid.$t}}",
-    @"teamName" : @"{{this.gsx$teamname.$t}}",
-    @"teamArena" : @"{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}},
-    @"playerId" : @"{{this.gsx$playerid.$t}}",
-    @"playerName" : @"{{this.gsx$playername.$t}}",
-    @"playerGrade" : @"{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}},
-    @"eventId" : @"{{this.gsx$eventid.$t}}",
-    @"eventName" : @"{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}},
-    @"mediaPartnerId" : @"{{this.gsx$mediapartnerid.$t}}",
-    @"mediaTitle" : @"{{this.gsx$mediatitle.$t}}",
-    @"mediaId" : @"{{this.gsx$mediaid.$t}}",
-    @"mediaMuted" : @"{{this.gsx$mediamuted.$t}}",
-    @"mediaAutoPlay" : @"{{this.gsx$mediaautoplay.$t}}",
-    @"mediaContentType" : @"{{this.gsx$mediacontenttype.$t}}"{{/if}}
+    @"siteType": @"",{{#if this.gsx$sitesection.$t}}
+    @"pageType": @"{{this.gsx$pagetype.$t}}",{{/if}}{{#if this.gsx$pagename.$t}}
+    @"pagename": @"{{this.gsx$pagename.$t}}",{{/if}}{{#if this.gsx$screenname.$t}}
+    @"screenZname": @"{{this.gsx$screenname.$t}}",{{/if}}{{#if this.gsx$pageviewguid.$t}}
+    @"pageViewGuid": @"{{this.gsx$pageviewguid.$t}}",{{/if}}{{#if this.gsx$clicktext.$t}}
+    @"clickText": @"{{this.gsx$clicktext.$t}}",{{/if}}{{#if this.gsx$sitehier.$t}}
+    @"sitehier": @"{{this.gsx$sitehier.$t}}",{{/if}}{{#if this.gsx$siteedition.$t}}
+    @"siteEdition": @"{{this.gsx$siteedition.$t}}",{{/if}}{{#if this.gsx$project.$t}}
+    @"project": @"{{this.gsx$project.$t}}",{{/if}}{{#if this.gsx$channel.$t}}
+    @"channel": @"{{this.gsx$channel.$t}}",{{/if}}{{#if this.gsx$feature.$t}}
+    @"feature": @"{{this.gsx$feature.$t}}",{{/if}}{{#if this.gsx$subfeature.$t}}
+    @"subfeature": @"{{this.gsx$subfeature.$t}}",{{/if}}{{#if this.gsx$sitesection.$t}}
+    @"sitesection": @"{{this.gsx$sitesection.$t}}",{{/if}}{{#if this.gsx$servicelevel.$t}}
+    @"servicelevel": @"{{this.gsx$servicelevel.$t}}",{{/if}}{{#if this.gsx$productline.$t}}
+    @"productline": @"{{this.gsx$productline.$t}}",{{/if}}{{#if this.gsx$user.$t}}
+    @"user": @"{{this.gsx$user.$t}}",{{/if}}{{#if this.gsx$userstatus.$t}}
+    @"userStatus": @"{{this.gsx$userstatus.$t}}",{{/if}}{{#if this.gsx$userregid.$t}}
+    @"userRegId": @"{{this.gsx$userregid.$t}}",{{/if}}{{#if this.gsx$userid.$t}}
+    @"userid": @"{{this.gsx$userid.$t}}",{{/if}}{{#if this.gsx$userregservice.$t}}
+    @"userRegService": @"{{this.gsx$userregservice.$t}}",{{/if}}{{#if this.gsx$usertype.$t}}
+    @"usertype": @"{{this.gsx$usertype.$t}}",{{/if}}{{#if this.gsx$userstate.$t}}
+    @"userstate": @"{{this.gsx$userstate.$t}}",{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+    @"userEventRegistrationSuccess": @"{{this.gsx$usereventregistrationsuccess.$t}}",{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+    @"userEventLoginSuccess": @"{{this.gsx$usereventloginsuccess.$t}}",{{/if}}{{#if this.gsx$userteamrole.$t}}
+    @"userTeamRole": @"{{this.gsx$userteamrole.$t}}",{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    @"mediaPartnerId": @"{{this.gsx$mediapartnerid.$t}}",{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+    @"mediaAutoPlay": @"{{this.gsx$mediaautoplay.$t}}",{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+    @"mediaContentType": @"{{this.gsx$mediacontenttype.$t}}",{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+    @"mediaEndCardUi": @"{{this.gsx$mediaendcardui.$t}}",{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+    @"mediaDistNetwork": @"{{this.gsx$mediadistnetwork.$t}}",{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+    @"mediaSvodContentType": @"{{this.gsx$mediasvodcontenttype.$t}}",{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+    @"mediaDynamicPlay": @"{{this.gsx$mediadynamicplay.$t}}",{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+    @"mediaRelatedShows": @"{{this.gsx$mediarelatedshows.$t}}",{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+    @"mediaDeviceId": @"{{this.gsx$mediadeviceid.$t}}",{{/if}}{{#if this.gsx$mediaresume.$t}}
+    @"mediaResume": @"{{this.gsx$mediaresume.$t}}",{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+    @"mediaViewMode": @"{{this.gsx$mediaviewmode.$t}}",{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+    @"mediaDvrTitleLong": @"{{this.gsx$mediadvrtitlelong.$t}}",{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+    @"mediaDvrTitleShort": @"{{this.gsx$mediadvrtitleshort.$t}}",{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+    @"mediaDvrSlugLabel": @"{{this.gsx$mediadvrsluglabel.$t}}",{{/if}}{{#if this.gsx$mediatitle.$t}}
+    @"mediaTitle": @"{{this.gsx$mediatitle.$t}}",{{/if}}{{#if this.gsx$mediaid.$t}}
+    @"mediaId": @"{{this.gsx$mediaid.$t}}",{{/if}}{{#if this.gsx$mediamuted.$t}}
+    @"mediaMuted": @"{{this.gsx$mediamuted.$t}}",{{/if}}{{#if this.gsx$articleid.$t}}
+    @"articleId": @"{{this.gsx$articleid.$t}}",{{/if}}{{#if this.gsx$articletype.$t}}
+    @"articleType": @"{{this.gsx$articletype.$t}}",{{/if}}{{#if this.gsx$articletitle.$t}}
+    @"articleTitle": @"{{this.gsx$articletitle.$t}}",{{/if}}{{#if this.gsx$articleauthorid.$t}}
+    @"articleauthorid": @"{{this.gsx$articleauthorid.$t}}",{{/if}}{{#if this.gsx$articleauthorname.$t}}
+    @"articleauthorname": @"{{this.gsx$articleauthorname.$t}}",{{/if}}{{#if this.gsx$podtype.$t}}
+    @"podType": @"{{this.gsx$podtype.$t}}",{{/if}}{{#if this.gsx$podtext.$t}}
+    @"podText": @"{{this.gsx$podtext.$t}}",{{/if}}{{#if this.gsx$podsection.$t}}
+    @"podSection": @"{{this.gsx$podsection.$t}}",{{/if}}{{#if this.gsx$podposition.$t}}
+    @"podPosition": @"{{this.gsx$podposition.$t}}",{{/if}}{{#if this.gsx$podtitle.$t}}
+    @"podTitle": @"{{this.gsx$podtitle.$t}}",{{/if}}{{#if this.gsx$showid.$t}}
+    @"showId": @"{{this.gsx$showid.$t}}",{{/if}}{{#if this.gsx$showtitle.$t}}
+    @"showTitle": @"{{this.gsx$showtitle.$t}}",{{/if}}{{#if this.gsx$showepisodeid.$t}}
+    @"showEpisodeId": @"{{this.gsx$showepisodeid.$t}}",{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+    @"showEpisodeTitle": @"{{this.gsx$showepisodetitle.$t}}",{{/if}}{{#if this.gsx$searchterm.$t}}
+    @"searchTerm": @"{{this.gsx$searchterm.$t}}",{{/if}}{{#if this.gsx$searcheventstart.$t}}
+    @"searchEventStart": @"{{this.gsx$searcheventstart.$t}}",{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+    @"searchEventSearch": @"{{this.gsx$searcheventsearch.$t}}",{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+    @"mvpdPartner": @"{{this.gsx$mvpdpartner.$t}}",{{/if}}{{#if this.gsx$mvpdid.$t}}
+    @"mvpdId": @"{{this.gsx$mvpdid.$t}}",{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+    @"purchaseEventBillingStart": @"{{this.gsx$purchaseeventbillingstart.$t}}",{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+    @"purchaseEventOrderComplete": @"{{this.gsx$purchaseeventordercomplete.$t}}",{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+    @"purchaseOrderId": @"{{this.gsx$purchaseorderid.$t}}",{{/if}}{{#if this.gsx$purchasecategory.$t}}
+    @"purchaseCategory": @"{{this.gsx$purchasecategory.$t}}",{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+    @"purchaseProduct": @"{{this.gsx$purchaseproduct.$t}}",{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+    @"purchaseProductName": @"{{this.gsx$purchaseproductname.$t}}",{{/if}}{{#if this.gsx$purchasequantity.$t}}
+    @"purchaseQuantity": @"{{this.gsx$purchasequantity.$t}}",{{/if}}{{#if this.gsx$purchaseprice.$t}}
+    @"purchasePrice": @"{{this.gsx$purchaseprice.$t}}",{{/if}}{{#if this.gsx$products.$t}}
+    @"&&products": @"{{this.gsx$products.$t}}",{{/if}}{{#if this.gsx$productpricingplan.$t}}
+    @"productPricingPlan": @"{{this.gsx$productpricingplan.$t}}",{{/if}}{{#if this.gsx$productofferperiod.$t}}
+    @"productOfferPeriod": @"{{this.gsx$productofferperiod.$t}}",{{/if}}{{#if this.gsx$intcid.$t}}
+    @"intcid": @"{{this.gsx$intcid.$t}}",{{/if}}{{#if this.gsx$campaign.$t}}
+    @"campaign": @"{{this.gsx$campaign.$t}}",{{/if}}{{#if this.gsx$upselltype.$t}}
+    @"upsellType": @"{{this.gsx$upselltype.$t}}",{{/if}}{{#if this.gsx$errorcode.$t}}
+    @"errorCode": @"{{this.gsx$errorcode.$t}}",{{/if}}{{#if this.gsx$launchtype.$t}}
+    @"launchType": @"{{this.gsx$launchtype.$t}}",{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+    @"deepLink/searchReferral": @"{{this.gsx$deeplink/searchreferral.$t}}",{{/if}}{{#if this.gsx$caststate.$t}}
+    @"castState": @"{{this.gsx$caststate.$t}}",{{/if}}{{#if this.gsx$applog.$t}}
+    @"appLog": @"{{this.gsx$applog.$t}}",{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+    @"taplyticsUserId": @"{{this.gsx$taplyticsuserid.$t}}",{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+    @"taplyticsSessionId": @"{{this.gsx$taplyticssessionid.$t}}",{{/if}}{{#if this.gsx$schoolid.$t}}
+    @"schoolId": @"{{this.gsx$schoolid.$t}}",{{/if}}{{#if this.gsx$schoolname.$t}}
+    @"schoolName": @"{{this.gsx$schoolname.$t}}",{{/if}}{{#if this.gsx$schoolstate.$t}}
+    @"schoolState": @"{{this.gsx$schoolstate.$t}}",{{/if}}{{#if this.gsx$schoolyear.$t}}
+    @"schoolYear": @"{{this.gsx$schoolyear.$t}}",{{/if}}{{#if this.gsx$teamid.$t}}
+    @"teamId": @"{{this.gsx$teamid.$t}}",{{/if}}{{#if this.gsx$teamname.$t}}
+    @"teamName": @"{{this.gsx$teamname.$t}}",{{/if}}{{#if this.gsx$teamarena.$t}}
+    @"teamArena": @"{{this.gsx$teamarena.$t}}",{{/if}}{{#if this.gsx$playerid.$t}}
+    @"playerId": @"{{this.gsx$playerid.$t}}",{{/if}}{{#if this.gsx$playername.$t}}
+    @"playerName": @"{{this.gsx$playername.$t}}",{{/if}}{{#if this.gsx$playergrade.$t}}
+    @"playerGrade": @"{{this.gsx$playergrade.$t}}",{{/if}}{{#if this.gsx$eventid.$t}}
+    @"eventId": @"{{this.gsx$eventid.$t}}",{{/if}}{{#if this.gsx$eventname.$t}}
+    @"eventName": @"{{this.gsx$eventname.$t}}",{{/if}}{{#if this.gsx$sporttype.$t}}
+    @"sportType": @"{{this.gsx$sporttype.$t}}",{{/if}}{{#if this.gsx$sportgender.$t}}
+    @"sportGender": @"{{this.gsx$sportgender.$t}}",{{/if}}{{#if this.gsx$sportlevel.$t}}
+    @"sportLevel": @"{{this.gsx$sportlevel.$t}}",{{/if}}{{#if this.gsx$sportseason.$t}}
+    @"sportSeason": @"{{this.gsx$sportseason.$t}}",{{/if}}{{#if this.gsx$photoeventview.$t}}
+    @"photoEventView": @"{{this.gsx$photoeventview.$t}}",{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+    @"topicPrimaryId": @"{{this.gsx$topicprimaryid.$t}}",{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+    @"topicPrimaryName": @"{{this.gsx$topicprimaryname.$t}}",{{/if}}{{#if this.gsx$collectionid.$t}}
+    @"collectionId": @"{{this.gsx$collectionid.$t}}",{{/if}}{{#if this.gsx$collectionname.$t}}
+    @"collectionName": @"{{this.gsx$collectionname.$t}}",{{/if}}{{#if this.gsx$socialsharetype.$t}}
+    @"socialShareType": @"{{this.gsx$socialsharetype.$t}}",{{/if}}{{#if this.gsx$traystatus.$t}}
+    @"trayStatus": @"{{this.gsx$traystatus.$t}}",{{/if}}{{#if this.gsx$playlisttitle.$t}}
+    @"playListTitle": @"{{this.gsx$playlisttitle.$t}}",{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+    @"bookMarkTitle": @"{{this.gsx$bookmarktitle.$t}}",{{/if}}
 };
 [ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
 </div>',
@@ -1600,40 +1772,113 @@ pre.line-numbers > code { position:relative; }
 <div id="tab-and-{{@index}}" class="tab">
 <pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "");
 cdata.put("sitePrimaryRsid", "");
-cdata.put("siteType", "");
-cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
-cdata.put("siteHier", "{{this.gsx$sitehier.$t}}");
-cdata.put("pageType", "{{this.gsx$pagetype.$t}}");
-cdata.put("screenName", "{{this.gsx$screenname.$t}}");{{#if this.gsx$directionscrolled.$t}}
-cdata.put("directionScrolled", "{{this.gsx$directionscrolled.$t}}";
-cdata.put("percentScrolled", "{{this.gsx$dpercentscrolled.$t}}";{{/if}}{{#if this.gsx$articleid.$t}}
-cdata.put("articleId", "{{this.gsx$articleid.$t}}");
-cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}");
-cdata.put("articleType", "{{this.gsx$articletype.$t}}");
-cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
-cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}{{#if this.gsx$sporttype.$t}}
-cdata.put("sportType", "{{this.gsx$sporttype.$t}}");
-cdata.put("sportGender", "{{this.gsx$sportgender.$t}}");
-cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}");
-cdata.put("sportSeason", "{{this.gsx$sportseason.$t}}");{{/if}}{{#if this.gsx$schoolid.$t}}
-cdata.put("schoolId", "{{this.gsx$schoolid.$t}}");
-cdata.put("schoolName", "{{this.gsx$schoolname.$t}}");
-cdata.put("schoolState", "{{this.gsx$schoolstate.$t}}");
-cdata.put("schoolYear", "{{this.gsx$schoolyear.$t}}");{{/if}}{{#if this.gsx$teamid.$t}}
-cdata.put("teamId", "{{this.gsx$teamid.$t}}");
-cdata.put("teamName", "{{this.gsx$teamname.$t}}");
-cdata.put("teamArena", "{{this.gsx$teamarena.$t}}");{{/if}}{{#if this.gsx$playerid.$t}}
-cdata.put("playerId", "{{this.gsx$playerid.$t}}");
-cdata.put("playerName", "{{this.gsx$playername.$t}}");
-cdata.put("playerGrade", "{{this.gsx$playergrade.$t}}");{{/if}}{{#if this.gsx$eventid.$t}}
-cdata.put("eventId", "{{this.gsx$playerid.$t}}");
-cdata.put("eventName", "{{this.gsx$playerid.$t}}");{{/if}}{{#if this.gsx$mediapartnerid.$t}}
-cdata.put("mediaPartnerId", "{{this.gsx$mediapartnerid.$t}}");
-cdata.put("mediaTitle", "{{this.gsx$mediatitle.$t}}");
-cdata.put("mediaId", "{{this.gsx$mediaid.$t}}");
-cdata.put("mediaMuted", "{{this.gsx$mediamuted.$t}}");
-cdata.put("mediaAutoPlay", "{{this.gsx$mediaautoplay.$t}}");
-cdata.put("mediaContentType", "{{this.gsx$mediacontenttype.$t}}");{{/if}}
+cdata.put("siteType", "");{{#if this.gsx$pagetype.$t}}
+cdata.put("pageType", "{{this.gsx$pagetype.$t}}";{{/if}}{{#if this.gsx$pagename.$t}}
+cdata.put("pagename", "{{this.gsx$pagename.$t}}";{{/if}}{{#if this.gsx$screenname.$t}}
+cdata.put("screenname", "{{this.gsx$screenname.$t}}";{{/if}}{{#if this.gsx$pageviewguid.$t}}
+cdata.put("pageViewGuid", "{{this.gsx$pageviewguid.$t}}";{{/if}}{{#if this.gsx$clicktext.$t}}
+cdata.put("clickText", "{{this.gsx$clicktext.$t}}";{{/if}}{{#if this.gsx$sitehier.$t}}
+cdata.put("sitehier", "{{this.gsx$sitehier.$t}}";{{/if}}{{#if this.gsx$siteedition.$t}}
+cdata.put("siteEdition", "{{this.gsx$siteedition.$t}}";{{/if}}{{#if this.gsx$project.$t}}
+cdata.put("project", "{{this.gsx$project.$t}}";{{/if}}{{#if this.gsx$channel.$t}}
+cdata.put("channel", "{{this.gsx$channel.$t}}";{{/if}}{{#if this.gsx$feature.$t}}
+cdata.put("feature", "{{this.gsx$feature.$t}}";{{/if}}{{#if this.gsx$subfeature.$t}}
+cdata.put("subfeature", "{{this.gsx$subfeature.$t}}";{{/if}}{{#if this.gsx$sitesection.$t}}
+cdata.put("sitesection", "{{this.gsx$sitesection.$t}}";{{/if}}{{#if this.gsx$servicelevel.$t}}
+cdata.put("servicelevel", "{{this.gsx$servicelevel.$t}}";{{/if}}{{#if this.gsx$productline.$t}}
+cdata.put("productline", "{{this.gsx$productline.$t}}";{{/if}}{{#if this.gsx$user.$t}}
+cdata.put("user", "{{this.gsx$user.$t}}";{{/if}}{{#if this.gsx$userstatus.$t}}
+cdata.put("userStatus", "{{this.gsx$userstatus.$t}}";{{/if}}{{#if this.gsx$userregid.$t}}
+cdata.put("userRegId", "{{this.gsx$userregid.$t}}";{{/if}}{{#if this.gsx$userid.$t}}
+cdata.put("userid", "{{this.gsx$userid.$t}}";{{/if}}{{#if this.gsx$userregservice.$t}}
+cdata.put("userRegService", "{{this.gsx$userregservice.$t}}";{{/if}}{{#if this.gsx$usertype.$t}}
+cdata.put("usertype", "{{this.gsx$usertype.$t}}";{{/if}}{{#if this.gsx$userstate.$t}}
+cdata.put("userstate", "{{this.gsx$userstate.$t}}";{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+cdata.put("userEventRegistrationSuccess", "{{this.gsx$usereventregistrationsuccess.$t}}";{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+cdata.put("userEventLoginSuccess", "{{this.gsx$usereventloginsuccess.$t}}";{{/if}}{{#if this.gsx$userteamrole.$t}}
+cdata.put("userTeamRole", "{{this.gsx$userteamrole.$t}}";{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+cdata.put("mediaPartnerId", "{{this.gsx$mediapartnerid.$t}}";{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+cdata.put("mediaAutoPlay", "{{this.gsx$mediaautoplay.$t}}";{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+cdata.put("mediaContentType", "{{this.gsx$mediacontenttype.$t}}";{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+cdata.put("mediaEndCardUi", "{{this.gsx$mediaendcardui.$t}}";{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+cdata.put("mediaDistNetwork", "{{this.gsx$mediadistnetwork.$t}}";{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+cdata.put("mediaSvodContentType", "{{this.gsx$mediasvodcontenttype.$t}}";{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+cdata.put("mediaDynamicPlay", "{{this.gsx$mediadynamicplay.$t}}";{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+cdata.put("mediaRelatedShows", "{{this.gsx$mediarelatedshows.$t}}";{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+cdata.put("mediaDeviceId", "{{this.gsx$mediadeviceid.$t}}";{{/if}}{{#if this.gsx$mediaresume.$t}}
+cdata.put("mediaResume", "{{this.gsx$mediaresume.$t}}";{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+cdata.put("mediaViewMode", "{{this.gsx$mediaviewmode.$t}}";{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+cdata.put("mediaDvrTitleLong", "{{this.gsx$mediadvrtitlelong.$t}}";{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+cdata.put("mediaDvrTitleShort", "{{this.gsx$mediadvrtitleshort.$t}}";{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+cdata.put("mediaDvrSlugLabel", "{{this.gsx$mediadvrsluglabel.$t}}";{{/if}}{{#if this.gsx$mediatitle.$t}}
+cdata.put("mediaTitle", "{{this.gsx$mediatitle.$t}}";{{/if}}{{#if this.gsx$mediaid.$t}}
+cdata.put("mediaId", "{{this.gsx$mediaid.$t}}";{{/if}}{{#if this.gsx$mediamuted.$t}}
+cdata.put("mediaMuted", "{{this.gsx$mediamuted.$t}}";{{/if}}{{#if this.gsx$articleid.$t}}
+cdata.put("articleId", "{{this.gsx$articleid.$t}}";{{/if}}{{#if this.gsx$articletype.$t}}
+cdata.put("articleType", "{{this.gsx$articletype.$t}}";{{/if}}{{#if this.gsx$articletitle.$t}}
+cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}";{{/if}}{{#if this.gsx$articleauthorid.$t}}
+cdata.put("articleauthorid", "{{this.gsx$articleauthorid.$t}}";{{/if}}{{#if this.gsx$articleauthorname.$t}}
+cdata.put("articleauthorname", "{{this.gsx$articleauthorname.$t}}";{{/if}}{{#if this.gsx$podtype.$t}}
+cdata.put("podType", "{{this.gsx$podtype.$t}}";{{/if}}{{#if this.gsx$podtext.$t}}
+cdata.put("podText", "{{this.gsx$podtext.$t}}";{{/if}}{{#if this.gsx$podsection.$t}}
+cdata.put("podSection", "{{this.gsx$podsection.$t}}";{{/if}}{{#if this.gsx$podposition.$t}}
+cdata.put("podPosition", "{{this.gsx$podposition.$t}}";{{/if}}{{#if this.gsx$podtitle.$t}}
+cdata.put("podTitle", "{{this.gsx$podtitle.$t}}";{{/if}}{{#if this.gsx$showid.$t}}
+cdata.put("showId", "{{this.gsx$showid.$t}}";{{/if}}{{#if this.gsx$showtitle.$t}}
+cdata.put("showTitle", "{{this.gsx$showtitle.$t}}";{{/if}}{{#if this.gsx$showepisodeid.$t}}
+cdata.put("showEpisodeId", "{{this.gsx$showepisodeid.$t}}";{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+cdata.put("showEpisodeTitle", "{{this.gsx$showepisodetitle.$t}}";{{/if}}{{#if this.gsx$searchterm.$t}}
+cdata.put("searchTerm", "{{this.gsx$searchterm.$t}}";{{/if}}{{#if this.gsx$searcheventstart.$t}}
+cdata.put("searchEventStart", "{{this.gsx$searcheventstart.$t}}";{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+cdata.put("searchEventSearch", "{{this.gsx$searcheventsearch.$t}}";{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+cdata.put("mvpdPartner", "{{this.gsx$mvpdpartner.$t}}";{{/if}}{{#if this.gsx$mvpdid.$t}}
+cdata.put("mvpdId", "{{this.gsx$mvpdid.$t}}";{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+cdata.put("purchaseEventBillingStart", "{{this.gsx$purchaseeventbillingstart.$t}}";{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+cdata.put("purchaseEventOrderComplete", "{{this.gsx$purchaseeventordercomplete.$t}}";{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+cdata.put("purchaseOrderId", "{{this.gsx$purchaseorderid.$t}}";{{/if}}{{#if this.gsx$purchasecategory.$t}}
+cdata.put("purchaseCategory", "{{this.gsx$purchasecategory.$t}}";{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+cdata.put("purchaseProduct", "{{this.gsx$purchaseproduct.$t}}";{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+cdata.put("purchaseProductName", "{{this.gsx$purchaseproductname.$t}}";{{/if}}{{#if this.gsx$purchasequantity.$t}}
+cdata.put("purchaseQuantity", "{{this.gsx$purchasequantity.$t}}";{{/if}}{{#if this.gsx$purchaseprice.$t}}
+cdata.put("purchasePrice", "{{this.gsx$purchaseprice.$t}}";{{/if}}{{#if this.gsx$products.$t}}
+cdata.put("&&products", "{{this.gsx$products.$t}}";{{/if}}{{#if this.gsx$productpricingplan.$t}}
+cdata.put("productPricingPlan", "{{this.gsx$productpricingplan.$t}}";{{/if}}{{#if this.gsx$productofferperiod.$t}}
+cdata.put("productOfferPeriod", "{{this.gsx$productofferperiod.$t}}";{{/if}}{{#if this.gsx$intcid.$t}}
+cdata.put("intcid", "{{this.gsx$intcid.$t}}";{{/if}}{{#if this.gsx$campaign.$t}}
+cdata.put("campaign", "{{this.gsx$campaign.$t}}";{{/if}}{{#if this.gsx$upselltype.$t}}
+cdata.put("upsellType", "{{this.gsx$upselltype.$t}}";{{/if}}{{#if this.gsx$errorcode.$t}}
+cdata.put("errorCode", "{{this.gsx$errorcode.$t}}";{{/if}}{{#if this.gsx$launchtype.$t}}
+cdata.put("launchType", "{{this.gsx$launchtype.$t}}";{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+cdata.put("deepLink/searchReferral", "{{this.gsx$deeplink/searchreferral.$t}}";{{/if}}{{#if this.gsx$caststate.$t}}
+cdata.put("castState", "{{this.gsx$caststate.$t}}";{{/if}}{{#if this.gsx$applog.$t}}
+cdata.put("appLog", "{{this.gsx$applog.$t}}";{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+cdata.put("taplyticsUserId", "{{this.gsx$taplyticsuserid.$t}}";{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+cdata.put("taplyticsSessionId", "{{this.gsx$taplyticssessionid.$t}}";{{/if}}{{#if this.gsx$schoolid.$t}}
+cdata.put("schoolId", "{{this.gsx$schoolid.$t}}";{{/if}}{{#if this.gsx$schoolname.$t}}
+cdata.put("schoolName", "{{this.gsx$schoolname.$t}}";{{/if}}{{#if this.gsx$schoolstate.$t}}
+cdata.put("schoolState", "{{this.gsx$schoolstate.$t}}";{{/if}}{{#if this.gsx$schoolyear.$t}}
+cdata.put("schoolYear", "{{this.gsx$schoolyear.$t}}";{{/if}}{{#if this.gsx$teamid.$t}}
+cdata.put("teamId", "{{this.gsx$teamid.$t}}";{{/if}}{{#if this.gsx$teamname.$t}}
+cdata.put("teamName", "{{this.gsx$teamname.$t}}";{{/if}}{{#if this.gsx$teamarena.$t}}
+cdata.put("teamArena", "{{this.gsx$teamarena.$t}}";{{/if}}{{#if this.gsx$playerid.$t}}
+cdata.put("playerId", "{{this.gsx$playerid.$t}}";{{/if}}{{#if this.gsx$playername.$t}}
+cdata.put("playerName", "{{this.gsx$playername.$t}}";{{/if}}{{#if this.gsx$playergrade.$t}}
+cdata.put("playerGrade", "{{this.gsx$playergrade.$t}}";{{/if}}{{#if this.gsx$eventid.$t}}
+cdata.put("eventId", "{{this.gsx$eventid.$t}}";{{/if}}{{#if this.gsx$eventname.$t}}
+cdata.put("eventName", "{{this.gsx$eventname.$t}}";{{/if}}{{#if this.gsx$sporttype.$t}}
+cdata.put("sportType", "{{this.gsx$sporttype.$t}}";{{/if}}{{#if this.gsx$sportgender.$t}}
+cdata.put("sportGender", "{{this.gsx$sportgender.$t}}";{{/if}}{{#if this.gsx$sportlevel.$t}}
+cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}";{{/if}}{{#if this.gsx$sportseason.$t}}
+cdata.put("sportSeason", "{{this.gsx$sportseason.$t}}";{{/if}}{{#if this.gsx$photoeventview.$t}}
+cdata.put("photoEventView", "{{this.gsx$photoeventview.$t}}";{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+cdata.put("topicPrimaryId", "{{this.gsx$topicprimaryid.$t}}";{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+cdata.put("topicPrimaryName", "{{this.gsx$topicprimaryname.$t}}";{{/if}}{{#if this.gsx$collectionid.$t}}
+cdata.put("collectionId", "{{this.gsx$collectionid.$t}}";{{/if}}{{#if this.gsx$collectionname.$t}}
+cdata.put("collectionName", "{{this.gsx$collectionname.$t}}";{{/if}}{{#if this.gsx$socialsharetype.$t}}
+cdata.put("socialShareType", "{{this.gsx$socialsharetype.$t}}";{{/if}}{{#if this.gsx$traystatus.$t}}
+cdata.put("trayStatus", "{{this.gsx$traystatus.$t}}";{{/if}}{{#if this.gsx$playlisttitle.$t}}
+cdata.put("playListTitle", "{{this.gsx$playlisttitle.$t}}";{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+cdata.put("bookMarkTitle", "{{this.gsx$bookmarktitle.$t}}";{{/if}}
 Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
 </div>',
     '[[$mainCustomJS]]' => '<script id="app-code-template" type="text/x-handlebars-template">
@@ -1649,7 +1894,7 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em></em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -1659,42 +1904,115 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
                 </ul>
                 <div class="tab-content main-content">
                     <div id="tab-web-{{@index}}" class="tab active">
-    <pre class="line-numbers"><code class="language-json">    siteCode : \'\'
-    sitePrimaryRsid : \'\'
-    siteType : \'\'
-    siteSection : \'{{this.gsx$sitesection.$t}}\'
-    siteHier : \'{{this.gsx$sitehier.$t}}\'
-    pageType : \'{{this.gsx$pagetype.$t}}\'
-    screenName : \'{{this.gsx$pagename.$t}}\'{{#if this.gsx$directionscrolled.$t}}
-    directionScrolled : \'{{this.gsx$directionscrolled.$t}}\'
-    percentScrolled : \'{{this.gsx$percentscrolled.$t}}\'{{/if}}{{#if this.gsx$articleid.$t}}
-    articleId : \'{{this.gsx$articleid.$t}}\'
-    articleTitle : \'{{this.gsx$articletitle.$t}}\'
-    articleType : \'{{this.gsx$articletype.$t}}\'
-    articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
-    articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}{{#if this.gsx$sporttype.$t}}
-    sportType : \'{{this.gsx$sporttype.$t}}\'
-    sportGender : \'{{this.gsx$sportgender.$t}}\'
-    sportLevel : \'{{this.gsx$sportlevel.$t}}\'
-    sportSeason : \'{{this.gsx$sportseason.$t}}\'{{/if}}{{#if this.gsx$schoolid.$t}}
-    schoolId : \'{{this.gsx$schoolid.$t}}\'
-    schoolName : \'{{this.gsx$schoolname.$t}}\'
-    schoolState : \'{{this.gsx$schoolstate.$t}}\'
-    schoolYear : \'{{this.gsx$schoolyear.$t}}\'{{/if}}{{#if this.gsx$teamid.$t}}
-    teamId : \'{{this.gsx$teamid.$t}}\'
-    teamName : \'{{this.gsx$teamname.$t}}\'
-    teamArena : \'{{this.gsx$teamarena.$t}}\'{{/if}}{{#if this.gsx$playerid.$t}}
-    playerId : \'{{this.gsx$playerid.$t}}\'
-    playerName : \'{{this.gsx$playername.$t}}\'
-    playerGrade : \'{{this.gsx$playergrade.$t}}\'{{/if}}{{#if this.gsx$eventid.$t}}
-    eventId : \'{{this.gsx$eventid.$t}}\'
-    eventName : \'{{this.gsx$eventname.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
-    mediaPartnerId : \'{{this.gsx$mediapartnerid.$t}}\'
-    mediaTitle : \'{{this.gsx$mediatitle.$t}}\'
-    mediaId : \'{{this.gsx$mediaid.$t}}\'
-    mediaMuted : \'{{this.gsx$mediamuted.$t}}\'
-    mediaAutoPlay : \'{{this.gsx$mediaautoplay.$t}}\'
-    mediaContentType : \'{{this.gsx$mediacontenttype.$t}}\'{{/if}}
+    <pre class="line-numbers"><code class="language-json">    "siteCode" : ""
+    "sitePrimaryRsid" : ""
+    "siteType" : ""{{#if this.gsx$pagetype.$t}}
+    "pageType" : "{{this.gsx$pagetype.$t}}"{{/if}}{{#if this.gsx$pagename.$t}}
+    "pagename" : "{{this.gsx$pagename.$t}}"{{/if}}{{#if this.gsx$screenname.$t}}
+    "screenZname" : "{{this.gsx$screenname.$t}}"{{/if}}{{#if this.gsx$pageviewguid.$t}}
+    "pageViewGuid" : "{{this.gsx$pageviewguid.$t}}"{{/if}}{{#if this.gsx$clicktext.$t}}
+    "clickText" : "{{this.gsx$clicktext.$t}}"{{/if}}{{#if this.gsx$sitehier.$t}}
+    "sitehier" : "{{this.gsx$sitehier.$t}}"{{/if}}{{#if this.gsx$siteedition.$t}}
+    "siteEdition" : "{{this.gsx$siteedition.$t}}"{{/if}}{{#if this.gsx$project.$t}}
+    "project" : "{{this.gsx$project.$t}}"{{/if}}{{#if this.gsx$channel.$t}}
+    "channel" : "{{this.gsx$channel.$t}}"{{/if}}{{#if this.gsx$feature.$t}}
+    "feature" : "{{this.gsx$feature.$t}}"{{/if}}{{#if this.gsx$subfeature.$t}}
+    "subfeature" : "{{this.gsx$subfeature.$t}}"{{/if}}{{#if this.gsx$sitesection.$t}}
+    "sitesection" : "{{this.gsx$sitesection.$t}}"{{/if}}{{#if this.gsx$servicelevel.$t}}
+    "servicelevel" : "{{this.gsx$servicelevel.$t}}"{{/if}}{{#if this.gsx$productline.$t}}
+    "productline" : "{{this.gsx$productline.$t}}"{{/if}}{{#if this.gsx$user.$t}}
+    "user" : "{{this.gsx$user.$t}}"{{/if}}{{#if this.gsx$userstatus.$t}}
+    "userStatus" : "{{this.gsx$userstatus.$t}}"{{/if}}{{#if this.gsx$userregid.$t}}
+    "userRegId" : "{{this.gsx$userregid.$t}}"{{/if}}{{#if this.gsx$userid.$t}}
+    "userid" : "{{this.gsx$userid.$t}}"{{/if}}{{#if this.gsx$userregservice.$t}}
+    "userRegService" : "{{this.gsx$userregservice.$t}}"{{/if}}{{#if this.gsx$usertype.$t}}
+    "usertype" : "{{this.gsx$usertype.$t}}"{{/if}}{{#if this.gsx$userstate.$t}}
+    "userstate" : "{{this.gsx$userstate.$t}}"{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+    "userEventRegistrationSuccess" : "{{this.gsx$usereventregistrationsuccess.$t}}"{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+    "userEventLoginSuccess" : "{{this.gsx$usereventloginsuccess.$t}}"{{/if}}{{#if this.gsx$userteamrole.$t}}
+    "userTeamRole" : "{{this.gsx$userteamrole.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    "mediaPartnerId" : "{{this.gsx$mediapartnerid.$t}}"{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+    "mediaAutoPlay" : "{{this.gsx$mediaautoplay.$t}}"{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+    "mediaContentType" : "{{this.gsx$mediacontenttype.$t}}"{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+    "mediaEndCardUi" : "{{this.gsx$mediaendcardui.$t}}"{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+    "mediaDistNetwork" : "{{this.gsx$mediadistnetwork.$t}}"{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+    "mediaSvodContentType" : "{{this.gsx$mediasvodcontenttype.$t}}"{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+    "mediaDynamicPlay" : "{{this.gsx$mediadynamicplay.$t}}"{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+    "mediaRelatedShows" : "{{this.gsx$mediarelatedshows.$t}}"{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+    "mediaDeviceId" : "{{this.gsx$mediadeviceid.$t}}"{{/if}}{{#if this.gsx$mediaresume.$t}}
+    "mediaResume" : "{{this.gsx$mediaresume.$t}}"{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+    "mediaViewMode" : "{{this.gsx$mediaviewmode.$t}}"{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+    "mediaDvrTitleLong" : "{{this.gsx$mediadvrtitlelong.$t}}"{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+    "mediaDvrTitleShort" : "{{this.gsx$mediadvrtitleshort.$t}}"{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+    "mediaDvrSlugLabel" : "{{this.gsx$mediadvrsluglabel.$t}}"{{/if}}{{#if this.gsx$mediatitle.$t}}
+    "mediaTitle" : "{{this.gsx$mediatitle.$t}}"{{/if}}{{#if this.gsx$mediaid.$t}}
+    "mediaId" : "{{this.gsx$mediaid.$t}}"{{/if}}{{#if this.gsx$mediamuted.$t}}
+    "mediaMuted" : "{{this.gsx$mediamuted.$t}}"{{/if}}{{#if this.gsx$articleid.$t}}
+    "articleId" : "{{this.gsx$articleid.$t}}"{{/if}}{{#if this.gsx$articletype.$t}}
+    "articleType" : "{{this.gsx$articletype.$t}}"{{/if}}{{#if this.gsx$articletitle.$t}}
+    "articleTitle" : "{{this.gsx$articletitle.$t}}"{{/if}}{{#if this.gsx$articleauthorid.$t}}
+    "articleauthorid" : "{{this.gsx$articleauthorid.$t}}"{{/if}}{{#if this.gsx$articleauthorname.$t}}
+    "articleauthorname" : "{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$podtype.$t}}
+    "podType" : "{{this.gsx$podtype.$t}}"{{/if}}{{#if this.gsx$podtext.$t}}
+    "podText" : "{{this.gsx$podtext.$t}}"{{/if}}{{#if this.gsx$podsection.$t}}
+    "podSection" : "{{this.gsx$podsection.$t}}"{{/if}}{{#if this.gsx$podposition.$t}}
+    "podPosition" : "{{this.gsx$podposition.$t}}"{{/if}}{{#if this.gsx$podtitle.$t}}
+    "podTitle" : "{{this.gsx$podtitle.$t}}"{{/if}}{{#if this.gsx$showid.$t}}
+    "showId" : "{{this.gsx$showid.$t}}"{{/if}}{{#if this.gsx$showtitle.$t}}
+    "showTitle" : "{{this.gsx$showtitle.$t}}"{{/if}}{{#if this.gsx$showepisodeid.$t}}
+    "showEpisodeId" : "{{this.gsx$showepisodeid.$t}}"{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+    "showEpisodeTitle" : "{{this.gsx$showepisodetitle.$t}}"{{/if}}{{#if this.gsx$searchterm.$t}}
+    "searchTerm" : "{{this.gsx$searchterm.$t}}"{{/if}}{{#if this.gsx$searcheventstart.$t}}
+    "searchEventStart" : "{{this.gsx$searcheventstart.$t}}"{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+    "searchEventSearch" : "{{this.gsx$searcheventsearch.$t}}"{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+    "mvpdPartner" : "{{this.gsx$mvpdpartner.$t}}"{{/if}}{{#if this.gsx$mvpdid.$t}}
+    "mvpdId" : "{{this.gsx$mvpdid.$t}}"{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+    "purchaseEventBillingStart" : "{{this.gsx$purchaseeventbillingstart.$t}}"{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+    "purchaseEventOrderComplete" : "{{this.gsx$purchaseeventordercomplete.$t}}"{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+    "purchaseOrderId" : "{{this.gsx$purchaseorderid.$t}}"{{/if}}{{#if this.gsx$purchasecategory.$t}}
+    "purchaseCategory" : "{{this.gsx$purchasecategory.$t}}"{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+    "purchaseProduct" : "{{this.gsx$purchaseproduct.$t}}"{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+    "purchaseProductName" : "{{this.gsx$purchaseproductname.$t}}"{{/if}}{{#if this.gsx$purchasequantity.$t}}
+    "purchaseQuantity" : "{{this.gsx$purchasequantity.$t}}"{{/if}}{{#if this.gsx$purchaseprice.$t}}
+    "purchasePrice" : "{{this.gsx$purchaseprice.$t}}"{{/if}}{{#if this.gsx$products.$t}}
+    "&&products" : "{{this.gsx$products.$t}}"{{/if}}{{#if this.gsx$productpricingplan.$t}}
+    "productPricingPlan" : "{{this.gsx$productpricingplan.$t}}"{{/if}}{{#if this.gsx$productofferperiod.$t}}
+    "productOfferPeriod" : "{{this.gsx$productofferperiod.$t}}"{{/if}}{{#if this.gsx$intcid.$t}}
+    "intcid" : "{{this.gsx$intcid.$t}}"{{/if}}{{#if this.gsx$campaign.$t}}
+    "campaign" : "{{this.gsx$campaign.$t}}"{{/if}}{{#if this.gsx$upselltype.$t}}
+    "upsellType" : "{{this.gsx$upselltype.$t}}"{{/if}}{{#if this.gsx$errorcode.$t}}
+    "errorCode" : "{{this.gsx$errorcode.$t}}"{{/if}}{{#if this.gsx$launchtype.$t}}
+    "launchType" : "{{this.gsx$launchtype.$t}}"{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+    "deepLink/searchReferral" : "{{this.gsx$deeplink/searchreferral.$t}}"{{/if}}{{#if this.gsx$caststate.$t}}
+    "castState" : "{{this.gsx$caststate.$t}}"{{/if}}{{#if this.gsx$applog.$t}}
+    "appLog" : "{{this.gsx$applog.$t}}"{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+    "taplyticsUserId" : "{{this.gsx$taplyticsuserid.$t}}"{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+    "taplyticsSessionId" : "{{this.gsx$taplyticssessionid.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}}
+    "schoolId" : "{{this.gsx$schoolid.$t}}"{{/if}}{{#if this.gsx$schoolname.$t}}
+    "schoolName" : "{{this.gsx$schoolname.$t}}"{{/if}}{{#if this.gsx$schoolstate.$t}}
+    "schoolState" : "{{this.gsx$schoolstate.$t}}"{{/if}}{{#if this.gsx$schoolyear.$t}}
+    "schoolYear" : "{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}}
+    "teamId" : "{{this.gsx$teamid.$t}}"{{/if}}{{#if this.gsx$teamname.$t}}
+    "teamName" : "{{this.gsx$teamname.$t}}"{{/if}}{{#if this.gsx$teamarena.$t}}
+    "teamArena" : "{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}}
+    "playerId" : "{{this.gsx$playerid.$t}}"{{/if}}{{#if this.gsx$playername.$t}}
+    "playerName" : "{{this.gsx$playername.$t}}"{{/if}}{{#if this.gsx$playergrade.$t}}
+    "playerGrade" : "{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}}
+    "eventId" : "{{this.gsx$eventid.$t}}"{{/if}}{{#if this.gsx$eventname.$t}}
+    "eventName" : "{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}}
+    "sportType" : "{{this.gsx$sporttype.$t}}"{{/if}}{{#if this.gsx$sportgender.$t}}
+    "sportGender" : "{{this.gsx$sportgender.$t}}"{{/if}}{{#if this.gsx$sportlevel.$t}}
+    "sportLevel" : "{{this.gsx$sportlevel.$t}}"{{/if}}{{#if this.gsx$sportseason.$t}}
+    "sportSeason" : "{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$photoeventview.$t}}
+    "photoEventView" : "{{this.gsx$photoeventview.$t}}"{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+    "topicPrimaryId" : "{{this.gsx$topicprimaryid.$t}}"{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+    "topicPrimaryName" : "{{this.gsx$topicprimaryname.$t}}"{{/if}}{{#if this.gsx$collectionid.$t}}
+    "collectionId" : "{{this.gsx$collectionid.$t}}"{{/if}}{{#if this.gsx$collectionname.$t}}
+    "collectionName" : "{{this.gsx$collectionname.$t}}"{{/if}}{{#if this.gsx$socialsharetype.$t}}
+    "socialShareType" : "{{this.gsx$socialsharetype.$t}}"{{/if}}{{#if this.gsx$traystatus.$t}}
+    "trayStatus" : "{{this.gsx$traystatus.$t}}"{{/if}}{{#if this.gsx$playlisttitle.$t}}
+    "playListTitle" : "{{this.gsx$playlisttitle.$t}}"{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+    "bookMarkTitle" : "{{this.gsx$bookmarktitle.$t}}"{{/if}}
 </code></pre>
 </div>
                     
@@ -1763,16 +2081,36 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
     firehandlebars = function(data, template, destination){
         Handlebars.registerHelper(\'trackingMethodPage\', function(trackingmethod){
             if(trackingmethod === \'trackState\'){
-                return this.gsx$pagename.$t;
+                if (this.gsx$pagename){
+                    return this.gsx$pagename.$t;
+                } else if (this.gsx$screenname) {
+                    return this.gsx$screenname.$t;
+                }
             } else {
                 return this.gsx$trackingmethodaction.$t;
             }
         });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
+            }
+        });
+        Handlebars.registerHelper("highlightDynamic", function(column){
+            if(/(\\[.*?\\])/gi.test(column)) {
+                return \'<mark>\' + column + \'</mark>\';
+            } else {
+                return column;
+            }
+        })
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
         jQuery(destination).html(theCompiledHtml);
     };
+
+
 
     /* Allocate Ontology Resources */
     classifyontology = function(element){
@@ -1828,76 +2166,9 @@ Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$tracking
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
-            fireprism();
-
+            Prism.highlightAll();
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 ',
@@ -2087,9 +2358,9 @@ pre.line-numbers > code { position:relative; }
 
     <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/js/prism.js"></script>
     <script src="assets/js/colorbox.js"></script>
     <script src="assets/js/handlebars.js"></script>
-    <script src="assets/js/prism.js"></script>
     <script id="app-code-template" type="text/x-handlebars-template">
     {{#each entry}}
     <div class="accordion2 ontology-row ontologymethod-{{this.gsx$trackingmethod.$t}} ontologycategory-{{#if this.gsx$mediapartnerid.$t}}video{{else if this.gsx$articleid.$t}}article{{else if this.gsx$webviewurl.$t}}webview{{else}}basic{{/if}}">
@@ -2103,7 +2374,7 @@ pre.line-numbers > code { position:relative; }
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em></em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -2113,42 +2384,115 @@ pre.line-numbers > code { position:relative; }
                 </ul>
                 <div class="tab-content main-content">
                     <div id="tab-web-{{@index}}" class="tab active">
-    <pre class="line-numbers"><code class="language-json">    siteCode : \'\'
-    sitePrimaryRsid : \'\'
-    siteType : \'\'
-    siteSection : \'{{this.gsx$sitesection.$t}}\'
-    siteHier : \'{{this.gsx$sitehier.$t}}\'
-    pageType : \'{{this.gsx$pagetype.$t}}\'
-    screenName : \'{{this.gsx$pagename.$t}}\'{{#if this.gsx$directionscrolled.$t}}
-    directionScrolled : \'{{this.gsx$directionscrolled.$t}}\'
-    percentScrolled : \'{{this.gsx$percentscrolled.$t}}\'{{/if}}{{#if this.gsx$articleid.$t}}
-    articleId : \'{{this.gsx$articleid.$t}}\'
-    articleTitle : \'{{this.gsx$articletitle.$t}}\'
-    articleType : \'{{this.gsx$articletype.$t}}\'
-    articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
-    articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}{{#if this.gsx$sporttype.$t}}
-    sportType : \'{{this.gsx$sporttype.$t}}\'
-    sportGender : \'{{this.gsx$sportgender.$t}}\'
-    sportLevel : \'{{this.gsx$sportlevel.$t}}\'
-    sportSeason : \'{{this.gsx$sportseason.$t}}\'{{/if}}{{#if this.gsx$schoolid.$t}}
-    schoolId : \'{{this.gsx$schoolid.$t}}\'
-    schoolName : \'{{this.gsx$schoolname.$t}}\'
-    schoolState : \'{{this.gsx$schoolstate.$t}}\'
-    schoolYear : \'{{this.gsx$schoolyear.$t}}\'{{/if}}{{#if this.gsx$teamid.$t}}
-    teamId : \'{{this.gsx$teamid.$t}}\'
-    teamName : \'{{this.gsx$teamname.$t}}\'
-    teamArena : \'{{this.gsx$teamarena.$t}}\'{{/if}}{{#if this.gsx$playerid.$t}}
-    playerId : \'{{this.gsx$playerid.$t}}\'
-    playerName : \'{{this.gsx$playername.$t}}\'
-    playerGrade : \'{{this.gsx$playergrade.$t}}\'{{/if}}{{#if this.gsx$eventid.$t}}
-    eventId : \'{{this.gsx$eventid.$t}}\'
-    eventName : \'{{this.gsx$eventname.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
-    mediaPartnerId : \'{{this.gsx$mediapartnerid.$t}}\'
-    mediaTitle : \'{{this.gsx$mediatitle.$t}}\'
-    mediaId : \'{{this.gsx$mediaid.$t}}\'
-    mediaMuted : \'{{this.gsx$mediamuted.$t}}\'
-    mediaAutoPlay : \'{{this.gsx$mediaautoplay.$t}}\'
-    mediaContentType : \'{{this.gsx$mediacontenttype.$t}}\'{{/if}}
+    <pre class="line-numbers"><code class="language-json">    "siteCode" : ""
+    "sitePrimaryRsid" : ""
+    "siteType" : ""{{#if this.gsx$pagetype.$t}}
+    "pageType" : "{{this.gsx$pagetype.$t}}"{{/if}}{{#if this.gsx$pagename.$t}}
+    "pagename" : "{{this.gsx$pagename.$t}}"{{/if}}{{#if this.gsx$screenname.$t}}
+    "screenZname" : "{{this.gsx$screenname.$t}}"{{/if}}{{#if this.gsx$pageviewguid.$t}}
+    "pageViewGuid" : "{{this.gsx$pageviewguid.$t}}"{{/if}}{{#if this.gsx$clicktext.$t}}
+    "clickText" : "{{this.gsx$clicktext.$t}}"{{/if}}{{#if this.gsx$sitehier.$t}}
+    "sitehier" : "{{this.gsx$sitehier.$t}}"{{/if}}{{#if this.gsx$siteedition.$t}}
+    "siteEdition" : "{{this.gsx$siteedition.$t}}"{{/if}}{{#if this.gsx$project.$t}}
+    "project" : "{{this.gsx$project.$t}}"{{/if}}{{#if this.gsx$channel.$t}}
+    "channel" : "{{this.gsx$channel.$t}}"{{/if}}{{#if this.gsx$feature.$t}}
+    "feature" : "{{this.gsx$feature.$t}}"{{/if}}{{#if this.gsx$subfeature.$t}}
+    "subfeature" : "{{this.gsx$subfeature.$t}}"{{/if}}{{#if this.gsx$sitesection.$t}}
+    "sitesection" : "{{this.gsx$sitesection.$t}}"{{/if}}{{#if this.gsx$servicelevel.$t}}
+    "servicelevel" : "{{this.gsx$servicelevel.$t}}"{{/if}}{{#if this.gsx$productline.$t}}
+    "productline" : "{{this.gsx$productline.$t}}"{{/if}}{{#if this.gsx$user.$t}}
+    "user" : "{{this.gsx$user.$t}}"{{/if}}{{#if this.gsx$userstatus.$t}}
+    "userStatus" : "{{this.gsx$userstatus.$t}}"{{/if}}{{#if this.gsx$userregid.$t}}
+    "userRegId" : "{{this.gsx$userregid.$t}}"{{/if}}{{#if this.gsx$userid.$t}}
+    "userid" : "{{this.gsx$userid.$t}}"{{/if}}{{#if this.gsx$userregservice.$t}}
+    "userRegService" : "{{this.gsx$userregservice.$t}}"{{/if}}{{#if this.gsx$usertype.$t}}
+    "usertype" : "{{this.gsx$usertype.$t}}"{{/if}}{{#if this.gsx$userstate.$t}}
+    "userstate" : "{{this.gsx$userstate.$t}}"{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+    "userEventRegistrationSuccess" : "{{this.gsx$usereventregistrationsuccess.$t}}"{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+    "userEventLoginSuccess" : "{{this.gsx$usereventloginsuccess.$t}}"{{/if}}{{#if this.gsx$userteamrole.$t}}
+    "userTeamRole" : "{{this.gsx$userteamrole.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    "mediaPartnerId" : "{{this.gsx$mediapartnerid.$t}}"{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+    "mediaAutoPlay" : "{{this.gsx$mediaautoplay.$t}}"{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+    "mediaContentType" : "{{this.gsx$mediacontenttype.$t}}"{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+    "mediaEndCardUi" : "{{this.gsx$mediaendcardui.$t}}"{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+    "mediaDistNetwork" : "{{this.gsx$mediadistnetwork.$t}}"{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+    "mediaSvodContentType" : "{{this.gsx$mediasvodcontenttype.$t}}"{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+    "mediaDynamicPlay" : "{{this.gsx$mediadynamicplay.$t}}"{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+    "mediaRelatedShows" : "{{this.gsx$mediarelatedshows.$t}}"{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+    "mediaDeviceId" : "{{this.gsx$mediadeviceid.$t}}"{{/if}}{{#if this.gsx$mediaresume.$t}}
+    "mediaResume" : "{{this.gsx$mediaresume.$t}}"{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+    "mediaViewMode" : "{{this.gsx$mediaviewmode.$t}}"{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+    "mediaDvrTitleLong" : "{{this.gsx$mediadvrtitlelong.$t}}"{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+    "mediaDvrTitleShort" : "{{this.gsx$mediadvrtitleshort.$t}}"{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+    "mediaDvrSlugLabel" : "{{this.gsx$mediadvrsluglabel.$t}}"{{/if}}{{#if this.gsx$mediatitle.$t}}
+    "mediaTitle" : "{{this.gsx$mediatitle.$t}}"{{/if}}{{#if this.gsx$mediaid.$t}}
+    "mediaId" : "{{this.gsx$mediaid.$t}}"{{/if}}{{#if this.gsx$mediamuted.$t}}
+    "mediaMuted" : "{{this.gsx$mediamuted.$t}}"{{/if}}{{#if this.gsx$articleid.$t}}
+    "articleId" : "{{this.gsx$articleid.$t}}"{{/if}}{{#if this.gsx$articletype.$t}}
+    "articleType" : "{{this.gsx$articletype.$t}}"{{/if}}{{#if this.gsx$articletitle.$t}}
+    "articleTitle" : "{{this.gsx$articletitle.$t}}"{{/if}}{{#if this.gsx$articleauthorid.$t}}
+    "articleauthorid" : "{{this.gsx$articleauthorid.$t}}"{{/if}}{{#if this.gsx$articleauthorname.$t}}
+    "articleauthorname" : "{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$podtype.$t}}
+    "podType" : "{{this.gsx$podtype.$t}}"{{/if}}{{#if this.gsx$podtext.$t}}
+    "podText" : "{{this.gsx$podtext.$t}}"{{/if}}{{#if this.gsx$podsection.$t}}
+    "podSection" : "{{this.gsx$podsection.$t}}"{{/if}}{{#if this.gsx$podposition.$t}}
+    "podPosition" : "{{this.gsx$podposition.$t}}"{{/if}}{{#if this.gsx$podtitle.$t}}
+    "podTitle" : "{{this.gsx$podtitle.$t}}"{{/if}}{{#if this.gsx$showid.$t}}
+    "showId" : "{{this.gsx$showid.$t}}"{{/if}}{{#if this.gsx$showtitle.$t}}
+    "showTitle" : "{{this.gsx$showtitle.$t}}"{{/if}}{{#if this.gsx$showepisodeid.$t}}
+    "showEpisodeId" : "{{this.gsx$showepisodeid.$t}}"{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+    "showEpisodeTitle" : "{{this.gsx$showepisodetitle.$t}}"{{/if}}{{#if this.gsx$searchterm.$t}}
+    "searchTerm" : "{{this.gsx$searchterm.$t}}"{{/if}}{{#if this.gsx$searcheventstart.$t}}
+    "searchEventStart" : "{{this.gsx$searcheventstart.$t}}"{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+    "searchEventSearch" : "{{this.gsx$searcheventsearch.$t}}"{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+    "mvpdPartner" : "{{this.gsx$mvpdpartner.$t}}"{{/if}}{{#if this.gsx$mvpdid.$t}}
+    "mvpdId" : "{{this.gsx$mvpdid.$t}}"{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+    "purchaseEventBillingStart" : "{{this.gsx$purchaseeventbillingstart.$t}}"{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+    "purchaseEventOrderComplete" : "{{this.gsx$purchaseeventordercomplete.$t}}"{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+    "purchaseOrderId" : "{{this.gsx$purchaseorderid.$t}}"{{/if}}{{#if this.gsx$purchasecategory.$t}}
+    "purchaseCategory" : "{{this.gsx$purchasecategory.$t}}"{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+    "purchaseProduct" : "{{this.gsx$purchaseproduct.$t}}"{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+    "purchaseProductName" : "{{this.gsx$purchaseproductname.$t}}"{{/if}}{{#if this.gsx$purchasequantity.$t}}
+    "purchaseQuantity" : "{{this.gsx$purchasequantity.$t}}"{{/if}}{{#if this.gsx$purchaseprice.$t}}
+    "purchasePrice" : "{{this.gsx$purchaseprice.$t}}"{{/if}}{{#if this.gsx$products.$t}}
+    "&&products" : "{{this.gsx$products.$t}}"{{/if}}{{#if this.gsx$productpricingplan.$t}}
+    "productPricingPlan" : "{{this.gsx$productpricingplan.$t}}"{{/if}}{{#if this.gsx$productofferperiod.$t}}
+    "productOfferPeriod" : "{{this.gsx$productofferperiod.$t}}"{{/if}}{{#if this.gsx$intcid.$t}}
+    "intcid" : "{{this.gsx$intcid.$t}}"{{/if}}{{#if this.gsx$campaign.$t}}
+    "campaign" : "{{this.gsx$campaign.$t}}"{{/if}}{{#if this.gsx$upselltype.$t}}
+    "upsellType" : "{{this.gsx$upselltype.$t}}"{{/if}}{{#if this.gsx$errorcode.$t}}
+    "errorCode" : "{{this.gsx$errorcode.$t}}"{{/if}}{{#if this.gsx$launchtype.$t}}
+    "launchType" : "{{this.gsx$launchtype.$t}}"{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+    "deepLink/searchReferral" : "{{this.gsx$deeplink/searchreferral.$t}}"{{/if}}{{#if this.gsx$caststate.$t}}
+    "castState" : "{{this.gsx$caststate.$t}}"{{/if}}{{#if this.gsx$applog.$t}}
+    "appLog" : "{{this.gsx$applog.$t}}"{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+    "taplyticsUserId" : "{{this.gsx$taplyticsuserid.$t}}"{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+    "taplyticsSessionId" : "{{this.gsx$taplyticssessionid.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}}
+    "schoolId" : "{{this.gsx$schoolid.$t}}"{{/if}}{{#if this.gsx$schoolname.$t}}
+    "schoolName" : "{{this.gsx$schoolname.$t}}"{{/if}}{{#if this.gsx$schoolstate.$t}}
+    "schoolState" : "{{this.gsx$schoolstate.$t}}"{{/if}}{{#if this.gsx$schoolyear.$t}}
+    "schoolYear" : "{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}}
+    "teamId" : "{{this.gsx$teamid.$t}}"{{/if}}{{#if this.gsx$teamname.$t}}
+    "teamName" : "{{this.gsx$teamname.$t}}"{{/if}}{{#if this.gsx$teamarena.$t}}
+    "teamArena" : "{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}}
+    "playerId" : "{{this.gsx$playerid.$t}}"{{/if}}{{#if this.gsx$playername.$t}}
+    "playerName" : "{{this.gsx$playername.$t}}"{{/if}}{{#if this.gsx$playergrade.$t}}
+    "playerGrade" : "{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}}
+    "eventId" : "{{this.gsx$eventid.$t}}"{{/if}}{{#if this.gsx$eventname.$t}}
+    "eventName" : "{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}}
+    "sportType" : "{{this.gsx$sporttype.$t}}"{{/if}}{{#if this.gsx$sportgender.$t}}
+    "sportGender" : "{{this.gsx$sportgender.$t}}"{{/if}}{{#if this.gsx$sportlevel.$t}}
+    "sportLevel" : "{{this.gsx$sportlevel.$t}}"{{/if}}{{#if this.gsx$sportseason.$t}}
+    "sportSeason" : "{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$photoeventview.$t}}
+    "photoEventView" : "{{this.gsx$photoeventview.$t}}"{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+    "topicPrimaryId" : "{{this.gsx$topicprimaryid.$t}}"{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+    "topicPrimaryName" : "{{this.gsx$topicprimaryname.$t}}"{{/if}}{{#if this.gsx$collectionid.$t}}
+    "collectionId" : "{{this.gsx$collectionid.$t}}"{{/if}}{{#if this.gsx$collectionname.$t}}
+    "collectionName" : "{{this.gsx$collectionname.$t}}"{{/if}}{{#if this.gsx$socialsharetype.$t}}
+    "socialShareType" : "{{this.gsx$socialsharetype.$t}}"{{/if}}{{#if this.gsx$traystatus.$t}}
+    "trayStatus" : "{{this.gsx$traystatus.$t}}"{{/if}}{{#if this.gsx$playlisttitle.$t}}
+    "playListTitle" : "{{this.gsx$playlisttitle.$t}}"{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+    "bookMarkTitle" : "{{this.gsx$bookmarktitle.$t}}"{{/if}}
 </code></pre>
 </div>
                     
@@ -2217,16 +2561,36 @@ pre.line-numbers > code { position:relative; }
     firehandlebars = function(data, template, destination){
         Handlebars.registerHelper(\'trackingMethodPage\', function(trackingmethod){
             if(trackingmethod === \'trackState\'){
-                return this.gsx$pagename.$t;
+                if (this.gsx$pagename){
+                    return this.gsx$pagename.$t;
+                } else if (this.gsx$screenname) {
+                    return this.gsx$screenname.$t;
+                }
             } else {
                 return this.gsx$trackingmethodaction.$t;
             }
         });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
+            }
+        });
+        Handlebars.registerHelper("highlightDynamic", function(column){
+            if(/(\\[.*?\\])/gi.test(column)) {
+                return \'<mark>\' + column + \'</mark>\';
+            } else {
+                return column;
+            }
+        })
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
         jQuery(destination).html(theCompiledHtml);
     };
+
+
 
     /* Allocate Ontology Resources */
     classifyontology = function(element){
@@ -2282,76 +2646,9 @@ pre.line-numbers > code { position:relative; }
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
-            fireprism();
-
+            Prism.highlightAll();
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 
@@ -3832,9 +4129,9 @@ table.display tr.gradeU {
 
     <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/js/prism.js"></script>
     <script src="assets/js/colorbox.js"></script>
     <script src="assets/js/handlebars.js"></script>
-    <script src="assets/js/prism.js"></script>
     [[$mainCustomJS]]
     
 ',
@@ -3858,9 +4155,9 @@ table.display tr.gradeU {
 
     <script src="//code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/js/prism.js"></script>
     <script src="assets/js/colorbox.js"></script>
     <script src="assets/js/handlebars.js"></script>
-    <script src="assets/js/prism.js"></script>
     [[$mainCustomJS]]
     
 ',
@@ -4291,7 +4588,7 @@ pre.line-numbers > code { position:relative; }
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em>[[*sitePrimaryRsid]]</em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -4367,16 +4664,36 @@ pre.line-numbers > code { position:relative; }
     firehandlebars = function(data, template, destination){
         Handlebars.registerHelper(\'trackingMethodPage\', function(trackingmethod){
             if(trackingmethod === \'trackState\'){
-                return this.gsx$pagename.$t;
+                if (this.gsx$pagename){
+                    return this.gsx$pagename.$t;
+                } else if (this.gsx$screenname) {
+                    return this.gsx$screenname.$t;
+                }
             } else {
                 return this.gsx$trackingmethodaction.$t;
             }
         });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
+            }
+        });
+        Handlebars.registerHelper("highlightDynamic", function(column){
+            if(/(\\[.*?\\])/gi.test(column)) {
+                return \'<mark>\' + column + \'</mark>\';
+            } else {
+                return column;
+            }
+        })
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
         jQuery(destination).html(theCompiledHtml);
     };
+
+
 
     /* Allocate Ontology Resources */
     classifyontology = function(element){
@@ -4432,76 +4749,9 @@ pre.line-numbers > code { position:relative; }
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
-            fireprism();
-
+            Prism.highlightAll();
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 ',
@@ -4509,7 +4759,7 @@ pre.line-numbers > code { position:relative; }
           'properties' => 
           array (
           ),
-          'static' => true,
+          'static' => false,
           'static_file' => 'assets/chunks/structure/mainCustomJS',
           'content' => '<script id="app-code-template" type="text/x-handlebars-template">
     {{#each entry}}
@@ -4524,7 +4774,7 @@ pre.line-numbers > code { position:relative; }
                 <div class="tab-content webview-content">
                     <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
                     <p>Along with the visitor ID, we will need to append <em>[[*sitePrimaryRsid]]</em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{this.gsx$webviewurl.$t}}&amp;adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
+                    <p><strong>Webview Embed URL -</strong><br />{{contains this.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
                 </div>
                 {{else}}
                 <ul class="tab-links main-links">
@@ -4600,16 +4850,36 @@ pre.line-numbers > code { position:relative; }
     firehandlebars = function(data, template, destination){
         Handlebars.registerHelper(\'trackingMethodPage\', function(trackingmethod){
             if(trackingmethod === \'trackState\'){
-                return this.gsx$pagename.$t;
+                if (this.gsx$pagename){
+                    return this.gsx$pagename.$t;
+                } else if (this.gsx$screenname) {
+                    return this.gsx$screenname.$t;
+                }
             } else {
                 return this.gsx$trackingmethodaction.$t;
             }
         });
+        Handlebars.registerHelper("contains", function(urlparams){
+            if(~urlparams.indexOf(\'?\')){
+                return this.gsx$webviewurl.$t + \'&\';
+            } else {
+                return this.gsx$webviewurl.$t + \'?\';
+            }
+        });
+        Handlebars.registerHelper("highlightDynamic", function(column){
+            if(/(\\[.*?\\])/gi.test(column)) {
+                return \'<mark>\' + column + \'</mark>\';
+            } else {
+                return column;
+            }
+        })
         var theTemplateScript = jQuery(template).html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         var theCompiledHtml = theTemplate(data);
         jQuery(destination).html(theCompiledHtml);
     };
+
+
 
     /* Allocate Ontology Resources */
     classifyontology = function(element){
@@ -4665,76 +4935,9 @@ pre.line-numbers > code { position:relative; }
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            //jQuery("#tab-ontology-basic").sieve({ itemSelector: "h2" });
-            fireprism();
-
+            Prism.highlightAll();
         });
     });
-</script>
-
-<script type="text/javascript">
-    (function() {
-        var $;
-
-        $ = jQuery;
-
-        $.fn.sieve = function(options) {
-            var compact;
-            compact = function(array) {
-                var item, _i, _len, _results;
-                _results = [];
-                for (_i = 0, _len = array.length; _i < _len; _i++) {
-                    item = array[_i];
-                    if (item) {
-                        _results.push(item);
-                    }
-                }
-                return _results;
-            };
-            return this.each(function() {
-                var container, searchBar, settings;
-                container = $(this);
-                settings = $.extend({
-                    searchInput: null,
-                    searchTemplate: "<div><label>Search: <input type=\'text\'></label></div>",
-                    itemSelector: "tbody tr",
-                    textSelector: null,
-                    toggle: function(item, match) {
-                        return item.toggle(match);
-                    },
-                    complete: function() {}
-                }, options);
-                if (!settings.searchInput) {
-                    searchBar = $(settings.searchTemplate);
-                    settings.searchInput = searchBar.find("input");
-                    container.before(searchBar);
-                }
-                return settings.searchInput.on("keyup.sieve change.sieve", function() {
-                    var items, query;
-                    query = compact($(this).val().toLowerCase().split(/\\s+/));
-                    items = container.find(settings.itemSelector);
-                    items.each(function() {
-                        var cells, item, match, q, text, _i, _len;
-                        item = $(this);
-                        if (settings.textSelector) {
-                            cells = item.find(settings.textSelector);
-                            text = cells.text().toLowerCase();
-                        } else {
-                            text = item.text().toLowerCase();
-                        }
-                        match = true;
-                        for (_i = 0, _len = query.length; _i < _len; _i++) {
-                            q = query[_i];
-                            match && (match = text.indexOf(q) >= 0);
-                        }
-                        return settings.toggle(item, match);
-                    });
-                    return settings.complete();
-                });
-            });
-        };
-
-    }).call(this);
 </script>
 
 ',
@@ -4771,98 +4974,234 @@ pre.line-numbers > code { position:relative; }
           'cache_type' => 0,
           'snippet' => '<div id="tab-web-{{@index}}" class="tab active">
     <pre class="line-numbers"><code class="language-json">[[*platform:contains=`Web`:then=`utag_data = {
-`]]    siteCode : \'[[*siteCode]]\'
-    sitePrimaryRsid : \'[[*sitePrimaryRsid]]\'
-    siteType : \'[[*siteType]]\'
-    siteSection : \'{{this.gsx$sitesection.$t}}\'
-    siteHier : \'{{this.gsx$sitehier.$t}}\'
-    pageType : \'{{this.gsx$pagetype.$t}}\'
-    screenName : \'{{this.gsx$pagename.$t}}\'{{#if this.gsx$directionscrolled.$t}}
-    directionScrolled : \'{{this.gsx$directionscrolled.$t}}\'
-    percentScrolled : \'{{this.gsx$percentscrolled.$t}}\'{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`
-    userID : \'{{this.gsx$userid.$t}}\'
-    userType : \'{{this.gsx$usertype.$t}}\'
-    userState : \'{{this.gsx$userstate.$t}}\'
-    userTeamRole : \'{{this.gsx$userteamrole.$t}}\'
-    userStateIsAuthenticated : \'1\'`]]{{#if this.gsx$articleid.$t}}
-    articleId : \'{{this.gsx$articleid.$t}}\'
-    articleTitle : \'{{this.gsx$articletitle.$t}}\'
-    articleType : \'{{this.gsx$articletype.$t}}\'
-    articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
-    articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}{{#if this.gsx$sporttype.$t}}
-    sportType : \'{{this.gsx$sporttype.$t}}\'
-    sportGender : \'{{this.gsx$sportgender.$t}}\'
-    sportLevel : \'{{this.gsx$sportlevel.$t}}\'
-    sportSeason : \'{{this.gsx$sportseason.$t}}\'{{/if}}{{#if this.gsx$schoolid.$t}}
-    schoolId : \'{{this.gsx$schoolid.$t}}\'
-    schoolName : \'{{this.gsx$schoolname.$t}}\'
-    schoolState : \'{{this.gsx$schoolstate.$t}}\'
-    schoolYear : \'{{this.gsx$schoolyear.$t}}\'{{/if}}{{#if this.gsx$teamid.$t}}
-    teamId : \'{{this.gsx$teamid.$t}}\'
-    teamName : \'{{this.gsx$teamname.$t}}\'
-    teamArena : \'{{this.gsx$teamarena.$t}}\'{{/if}}{{#if this.gsx$playerid.$t}}
-    playerId : \'{{this.gsx$playerid.$t}}\'
-    playerName : \'{{this.gsx$playername.$t}}\'
-    playerGrade : \'{{this.gsx$playergrade.$t}}\'{{/if}}{{#if this.gsx$eventid.$t}}
-    eventId : \'{{this.gsx$eventid.$t}}\'
-    eventName : \'{{this.gsx$eventname.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
-    mediaPartnerId : \'{{this.gsx$mediapartnerid.$t}}\'
-    mediaTitle : \'{{this.gsx$mediatitle.$t}}\'
-    mediaId : \'{{this.gsx$mediaid.$t}}\'
-    mediaMuted : \'{{this.gsx$mediamuted.$t}}\'
-    mediaAutoPlay : \'{{this.gsx$mediaautoplay.$t}}\'
-    mediaContentType : \'{{this.gsx$mediacontenttype.$t}}\'{{/if}}
+`]]    "siteCode" : "[[*siteCode]]"
+    "sitePrimaryRsid" : "[[*sitePrimaryRsid]]"
+    "siteType" : "[[*siteType]]"{{#if this.gsx$pagetype.$t}}
+    "pageType" : "{{this.gsx$pagetype.$t}}"{{/if}}{{#if this.gsx$pagename.$t}}
+    "pagename" : "{{this.gsx$pagename.$t}}"{{/if}}{{#if this.gsx$screenname.$t}}
+    "screenZname" : "{{this.gsx$screenname.$t}}"{{/if}}{{#if this.gsx$pageviewguid.$t}}
+    "pageViewGuid" : "{{this.gsx$pageviewguid.$t}}"{{/if}}{{#if this.gsx$clicktext.$t}}
+    "clickText" : "{{this.gsx$clicktext.$t}}"{{/if}}{{#if this.gsx$sitehier.$t}}
+    "sitehier" : "{{this.gsx$sitehier.$t}}"{{/if}}{{#if this.gsx$siteedition.$t}}
+    "siteEdition" : "{{this.gsx$siteedition.$t}}"{{/if}}{{#if this.gsx$project.$t}}
+    "project" : "{{this.gsx$project.$t}}"{{/if}}{{#if this.gsx$channel.$t}}
+    "channel" : "{{this.gsx$channel.$t}}"{{/if}}{{#if this.gsx$feature.$t}}
+    "feature" : "{{this.gsx$feature.$t}}"{{/if}}{{#if this.gsx$subfeature.$t}}
+    "subfeature" : "{{this.gsx$subfeature.$t}}"{{/if}}{{#if this.gsx$sitesection.$t}}
+    "sitesection" : "{{this.gsx$sitesection.$t}}"{{/if}}{{#if this.gsx$servicelevel.$t}}
+    "servicelevel" : "{{this.gsx$servicelevel.$t}}"{{/if}}{{#if this.gsx$productline.$t}}
+    "productline" : "{{this.gsx$productline.$t}}"{{/if}}{{#if this.gsx$user.$t}}
+    "user" : "{{this.gsx$user.$t}}"{{/if}}{{#if this.gsx$userstatus.$t}}
+    "userStatus" : "{{this.gsx$userstatus.$t}}"{{/if}}{{#if this.gsx$userregid.$t}}
+    "userRegId" : "{{this.gsx$userregid.$t}}"{{/if}}{{#if this.gsx$userid.$t}}
+    "userid" : "{{this.gsx$userid.$t}}"{{/if}}{{#if this.gsx$userregservice.$t}}
+    "userRegService" : "{{this.gsx$userregservice.$t}}"{{/if}}{{#if this.gsx$usertype.$t}}
+    "usertype" : "{{this.gsx$usertype.$t}}"{{/if}}{{#if this.gsx$userstate.$t}}
+    "userstate" : "{{this.gsx$userstate.$t}}"{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+    "userEventRegistrationSuccess" : "{{this.gsx$usereventregistrationsuccess.$t}}"{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+    "userEventLoginSuccess" : "{{this.gsx$usereventloginsuccess.$t}}"{{/if}}{{#if this.gsx$userteamrole.$t}}
+    "userTeamRole" : "{{this.gsx$userteamrole.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    "mediaPartnerId" : "{{this.gsx$mediapartnerid.$t}}"{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+    "mediaAutoPlay" : "{{this.gsx$mediaautoplay.$t}}"{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+    "mediaContentType" : "{{this.gsx$mediacontenttype.$t}}"{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+    "mediaEndCardUi" : "{{this.gsx$mediaendcardui.$t}}"{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+    "mediaDistNetwork" : "{{this.gsx$mediadistnetwork.$t}}"{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+    "mediaSvodContentType" : "{{this.gsx$mediasvodcontenttype.$t}}"{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+    "mediaDynamicPlay" : "{{this.gsx$mediadynamicplay.$t}}"{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+    "mediaRelatedShows" : "{{this.gsx$mediarelatedshows.$t}}"{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+    "mediaDeviceId" : "{{this.gsx$mediadeviceid.$t}}"{{/if}}{{#if this.gsx$mediaresume.$t}}
+    "mediaResume" : "{{this.gsx$mediaresume.$t}}"{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+    "mediaViewMode" : "{{this.gsx$mediaviewmode.$t}}"{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+    "mediaDvrTitleLong" : "{{this.gsx$mediadvrtitlelong.$t}}"{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+    "mediaDvrTitleShort" : "{{this.gsx$mediadvrtitleshort.$t}}"{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+    "mediaDvrSlugLabel" : "{{this.gsx$mediadvrsluglabel.$t}}"{{/if}}{{#if this.gsx$mediatitle.$t}}
+    "mediaTitle" : "{{this.gsx$mediatitle.$t}}"{{/if}}{{#if this.gsx$mediaid.$t}}
+    "mediaId" : "{{this.gsx$mediaid.$t}}"{{/if}}{{#if this.gsx$mediamuted.$t}}
+    "mediaMuted" : "{{this.gsx$mediamuted.$t}}"{{/if}}{{#if this.gsx$articleid.$t}}
+    "articleId" : "{{this.gsx$articleid.$t}}"{{/if}}{{#if this.gsx$articletype.$t}}
+    "articleType" : "{{this.gsx$articletype.$t}}"{{/if}}{{#if this.gsx$articletitle.$t}}
+    "articleTitle" : "{{this.gsx$articletitle.$t}}"{{/if}}{{#if this.gsx$articleauthorid.$t}}
+    "articleauthorid" : "{{this.gsx$articleauthorid.$t}}"{{/if}}{{#if this.gsx$articleauthorname.$t}}
+    "articleauthorname" : "{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$podtype.$t}}
+    "podType" : "{{this.gsx$podtype.$t}}"{{/if}}{{#if this.gsx$podtext.$t}}
+    "podText" : "{{this.gsx$podtext.$t}}"{{/if}}{{#if this.gsx$podsection.$t}}
+    "podSection" : "{{this.gsx$podsection.$t}}"{{/if}}{{#if this.gsx$podposition.$t}}
+    "podPosition" : "{{this.gsx$podposition.$t}}"{{/if}}{{#if this.gsx$podtitle.$t}}
+    "podTitle" : "{{this.gsx$podtitle.$t}}"{{/if}}{{#if this.gsx$showid.$t}}
+    "showId" : "{{this.gsx$showid.$t}}"{{/if}}{{#if this.gsx$showtitle.$t}}
+    "showTitle" : "{{this.gsx$showtitle.$t}}"{{/if}}{{#if this.gsx$showepisodeid.$t}}
+    "showEpisodeId" : "{{this.gsx$showepisodeid.$t}}"{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+    "showEpisodeTitle" : "{{this.gsx$showepisodetitle.$t}}"{{/if}}{{#if this.gsx$searchterm.$t}}
+    "searchTerm" : "{{this.gsx$searchterm.$t}}"{{/if}}{{#if this.gsx$searcheventstart.$t}}
+    "searchEventStart" : "{{this.gsx$searcheventstart.$t}}"{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+    "searchEventSearch" : "{{this.gsx$searcheventsearch.$t}}"{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+    "mvpdPartner" : "{{this.gsx$mvpdpartner.$t}}"{{/if}}{{#if this.gsx$mvpdid.$t}}
+    "mvpdId" : "{{this.gsx$mvpdid.$t}}"{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+    "purchaseEventBillingStart" : "{{this.gsx$purchaseeventbillingstart.$t}}"{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+    "purchaseEventOrderComplete" : "{{this.gsx$purchaseeventordercomplete.$t}}"{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+    "purchaseOrderId" : "{{this.gsx$purchaseorderid.$t}}"{{/if}}{{#if this.gsx$purchasecategory.$t}}
+    "purchaseCategory" : "{{this.gsx$purchasecategory.$t}}"{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+    "purchaseProduct" : "{{this.gsx$purchaseproduct.$t}}"{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+    "purchaseProductName" : "{{this.gsx$purchaseproductname.$t}}"{{/if}}{{#if this.gsx$purchasequantity.$t}}
+    "purchaseQuantity" : "{{this.gsx$purchasequantity.$t}}"{{/if}}{{#if this.gsx$purchaseprice.$t}}
+    "purchasePrice" : "{{this.gsx$purchaseprice.$t}}"{{/if}}{{#if this.gsx$products.$t}}
+    "&&products" : "{{this.gsx$products.$t}}"{{/if}}{{#if this.gsx$productpricingplan.$t}}
+    "productPricingPlan" : "{{this.gsx$productpricingplan.$t}}"{{/if}}{{#if this.gsx$productofferperiod.$t}}
+    "productOfferPeriod" : "{{this.gsx$productofferperiod.$t}}"{{/if}}{{#if this.gsx$intcid.$t}}
+    "intcid" : "{{this.gsx$intcid.$t}}"{{/if}}{{#if this.gsx$campaign.$t}}
+    "campaign" : "{{this.gsx$campaign.$t}}"{{/if}}{{#if this.gsx$upselltype.$t}}
+    "upsellType" : "{{this.gsx$upselltype.$t}}"{{/if}}{{#if this.gsx$errorcode.$t}}
+    "errorCode" : "{{this.gsx$errorcode.$t}}"{{/if}}{{#if this.gsx$launchtype.$t}}
+    "launchType" : "{{this.gsx$launchtype.$t}}"{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+    "deepLink/searchReferral" : "{{this.gsx$deeplink/searchreferral.$t}}"{{/if}}{{#if this.gsx$caststate.$t}}
+    "castState" : "{{this.gsx$caststate.$t}}"{{/if}}{{#if this.gsx$applog.$t}}
+    "appLog" : "{{this.gsx$applog.$t}}"{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+    "taplyticsUserId" : "{{this.gsx$taplyticsuserid.$t}}"{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+    "taplyticsSessionId" : "{{this.gsx$taplyticssessionid.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}}
+    "schoolId" : "{{this.gsx$schoolid.$t}}"{{/if}}{{#if this.gsx$schoolname.$t}}
+    "schoolName" : "{{this.gsx$schoolname.$t}}"{{/if}}{{#if this.gsx$schoolstate.$t}}
+    "schoolState" : "{{this.gsx$schoolstate.$t}}"{{/if}}{{#if this.gsx$schoolyear.$t}}
+    "schoolYear" : "{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}}
+    "teamId" : "{{this.gsx$teamid.$t}}"{{/if}}{{#if this.gsx$teamname.$t}}
+    "teamName" : "{{this.gsx$teamname.$t}}"{{/if}}{{#if this.gsx$teamarena.$t}}
+    "teamArena" : "{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}}
+    "playerId" : "{{this.gsx$playerid.$t}}"{{/if}}{{#if this.gsx$playername.$t}}
+    "playerName" : "{{this.gsx$playername.$t}}"{{/if}}{{#if this.gsx$playergrade.$t}}
+    "playerGrade" : "{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}}
+    "eventId" : "{{this.gsx$eventid.$t}}"{{/if}}{{#if this.gsx$eventname.$t}}
+    "eventName" : "{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}}
+    "sportType" : "{{this.gsx$sporttype.$t}}"{{/if}}{{#if this.gsx$sportgender.$t}}
+    "sportGender" : "{{this.gsx$sportgender.$t}}"{{/if}}{{#if this.gsx$sportlevel.$t}}
+    "sportLevel" : "{{this.gsx$sportlevel.$t}}"{{/if}}{{#if this.gsx$sportseason.$t}}
+    "sportSeason" : "{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$photoeventview.$t}}
+    "photoEventView" : "{{this.gsx$photoeventview.$t}}"{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+    "topicPrimaryId" : "{{this.gsx$topicprimaryid.$t}}"{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+    "topicPrimaryName" : "{{this.gsx$topicprimaryname.$t}}"{{/if}}{{#if this.gsx$collectionid.$t}}
+    "collectionId" : "{{this.gsx$collectionid.$t}}"{{/if}}{{#if this.gsx$collectionname.$t}}
+    "collectionName" : "{{this.gsx$collectionname.$t}}"{{/if}}{{#if this.gsx$socialsharetype.$t}}
+    "socialShareType" : "{{this.gsx$socialsharetype.$t}}"{{/if}}{{#if this.gsx$traystatus.$t}}
+    "trayStatus" : "{{this.gsx$traystatus.$t}}"{{/if}}{{#if this.gsx$playlisttitle.$t}}
+    "playListTitle" : "{{this.gsx$playlisttitle.$t}}"{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+    "bookMarkTitle" : "{{this.gsx$bookmarktitle.$t}}"{{/if}}
 [[*platform:contains=`Web`:then=`}`]]</code></pre>
 </div>',
           'locked' => false,
           'properties' => 
           array (
           ),
-          'static' => true,
+          'static' => false,
           'static_file' => 'assets/chunks/structure/codeformats/spec_codeFormat_web',
           'content' => '<div id="tab-web-{{@index}}" class="tab active">
     <pre class="line-numbers"><code class="language-json">[[*platform:contains=`Web`:then=`utag_data = {
-`]]    siteCode : \'[[*siteCode]]\'
-    sitePrimaryRsid : \'[[*sitePrimaryRsid]]\'
-    siteType : \'[[*siteType]]\'
-    siteSection : \'{{this.gsx$sitesection.$t}}\'
-    siteHier : \'{{this.gsx$sitehier.$t}}\'
-    pageType : \'{{this.gsx$pagetype.$t}}\'
-    screenName : \'{{this.gsx$pagename.$t}}\'{{#if this.gsx$directionscrolled.$t}}
-    directionScrolled : \'{{this.gsx$directionscrolled.$t}}\'
-    percentScrolled : \'{{this.gsx$percentscrolled.$t}}\'{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`
-    userID : \'{{this.gsx$userid.$t}}\'
-    userType : \'{{this.gsx$usertype.$t}}\'
-    userState : \'{{this.gsx$userstate.$t}}\'
-    userTeamRole : \'{{this.gsx$userteamrole.$t}}\'
-    userStateIsAuthenticated : \'1\'`]]{{#if this.gsx$articleid.$t}}
-    articleId : \'{{this.gsx$articleid.$t}}\'
-    articleTitle : \'{{this.gsx$articletitle.$t}}\'
-    articleType : \'{{this.gsx$articletype.$t}}\'
-    articleAuthorId : \'{{this.gsx$articleauthorid.$t}}\'
-    articleAuthorName : \'{{this.gsx$articleauthorname.$t}}\'{{/if}}{{#if this.gsx$sporttype.$t}}
-    sportType : \'{{this.gsx$sporttype.$t}}\'
-    sportGender : \'{{this.gsx$sportgender.$t}}\'
-    sportLevel : \'{{this.gsx$sportlevel.$t}}\'
-    sportSeason : \'{{this.gsx$sportseason.$t}}\'{{/if}}{{#if this.gsx$schoolid.$t}}
-    schoolId : \'{{this.gsx$schoolid.$t}}\'
-    schoolName : \'{{this.gsx$schoolname.$t}}\'
-    schoolState : \'{{this.gsx$schoolstate.$t}}\'
-    schoolYear : \'{{this.gsx$schoolyear.$t}}\'{{/if}}{{#if this.gsx$teamid.$t}}
-    teamId : \'{{this.gsx$teamid.$t}}\'
-    teamName : \'{{this.gsx$teamname.$t}}\'
-    teamArena : \'{{this.gsx$teamarena.$t}}\'{{/if}}{{#if this.gsx$playerid.$t}}
-    playerId : \'{{this.gsx$playerid.$t}}\'
-    playerName : \'{{this.gsx$playername.$t}}\'
-    playerGrade : \'{{this.gsx$playergrade.$t}}\'{{/if}}{{#if this.gsx$eventid.$t}}
-    eventId : \'{{this.gsx$eventid.$t}}\'
-    eventName : \'{{this.gsx$eventname.$t}}\'{{/if}}{{#if this.gsx$mediapartnerid.$t}}
-    mediaPartnerId : \'{{this.gsx$mediapartnerid.$t}}\'
-    mediaTitle : \'{{this.gsx$mediatitle.$t}}\'
-    mediaId : \'{{this.gsx$mediaid.$t}}\'
-    mediaMuted : \'{{this.gsx$mediamuted.$t}}\'
-    mediaAutoPlay : \'{{this.gsx$mediaautoplay.$t}}\'
-    mediaContentType : \'{{this.gsx$mediacontenttype.$t}}\'{{/if}}
+`]]    "siteCode" : "[[*siteCode]]"
+    "sitePrimaryRsid" : "[[*sitePrimaryRsid]]"
+    "siteType" : "[[*siteType]]"{{#if this.gsx$pagetype.$t}}
+    "pageType" : "{{this.gsx$pagetype.$t}}"{{/if}}{{#if this.gsx$pagename.$t}}
+    "pagename" : "{{this.gsx$pagename.$t}}"{{/if}}{{#if this.gsx$screenname.$t}}
+    "screenZname" : "{{this.gsx$screenname.$t}}"{{/if}}{{#if this.gsx$pageviewguid.$t}}
+    "pageViewGuid" : "{{this.gsx$pageviewguid.$t}}"{{/if}}{{#if this.gsx$clicktext.$t}}
+    "clickText" : "{{this.gsx$clicktext.$t}}"{{/if}}{{#if this.gsx$sitehier.$t}}
+    "sitehier" : "{{this.gsx$sitehier.$t}}"{{/if}}{{#if this.gsx$siteedition.$t}}
+    "siteEdition" : "{{this.gsx$siteedition.$t}}"{{/if}}{{#if this.gsx$project.$t}}
+    "project" : "{{this.gsx$project.$t}}"{{/if}}{{#if this.gsx$channel.$t}}
+    "channel" : "{{this.gsx$channel.$t}}"{{/if}}{{#if this.gsx$feature.$t}}
+    "feature" : "{{this.gsx$feature.$t}}"{{/if}}{{#if this.gsx$subfeature.$t}}
+    "subfeature" : "{{this.gsx$subfeature.$t}}"{{/if}}{{#if this.gsx$sitesection.$t}}
+    "sitesection" : "{{this.gsx$sitesection.$t}}"{{/if}}{{#if this.gsx$servicelevel.$t}}
+    "servicelevel" : "{{this.gsx$servicelevel.$t}}"{{/if}}{{#if this.gsx$productline.$t}}
+    "productline" : "{{this.gsx$productline.$t}}"{{/if}}{{#if this.gsx$user.$t}}
+    "user" : "{{this.gsx$user.$t}}"{{/if}}{{#if this.gsx$userstatus.$t}}
+    "userStatus" : "{{this.gsx$userstatus.$t}}"{{/if}}{{#if this.gsx$userregid.$t}}
+    "userRegId" : "{{this.gsx$userregid.$t}}"{{/if}}{{#if this.gsx$userid.$t}}
+    "userid" : "{{this.gsx$userid.$t}}"{{/if}}{{#if this.gsx$userregservice.$t}}
+    "userRegService" : "{{this.gsx$userregservice.$t}}"{{/if}}{{#if this.gsx$usertype.$t}}
+    "usertype" : "{{this.gsx$usertype.$t}}"{{/if}}{{#if this.gsx$userstate.$t}}
+    "userstate" : "{{this.gsx$userstate.$t}}"{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+    "userEventRegistrationSuccess" : "{{this.gsx$usereventregistrationsuccess.$t}}"{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+    "userEventLoginSuccess" : "{{this.gsx$usereventloginsuccess.$t}}"{{/if}}{{#if this.gsx$userteamrole.$t}}
+    "userTeamRole" : "{{this.gsx$userteamrole.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    "mediaPartnerId" : "{{this.gsx$mediapartnerid.$t}}"{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+    "mediaAutoPlay" : "{{this.gsx$mediaautoplay.$t}}"{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+    "mediaContentType" : "{{this.gsx$mediacontenttype.$t}}"{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+    "mediaEndCardUi" : "{{this.gsx$mediaendcardui.$t}}"{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+    "mediaDistNetwork" : "{{this.gsx$mediadistnetwork.$t}}"{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+    "mediaSvodContentType" : "{{this.gsx$mediasvodcontenttype.$t}}"{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+    "mediaDynamicPlay" : "{{this.gsx$mediadynamicplay.$t}}"{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+    "mediaRelatedShows" : "{{this.gsx$mediarelatedshows.$t}}"{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+    "mediaDeviceId" : "{{this.gsx$mediadeviceid.$t}}"{{/if}}{{#if this.gsx$mediaresume.$t}}
+    "mediaResume" : "{{this.gsx$mediaresume.$t}}"{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+    "mediaViewMode" : "{{this.gsx$mediaviewmode.$t}}"{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+    "mediaDvrTitleLong" : "{{this.gsx$mediadvrtitlelong.$t}}"{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+    "mediaDvrTitleShort" : "{{this.gsx$mediadvrtitleshort.$t}}"{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+    "mediaDvrSlugLabel" : "{{this.gsx$mediadvrsluglabel.$t}}"{{/if}}{{#if this.gsx$mediatitle.$t}}
+    "mediaTitle" : "{{this.gsx$mediatitle.$t}}"{{/if}}{{#if this.gsx$mediaid.$t}}
+    "mediaId" : "{{this.gsx$mediaid.$t}}"{{/if}}{{#if this.gsx$mediamuted.$t}}
+    "mediaMuted" : "{{this.gsx$mediamuted.$t}}"{{/if}}{{#if this.gsx$articleid.$t}}
+    "articleId" : "{{this.gsx$articleid.$t}}"{{/if}}{{#if this.gsx$articletype.$t}}
+    "articleType" : "{{this.gsx$articletype.$t}}"{{/if}}{{#if this.gsx$articletitle.$t}}
+    "articleTitle" : "{{this.gsx$articletitle.$t}}"{{/if}}{{#if this.gsx$articleauthorid.$t}}
+    "articleauthorid" : "{{this.gsx$articleauthorid.$t}}"{{/if}}{{#if this.gsx$articleauthorname.$t}}
+    "articleauthorname" : "{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$podtype.$t}}
+    "podType" : "{{this.gsx$podtype.$t}}"{{/if}}{{#if this.gsx$podtext.$t}}
+    "podText" : "{{this.gsx$podtext.$t}}"{{/if}}{{#if this.gsx$podsection.$t}}
+    "podSection" : "{{this.gsx$podsection.$t}}"{{/if}}{{#if this.gsx$podposition.$t}}
+    "podPosition" : "{{this.gsx$podposition.$t}}"{{/if}}{{#if this.gsx$podtitle.$t}}
+    "podTitle" : "{{this.gsx$podtitle.$t}}"{{/if}}{{#if this.gsx$showid.$t}}
+    "showId" : "{{this.gsx$showid.$t}}"{{/if}}{{#if this.gsx$showtitle.$t}}
+    "showTitle" : "{{this.gsx$showtitle.$t}}"{{/if}}{{#if this.gsx$showepisodeid.$t}}
+    "showEpisodeId" : "{{this.gsx$showepisodeid.$t}}"{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+    "showEpisodeTitle" : "{{this.gsx$showepisodetitle.$t}}"{{/if}}{{#if this.gsx$searchterm.$t}}
+    "searchTerm" : "{{this.gsx$searchterm.$t}}"{{/if}}{{#if this.gsx$searcheventstart.$t}}
+    "searchEventStart" : "{{this.gsx$searcheventstart.$t}}"{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+    "searchEventSearch" : "{{this.gsx$searcheventsearch.$t}}"{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+    "mvpdPartner" : "{{this.gsx$mvpdpartner.$t}}"{{/if}}{{#if this.gsx$mvpdid.$t}}
+    "mvpdId" : "{{this.gsx$mvpdid.$t}}"{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+    "purchaseEventBillingStart" : "{{this.gsx$purchaseeventbillingstart.$t}}"{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+    "purchaseEventOrderComplete" : "{{this.gsx$purchaseeventordercomplete.$t}}"{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+    "purchaseOrderId" : "{{this.gsx$purchaseorderid.$t}}"{{/if}}{{#if this.gsx$purchasecategory.$t}}
+    "purchaseCategory" : "{{this.gsx$purchasecategory.$t}}"{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+    "purchaseProduct" : "{{this.gsx$purchaseproduct.$t}}"{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+    "purchaseProductName" : "{{this.gsx$purchaseproductname.$t}}"{{/if}}{{#if this.gsx$purchasequantity.$t}}
+    "purchaseQuantity" : "{{this.gsx$purchasequantity.$t}}"{{/if}}{{#if this.gsx$purchaseprice.$t}}
+    "purchasePrice" : "{{this.gsx$purchaseprice.$t}}"{{/if}}{{#if this.gsx$products.$t}}
+    "&&products" : "{{this.gsx$products.$t}}"{{/if}}{{#if this.gsx$productpricingplan.$t}}
+    "productPricingPlan" : "{{this.gsx$productpricingplan.$t}}"{{/if}}{{#if this.gsx$productofferperiod.$t}}
+    "productOfferPeriod" : "{{this.gsx$productofferperiod.$t}}"{{/if}}{{#if this.gsx$intcid.$t}}
+    "intcid" : "{{this.gsx$intcid.$t}}"{{/if}}{{#if this.gsx$campaign.$t}}
+    "campaign" : "{{this.gsx$campaign.$t}}"{{/if}}{{#if this.gsx$upselltype.$t}}
+    "upsellType" : "{{this.gsx$upselltype.$t}}"{{/if}}{{#if this.gsx$errorcode.$t}}
+    "errorCode" : "{{this.gsx$errorcode.$t}}"{{/if}}{{#if this.gsx$launchtype.$t}}
+    "launchType" : "{{this.gsx$launchtype.$t}}"{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+    "deepLink/searchReferral" : "{{this.gsx$deeplink/searchreferral.$t}}"{{/if}}{{#if this.gsx$caststate.$t}}
+    "castState" : "{{this.gsx$caststate.$t}}"{{/if}}{{#if this.gsx$applog.$t}}
+    "appLog" : "{{this.gsx$applog.$t}}"{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+    "taplyticsUserId" : "{{this.gsx$taplyticsuserid.$t}}"{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+    "taplyticsSessionId" : "{{this.gsx$taplyticssessionid.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}}
+    "schoolId" : "{{this.gsx$schoolid.$t}}"{{/if}}{{#if this.gsx$schoolname.$t}}
+    "schoolName" : "{{this.gsx$schoolname.$t}}"{{/if}}{{#if this.gsx$schoolstate.$t}}
+    "schoolState" : "{{this.gsx$schoolstate.$t}}"{{/if}}{{#if this.gsx$schoolyear.$t}}
+    "schoolYear" : "{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}}
+    "teamId" : "{{this.gsx$teamid.$t}}"{{/if}}{{#if this.gsx$teamname.$t}}
+    "teamName" : "{{this.gsx$teamname.$t}}"{{/if}}{{#if this.gsx$teamarena.$t}}
+    "teamArena" : "{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}}
+    "playerId" : "{{this.gsx$playerid.$t}}"{{/if}}{{#if this.gsx$playername.$t}}
+    "playerName" : "{{this.gsx$playername.$t}}"{{/if}}{{#if this.gsx$playergrade.$t}}
+    "playerGrade" : "{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}}
+    "eventId" : "{{this.gsx$eventid.$t}}"{{/if}}{{#if this.gsx$eventname.$t}}
+    "eventName" : "{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}}
+    "sportType" : "{{this.gsx$sporttype.$t}}"{{/if}}{{#if this.gsx$sportgender.$t}}
+    "sportGender" : "{{this.gsx$sportgender.$t}}"{{/if}}{{#if this.gsx$sportlevel.$t}}
+    "sportLevel" : "{{this.gsx$sportlevel.$t}}"{{/if}}{{#if this.gsx$sportseason.$t}}
+    "sportSeason" : "{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$photoeventview.$t}}
+    "photoEventView" : "{{this.gsx$photoeventview.$t}}"{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+    "topicPrimaryId" : "{{this.gsx$topicprimaryid.$t}}"{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+    "topicPrimaryName" : "{{this.gsx$topicprimaryname.$t}}"{{/if}}{{#if this.gsx$collectionid.$t}}
+    "collectionId" : "{{this.gsx$collectionid.$t}}"{{/if}}{{#if this.gsx$collectionname.$t}}
+    "collectionName" : "{{this.gsx$collectionname.$t}}"{{/if}}{{#if this.gsx$socialsharetype.$t}}
+    "socialShareType" : "{{this.gsx$socialsharetype.$t}}"{{/if}}{{#if this.gsx$traystatus.$t}}
+    "trayStatus" : "{{this.gsx$traystatus.$t}}"{{/if}}{{#if this.gsx$playlisttitle.$t}}
+    "playListTitle" : "{{this.gsx$playlisttitle.$t}}"{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+    "bookMarkTitle" : "{{this.gsx$bookmarktitle.$t}}"{{/if}}
 [[*platform:contains=`Web`:then=`}`]]</code></pre>
 </div>',
         ),
@@ -4900,45 +5239,113 @@ pre.line-numbers > code { position:relative; }
 <pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
     @"siteCode": @"[[*siteCode]]",
     @"sitePrimaryRsid": @"[[*sitePrimaryRsid]]",
-    @"siteType": @"[[*siteType]]",
-    @"siteSection": @"{{this.gsx$sitesection.$t}}",
-    @"siteHier": @"{{this.gsx$sitehier.$t}}",
-    @"pageType": @"{{this.gsx$pagetype.$t}}",
-    @"screenName": @"{{this.gsx$pagename.$t}}",{{#if this.gsx$directionscrolled.$t}}
-    @"directionScrolled" : @"{{this.gsx$directionscrolled.$t}}",
-    @"percentScrolled" : @"{{this.gsx$percentscrolled.$t}}"{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`,
-    @"userID": @"{{this.gsx$userid.$t}}",
-    @"userType": @"{{this.gsx$usertype.$t}}",
-    @"userState": @"{{this.gsx$userstate.$t}}",
-    @"userTeamRole": @"{{this.gsx$userteamrole.$t}}",
-    @"userStateIsAuthenticated": @"1"`]]{{#if this.gsx$articleid.$t}},
-    @"articleId": @"{{this.gsx$articleid.$t}}",
-    @"articleTitle": @"{{this.gsx$articletitle.$t}}",
-    @"articleType": @"{{this.gsx$articletype.$t}}",
-    @"articleAuthorId": @"{{this.gsx$articleauthorid.$t}}",
-    @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}},
-    @"sportType": @"{{this.gsx$sporttype.$t}}",
-    @"sportGender": @"{{this.gsx$sportgender.$t}}",
-    @"sportLevel": @"{{this.gsx$sportlevel.$t}}",
-    @"sportSeason": @"{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}},
-    @"schoolId" : @"{{this.gsx$schoolid.$t}}",
-    @"schoolName" : @"{{this.gsx$schoolname.$t}}",
-    @"schoolState" : @"{{this.gsx$schoolstate.$t}}",
-    @"schoolYear" : @"{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}},
-    @"teamId" : @"{{this.gsx$teamid.$t}}",
-    @"teamName" : @"{{this.gsx$teamname.$t}}",
-    @"teamArena" : @"{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}},
-    @"playerId" : @"{{this.gsx$playerid.$t}}",
-    @"playerName" : @"{{this.gsx$playername.$t}}",
-    @"playerGrade" : @"{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}},
-    @"eventId" : @"{{this.gsx$eventid.$t}}",
-    @"eventName" : @"{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}},
-    @"mediaPartnerId" : @"{{this.gsx$mediapartnerid.$t}}",
-    @"mediaTitle" : @"{{this.gsx$mediatitle.$t}}",
-    @"mediaId" : @"{{this.gsx$mediaid.$t}}",
-    @"mediaMuted" : @"{{this.gsx$mediamuted.$t}}",
-    @"mediaAutoPlay" : @"{{this.gsx$mediaautoplay.$t}}",
-    @"mediaContentType" : @"{{this.gsx$mediacontenttype.$t}}"{{/if}}
+    @"siteType": @"[[*siteType]]",{{#if this.gsx$sitesection.$t}}
+    @"pageType": @"{{this.gsx$pagetype.$t}}",{{/if}}{{#if this.gsx$pagename.$t}}
+    @"pagename": @"{{this.gsx$pagename.$t}}",{{/if}}{{#if this.gsx$screenname.$t}}
+    @"screenZname": @"{{this.gsx$screenname.$t}}",{{/if}}{{#if this.gsx$pageviewguid.$t}}
+    @"pageViewGuid": @"{{this.gsx$pageviewguid.$t}}",{{/if}}{{#if this.gsx$clicktext.$t}}
+    @"clickText": @"{{this.gsx$clicktext.$t}}",{{/if}}{{#if this.gsx$sitehier.$t}}
+    @"sitehier": @"{{this.gsx$sitehier.$t}}",{{/if}}{{#if this.gsx$siteedition.$t}}
+    @"siteEdition": @"{{this.gsx$siteedition.$t}}",{{/if}}{{#if this.gsx$project.$t}}
+    @"project": @"{{this.gsx$project.$t}}",{{/if}}{{#if this.gsx$channel.$t}}
+    @"channel": @"{{this.gsx$channel.$t}}",{{/if}}{{#if this.gsx$feature.$t}}
+    @"feature": @"{{this.gsx$feature.$t}}",{{/if}}{{#if this.gsx$subfeature.$t}}
+    @"subfeature": @"{{this.gsx$subfeature.$t}}",{{/if}}{{#if this.gsx$sitesection.$t}}
+    @"sitesection": @"{{this.gsx$sitesection.$t}}",{{/if}}{{#if this.gsx$servicelevel.$t}}
+    @"servicelevel": @"{{this.gsx$servicelevel.$t}}",{{/if}}{{#if this.gsx$productline.$t}}
+    @"productline": @"{{this.gsx$productline.$t}}",{{/if}}{{#if this.gsx$user.$t}}
+    @"user": @"{{this.gsx$user.$t}}",{{/if}}{{#if this.gsx$userstatus.$t}}
+    @"userStatus": @"{{this.gsx$userstatus.$t}}",{{/if}}{{#if this.gsx$userregid.$t}}
+    @"userRegId": @"{{this.gsx$userregid.$t}}",{{/if}}{{#if this.gsx$userid.$t}}
+    @"userid": @"{{this.gsx$userid.$t}}",{{/if}}{{#if this.gsx$userregservice.$t}}
+    @"userRegService": @"{{this.gsx$userregservice.$t}}",{{/if}}{{#if this.gsx$usertype.$t}}
+    @"usertype": @"{{this.gsx$usertype.$t}}",{{/if}}{{#if this.gsx$userstate.$t}}
+    @"userstate": @"{{this.gsx$userstate.$t}}",{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+    @"userEventRegistrationSuccess": @"{{this.gsx$usereventregistrationsuccess.$t}}",{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+    @"userEventLoginSuccess": @"{{this.gsx$usereventloginsuccess.$t}}",{{/if}}{{#if this.gsx$userteamrole.$t}}
+    @"userTeamRole": @"{{this.gsx$userteamrole.$t}}",{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    @"mediaPartnerId": @"{{this.gsx$mediapartnerid.$t}}",{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+    @"mediaAutoPlay": @"{{this.gsx$mediaautoplay.$t}}",{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+    @"mediaContentType": @"{{this.gsx$mediacontenttype.$t}}",{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+    @"mediaEndCardUi": @"{{this.gsx$mediaendcardui.$t}}",{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+    @"mediaDistNetwork": @"{{this.gsx$mediadistnetwork.$t}}",{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+    @"mediaSvodContentType": @"{{this.gsx$mediasvodcontenttype.$t}}",{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+    @"mediaDynamicPlay": @"{{this.gsx$mediadynamicplay.$t}}",{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+    @"mediaRelatedShows": @"{{this.gsx$mediarelatedshows.$t}}",{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+    @"mediaDeviceId": @"{{this.gsx$mediadeviceid.$t}}",{{/if}}{{#if this.gsx$mediaresume.$t}}
+    @"mediaResume": @"{{this.gsx$mediaresume.$t}}",{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+    @"mediaViewMode": @"{{this.gsx$mediaviewmode.$t}}",{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+    @"mediaDvrTitleLong": @"{{this.gsx$mediadvrtitlelong.$t}}",{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+    @"mediaDvrTitleShort": @"{{this.gsx$mediadvrtitleshort.$t}}",{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+    @"mediaDvrSlugLabel": @"{{this.gsx$mediadvrsluglabel.$t}}",{{/if}}{{#if this.gsx$mediatitle.$t}}
+    @"mediaTitle": @"{{this.gsx$mediatitle.$t}}",{{/if}}{{#if this.gsx$mediaid.$t}}
+    @"mediaId": @"{{this.gsx$mediaid.$t}}",{{/if}}{{#if this.gsx$mediamuted.$t}}
+    @"mediaMuted": @"{{this.gsx$mediamuted.$t}}",{{/if}}{{#if this.gsx$articleid.$t}}
+    @"articleId": @"{{this.gsx$articleid.$t}}",{{/if}}{{#if this.gsx$articletype.$t}}
+    @"articleType": @"{{this.gsx$articletype.$t}}",{{/if}}{{#if this.gsx$articletitle.$t}}
+    @"articleTitle": @"{{this.gsx$articletitle.$t}}",{{/if}}{{#if this.gsx$articleauthorid.$t}}
+    @"articleauthorid": @"{{this.gsx$articleauthorid.$t}}",{{/if}}{{#if this.gsx$articleauthorname.$t}}
+    @"articleauthorname": @"{{this.gsx$articleauthorname.$t}}",{{/if}}{{#if this.gsx$podtype.$t}}
+    @"podType": @"{{this.gsx$podtype.$t}}",{{/if}}{{#if this.gsx$podtext.$t}}
+    @"podText": @"{{this.gsx$podtext.$t}}",{{/if}}{{#if this.gsx$podsection.$t}}
+    @"podSection": @"{{this.gsx$podsection.$t}}",{{/if}}{{#if this.gsx$podposition.$t}}
+    @"podPosition": @"{{this.gsx$podposition.$t}}",{{/if}}{{#if this.gsx$podtitle.$t}}
+    @"podTitle": @"{{this.gsx$podtitle.$t}}",{{/if}}{{#if this.gsx$showid.$t}}
+    @"showId": @"{{this.gsx$showid.$t}}",{{/if}}{{#if this.gsx$showtitle.$t}}
+    @"showTitle": @"{{this.gsx$showtitle.$t}}",{{/if}}{{#if this.gsx$showepisodeid.$t}}
+    @"showEpisodeId": @"{{this.gsx$showepisodeid.$t}}",{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+    @"showEpisodeTitle": @"{{this.gsx$showepisodetitle.$t}}",{{/if}}{{#if this.gsx$searchterm.$t}}
+    @"searchTerm": @"{{this.gsx$searchterm.$t}}",{{/if}}{{#if this.gsx$searcheventstart.$t}}
+    @"searchEventStart": @"{{this.gsx$searcheventstart.$t}}",{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+    @"searchEventSearch": @"{{this.gsx$searcheventsearch.$t}}",{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+    @"mvpdPartner": @"{{this.gsx$mvpdpartner.$t}}",{{/if}}{{#if this.gsx$mvpdid.$t}}
+    @"mvpdId": @"{{this.gsx$mvpdid.$t}}",{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+    @"purchaseEventBillingStart": @"{{this.gsx$purchaseeventbillingstart.$t}}",{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+    @"purchaseEventOrderComplete": @"{{this.gsx$purchaseeventordercomplete.$t}}",{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+    @"purchaseOrderId": @"{{this.gsx$purchaseorderid.$t}}",{{/if}}{{#if this.gsx$purchasecategory.$t}}
+    @"purchaseCategory": @"{{this.gsx$purchasecategory.$t}}",{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+    @"purchaseProduct": @"{{this.gsx$purchaseproduct.$t}}",{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+    @"purchaseProductName": @"{{this.gsx$purchaseproductname.$t}}",{{/if}}{{#if this.gsx$purchasequantity.$t}}
+    @"purchaseQuantity": @"{{this.gsx$purchasequantity.$t}}",{{/if}}{{#if this.gsx$purchaseprice.$t}}
+    @"purchasePrice": @"{{this.gsx$purchaseprice.$t}}",{{/if}}{{#if this.gsx$products.$t}}
+    @"&&products": @"{{this.gsx$products.$t}}",{{/if}}{{#if this.gsx$productpricingplan.$t}}
+    @"productPricingPlan": @"{{this.gsx$productpricingplan.$t}}",{{/if}}{{#if this.gsx$productofferperiod.$t}}
+    @"productOfferPeriod": @"{{this.gsx$productofferperiod.$t}}",{{/if}}{{#if this.gsx$intcid.$t}}
+    @"intcid": @"{{this.gsx$intcid.$t}}",{{/if}}{{#if this.gsx$campaign.$t}}
+    @"campaign": @"{{this.gsx$campaign.$t}}",{{/if}}{{#if this.gsx$upselltype.$t}}
+    @"upsellType": @"{{this.gsx$upselltype.$t}}",{{/if}}{{#if this.gsx$errorcode.$t}}
+    @"errorCode": @"{{this.gsx$errorcode.$t}}",{{/if}}{{#if this.gsx$launchtype.$t}}
+    @"launchType": @"{{this.gsx$launchtype.$t}}",{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+    @"deepLink/searchReferral": @"{{this.gsx$deeplink/searchreferral.$t}}",{{/if}}{{#if this.gsx$caststate.$t}}
+    @"castState": @"{{this.gsx$caststate.$t}}",{{/if}}{{#if this.gsx$applog.$t}}
+    @"appLog": @"{{this.gsx$applog.$t}}",{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+    @"taplyticsUserId": @"{{this.gsx$taplyticsuserid.$t}}",{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+    @"taplyticsSessionId": @"{{this.gsx$taplyticssessionid.$t}}",{{/if}}{{#if this.gsx$schoolid.$t}}
+    @"schoolId": @"{{this.gsx$schoolid.$t}}",{{/if}}{{#if this.gsx$schoolname.$t}}
+    @"schoolName": @"{{this.gsx$schoolname.$t}}",{{/if}}{{#if this.gsx$schoolstate.$t}}
+    @"schoolState": @"{{this.gsx$schoolstate.$t}}",{{/if}}{{#if this.gsx$schoolyear.$t}}
+    @"schoolYear": @"{{this.gsx$schoolyear.$t}}",{{/if}}{{#if this.gsx$teamid.$t}}
+    @"teamId": @"{{this.gsx$teamid.$t}}",{{/if}}{{#if this.gsx$teamname.$t}}
+    @"teamName": @"{{this.gsx$teamname.$t}}",{{/if}}{{#if this.gsx$teamarena.$t}}
+    @"teamArena": @"{{this.gsx$teamarena.$t}}",{{/if}}{{#if this.gsx$playerid.$t}}
+    @"playerId": @"{{this.gsx$playerid.$t}}",{{/if}}{{#if this.gsx$playername.$t}}
+    @"playerName": @"{{this.gsx$playername.$t}}",{{/if}}{{#if this.gsx$playergrade.$t}}
+    @"playerGrade": @"{{this.gsx$playergrade.$t}}",{{/if}}{{#if this.gsx$eventid.$t}}
+    @"eventId": @"{{this.gsx$eventid.$t}}",{{/if}}{{#if this.gsx$eventname.$t}}
+    @"eventName": @"{{this.gsx$eventname.$t}}",{{/if}}{{#if this.gsx$sporttype.$t}}
+    @"sportType": @"{{this.gsx$sporttype.$t}}",{{/if}}{{#if this.gsx$sportgender.$t}}
+    @"sportGender": @"{{this.gsx$sportgender.$t}}",{{/if}}{{#if this.gsx$sportlevel.$t}}
+    @"sportLevel": @"{{this.gsx$sportlevel.$t}}",{{/if}}{{#if this.gsx$sportseason.$t}}
+    @"sportSeason": @"{{this.gsx$sportseason.$t}}",{{/if}}{{#if this.gsx$photoeventview.$t}}
+    @"photoEventView": @"{{this.gsx$photoeventview.$t}}",{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+    @"topicPrimaryId": @"{{this.gsx$topicprimaryid.$t}}",{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+    @"topicPrimaryName": @"{{this.gsx$topicprimaryname.$t}}",{{/if}}{{#if this.gsx$collectionid.$t}}
+    @"collectionId": @"{{this.gsx$collectionid.$t}}",{{/if}}{{#if this.gsx$collectionname.$t}}
+    @"collectionName": @"{{this.gsx$collectionname.$t}}",{{/if}}{{#if this.gsx$socialsharetype.$t}}
+    @"socialShareType": @"{{this.gsx$socialsharetype.$t}}",{{/if}}{{#if this.gsx$traystatus.$t}}
+    @"trayStatus": @"{{this.gsx$traystatus.$t}}",{{/if}}{{#if this.gsx$playlisttitle.$t}}
+    @"playListTitle": @"{{this.gsx$playlisttitle.$t}}",{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+    @"bookMarkTitle": @"{{this.gsx$bookmarktitle.$t}}",{{/if}}
 };
 [ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
 </div>',
@@ -4946,51 +5353,119 @@ pre.line-numbers > code { position:relative; }
           'properties' => 
           array (
           ),
-          'static' => true,
+          'static' => false,
           'static_file' => 'assets/chunks/structure/codeformats/spec_codeFormat_iOS',
           'content' => '<div id="tab-ios-{{@index}}" class="tab">
 <pre class="line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
     @"siteCode": @"[[*siteCode]]",
     @"sitePrimaryRsid": @"[[*sitePrimaryRsid]]",
-    @"siteType": @"[[*siteType]]",
-    @"siteSection": @"{{this.gsx$sitesection.$t}}",
-    @"siteHier": @"{{this.gsx$sitehier.$t}}",
-    @"pageType": @"{{this.gsx$pagetype.$t}}",
-    @"screenName": @"{{this.gsx$pagename.$t}}",{{#if this.gsx$directionscrolled.$t}}
-    @"directionScrolled" : @"{{this.gsx$directionscrolled.$t}}",
-    @"percentScrolled" : @"{{this.gsx$percentscrolled.$t}}"{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`,
-    @"userID": @"{{this.gsx$userid.$t}}",
-    @"userType": @"{{this.gsx$usertype.$t}}",
-    @"userState": @"{{this.gsx$userstate.$t}}",
-    @"userTeamRole": @"{{this.gsx$userteamrole.$t}}",
-    @"userStateIsAuthenticated": @"1"`]]{{#if this.gsx$articleid.$t}},
-    @"articleId": @"{{this.gsx$articleid.$t}}",
-    @"articleTitle": @"{{this.gsx$articletitle.$t}}",
-    @"articleType": @"{{this.gsx$articletype.$t}}",
-    @"articleAuthorId": @"{{this.gsx$articleauthorid.$t}}",
-    @"articleAuthorName": @"{{this.gsx$articleauthorname.$t}}"{{/if}}{{#if this.gsx$sporttype.$t}},
-    @"sportType": @"{{this.gsx$sporttype.$t}}",
-    @"sportGender": @"{{this.gsx$sportgender.$t}}",
-    @"sportLevel": @"{{this.gsx$sportlevel.$t}}",
-    @"sportSeason": @"{{this.gsx$sportseason.$t}}"{{/if}}{{#if this.gsx$schoolid.$t}},
-    @"schoolId" : @"{{this.gsx$schoolid.$t}}",
-    @"schoolName" : @"{{this.gsx$schoolname.$t}}",
-    @"schoolState" : @"{{this.gsx$schoolstate.$t}}",
-    @"schoolYear" : @"{{this.gsx$schoolyear.$t}}"{{/if}}{{#if this.gsx$teamid.$t}},
-    @"teamId" : @"{{this.gsx$teamid.$t}}",
-    @"teamName" : @"{{this.gsx$teamname.$t}}",
-    @"teamArena" : @"{{this.gsx$teamarena.$t}}"{{/if}}{{#if this.gsx$playerid.$t}},
-    @"playerId" : @"{{this.gsx$playerid.$t}}",
-    @"playerName" : @"{{this.gsx$playername.$t}}",
-    @"playerGrade" : @"{{this.gsx$playergrade.$t}}"{{/if}}{{#if this.gsx$eventid.$t}},
-    @"eventId" : @"{{this.gsx$eventid.$t}}",
-    @"eventName" : @"{{this.gsx$eventname.$t}}"{{/if}}{{#if this.gsx$mediapartnerid.$t}},
-    @"mediaPartnerId" : @"{{this.gsx$mediapartnerid.$t}}",
-    @"mediaTitle" : @"{{this.gsx$mediatitle.$t}}",
-    @"mediaId" : @"{{this.gsx$mediaid.$t}}",
-    @"mediaMuted" : @"{{this.gsx$mediamuted.$t}}",
-    @"mediaAutoPlay" : @"{{this.gsx$mediaautoplay.$t}}",
-    @"mediaContentType" : @"{{this.gsx$mediacontenttype.$t}}"{{/if}}
+    @"siteType": @"[[*siteType]]",{{#if this.gsx$sitesection.$t}}
+    @"pageType": @"{{this.gsx$pagetype.$t}}",{{/if}}{{#if this.gsx$pagename.$t}}
+    @"pagename": @"{{this.gsx$pagename.$t}}",{{/if}}{{#if this.gsx$screenname.$t}}
+    @"screenZname": @"{{this.gsx$screenname.$t}}",{{/if}}{{#if this.gsx$pageviewguid.$t}}
+    @"pageViewGuid": @"{{this.gsx$pageviewguid.$t}}",{{/if}}{{#if this.gsx$clicktext.$t}}
+    @"clickText": @"{{this.gsx$clicktext.$t}}",{{/if}}{{#if this.gsx$sitehier.$t}}
+    @"sitehier": @"{{this.gsx$sitehier.$t}}",{{/if}}{{#if this.gsx$siteedition.$t}}
+    @"siteEdition": @"{{this.gsx$siteedition.$t}}",{{/if}}{{#if this.gsx$project.$t}}
+    @"project": @"{{this.gsx$project.$t}}",{{/if}}{{#if this.gsx$channel.$t}}
+    @"channel": @"{{this.gsx$channel.$t}}",{{/if}}{{#if this.gsx$feature.$t}}
+    @"feature": @"{{this.gsx$feature.$t}}",{{/if}}{{#if this.gsx$subfeature.$t}}
+    @"subfeature": @"{{this.gsx$subfeature.$t}}",{{/if}}{{#if this.gsx$sitesection.$t}}
+    @"sitesection": @"{{this.gsx$sitesection.$t}}",{{/if}}{{#if this.gsx$servicelevel.$t}}
+    @"servicelevel": @"{{this.gsx$servicelevel.$t}}",{{/if}}{{#if this.gsx$productline.$t}}
+    @"productline": @"{{this.gsx$productline.$t}}",{{/if}}{{#if this.gsx$user.$t}}
+    @"user": @"{{this.gsx$user.$t}}",{{/if}}{{#if this.gsx$userstatus.$t}}
+    @"userStatus": @"{{this.gsx$userstatus.$t}}",{{/if}}{{#if this.gsx$userregid.$t}}
+    @"userRegId": @"{{this.gsx$userregid.$t}}",{{/if}}{{#if this.gsx$userid.$t}}
+    @"userid": @"{{this.gsx$userid.$t}}",{{/if}}{{#if this.gsx$userregservice.$t}}
+    @"userRegService": @"{{this.gsx$userregservice.$t}}",{{/if}}{{#if this.gsx$usertype.$t}}
+    @"usertype": @"{{this.gsx$usertype.$t}}",{{/if}}{{#if this.gsx$userstate.$t}}
+    @"userstate": @"{{this.gsx$userstate.$t}}",{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+    @"userEventRegistrationSuccess": @"{{this.gsx$usereventregistrationsuccess.$t}}",{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+    @"userEventLoginSuccess": @"{{this.gsx$usereventloginsuccess.$t}}",{{/if}}{{#if this.gsx$userteamrole.$t}}
+    @"userTeamRole": @"{{this.gsx$userteamrole.$t}}",{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+    @"mediaPartnerId": @"{{this.gsx$mediapartnerid.$t}}",{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+    @"mediaAutoPlay": @"{{this.gsx$mediaautoplay.$t}}",{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+    @"mediaContentType": @"{{this.gsx$mediacontenttype.$t}}",{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+    @"mediaEndCardUi": @"{{this.gsx$mediaendcardui.$t}}",{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+    @"mediaDistNetwork": @"{{this.gsx$mediadistnetwork.$t}}",{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+    @"mediaSvodContentType": @"{{this.gsx$mediasvodcontenttype.$t}}",{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+    @"mediaDynamicPlay": @"{{this.gsx$mediadynamicplay.$t}}",{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+    @"mediaRelatedShows": @"{{this.gsx$mediarelatedshows.$t}}",{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+    @"mediaDeviceId": @"{{this.gsx$mediadeviceid.$t}}",{{/if}}{{#if this.gsx$mediaresume.$t}}
+    @"mediaResume": @"{{this.gsx$mediaresume.$t}}",{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+    @"mediaViewMode": @"{{this.gsx$mediaviewmode.$t}}",{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+    @"mediaDvrTitleLong": @"{{this.gsx$mediadvrtitlelong.$t}}",{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+    @"mediaDvrTitleShort": @"{{this.gsx$mediadvrtitleshort.$t}}",{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+    @"mediaDvrSlugLabel": @"{{this.gsx$mediadvrsluglabel.$t}}",{{/if}}{{#if this.gsx$mediatitle.$t}}
+    @"mediaTitle": @"{{this.gsx$mediatitle.$t}}",{{/if}}{{#if this.gsx$mediaid.$t}}
+    @"mediaId": @"{{this.gsx$mediaid.$t}}",{{/if}}{{#if this.gsx$mediamuted.$t}}
+    @"mediaMuted": @"{{this.gsx$mediamuted.$t}}",{{/if}}{{#if this.gsx$articleid.$t}}
+    @"articleId": @"{{this.gsx$articleid.$t}}",{{/if}}{{#if this.gsx$articletype.$t}}
+    @"articleType": @"{{this.gsx$articletype.$t}}",{{/if}}{{#if this.gsx$articletitle.$t}}
+    @"articleTitle": @"{{this.gsx$articletitle.$t}}",{{/if}}{{#if this.gsx$articleauthorid.$t}}
+    @"articleauthorid": @"{{this.gsx$articleauthorid.$t}}",{{/if}}{{#if this.gsx$articleauthorname.$t}}
+    @"articleauthorname": @"{{this.gsx$articleauthorname.$t}}",{{/if}}{{#if this.gsx$podtype.$t}}
+    @"podType": @"{{this.gsx$podtype.$t}}",{{/if}}{{#if this.gsx$podtext.$t}}
+    @"podText": @"{{this.gsx$podtext.$t}}",{{/if}}{{#if this.gsx$podsection.$t}}
+    @"podSection": @"{{this.gsx$podsection.$t}}",{{/if}}{{#if this.gsx$podposition.$t}}
+    @"podPosition": @"{{this.gsx$podposition.$t}}",{{/if}}{{#if this.gsx$podtitle.$t}}
+    @"podTitle": @"{{this.gsx$podtitle.$t}}",{{/if}}{{#if this.gsx$showid.$t}}
+    @"showId": @"{{this.gsx$showid.$t}}",{{/if}}{{#if this.gsx$showtitle.$t}}
+    @"showTitle": @"{{this.gsx$showtitle.$t}}",{{/if}}{{#if this.gsx$showepisodeid.$t}}
+    @"showEpisodeId": @"{{this.gsx$showepisodeid.$t}}",{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+    @"showEpisodeTitle": @"{{this.gsx$showepisodetitle.$t}}",{{/if}}{{#if this.gsx$searchterm.$t}}
+    @"searchTerm": @"{{this.gsx$searchterm.$t}}",{{/if}}{{#if this.gsx$searcheventstart.$t}}
+    @"searchEventStart": @"{{this.gsx$searcheventstart.$t}}",{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+    @"searchEventSearch": @"{{this.gsx$searcheventsearch.$t}}",{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+    @"mvpdPartner": @"{{this.gsx$mvpdpartner.$t}}",{{/if}}{{#if this.gsx$mvpdid.$t}}
+    @"mvpdId": @"{{this.gsx$mvpdid.$t}}",{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+    @"purchaseEventBillingStart": @"{{this.gsx$purchaseeventbillingstart.$t}}",{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+    @"purchaseEventOrderComplete": @"{{this.gsx$purchaseeventordercomplete.$t}}",{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+    @"purchaseOrderId": @"{{this.gsx$purchaseorderid.$t}}",{{/if}}{{#if this.gsx$purchasecategory.$t}}
+    @"purchaseCategory": @"{{this.gsx$purchasecategory.$t}}",{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+    @"purchaseProduct": @"{{this.gsx$purchaseproduct.$t}}",{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+    @"purchaseProductName": @"{{this.gsx$purchaseproductname.$t}}",{{/if}}{{#if this.gsx$purchasequantity.$t}}
+    @"purchaseQuantity": @"{{this.gsx$purchasequantity.$t}}",{{/if}}{{#if this.gsx$purchaseprice.$t}}
+    @"purchasePrice": @"{{this.gsx$purchaseprice.$t}}",{{/if}}{{#if this.gsx$products.$t}}
+    @"&&products": @"{{this.gsx$products.$t}}",{{/if}}{{#if this.gsx$productpricingplan.$t}}
+    @"productPricingPlan": @"{{this.gsx$productpricingplan.$t}}",{{/if}}{{#if this.gsx$productofferperiod.$t}}
+    @"productOfferPeriod": @"{{this.gsx$productofferperiod.$t}}",{{/if}}{{#if this.gsx$intcid.$t}}
+    @"intcid": @"{{this.gsx$intcid.$t}}",{{/if}}{{#if this.gsx$campaign.$t}}
+    @"campaign": @"{{this.gsx$campaign.$t}}",{{/if}}{{#if this.gsx$upselltype.$t}}
+    @"upsellType": @"{{this.gsx$upselltype.$t}}",{{/if}}{{#if this.gsx$errorcode.$t}}
+    @"errorCode": @"{{this.gsx$errorcode.$t}}",{{/if}}{{#if this.gsx$launchtype.$t}}
+    @"launchType": @"{{this.gsx$launchtype.$t}}",{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+    @"deepLink/searchReferral": @"{{this.gsx$deeplink/searchreferral.$t}}",{{/if}}{{#if this.gsx$caststate.$t}}
+    @"castState": @"{{this.gsx$caststate.$t}}",{{/if}}{{#if this.gsx$applog.$t}}
+    @"appLog": @"{{this.gsx$applog.$t}}",{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+    @"taplyticsUserId": @"{{this.gsx$taplyticsuserid.$t}}",{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+    @"taplyticsSessionId": @"{{this.gsx$taplyticssessionid.$t}}",{{/if}}{{#if this.gsx$schoolid.$t}}
+    @"schoolId": @"{{this.gsx$schoolid.$t}}",{{/if}}{{#if this.gsx$schoolname.$t}}
+    @"schoolName": @"{{this.gsx$schoolname.$t}}",{{/if}}{{#if this.gsx$schoolstate.$t}}
+    @"schoolState": @"{{this.gsx$schoolstate.$t}}",{{/if}}{{#if this.gsx$schoolyear.$t}}
+    @"schoolYear": @"{{this.gsx$schoolyear.$t}}",{{/if}}{{#if this.gsx$teamid.$t}}
+    @"teamId": @"{{this.gsx$teamid.$t}}",{{/if}}{{#if this.gsx$teamname.$t}}
+    @"teamName": @"{{this.gsx$teamname.$t}}",{{/if}}{{#if this.gsx$teamarena.$t}}
+    @"teamArena": @"{{this.gsx$teamarena.$t}}",{{/if}}{{#if this.gsx$playerid.$t}}
+    @"playerId": @"{{this.gsx$playerid.$t}}",{{/if}}{{#if this.gsx$playername.$t}}
+    @"playerName": @"{{this.gsx$playername.$t}}",{{/if}}{{#if this.gsx$playergrade.$t}}
+    @"playerGrade": @"{{this.gsx$playergrade.$t}}",{{/if}}{{#if this.gsx$eventid.$t}}
+    @"eventId": @"{{this.gsx$eventid.$t}}",{{/if}}{{#if this.gsx$eventname.$t}}
+    @"eventName": @"{{this.gsx$eventname.$t}}",{{/if}}{{#if this.gsx$sporttype.$t}}
+    @"sportType": @"{{this.gsx$sporttype.$t}}",{{/if}}{{#if this.gsx$sportgender.$t}}
+    @"sportGender": @"{{this.gsx$sportgender.$t}}",{{/if}}{{#if this.gsx$sportlevel.$t}}
+    @"sportLevel": @"{{this.gsx$sportlevel.$t}}",{{/if}}{{#if this.gsx$sportseason.$t}}
+    @"sportSeason": @"{{this.gsx$sportseason.$t}}",{{/if}}{{#if this.gsx$photoeventview.$t}}
+    @"photoEventView": @"{{this.gsx$photoeventview.$t}}",{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+    @"topicPrimaryId": @"{{this.gsx$topicprimaryid.$t}}",{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+    @"topicPrimaryName": @"{{this.gsx$topicprimaryname.$t}}",{{/if}}{{#if this.gsx$collectionid.$t}}
+    @"collectionId": @"{{this.gsx$collectionid.$t}}",{{/if}}{{#if this.gsx$collectionname.$t}}
+    @"collectionName": @"{{this.gsx$collectionname.$t}}",{{/if}}{{#if this.gsx$socialsharetype.$t}}
+    @"socialShareType": @"{{this.gsx$socialsharetype.$t}}",{{/if}}{{#if this.gsx$traystatus.$t}}
+    @"trayStatus": @"{{this.gsx$traystatus.$t}}",{{/if}}{{#if this.gsx$playlisttitle.$t}}
+    @"playListTitle": @"{{this.gsx$playlisttitle.$t}}",{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+    @"bookMarkTitle": @"{{this.gsx$bookmarktitle.$t}}",{{/if}}
 };
 [ADBMobile {{this.gsx$trackingmethod.$t}}:@"{{trackingMethodPage this.gsx$trackingmethod.$t}}", data:cdata];</code></pre>
 </div>',
@@ -5021,96 +5496,232 @@ pre.line-numbers > code { position:relative; }
 <div id="tab-and-{{@index}}" class="tab">
 <pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "[[*siteCode]]");
 cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
-cdata.put("siteType", "[[*siteType]]");
-cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
-cdata.put("siteHier", "{{this.gsx$sitehier.$t}}");
-cdata.put("pageType", "{{this.gsx$pagetype.$t}}");
-cdata.put("screenName", "{{this.gsx$screenname.$t}}");{{#if this.gsx$directionscrolled.$t}}
-cdata.put("directionScrolled", "{{this.gsx$directionscrolled.$t}}";
-cdata.put("percentScrolled", "{{this.gsx$dpercentscrolled.$t}}";{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`
-cdata.put("userID", "{{this.gsx$userid.$t}}");
-cdata.put("userType", "{{this.gsx$usertype.$t}}");
-cdata.put("userState", "{{this.gsx$userstate.$t}}");
-cdata.put("userTeamRole", "{{this.gsx$userteamrole.$t}}");
-cdata.put("userStateIsAuthenticated", "1");`]]{{#if this.gsx$articleid.$t}}
-cdata.put("articleId", "{{this.gsx$articleid.$t}}");
-cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}");
-cdata.put("articleType", "{{this.gsx$articletype.$t}}");
-cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
-cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}{{#if this.gsx$sporttype.$t}}
-cdata.put("sportType", "{{this.gsx$sporttype.$t}}");
-cdata.put("sportGender", "{{this.gsx$sportgender.$t}}");
-cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}");
-cdata.put("sportSeason", "{{this.gsx$sportseason.$t}}");{{/if}}{{#if this.gsx$schoolid.$t}}
-cdata.put("schoolId", "{{this.gsx$schoolid.$t}}");
-cdata.put("schoolName", "{{this.gsx$schoolname.$t}}");
-cdata.put("schoolState", "{{this.gsx$schoolstate.$t}}");
-cdata.put("schoolYear", "{{this.gsx$schoolyear.$t}}");{{/if}}{{#if this.gsx$teamid.$t}}
-cdata.put("teamId", "{{this.gsx$teamid.$t}}");
-cdata.put("teamName", "{{this.gsx$teamname.$t}}");
-cdata.put("teamArena", "{{this.gsx$teamarena.$t}}");{{/if}}{{#if this.gsx$playerid.$t}}
-cdata.put("playerId", "{{this.gsx$playerid.$t}}");
-cdata.put("playerName", "{{this.gsx$playername.$t}}");
-cdata.put("playerGrade", "{{this.gsx$playergrade.$t}}");{{/if}}{{#if this.gsx$eventid.$t}}
-cdata.put("eventId", "{{this.gsx$playerid.$t}}");
-cdata.put("eventName", "{{this.gsx$playerid.$t}}");{{/if}}{{#if this.gsx$mediapartnerid.$t}}
-cdata.put("mediaPartnerId", "{{this.gsx$mediapartnerid.$t}}");
-cdata.put("mediaTitle", "{{this.gsx$mediatitle.$t}}");
-cdata.put("mediaId", "{{this.gsx$mediaid.$t}}");
-cdata.put("mediaMuted", "{{this.gsx$mediamuted.$t}}");
-cdata.put("mediaAutoPlay", "{{this.gsx$mediaautoplay.$t}}");
-cdata.put("mediaContentType", "{{this.gsx$mediacontenttype.$t}}");{{/if}}
+cdata.put("siteType", "[[*siteType]]");{{#if this.gsx$pagetype.$t}}
+cdata.put("pageType", "{{this.gsx$pagetype.$t}}";{{/if}}{{#if this.gsx$pagename.$t}}
+cdata.put("pagename", "{{this.gsx$pagename.$t}}";{{/if}}{{#if this.gsx$screenname.$t}}
+cdata.put("screenname", "{{this.gsx$screenname.$t}}";{{/if}}{{#if this.gsx$pageviewguid.$t}}
+cdata.put("pageViewGuid", "{{this.gsx$pageviewguid.$t}}";{{/if}}{{#if this.gsx$clicktext.$t}}
+cdata.put("clickText", "{{this.gsx$clicktext.$t}}";{{/if}}{{#if this.gsx$sitehier.$t}}
+cdata.put("sitehier", "{{this.gsx$sitehier.$t}}";{{/if}}{{#if this.gsx$siteedition.$t}}
+cdata.put("siteEdition", "{{this.gsx$siteedition.$t}}";{{/if}}{{#if this.gsx$project.$t}}
+cdata.put("project", "{{this.gsx$project.$t}}";{{/if}}{{#if this.gsx$channel.$t}}
+cdata.put("channel", "{{this.gsx$channel.$t}}";{{/if}}{{#if this.gsx$feature.$t}}
+cdata.put("feature", "{{this.gsx$feature.$t}}";{{/if}}{{#if this.gsx$subfeature.$t}}
+cdata.put("subfeature", "{{this.gsx$subfeature.$t}}";{{/if}}{{#if this.gsx$sitesection.$t}}
+cdata.put("sitesection", "{{this.gsx$sitesection.$t}}";{{/if}}{{#if this.gsx$servicelevel.$t}}
+cdata.put("servicelevel", "{{this.gsx$servicelevel.$t}}";{{/if}}{{#if this.gsx$productline.$t}}
+cdata.put("productline", "{{this.gsx$productline.$t}}";{{/if}}{{#if this.gsx$user.$t}}
+cdata.put("user", "{{this.gsx$user.$t}}";{{/if}}{{#if this.gsx$userstatus.$t}}
+cdata.put("userStatus", "{{this.gsx$userstatus.$t}}";{{/if}}{{#if this.gsx$userregid.$t}}
+cdata.put("userRegId", "{{this.gsx$userregid.$t}}";{{/if}}{{#if this.gsx$userid.$t}}
+cdata.put("userid", "{{this.gsx$userid.$t}}";{{/if}}{{#if this.gsx$userregservice.$t}}
+cdata.put("userRegService", "{{this.gsx$userregservice.$t}}";{{/if}}{{#if this.gsx$usertype.$t}}
+cdata.put("usertype", "{{this.gsx$usertype.$t}}";{{/if}}{{#if this.gsx$userstate.$t}}
+cdata.put("userstate", "{{this.gsx$userstate.$t}}";{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+cdata.put("userEventRegistrationSuccess", "{{this.gsx$usereventregistrationsuccess.$t}}";{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+cdata.put("userEventLoginSuccess", "{{this.gsx$usereventloginsuccess.$t}}";{{/if}}{{#if this.gsx$userteamrole.$t}}
+cdata.put("userTeamRole", "{{this.gsx$userteamrole.$t}}";{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+cdata.put("mediaPartnerId", "{{this.gsx$mediapartnerid.$t}}";{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+cdata.put("mediaAutoPlay", "{{this.gsx$mediaautoplay.$t}}";{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+cdata.put("mediaContentType", "{{this.gsx$mediacontenttype.$t}}";{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+cdata.put("mediaEndCardUi", "{{this.gsx$mediaendcardui.$t}}";{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+cdata.put("mediaDistNetwork", "{{this.gsx$mediadistnetwork.$t}}";{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+cdata.put("mediaSvodContentType", "{{this.gsx$mediasvodcontenttype.$t}}";{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+cdata.put("mediaDynamicPlay", "{{this.gsx$mediadynamicplay.$t}}";{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+cdata.put("mediaRelatedShows", "{{this.gsx$mediarelatedshows.$t}}";{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+cdata.put("mediaDeviceId", "{{this.gsx$mediadeviceid.$t}}";{{/if}}{{#if this.gsx$mediaresume.$t}}
+cdata.put("mediaResume", "{{this.gsx$mediaresume.$t}}";{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+cdata.put("mediaViewMode", "{{this.gsx$mediaviewmode.$t}}";{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+cdata.put("mediaDvrTitleLong", "{{this.gsx$mediadvrtitlelong.$t}}";{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+cdata.put("mediaDvrTitleShort", "{{this.gsx$mediadvrtitleshort.$t}}";{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+cdata.put("mediaDvrSlugLabel", "{{this.gsx$mediadvrsluglabel.$t}}";{{/if}}{{#if this.gsx$mediatitle.$t}}
+cdata.put("mediaTitle", "{{this.gsx$mediatitle.$t}}";{{/if}}{{#if this.gsx$mediaid.$t}}
+cdata.put("mediaId", "{{this.gsx$mediaid.$t}}";{{/if}}{{#if this.gsx$mediamuted.$t}}
+cdata.put("mediaMuted", "{{this.gsx$mediamuted.$t}}";{{/if}}{{#if this.gsx$articleid.$t}}
+cdata.put("articleId", "{{this.gsx$articleid.$t}}";{{/if}}{{#if this.gsx$articletype.$t}}
+cdata.put("articleType", "{{this.gsx$articletype.$t}}";{{/if}}{{#if this.gsx$articletitle.$t}}
+cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}";{{/if}}{{#if this.gsx$articleauthorid.$t}}
+cdata.put("articleauthorid", "{{this.gsx$articleauthorid.$t}}";{{/if}}{{#if this.gsx$articleauthorname.$t}}
+cdata.put("articleauthorname", "{{this.gsx$articleauthorname.$t}}";{{/if}}{{#if this.gsx$podtype.$t}}
+cdata.put("podType", "{{this.gsx$podtype.$t}}";{{/if}}{{#if this.gsx$podtext.$t}}
+cdata.put("podText", "{{this.gsx$podtext.$t}}";{{/if}}{{#if this.gsx$podsection.$t}}
+cdata.put("podSection", "{{this.gsx$podsection.$t}}";{{/if}}{{#if this.gsx$podposition.$t}}
+cdata.put("podPosition", "{{this.gsx$podposition.$t}}";{{/if}}{{#if this.gsx$podtitle.$t}}
+cdata.put("podTitle", "{{this.gsx$podtitle.$t}}";{{/if}}{{#if this.gsx$showid.$t}}
+cdata.put("showId", "{{this.gsx$showid.$t}}";{{/if}}{{#if this.gsx$showtitle.$t}}
+cdata.put("showTitle", "{{this.gsx$showtitle.$t}}";{{/if}}{{#if this.gsx$showepisodeid.$t}}
+cdata.put("showEpisodeId", "{{this.gsx$showepisodeid.$t}}";{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+cdata.put("showEpisodeTitle", "{{this.gsx$showepisodetitle.$t}}";{{/if}}{{#if this.gsx$searchterm.$t}}
+cdata.put("searchTerm", "{{this.gsx$searchterm.$t}}";{{/if}}{{#if this.gsx$searcheventstart.$t}}
+cdata.put("searchEventStart", "{{this.gsx$searcheventstart.$t}}";{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+cdata.put("searchEventSearch", "{{this.gsx$searcheventsearch.$t}}";{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+cdata.put("mvpdPartner", "{{this.gsx$mvpdpartner.$t}}";{{/if}}{{#if this.gsx$mvpdid.$t}}
+cdata.put("mvpdId", "{{this.gsx$mvpdid.$t}}";{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+cdata.put("purchaseEventBillingStart", "{{this.gsx$purchaseeventbillingstart.$t}}";{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+cdata.put("purchaseEventOrderComplete", "{{this.gsx$purchaseeventordercomplete.$t}}";{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+cdata.put("purchaseOrderId", "{{this.gsx$purchaseorderid.$t}}";{{/if}}{{#if this.gsx$purchasecategory.$t}}
+cdata.put("purchaseCategory", "{{this.gsx$purchasecategory.$t}}";{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+cdata.put("purchaseProduct", "{{this.gsx$purchaseproduct.$t}}";{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+cdata.put("purchaseProductName", "{{this.gsx$purchaseproductname.$t}}";{{/if}}{{#if this.gsx$purchasequantity.$t}}
+cdata.put("purchaseQuantity", "{{this.gsx$purchasequantity.$t}}";{{/if}}{{#if this.gsx$purchaseprice.$t}}
+cdata.put("purchasePrice", "{{this.gsx$purchaseprice.$t}}";{{/if}}{{#if this.gsx$products.$t}}
+cdata.put("&&products", "{{this.gsx$products.$t}}";{{/if}}{{#if this.gsx$productpricingplan.$t}}
+cdata.put("productPricingPlan", "{{this.gsx$productpricingplan.$t}}";{{/if}}{{#if this.gsx$productofferperiod.$t}}
+cdata.put("productOfferPeriod", "{{this.gsx$productofferperiod.$t}}";{{/if}}{{#if this.gsx$intcid.$t}}
+cdata.put("intcid", "{{this.gsx$intcid.$t}}";{{/if}}{{#if this.gsx$campaign.$t}}
+cdata.put("campaign", "{{this.gsx$campaign.$t}}";{{/if}}{{#if this.gsx$upselltype.$t}}
+cdata.put("upsellType", "{{this.gsx$upselltype.$t}}";{{/if}}{{#if this.gsx$errorcode.$t}}
+cdata.put("errorCode", "{{this.gsx$errorcode.$t}}";{{/if}}{{#if this.gsx$launchtype.$t}}
+cdata.put("launchType", "{{this.gsx$launchtype.$t}}";{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+cdata.put("deepLink/searchReferral", "{{this.gsx$deeplink/searchreferral.$t}}";{{/if}}{{#if this.gsx$caststate.$t}}
+cdata.put("castState", "{{this.gsx$caststate.$t}}";{{/if}}{{#if this.gsx$applog.$t}}
+cdata.put("appLog", "{{this.gsx$applog.$t}}";{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+cdata.put("taplyticsUserId", "{{this.gsx$taplyticsuserid.$t}}";{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+cdata.put("taplyticsSessionId", "{{this.gsx$taplyticssessionid.$t}}";{{/if}}{{#if this.gsx$schoolid.$t}}
+cdata.put("schoolId", "{{this.gsx$schoolid.$t}}";{{/if}}{{#if this.gsx$schoolname.$t}}
+cdata.put("schoolName", "{{this.gsx$schoolname.$t}}";{{/if}}{{#if this.gsx$schoolstate.$t}}
+cdata.put("schoolState", "{{this.gsx$schoolstate.$t}}";{{/if}}{{#if this.gsx$schoolyear.$t}}
+cdata.put("schoolYear", "{{this.gsx$schoolyear.$t}}";{{/if}}{{#if this.gsx$teamid.$t}}
+cdata.put("teamId", "{{this.gsx$teamid.$t}}";{{/if}}{{#if this.gsx$teamname.$t}}
+cdata.put("teamName", "{{this.gsx$teamname.$t}}";{{/if}}{{#if this.gsx$teamarena.$t}}
+cdata.put("teamArena", "{{this.gsx$teamarena.$t}}";{{/if}}{{#if this.gsx$playerid.$t}}
+cdata.put("playerId", "{{this.gsx$playerid.$t}}";{{/if}}{{#if this.gsx$playername.$t}}
+cdata.put("playerName", "{{this.gsx$playername.$t}}";{{/if}}{{#if this.gsx$playergrade.$t}}
+cdata.put("playerGrade", "{{this.gsx$playergrade.$t}}";{{/if}}{{#if this.gsx$eventid.$t}}
+cdata.put("eventId", "{{this.gsx$eventid.$t}}";{{/if}}{{#if this.gsx$eventname.$t}}
+cdata.put("eventName", "{{this.gsx$eventname.$t}}";{{/if}}{{#if this.gsx$sporttype.$t}}
+cdata.put("sportType", "{{this.gsx$sporttype.$t}}";{{/if}}{{#if this.gsx$sportgender.$t}}
+cdata.put("sportGender", "{{this.gsx$sportgender.$t}}";{{/if}}{{#if this.gsx$sportlevel.$t}}
+cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}";{{/if}}{{#if this.gsx$sportseason.$t}}
+cdata.put("sportSeason", "{{this.gsx$sportseason.$t}}";{{/if}}{{#if this.gsx$photoeventview.$t}}
+cdata.put("photoEventView", "{{this.gsx$photoeventview.$t}}";{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+cdata.put("topicPrimaryId", "{{this.gsx$topicprimaryid.$t}}";{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+cdata.put("topicPrimaryName", "{{this.gsx$topicprimaryname.$t}}";{{/if}}{{#if this.gsx$collectionid.$t}}
+cdata.put("collectionId", "{{this.gsx$collectionid.$t}}";{{/if}}{{#if this.gsx$collectionname.$t}}
+cdata.put("collectionName", "{{this.gsx$collectionname.$t}}";{{/if}}{{#if this.gsx$socialsharetype.$t}}
+cdata.put("socialShareType", "{{this.gsx$socialsharetype.$t}}";{{/if}}{{#if this.gsx$traystatus.$t}}
+cdata.put("trayStatus", "{{this.gsx$traystatus.$t}}";{{/if}}{{#if this.gsx$playlisttitle.$t}}
+cdata.put("playListTitle", "{{this.gsx$playlisttitle.$t}}";{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+cdata.put("bookMarkTitle", "{{this.gsx$bookmarktitle.$t}}";{{/if}}
 Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
 </div>',
           'locked' => false,
           'properties' => 
           array (
           ),
-          'static' => true,
+          'static' => false,
           'static_file' => 'assets/chunks/structure/codeformats/spec_codeFormat_Android',
           'content' => '
 <div id="tab-and-{{@index}}" class="tab">
 <pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "[[*siteCode]]");
 cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
-cdata.put("siteType", "[[*siteType]]");
-cdata.put("siteSection", "{{this.gsx$sitesection.$t}}");
-cdata.put("siteHier", "{{this.gsx$sitehier.$t}}");
-cdata.put("pageType", "{{this.gsx$pagetype.$t}}");
-cdata.put("screenName", "{{this.gsx$screenname.$t}}");{{#if this.gsx$directionscrolled.$t}}
-cdata.put("directionScrolled", "{{this.gsx$directionscrolled.$t}}";
-cdata.put("percentScrolled", "{{this.gsx$dpercentscrolled.$t}}";{{/if}}[[*appfeatures:contains=`Interaction (Login)`:then=`
-cdata.put("userID", "{{this.gsx$userid.$t}}");
-cdata.put("userType", "{{this.gsx$usertype.$t}}");
-cdata.put("userState", "{{this.gsx$userstate.$t}}");
-cdata.put("userTeamRole", "{{this.gsx$userteamrole.$t}}");
-cdata.put("userStateIsAuthenticated", "1");`]]{{#if this.gsx$articleid.$t}}
-cdata.put("articleId", "{{this.gsx$articleid.$t}}");
-cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}");
-cdata.put("articleType", "{{this.gsx$articletype.$t}}");
-cdata.put("articleAuthorId", "{{this.gsx$articleauthorid.$t}}");
-cdata.put("articleAuthorName", "{{this.gsx$articleauthorname.$t}}");{{/if}}{{#if this.gsx$sporttype.$t}}
-cdata.put("sportType", "{{this.gsx$sporttype.$t}}");
-cdata.put("sportGender", "{{this.gsx$sportgender.$t}}");
-cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}");
-cdata.put("sportSeason", "{{this.gsx$sportseason.$t}}");{{/if}}{{#if this.gsx$schoolid.$t}}
-cdata.put("schoolId", "{{this.gsx$schoolid.$t}}");
-cdata.put("schoolName", "{{this.gsx$schoolname.$t}}");
-cdata.put("schoolState", "{{this.gsx$schoolstate.$t}}");
-cdata.put("schoolYear", "{{this.gsx$schoolyear.$t}}");{{/if}}{{#if this.gsx$teamid.$t}}
-cdata.put("teamId", "{{this.gsx$teamid.$t}}");
-cdata.put("teamName", "{{this.gsx$teamname.$t}}");
-cdata.put("teamArena", "{{this.gsx$teamarena.$t}}");{{/if}}{{#if this.gsx$playerid.$t}}
-cdata.put("playerId", "{{this.gsx$playerid.$t}}");
-cdata.put("playerName", "{{this.gsx$playername.$t}}");
-cdata.put("playerGrade", "{{this.gsx$playergrade.$t}}");{{/if}}{{#if this.gsx$eventid.$t}}
-cdata.put("eventId", "{{this.gsx$playerid.$t}}");
-cdata.put("eventName", "{{this.gsx$playerid.$t}}");{{/if}}{{#if this.gsx$mediapartnerid.$t}}
-cdata.put("mediaPartnerId", "{{this.gsx$mediapartnerid.$t}}");
-cdata.put("mediaTitle", "{{this.gsx$mediatitle.$t}}");
-cdata.put("mediaId", "{{this.gsx$mediaid.$t}}");
-cdata.put("mediaMuted", "{{this.gsx$mediamuted.$t}}");
-cdata.put("mediaAutoPlay", "{{this.gsx$mediaautoplay.$t}}");
-cdata.put("mediaContentType", "{{this.gsx$mediacontenttype.$t}}");{{/if}}
+cdata.put("siteType", "[[*siteType]]");{{#if this.gsx$pagetype.$t}}
+cdata.put("pageType", "{{this.gsx$pagetype.$t}}";{{/if}}{{#if this.gsx$pagename.$t}}
+cdata.put("pagename", "{{this.gsx$pagename.$t}}";{{/if}}{{#if this.gsx$screenname.$t}}
+cdata.put("screenname", "{{this.gsx$screenname.$t}}";{{/if}}{{#if this.gsx$pageviewguid.$t}}
+cdata.put("pageViewGuid", "{{this.gsx$pageviewguid.$t}}";{{/if}}{{#if this.gsx$clicktext.$t}}
+cdata.put("clickText", "{{this.gsx$clicktext.$t}}";{{/if}}{{#if this.gsx$sitehier.$t}}
+cdata.put("sitehier", "{{this.gsx$sitehier.$t}}";{{/if}}{{#if this.gsx$siteedition.$t}}
+cdata.put("siteEdition", "{{this.gsx$siteedition.$t}}";{{/if}}{{#if this.gsx$project.$t}}
+cdata.put("project", "{{this.gsx$project.$t}}";{{/if}}{{#if this.gsx$channel.$t}}
+cdata.put("channel", "{{this.gsx$channel.$t}}";{{/if}}{{#if this.gsx$feature.$t}}
+cdata.put("feature", "{{this.gsx$feature.$t}}";{{/if}}{{#if this.gsx$subfeature.$t}}
+cdata.put("subfeature", "{{this.gsx$subfeature.$t}}";{{/if}}{{#if this.gsx$sitesection.$t}}
+cdata.put("sitesection", "{{this.gsx$sitesection.$t}}";{{/if}}{{#if this.gsx$servicelevel.$t}}
+cdata.put("servicelevel", "{{this.gsx$servicelevel.$t}}";{{/if}}{{#if this.gsx$productline.$t}}
+cdata.put("productline", "{{this.gsx$productline.$t}}";{{/if}}{{#if this.gsx$user.$t}}
+cdata.put("user", "{{this.gsx$user.$t}}";{{/if}}{{#if this.gsx$userstatus.$t}}
+cdata.put("userStatus", "{{this.gsx$userstatus.$t}}";{{/if}}{{#if this.gsx$userregid.$t}}
+cdata.put("userRegId", "{{this.gsx$userregid.$t}}";{{/if}}{{#if this.gsx$userid.$t}}
+cdata.put("userid", "{{this.gsx$userid.$t}}";{{/if}}{{#if this.gsx$userregservice.$t}}
+cdata.put("userRegService", "{{this.gsx$userregservice.$t}}";{{/if}}{{#if this.gsx$usertype.$t}}
+cdata.put("usertype", "{{this.gsx$usertype.$t}}";{{/if}}{{#if this.gsx$userstate.$t}}
+cdata.put("userstate", "{{this.gsx$userstate.$t}}";{{/if}}{{#if this.gsx$usereventregistrationsuccess.$t}}
+cdata.put("userEventRegistrationSuccess", "{{this.gsx$usereventregistrationsuccess.$t}}";{{/if}}{{#if this.gsx$usereventloginsuccess.$t}}
+cdata.put("userEventLoginSuccess", "{{this.gsx$usereventloginsuccess.$t}}";{{/if}}{{#if this.gsx$userteamrole.$t}}
+cdata.put("userTeamRole", "{{this.gsx$userteamrole.$t}}";{{/if}}{{#if this.gsx$mediapartnerid.$t}}
+cdata.put("mediaPartnerId", "{{this.gsx$mediapartnerid.$t}}";{{/if}}{{#if this.gsx$mediaautoplay.$t}}
+cdata.put("mediaAutoPlay", "{{this.gsx$mediaautoplay.$t}}";{{/if}}{{#if this.gsx$mediacontenttype.$t}}
+cdata.put("mediaContentType", "{{this.gsx$mediacontenttype.$t}}";{{/if}}{{#if this.gsx$mediaendcardui.$t}}
+cdata.put("mediaEndCardUi", "{{this.gsx$mediaendcardui.$t}}";{{/if}}{{#if this.gsx$mediadistnetwork.$t}}
+cdata.put("mediaDistNetwork", "{{this.gsx$mediadistnetwork.$t}}";{{/if}}{{#if this.gsx$mediasvodcontenttype.$t}}
+cdata.put("mediaSvodContentType", "{{this.gsx$mediasvodcontenttype.$t}}";{{/if}}{{#if this.gsx$mediadynamicplay.$t}}
+cdata.put("mediaDynamicPlay", "{{this.gsx$mediadynamicplay.$t}}";{{/if}}{{#if this.gsx$mediarelatedshows.$t}}
+cdata.put("mediaRelatedShows", "{{this.gsx$mediarelatedshows.$t}}";{{/if}}{{#if this.gsx$mediadeviceid.$t}}
+cdata.put("mediaDeviceId", "{{this.gsx$mediadeviceid.$t}}";{{/if}}{{#if this.gsx$mediaresume.$t}}
+cdata.put("mediaResume", "{{this.gsx$mediaresume.$t}}";{{/if}}{{#if this.gsx$mediaviewmode.$t}}
+cdata.put("mediaViewMode", "{{this.gsx$mediaviewmode.$t}}";{{/if}}{{#if this.gsx$mediadvrtitlelong.$t}}
+cdata.put("mediaDvrTitleLong", "{{this.gsx$mediadvrtitlelong.$t}}";{{/if}}{{#if this.gsx$mediadvrtitleshort.$t}}
+cdata.put("mediaDvrTitleShort", "{{this.gsx$mediadvrtitleshort.$t}}";{{/if}}{{#if this.gsx$mediadvrsluglabel.$t}}
+cdata.put("mediaDvrSlugLabel", "{{this.gsx$mediadvrsluglabel.$t}}";{{/if}}{{#if this.gsx$mediatitle.$t}}
+cdata.put("mediaTitle", "{{this.gsx$mediatitle.$t}}";{{/if}}{{#if this.gsx$mediaid.$t}}
+cdata.put("mediaId", "{{this.gsx$mediaid.$t}}";{{/if}}{{#if this.gsx$mediamuted.$t}}
+cdata.put("mediaMuted", "{{this.gsx$mediamuted.$t}}";{{/if}}{{#if this.gsx$articleid.$t}}
+cdata.put("articleId", "{{this.gsx$articleid.$t}}";{{/if}}{{#if this.gsx$articletype.$t}}
+cdata.put("articleType", "{{this.gsx$articletype.$t}}";{{/if}}{{#if this.gsx$articletitle.$t}}
+cdata.put("articleTitle", "{{this.gsx$articletitle.$t}}";{{/if}}{{#if this.gsx$articleauthorid.$t}}
+cdata.put("articleauthorid", "{{this.gsx$articleauthorid.$t}}";{{/if}}{{#if this.gsx$articleauthorname.$t}}
+cdata.put("articleauthorname", "{{this.gsx$articleauthorname.$t}}";{{/if}}{{#if this.gsx$podtype.$t}}
+cdata.put("podType", "{{this.gsx$podtype.$t}}";{{/if}}{{#if this.gsx$podtext.$t}}
+cdata.put("podText", "{{this.gsx$podtext.$t}}";{{/if}}{{#if this.gsx$podsection.$t}}
+cdata.put("podSection", "{{this.gsx$podsection.$t}}";{{/if}}{{#if this.gsx$podposition.$t}}
+cdata.put("podPosition", "{{this.gsx$podposition.$t}}";{{/if}}{{#if this.gsx$podtitle.$t}}
+cdata.put("podTitle", "{{this.gsx$podtitle.$t}}";{{/if}}{{#if this.gsx$showid.$t}}
+cdata.put("showId", "{{this.gsx$showid.$t}}";{{/if}}{{#if this.gsx$showtitle.$t}}
+cdata.put("showTitle", "{{this.gsx$showtitle.$t}}";{{/if}}{{#if this.gsx$showepisodeid.$t}}
+cdata.put("showEpisodeId", "{{this.gsx$showepisodeid.$t}}";{{/if}}{{#if this.gsx$showepisodetitle.$t}}
+cdata.put("showEpisodeTitle", "{{this.gsx$showepisodetitle.$t}}";{{/if}}{{#if this.gsx$searchterm.$t}}
+cdata.put("searchTerm", "{{this.gsx$searchterm.$t}}";{{/if}}{{#if this.gsx$searcheventstart.$t}}
+cdata.put("searchEventStart", "{{this.gsx$searcheventstart.$t}}";{{/if}}{{#if this.gsx$searcheventsearch.$t}}
+cdata.put("searchEventSearch", "{{this.gsx$searcheventsearch.$t}}";{{/if}}{{#if this.gsx$mvpdpartner.$t}}
+cdata.put("mvpdPartner", "{{this.gsx$mvpdpartner.$t}}";{{/if}}{{#if this.gsx$mvpdid.$t}}
+cdata.put("mvpdId", "{{this.gsx$mvpdid.$t}}";{{/if}}{{#if this.gsx$purchaseeventbillingstart.$t}}
+cdata.put("purchaseEventBillingStart", "{{this.gsx$purchaseeventbillingstart.$t}}";{{/if}}{{#if this.gsx$purchaseeventordercomplete.$t}}
+cdata.put("purchaseEventOrderComplete", "{{this.gsx$purchaseeventordercomplete.$t}}";{{/if}}{{#if this.gsx$purchaseorderid.$t}}
+cdata.put("purchaseOrderId", "{{this.gsx$purchaseorderid.$t}}";{{/if}}{{#if this.gsx$purchasecategory.$t}}
+cdata.put("purchaseCategory", "{{this.gsx$purchasecategory.$t}}";{{/if}}{{#if this.gsx$purchaseproduct.$t}}
+cdata.put("purchaseProduct", "{{this.gsx$purchaseproduct.$t}}";{{/if}}{{#if this.gsx$purchaseproductname.$t}}
+cdata.put("purchaseProductName", "{{this.gsx$purchaseproductname.$t}}";{{/if}}{{#if this.gsx$purchasequantity.$t}}
+cdata.put("purchaseQuantity", "{{this.gsx$purchasequantity.$t}}";{{/if}}{{#if this.gsx$purchaseprice.$t}}
+cdata.put("purchasePrice", "{{this.gsx$purchaseprice.$t}}";{{/if}}{{#if this.gsx$products.$t}}
+cdata.put("&&products", "{{this.gsx$products.$t}}";{{/if}}{{#if this.gsx$productpricingplan.$t}}
+cdata.put("productPricingPlan", "{{this.gsx$productpricingplan.$t}}";{{/if}}{{#if this.gsx$productofferperiod.$t}}
+cdata.put("productOfferPeriod", "{{this.gsx$productofferperiod.$t}}";{{/if}}{{#if this.gsx$intcid.$t}}
+cdata.put("intcid", "{{this.gsx$intcid.$t}}";{{/if}}{{#if this.gsx$campaign.$t}}
+cdata.put("campaign", "{{this.gsx$campaign.$t}}";{{/if}}{{#if this.gsx$upselltype.$t}}
+cdata.put("upsellType", "{{this.gsx$upselltype.$t}}";{{/if}}{{#if this.gsx$errorcode.$t}}
+cdata.put("errorCode", "{{this.gsx$errorcode.$t}}";{{/if}}{{#if this.gsx$launchtype.$t}}
+cdata.put("launchType", "{{this.gsx$launchtype.$t}}";{{/if}}{{#if this.gsx$deeplink/searchreferral.$t}}
+cdata.put("deepLink/searchReferral", "{{this.gsx$deeplink/searchreferral.$t}}";{{/if}}{{#if this.gsx$caststate.$t}}
+cdata.put("castState", "{{this.gsx$caststate.$t}}";{{/if}}{{#if this.gsx$applog.$t}}
+cdata.put("appLog", "{{this.gsx$applog.$t}}";{{/if}}{{#if this.gsx$taplyticsuserid.$t}}
+cdata.put("taplyticsUserId", "{{this.gsx$taplyticsuserid.$t}}";{{/if}}{{#if this.gsx$taplyticssessionid.$t}}
+cdata.put("taplyticsSessionId", "{{this.gsx$taplyticssessionid.$t}}";{{/if}}{{#if this.gsx$schoolid.$t}}
+cdata.put("schoolId", "{{this.gsx$schoolid.$t}}";{{/if}}{{#if this.gsx$schoolname.$t}}
+cdata.put("schoolName", "{{this.gsx$schoolname.$t}}";{{/if}}{{#if this.gsx$schoolstate.$t}}
+cdata.put("schoolState", "{{this.gsx$schoolstate.$t}}";{{/if}}{{#if this.gsx$schoolyear.$t}}
+cdata.put("schoolYear", "{{this.gsx$schoolyear.$t}}";{{/if}}{{#if this.gsx$teamid.$t}}
+cdata.put("teamId", "{{this.gsx$teamid.$t}}";{{/if}}{{#if this.gsx$teamname.$t}}
+cdata.put("teamName", "{{this.gsx$teamname.$t}}";{{/if}}{{#if this.gsx$teamarena.$t}}
+cdata.put("teamArena", "{{this.gsx$teamarena.$t}}";{{/if}}{{#if this.gsx$playerid.$t}}
+cdata.put("playerId", "{{this.gsx$playerid.$t}}";{{/if}}{{#if this.gsx$playername.$t}}
+cdata.put("playerName", "{{this.gsx$playername.$t}}";{{/if}}{{#if this.gsx$playergrade.$t}}
+cdata.put("playerGrade", "{{this.gsx$playergrade.$t}}";{{/if}}{{#if this.gsx$eventid.$t}}
+cdata.put("eventId", "{{this.gsx$eventid.$t}}";{{/if}}{{#if this.gsx$eventname.$t}}
+cdata.put("eventName", "{{this.gsx$eventname.$t}}";{{/if}}{{#if this.gsx$sporttype.$t}}
+cdata.put("sportType", "{{this.gsx$sporttype.$t}}";{{/if}}{{#if this.gsx$sportgender.$t}}
+cdata.put("sportGender", "{{this.gsx$sportgender.$t}}";{{/if}}{{#if this.gsx$sportlevel.$t}}
+cdata.put("sportLevel", "{{this.gsx$sportlevel.$t}}";{{/if}}{{#if this.gsx$sportseason.$t}}
+cdata.put("sportSeason", "{{this.gsx$sportseason.$t}}";{{/if}}{{#if this.gsx$photoeventview.$t}}
+cdata.put("photoEventView", "{{this.gsx$photoeventview.$t}}";{{/if}}{{#if this.gsx$topicprimaryid.$t}}
+cdata.put("topicPrimaryId", "{{this.gsx$topicprimaryid.$t}}";{{/if}}{{#if this.gsx$topicprimaryname.$t}}
+cdata.put("topicPrimaryName", "{{this.gsx$topicprimaryname.$t}}";{{/if}}{{#if this.gsx$collectionid.$t}}
+cdata.put("collectionId", "{{this.gsx$collectionid.$t}}";{{/if}}{{#if this.gsx$collectionname.$t}}
+cdata.put("collectionName", "{{this.gsx$collectionname.$t}}";{{/if}}{{#if this.gsx$socialsharetype.$t}}
+cdata.put("socialShareType", "{{this.gsx$socialsharetype.$t}}";{{/if}}{{#if this.gsx$traystatus.$t}}
+cdata.put("trayStatus", "{{this.gsx$traystatus.$t}}";{{/if}}{{#if this.gsx$playlisttitle.$t}}
+cdata.put("playListTitle", "{{this.gsx$playlisttitle.$t}}";{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+cdata.put("bookMarkTitle", "{{this.gsx$bookmarktitle.$t}}";{{/if}}
 Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
 </div>',
         ),
@@ -7704,62 +8315,6 @@ if ($wf->_config[\'ph\']) {
             'minLength' => '',
             'regex' => '',
             'regexText' => '',
-          ),
-          'output_properties' => 
-          array (
-          ),
-          'static' => false,
-          'static_file' => '',
-          'content' => '',
-        ),
-        'policies' => 
-        array (
-          'web' => 
-          array (
-          ),
-        ),
-        'source' => 
-        array (
-          'id' => 1,
-          'name' => 'Filesystem',
-          'description' => '',
-          'class_key' => 'sources.modFileMediaSource',
-          'properties' => 
-          array (
-          ),
-          'is_stream' => true,
-        ),
-      ),
-      'appfeatures' => 
-      array (
-        'fields' => 
-        array (
-          'id' => 21,
-          'source' => 1,
-          'property_preprocess' => false,
-          'type' => 'listbox-multiple',
-          'name' => 'appfeatures',
-          'caption' => 'App Features',
-          'description' => '',
-          'editor_type' => 0,
-          'category' => 6,
-          'locked' => false,
-          'elements' => 'Articles||Events||Interaction (Login)||Teams||Click Tracking||Watchlist||Video||MVPD',
-          'rank' => 0,
-          'display' => 'default',
-          'default_text' => '',
-          'properties' => 
-          array (
-          ),
-          'input_properties' => 
-          array (
-            'allowBlank' => 'true',
-            'listWidth' => '',
-            'title' => '',
-            'typeAhead' => 'false',
-            'typeAheadDelay' => '250',
-            'listEmptyText' => '',
-            'stackItems' => 'false',
           ),
           'output_properties' => 
           array (
