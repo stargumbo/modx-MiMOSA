@@ -8,7 +8,7 @@
     <div class="container">
         <div class="main">
             <h2>[[*longtitle:default=`[[*pagetitle]]`]]</h2>
-            <p>This is the tracking spec for [[*longtitle:default=`[[*pagetitle]]`]] using the latest tracking implementation for -</p>
+            <p>This is the Adobe basic tracking spec for [[*longtitle:default=`[[*pagetitle]]`]] using the latest implementation for -</p>
             <ul>
                 [[*platform:contains=`Web`:then=`<li>Web</li>`]]
                 [[*platform:contains=`Android`:then=`<li>Android</li>`]]
@@ -149,6 +149,7 @@
                 [[*siteType:!empty=`<li>Site Type:<br /><em>[[*siteType]]</em></li>`]]
                 [[*prodrsids:!empty=`<li>Prod RSIDs:<br /><em>[[*prodrsids]]</em></li>`]]
                 [[*devrsids:!empty=`<li>Dev RSIDs:<br /><em>[[*devrsids]]</em></li>`]]
+                [[*gen_ontologyID:!empty=`<li>Ontology Links:<br /><em><a href="https://docs.google.com/spreadsheets/d/[[*gen_ontologyID]]" target="_blank">Spreadsheet</a></em></li>`]]
                 <!-- [[*MainJiraTicket:!empty=`<li>JIRA Ticket(s):<br /><em>[[*MainJiraTicket]]</em></li>`]] -->
             </ul>
         </div>

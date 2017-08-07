@@ -60,14 +60,14 @@
     };
 
     /* Build Accordions */
-    var accordion_preajax = [".accordion1", ".accordion3", ".accordion4", ".accordion5"];
+    var accordion_preajax = [".accordion1", ".accordion3", ".accordion4", ".accordion5", ".accordion6"];
     var accordion_postajax = [".accordion2"];
     fireaccordion = function(params){
         for (i=0; i<params.length; i++) {
             jQuery(params[i]).accordion({
                 active: false,
                 collapsible: true,
-                header: "h2",
+                //header: "h2",
                 heightStyle: "content"
             });
         }
@@ -87,7 +87,11 @@
     firehandlebars = function(data, template, destination){
         Handlebars.registerHelper('trackingMethodPage', function(trackingmethod){
             if(trackingmethod === 'trackState'){
-                return this.gsx$pagename.$t;
+                if (this.gsx$pagename){
+                    return this.gsx$pagename.$t;
+                } else if (this.gsx$screenname) {
+                    return this.gsx$screenname.$t;
+                }
             } else {
                 return this.gsx$trackingmethodaction.$t;
             }
@@ -102,7 +106,6 @@
         Handlebars.registerHelper("highlightDynamic", function(column){
             if(/(\[.*?\])/gi.test(column)) {
                 return '<mark>' + column + '</mark>';
-                fireprism();
             } else {
                 return column;
             }
@@ -169,7 +172,7 @@
             fireaccordion(accordion_postajax);
             firetabs();
             trimempty(trimparams);
-            fireprism();
+            Prism.highlightAll();
         });
     });
 </script>

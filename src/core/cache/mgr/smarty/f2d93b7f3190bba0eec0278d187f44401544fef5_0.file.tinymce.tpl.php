@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2017-06-30 00:11:43
+<?php /* Smarty version 3.1.27, created on 2017-07-12 18:24:44
          compiled from "/var/www/core/components/migx/elements/tv/tinymce.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:16001285925955973f5e9390_97762346%%*/
+/*%%SmartyHeaderCode:7173029895966696c0786b9_74845780%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -13,20 +13,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '16001285925955973f5e9390_97762346',
+  'nocache_hash' => '7173029895966696c0786b9_74845780',
   'variables' => 
   array (
     'tv' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5955973f60adb6_50580185',
+  'unifunc' => 'content_5966696c0a0111_80533494',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5955973f60adb6_50580185')) {
-function content_5955973f60adb6_50580185 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5966696c0a0111_80533494')) {
+function content_5966696c0a0111_80533494 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '16001285925955973f5e9390_97762346';
+$_smarty_tpl->properties['nocache_hash'] = '7173029895966696c0786b9_74845780';
 ?>
 <textarea id="tv<?php echo $_smarty_tpl->tpl_vars['tv']->value->id;?>
 " name="tv<?php echo $_smarty_tpl->tpl_vars['tv']->value->id;?>

@@ -11,8 +11,8 @@
     'cdm/' => 20,
     'cmg/' => 21,
     'cbs-sports-app.html' => 4,
+    'cbssports-now.html' => 102,
     'googleapi.html' => 1,
-    'migxtestattributes.html' => 97,
     'cbs-sports/' => 24,
     'cbs-sports-fantasy/' => 25,
     'sportsline.html' => 26,
@@ -33,6 +33,7 @@
     'cbs/' => 33,
     'web/' => 55,
     'cbssportsapps/' => 8,
+    'heartbeat/' => 103,
     'cbssportsfantasyapps/' => 38,
     'cbssportsfantasy-web/' => 99,
     'maxprepsapps/' => 39,
@@ -93,6 +94,7 @@
     'cbsapp-all-access.html' => 93,
     'app-cbsnews.html' => 96,
     'opm-opc-desktop.html' => 100,
+    'heartbeat-implementation.html' => 101,
   ),
   'resourceMap' => 
   array (
@@ -111,11 +113,11 @@
     8 => 
     array (
       0 => 4,
+      1 => 102,
     ),
     9 => 
     array (
       0 => 1,
-      1 => 97,
     ),
     12 => 
     array (
@@ -157,6 +159,7 @@
     array (
       0 => 55,
       1 => 8,
+      2 => 103,
     ),
     25 => 
     array (
@@ -349,6 +352,10 @@
     99 => 
     array (
       0 => 100,
+    ),
+    103 => 
+    array (
+      0 => 101,
     ),
   ),
   'webLinkMap' => 

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2017-06-30 00:11:35
+<?php /* Smarty version 3.1.27, created on 2017-07-12 21:48:43
          compiled from "/var/www/htdocs/manager/templates/default/resource/update.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1606561695595597372db7a0_00739702%%*/
+/*%%SmartyHeaderCode:4065282075966993b730944_34662467%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -13,7 +13,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1606561695595597372db7a0_00739702',
+  'nocache_hash' => '4065282075966993b730944_34662467',
   'variables' => 
   array (
     'tvOutput' => 0,
@@ -26,13 +26,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_595597372f1a64_02026750',
+  'unifunc' => 'content_5966993b7464a6_88785676',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_595597372f1a64_02026750')) {
-function content_595597372f1a64_02026750 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5966993b7464a6_88785676')) {
+function content_5966993b7464a6_88785676 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1606561695595597372db7a0_00739702';
+$_smarty_tpl->properties['nocache_hash'] = '4065282075966993b730944_34662467';
 ?>
 <div id="modx-panel-resource-div"></div>
 <div id="modx-resource-tvs-div"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['tvOutput']->value)===null||$tmp==='' ? '' : $tmp);?>

@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en">
+<head>[[$basicHead]]</head>
+<body>
+<div class="header">[[$mainHeader]]</div>
+<div class="nav-bar">[[$mainNavbar]]</div>
+<div class="content">
+    <div class="container">
+        <div class="main">
+            <h2>[[*longtitle:default=`[[*pagetitle]]`]]</h2>
+            <p class="notetext"><em><strong>Note:</strong> Prior to implementing Heartbeat, insure that at a minimum there is a basic Adobe Tracking Implementation in place.  A basic tracking spec can be found under the Quick Reference section.</p>
+            [[*content:!empty=`<div class="accordion accordion1">[[*content]]</div>`]]
+
+            <h3>Video Heartbeat 2.x Developer Guides / SDKs</h3>
+            <p class="notetext"><em><strong>Note:</strong> These development guides <u><strong>do not</strong></u> apply to Heartbeat 1.5x</em></p>
+            <div class="accordion accordion1">
+                <h2>Android / FireTV</h2>
+                <div class="inner-container">
+                    <h3>SDK Download</h3>
+                    <p><a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/android-v2.0.1" target="_blank">VHL SDK for Android v2.0.1</a></p>
+                    <h3>Developer Guide</h3>
+                    <p><a href="https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/android_2.0/r_vhl_getting-started-android.html" target="_blank">Get Started - VHL 2.x for Android</a></p>
+                </div>
+
+                <h2>iOS / AppleTV</h2>
+                <div class="inner-container">
+                    <h3>SDK Download</h3>
+                    <p><a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/ios-v2.0.1" target="_blank">VHL SDK for for iOS v2.0.1</a></p>
+                    <h3>Developer Guide</h3>
+                    <p><a href="https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/ios_2.0/r_vhl_getting-started-ios.html" target="_blank">Get Started - VHL 2.x for iOS</a></p>
+                </div>
+
+                <h2>JavaScript</h2>
+                <div class="inner-container">
+                    <h3>SDK Download</h3>
+                    <p><a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/js-v2.0.2" target="_blank">VHL SDK for JS v2.0.2</a></p>
+                    <h3>Developer Guide</h3>
+                    <p><a href="https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/js_2.0/r_vhl_getting-started-js.html" target="_blank">Get Started - VHL 2.x for JS</a></p>
+                </div>
+
+                <h2>Roku</h2>
+                <div class="inner-container">
+                    <h3>SDK Download</h3>
+                    <p><a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/roku-v2.0.1" target="_blank">VHL SDK for Roku v2.0.1</a></p>
+                    <h3>Developer Guide</h3>
+                    <p><a href="https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/roku/c_vhl_conf-med-hrbts.html" target="_blank">Get Started - VHL 2.x for Roku</a></p>
+                </div>
+            </div>
+
+            <h3>Implementation</h3>
+            <div class="accordion accordion1">
+                <h2>Website</h2>
+                <div class="inner-container">
+                    <div class="tabs">
+                        <ul class="tab-links">
+                            <li><a href="#tab-webimplementation-0">Tealium</a></li>
+                            <li><a href="#tab-webimplementation-1">Non-Tealium</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab-webimplementation-0" class="tab active">
+                                <div class="accordion accordion1">
+                                    <h2>Overview</h2>
+                                    <div class="inner-container">
+                                        <p>For desktop/mobile web implementations in Tealium, you will to ensure the following steps are complete:</p>
+                                        <ol>
+                                            <li>Ensure the SiteCatalyst config module/node (xml or JSON object method) is set with the proper Heartbeat param values (see Player Config XML Module sample)</li>
+                                            <li>Add in a getHbParams function inside of the om.track functions extension in Tealium profile.</li>
+                                            <li>Setup playerReference.setPageContextMetadata(om.getHbParams()) on player instance *</li>
+                                            <li>Remove SiteCatalyst.swf and replace with Heartbeat.swf (the two can’t co-exist)</li>
+                                        </ol>
+                                        <p><em>* if using Heartbeat.swf in your flash implementation it's a requirement that the page pass page-level metadata into the player using the setPageContextMetadata() api method.</em></p>
+                                    </div>
+                                    <h2>Loading Sequence</h2>
+                                    <div class="inner-container">
+                                        <p>Note that setPageContextMetadata() in the player can't be called until both cbsi_player_hl.swf and heartbeat.swf are already loaded.</p>
+                                        <p>The tealium object (utag.js), cbsi_player_hl.swf and heartbeat.swf should already be loaded before setPageContextMetadata() is called, otherwise account report suite id and page-level context meta-data may not pass through.</p>
+                                        <h3>Sample code snippet for setting setPageContextMetadata</h3>
+<pre class="line-numbers"><code class="language-javascript">CBSPlayer.Video.prototype.setPageContextMetadata = function() {
+    var a = this, b = window[a.options.playerElement];
+    try {
+        b.setPageContextMetadata(om.getHbParams())
+    } catch (c) {
+        console.log("setPageContextMetadata exception:  " + c.message)
+}};</code></pre>
+                                    </div>
+                                    <h2>Plugin List</h2>
+                                    <div class="inner-container">
+                                        <h3>Flash Player Plugins</h3>
+                                        <p>http://vidtech.cbsinteractive.com/player/3_7_3/CBSI_PLAYER_HL.swf<br />http://vidtech.cbsinteractive.com/plugins/site_catalyst/3_7_1/Heartbeat.swf</p>
+
+                                        <h3>Flash Player Instance example</h3>
+                                        <p>http://www.cbs.com/assets/min/js/cbs/v2/video/cbsplayer.min.js?20170218-052617</p>
+
+                                        <h3>JS Player Plugins</h3>
+                                        <p>http://vidtech.cbsinteractive.com/uvpjs/1.9.0/CBSI-PLAYER.js<br />http://vidtech.cbsinteractive.com/uvpjs/1.9.0/lib/tracking/adobe/VideoHeartbeat-2.0.1.min.js</p>
+
+                                        <h3>JS Player Instance example</h3>
+                                        <p>http://branch.cbs.com/assets/build/development/js/video/jscbsplayer.js?20170217-194357</p>
+                                    </div>
+                                    <h2>Player Config XML module sample</h2>
+                                    <div class="inner-container">
+                                        <p>Note that with tealium implementation the value of account is set to “” as the tealium function getHbParams will discern account value from _scAccount in the utag.</p>
+                                        <pre class="line-numbers"><code class="language-javascript">&lt;?xml version="1.0" encoding="utf-8"?>
+&lt;module name="SiteCatalyst" category="qos" enabled="y">
+    &lt;params>
+        &lt;param name="account" value="" />
+        &lt;param name="brand" value="[site specific value]" />
+        &lt;param name="edition" value="us" />
+        &lt;param name="charSet" value="UTF-8" />
+        &lt;param name="currencyCode" value="USD" />
+        &lt;param name="visitorNamespace" value="cbsinteractive" />
+        &lt;param name="TrackLiveStreams" value="y" />
+        &lt;param name="trackingServer" value="om.cbsi.com" />
+        &lt;param name="heartbeatTrackingServer" value="http://cbsinteractive.hb.omtrdc.net" />
+        &lt;param name="heartbeatVisitorMarketingCloudOrgId" value="10D31225525FF5790A490D4D@AdobeOrg" />
+        &lt;param name="heartbeatAdobePublisherId" value="10D31225525FF5790A490D4D@AdobeOrg" />
+    &lt;/params>
+&lt;/module></code></pre>
+                                    </div>
+                                    <h2>getHbParams function inside om.track functions</h2>
+                                    <div class="inner-container">
+                                        <p>Please note that some utag keys will be site specific and you may need to add them to the utag_keys array.</p>
+                                        <pre class="line-numbers"><code class="language-javascript">getHbParams: function(p) {
+    var utag_keys = new Array(
+        'siteEdition','siteSection','siteType','siteHier',
+        'articleId','articleType','articleTitle','mediaAutoPlay',
+        'pageType','pageTypeId','pageOntologyId','pageViewGuid',
+        'showId','showTitle','showEpisodeId','showEpisodeTitle',
+        'userState','userId','userType','userRegId',
+        'deviceType','dwAnonId');
+    var hbParams = new Array(), data={};
+    if(!p){p={}};
+    for (var i=0; i < utag_keys.length; i++) {
+        if (!!utag_data[utag_keys[i]]) {
+            hbParams[utag_keys[i]]=utag_data[utag_keys[i]];
+        }
+    }
+    $.extend(data, hbParams, {'siteRsids':utag_data['_scAccount'],'siteCode':utag_data['_siteCode'],'pageUrl':utag_data['_pageUrl'], 'sitePrimaryRsid':utag_data['_sitePrimaryRsid'], 'userStatus':utag_data['userType']}, p);
+    return data;
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab-webimplementation-1" class="tab"><p>For desktop/mobile sites not on tealium (i.e. s code), you will need to hard code in the omniture report suite ids into the account name value of the player config xml, e.g.<br />
+                                <pre class="line-numbers"><code class="language-javascript">&lt;param name="account" value="[primary risd], cbsicbsiall"/></code></pre></p>
+                                <p>You will also need to set a page level function which translates the eVar mappings to context variables in the omniture request, as heartbeat leverages context variable keys for context video metadata</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Apps / OTT</h2>
+                <div class="inner-container">
+                    <div class="tabs">
+                        <ul class="tab-links">
+                            <li><a href="#tab-appimplementation-0">General</a></li>
+                            <li><a href="#tab-appimplementation-1">Android / FireTV</a></li>
+                            <li><a href="#tab-appimplementation-2">iOS / AppleTV</a></li>
+                            <li><a href="#tab-appimplementation-3">Roku</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab-appimplementation-0" class="tab active">
+                                <p>This implementation guide will be referencing the developer guides listed above.</p>
+                                <ol>
+                                    <li>Set Up and Configure Your MediaHeartbeat Instance</li>
+                                    <li>Import the library</li>
+                                    <li>Create the ADBMediaHeartbeatConfig Instance<br />
+                                        <div class="accordion accordion1">
+                                        <h2>Reference Table - ADBMediaHeartbeatConfig</h2>
+                                            <div class="inner-container">
+                                                <table>
+                                                    <tr>
+                                                        <td><strong>Variable Name</strong></td>
+                                                        <td><strong>Description</strong></td>
+                                                        <td><strong>Required</strong></td>
+                                                        <td><strong>Default</strong></td>
+                                                        <td><strong>Suggested Value</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>trackingServer</td>
+                                                        <td>Define the server for tracking media heartbeats. This is different from your analytics tracking server</td>
+                                                        <td>Yes</td>
+                                                        <td>Empty String</td>
+                                                        <td>[[*trackingServer]]</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>channel</td>
+                                                        <td>Channel name property</td>
+                                                        <td>Yes</td>
+                                                        <td>Empty String</td>
+                                                        <td>[[*channel]]</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ovp</td>
+                                                        <td>Name of the online video platform through which content gets distributed</td>
+                                                        <td>Yes</td>
+                                                        <td>unknown</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>appVersion</td>
+                                                        <td>Version of the video player app / SDK</td>
+                                                        <td>Yes</td>
+                                                        <td>unknown</td>
+                                                        <td>[[*appVersion]]</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>playerName</td>
+                                                        <td>Name of the video player on use (ex. UVPJS_2.6.0)</td>
+                                                        <td>Yes</td>
+                                                        <td>Empty String</td>
+                                                        <td>[[*playerName]]</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ssl</td>
+                                                        <td>Property that indicates whether the heartbeat calls should be made over HTTPS</td>
+                                                        <td>Yes</td>
+                                                        <td>false</td>
+                                                        <td>"true" if SSL</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>debugLogging</td>
+                                                        <td>Gets the preference for debug log output</td>
+                                                        <td>Yes</td>
+                                                        <td>false</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>Implement the MediaHeartbeatDelegate interface<br />
+                                        <div class="accordion accordion1">
+                                            <h2>Reference Table - MediaHeartbeatDelegate</h2>
+                                            <div class="inner-container">
+                                                <table>
+                                                    <tr>
+                                                        <td><strong>Method Name</strong></td>
+                                                        <td><strong>Description</strong></td>
+                                                        <td><strong>Required</strong></td>
+                                                    <tr>
+                                                    <tr>
+                                                        <td>getQoSObject</td>
+                                                        <td>Returns the MediaObject instance that contains the current QoS information. This method will be called multiple times during a playback session. Player implementation must always return the most recently available QoS data.</td>
+                                                        <td>Yes</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>Create the MediaHeartbeat instance<br />
+                                        <ul>
+                                            <li>Use the MediaHertbeatConfig and MediaHertbeatDelegate to create the MediaHeartbeat instance</li>
+                                            <li><strong><em>Important:</em></strong> Make sure that your MediaHeartbeat instance is accessible and does not get deallocated until the end of the video session. This instance will be used for all the following video tracking events.</li>
+                                        </ul>
+                                        <div class="accordion accordion1">
+                                            <h2>Reference Table - MediaObject</h2>
+                                            <div class="inner-container">
+                                                <table>
+                                                    <tr>
+                                                        <td><strong>Variable Name</strong></td>
+                                                        <td><strong>Description</strong></td>
+                                                        <td><strong>Required</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>name</td>
+                                                        <td>Video Name</td>
+                                                        <td>Yes</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>mediaid</td>
+                                                        <td>Video UID</td>
+                                                        <td>Yes</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>length</td>
+                                                        <td>Video Length</td>
+                                                        <td>Yes</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>sreamType</td>
+                                                        <td>Stream Type (see Reference Table - StreamType)</td>
+                                                        <td>Yes</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <h2>Reference Table - StreamType</h2>
+                                            <div class="inner-container">
+                                                <table>
+                                                    <tr>
+                                                        <td><strong>Constant Name</strong></td>
+                                                        <td><strong>Description</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>MediaHeartbeat.StreamType.VOD</td>
+                                                        <td>Stream Type - Video on Demand (VOD)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>MediaHeartbeat.StreamType.LIVE</td>
+                                                        <td>Stream Type - Live</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>MediaHeartbeat.StreamType.LINEAR</td>
+                                                        <td>Stream Type - Linear</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>Track core playback<br />
+                                        <ol>
+                                            <li>Identify when the user triggers the intention of playback (user clicks play and/or autoplay is on) and create a MediaObject instance using the video information</li>
+                                            <li>If you need to attach custom video metadata (Adobe Analytics context data) to the video tracking session, create a HashMap with the key­value pairs</li>
+                                            <li>Call trackSessionStart in the MediaHeartbeat instance to begin tracking a video session<br /><br />
+                                                <p><strong><em>Note: </em></strong>trackSessionStart tracks the user intention of playback, not the beginning of the playback. This API is used to load the video data/metadata and to estimate the time to start QoS metric (time duration between trackSessionStart and trackPlay)</p>
+                                                <p><strong><em>Note: </em></strong>If you are not using custom video metadata, send a null value for the data argument in trackSessionStart</p>
+                                            </li>
+                                            <li>Identify the event from the video player for the beginning of the video playback (1st frame of the video is rendered on the screen) and call trackPlay</li>
+                                        </ol>
+                                    </li>
+                                    <li>Track Ads
+                                        <div class="accordion accordion1">
+                                            <h2>Reference Table - MediaHeartbeat.Event</h2>
+                                            <div class="inner-container">
+                                                <table>
+                                                    <tr>
+                                                        <td>Constant Name</td>
+                                                        <td>Description</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>MediaHeartbeat.Event.AdBreakStart</td>
+                                                        <td>AdBreak Start Event</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>MediaHeartbeat.Event.AdBreakComplete</td>
+                                                        <td>AdBreak Complete Event</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>MediaHeartbeat.Event.AdStart</td>
+                                                        <td>Ad Start Event</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>MediaHeartbeat.Event.AdComplete</td>
+                                                        <td>Ad Complete Event</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>MediaHeartbeat.Event.AdSkip</td>
+                                                        <td>Ad Skip Event</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <ol>
+                                            <li>Identify when AdBreak boundary starts, then create MediaObject instance using AdBreak information
+                                                <div class="accordion accordion1">
+                                                    <h2>Reference Table - MediaObject (AdBreak Object)</h2>
+                                                    <div class="inner-container">
+                                                        <table>
+                                                            <tr>
+                                                                <td>Variable Name</td>
+                                                                <td>Description</td>
+                                                                <td>Required</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>name</td>
+                                                                <td>AdBreak Name</td>
+                                                                <td>Yes</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>position</td>
+                                                                <td>AdBreak Position</td>
+                                                                <td>Yes</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>startTime</td>
+                                                                <td>AdBreak Start Time</td>
+                                                                <td>Yes</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>Using track API, track MediaHeartbeat.Event.AdBreakStart event</li>
+                                            <li>Identify when Ad boundary starts, then create a MediaObject instance using the ad information
+                                                <div class="accordion accordion1">
+                                                    <h2>Reference Table - MediaObject (Ad Object)</h2>
+                                                    <div class="inner-container">
+                                                        <table>
+                                                            <tr>
+                                                                <td>Variable Name</td>
+                                                                <td>Description</td>
+                                                                <td>Required</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>name</td>
+                                                                <td>Ad Name</td>
+                                                                <td>Yes</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>adId</td>
+                                                                <td>Ad ID</td>
+                                                                <td>Yes</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>position</td>
+                                                                <td>Ad Position</td>
+                                                                <td>Yes</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>length</td>
+                                                                <td>Ad Length</td>
+                                                                <td>Yes</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>Create Ad context HashMap if you intend to provide custom ad metadata while tracking an ad</li>
+                                            <li>Using track API, track MediaHeartbeat.Event.AdStart event</li>
+                                            <li>Identify when playback hits Ad end boundary and track the MediaHeartbeat.Event.AdComplete event</li>
+                                            <li>(Optional) Identify if Ad playback did not complete and was skipped using MediaHeartbeat.Event.AdSkip</li>
+                                            <li>If there are any additional ads in the same AdBreak, repeat steps 3 through 7</li>
+                                            <li>Identify whether the playback hits the AdBreak end boundary, and On AdBreak complete, track the event usingMediaHeartbeat.Event.AdBreakComplete</li>
+                                        </ol>
+                                    </li>
+
+
+                                </ol>
+                            </div>
+                            <div id="tab-appimplementation-1" class="tab">
+                                <div class="accordion accordion1">
+                                    <h2>Import the Library</h2>
+                                    <div class="inner-container">
+<pre class="line-numbers"><code class="language-java">import com.adobe.primetime.va.simple.MediaHeartbeat;
+import com.adobe.primetime.va.simple.MediaHeartbeat.MediaHeartbeatDelegate;
+import com.adobe.primetime.va.simple.MediaHeartbeatConfig;
+import com.adobe.primetime.va.simple.MediaObject;</code></pre>
+                                    </div>
+                                    <h2>Create the MediaHeartbeatConfig Instance</h2>
+                                    <div class="inner-container">
+<pre class="line-numbers"><code class="language-java">// Media Heartbeat Initialization
+config.trackingServer = [[*trackingServer]];
+config.channel = [[*channel]];
+config.appVersion = [[*appVersion]];
+config.ovp = [ovp];
+config.playerName = [[*playerName]];
+config.ssl = true/false;
+config.debugLogging = true/false;</code></pre>
+                                    </div>
+
+                                    <h2>Implement MediaHeartbeatDelegate</h2>
+                                    <div class="inner-container">
+                                        <pre class="line-numbers"><code class="language-java">public class VideoAnalyticsProvider implements Observer, MediaHeartbeatDelegate {
+}</code></pre>
+                                    </div>
+
+                                    <h2>MediaObject</h2>
+                                    <div class="inner-container"><pre class="line-numbers"><code class="language-java">// Replace &lt;bitrate>, &lt;startupTime>, &lt;fps> and &lt;droppeFrames> with the current playback QoS values.
+@Override
+public MediaObject getQoSObject() {
+  return MediaHeartbeat.createQoSObject(&lt;bitrate>, &lt;startupTime>, &lt;fps>, &lt;droppedFrames>
+ );
+}
+
+//Replace &lt;currentPlaybackTime> with the video player current playback time
+@Override
+public Double getCurrentPlaybackTime() {
+  return &lt;currentPlaybackTime>;
+}</code></pre>
+                                    </div>
+                                    <h2>Create the MediaHeartbeat instance</h2>
+                                    <div class="inner-container"><pre class="line-numbers"><code class="language-java">//Replace &lt;MediaHertbeatDelegate> with your delegate instance
+MediaHeartbeat _heartbeat = new MediaHeartbeat(&lt;MediaHeartbeatDelegate>, config);</code></pre>
+                                    </div>
+                                    <h2>Track Core Playback</h2>
+                                    <div class="inner-container">
+                                        <p>1. Identify when the user triggers the intention of playback (user clicks play and/or autoplay is on) and create a MediaObject instance using the video information</p>
+                                        <pre class="line-numbers"><code class="language-java">MediaObject mediaInfo = MediaHeartbeat.createMediaObject(
+    &lt;VIDEO_NAME>,
+    &lt;VIDEO_ID>,
+    &lt;VIDEO_LENGTH>,
+    MediaHeartbeat.StreamType.VOD
+);</code></pre>
+                                        <p>2. If you need to attach custom video metadata (Adobe Analytics context data) to the video tracking session, create a HashMap with the key­value pairs</p>
+                                        <pre class="line-numbers"><code class="language-java">HashMap&lt;String, String> videoMetadata = new HashMap&lt;String, String>();
+videoMetadata.put("isUserLoggedIn", "false");
+videoMetadata.put("tvStation", "Sample TV Station");
+videoMetadata.put("programmer", "Sample programmer");</code></pre>
+                                        <p>3. Call trackSessionStart in the MediaHeartbeat instance to begin tracking a video session</p>
+                                        <pre class="line-numbers"><code class="language-java">public void onVideoLoad(Observable observable, Object data) {
+    _heartbeat.trackSessionStart(mediaInfo, videoMetadata);
+}</code></pre>
+                                        <p>4. Identify the event from the video player for the beginning of the video playback (1st frame of the video is rendered on the screen) and call trackPlay</p>
+                                        <pre class="line-numbers"><code class="language-java">public void onVideoPlay(Observable observable, Object data) {
+   _heartbeat.trackPlay();
+}</code></pre>
+
+                                        <p>5. Identify the event from the video player for the completion of the video playback (watched the end of the content) and call trackComplete</p>
+                                        <pre class="line-numbers"><code class="language-java">public void onVideoComplete(Observable observable, Object data) {
+   _heartbeat.trackComplete();
+}</code></pre>
+
+                                        <p>6. Identify the event from the video player for the unloading/closing of the video playback (user closes the video and/or the video completed and unloaded) and call trackSessionEnd</p>
+                                        <pre class="line-numbers"><code class="language-java">public void onMainVideoUnload(Observable observable, Object data){
+   _heartbeat.trackSessionEnd();
+}</code></pre>
+
+                                        <p>7. Identify the event from the video player for video paused and call trackPause</p>
+                                        <pre class="line-numbers"><code class="language-java">public void onVideoPause(Observable observable, Object data) {
+   _heartbeat.trackPause();
+}</code></pre>
+
+                                        <p>8. Identify the event from the video player for video play and/or video resume from pause and call trackPlay</p>
+                                        <pre class="line-numbers"><code class="language-java">public void onVideoPlay(Observable observable, Object data) {
+   _heartbeat.trackPlay();
+}</code></pre>
+                                    </div>
+
+                                    <h2>Track Ads</h2>
+                                    <div class="inner-container">
+                                        <p>1. Identify when AdBreak boundary starts, then create MediaObject instance using AdBreak information</p>
+                                        <pre class="line-numbers"><code class="language-java">//Replace &lt;ADBREAK_NAME> with the AdBreak name.
+//Replace &lt;POSITION> with a valid position value.
+//Replace &lt;START_TIME> with the AdBreak start time.
+
+MediaObject adBreakInfo = MediaHeartbeat.createAdBreakObject(
+    &lt;ADBREAK_NAME>,
+    &lt;POSITION>,
+    &lt;START_TIME>);</code></pre>
+
+                                        <p>2. Using track API, track MediaHeartbeat.Event.AdBreakStart event</p>
+                                        <pre class="line-numbers"><code class="language-java">public void onAdBreakStart(Observable observable, Object data) {
+   _heartbeat.trackEvent(MediaHeartbeat.Event.AdBreakStart, adBreakInfo, null);
+}</code></pre>
+
+                                        <p>3. Identify when Ad boundary starts, then create a MediaObject instance using the ad information</p>
+                                        <pre class="line-numbers"><code class="language-java">//Replace &lt;AD_NAME> with the Ad name.
+//Replace &lt;AD_ID> with the unique Ad identifier.
+//Replace &lt;POSITION> with a valid ad position value.
+//Replace &lt;LENGTH> with the ad length.
+
+MediaObject adInfo = MediaHeartbeat.createAdObject(
+    &lt;AD_NAME>
+    &lt;AD_ID>,
+    &lt;POSITION>,
+    &lt;LENGTH>);</code></pre>
+
+                                        <p>4. Create Ad context HashMap if you intend to provide custom ad metadata while tracking an ad</p>
+                                        <pre class="line-numbers"><code class="language-java">// Setting Ad Metadata
+HashMap<String, String> adMetadata = new HashMap<String, String>();
+adMetadata.put("affiliate", "Sample affiliate");
+adMetadata.put("campaign", "Sample ad campaign");</code></pre>
+
+                                        <p>5. Using track API, track MediaHeartbeat.Event.AdStart event</p>
+                                        <pre class="line-numbers"><code class="language-java">public void onAdStart(Observable observable, Object data) {
+   _heartbeat.trackEvent(MediaHeartbeat.Event.AdStart, adInfo, adMetadata);
+}</code></pre>
+
+                                        <p>6. Identify when playback hits Ad end boundary and track the MediaHeartbeat.Event.AdComplete event</p>
+                                        <pre class="line-numbers"><code class="language-java">public void onAdComplete(Observable observable, Object data) {
+   _heartbeat.trackEvent(MediaHeartbeat.Event.AdComplete, null, null);
+}</code></pre>
+
+                                        <p>7. Optionally, identify if Ad playback did not complete and was skipped</p>
+                                        <pre class="line-numbers"><code class="language-java">public void onAdSkip(Observable observable, Object data) {
+   _heartbeat.trackEvent(MediaHeartbeat.Event.AdSkip, null, null);
+}</code></pre>
+
+                                        <p>9. Identify whether the playback hits the AdBreak end boundary, and On AdBreak complete, track the event using MediaHeartbeat.Event.AdBreakComplete</p>
+                                        <pre class="line-numbers"><code class="language-java">public void onAdBreakComplete(Observable observable, Object data) {
+   _heartbeat.trackEvent(MediaHeartbeat.Event.AdBreakComplete, null, null);
+}</code></pre>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab-appimplementation-2" class="tab">
+                                <div class="accordion accordion1">
+                                    <h2>Import the Library</h2>
+                                    <div class="inner-container">
+                                        <pre class="line-numbers"><code class="language-objectivec">#import "ADBMediaHeartbeat.h"
+#import "ADBMediaHeartbeatConfig.h"</code></pre>
+                                    </div>
+
+                                    <h2>Create the MediaHeartbeatConfig Instance</h2>
+                                    <div class="inner-container">
+                                        <pre class="line-numbers"><code class="language-objectivec">// Media Heartbeat Initialization
+ADBMediaHeartbeatConfig *config = &#91;&#91;ADBMediaHeartbeatConfig alloc] init];
+config.trackingServer = [[*trackingServer]];
+config.channel = [[*channel]];
+config.appVersion = [[*appVersion]];
+config.ovp = [ovp];
+config.playerName = [[*playerName]];
+config.ssl = YES/NO;
+config.debugLogging = YES/NO;</code></pre>
+                                    </div>
+
+                                    <h2>Implement MediaHeartbeatDelegate</h2>
+                                    <div class="inner-container">
+                                        <pre class="line-numbers"><code class="language-objectivec">@interface VideoAnalyticsProvider : NSObject &lt;ADBMediaHeartbeatDelegate>
+@end</code></pre>
+                                    </div>
+
+                                    <h2>MediaObject</h2>
+                                    <div class="inner-container">
+                                        <pre class="line-numbers"><code class="language-objectivec">@implementation VideoAnalyticsProvider
+// Replace &lt;bitrate>, &lt;startuptime>, &lt;fps> and &lt;droppeFrames> with the current playback QoS values.
+- (ADBMediaObject *)getQoSObject
+{
+    return [ADBMediaHeartbeat createQoSObjectWithBitrate:&lt;bitrate> startupTime:&lt;startuptime>  fps:&lt;fps> droppedFrames:&lt;droppedFrames>];
+}
+//Return the current video player playhead position.
+//Replace &lt;currentPlaybackTime> with the video player current playback time
+- (NSTimeInterval)getCurrentPlaybackTime
+{
+    return &lt;currentPlaybackTime>;
+}
+@end</code></pre>
+                                    </div>
+
+                                    <h2>Create the MediaHeartbeat instance</h2>
+                                    <div class="inner-container">
+                                        <pre class="line-numbers"><code class="language-objectivec">//Replace &lt;ADBMediaHertbeatDelegate> with your delegate instance
+_mediaHeartbeat = &#91;&#91;ADBMediaHeartbeat alloc] initWithDelegate:
+&lt;ADBMediaHertbeatDelegate> config:config];</code></pre>
+                                    </div>
+
+                                    <h2>Track Core Playback</h2>
+                                    <div class="inner-container">
+                                        <p>1. Identify when the user triggers the intention of playback (user clicks play and/or autoplay is on) and create a MediaObject instance using the video information</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">//Replace &lt;VIDEO_NAME> with the video name.
+//Replace &lt;VIDEO_ID> with a video unique identifier.
+//Replace &lt;VIDEO_LENGTH> with the video length.
+ADBMediaObject *mediaObject = [ADBMediaHeartbeat
+createMediaObjectWithName:&lt;VIDEO_NAME>
+                  mediaId:&lt;VIDEO_ID>
+                   length:&lt;VIDEO_LENGTH>
+               streamType:ADBMediaHeartbeatStreamTypeVOD];</code></pre>
+
+                                        <p>2. Call trackSessionStart in the MediaHeartbeat instance to begin tracking a video session</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">- void)onMainVideoLoaded:(NSNotification *)notification
+{
+ [_mediaHeartbeat trackSessionStart:mediaObject data:nil];
+}</code></pre>
+
+                                        <p>3. Identify the event from the video player for the beginning of the video playback (1st frame of the video is rendered on the screen) and call trackPlay</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">-(void)onVideoPlay:(NSNotification *)notification
+{
+ [_mediaHeartbeat trackPlay];
+}</code></pre>
+
+                                        <p>4. Identify the event from the video player for the completion of the video playback (watched the end of the content) and call trackComplete</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">-(void)onVideoComplete:(NSNotification *)notification
+{
+ [_mediaHeartbeat trackComplete];
+}</code></pre>
+
+                                        <p>5. Identify the event from the video player for the unloading/closing of the video playback (user closes the video and/or the video completed and unloaded) and call trackSessionEnd</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">- void)onMainVideoUnloaded:(NSNotification *)notification
+{
+ [_mediaHeartbeat trackSessionEnd];
+}</code></pre>
+
+                                        <p>6. Identify the event from the video player for video paused and call trackPause</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">-(void)onVideoPause:(NSNotification *)notification
+{
+[_mediaHeartbeat trackPause];
+}</code></pre>
+
+                                        <p>7. Identify the event from the video player for video play and/or video resume from pause and call trackPlay</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">-(void)onVideoPlay:(NSNotification *)notification
+{
+ [_mediaHeartbeat trackPlay];
+}</code></pre>
+                                    </div>
+
+                                    <h2>Track Ads</h2>
+                                    <div class="inner-container">
+                                        <p>1. Identify when AdBreak boundary starts, then create MediaObject instance using AdBreak information</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">//Replace &lt;ADBREAK_NAME> with the AdBreak name.
+//Replace &lt;POSITION> with a valid position value.
+//Replace &lt;START_TIME> with the AdBreak start time.
+
+id adBreakObject = [ADBMediaHeartbeat createAdBreakObjectWithName:[ADBREAK_NAME]
+                                                         position:[POSITION]
+                                                        startTime:[START_TIME]];</code></pre>
+
+                                        <p>2. Using track API, track MediaHeartbeat.Event.AdBreakStart event</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">- (void)onAdBreakStart:(NSNotification *)notification
+{
+ [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdBreakStart mediaObject:adBreakObject data:nil];
+}</code></pre>
+
+                                        <p>3. Identify when Ad boundary starts, then create a MediaObject instance using the ad information</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">//Replace &lt;AD_NAME> with the Ad name.
+//Replace &lt;AD_ID> with the unique Ad identifier.
+//Replace &lt;POSITION> with a valid ad position value.
+//Replace &lt;LENGTH> with the ad length.
+
+id adObject = [ADBMediaHeartbeat createAdObjectWithName:[AD_NAME]
+                                                   adId:[AD_ID]
+                                               position:[POSITION]
+                                                 length:[LENGTH]];</code></pre>
+
+                                        <p>4. Create Ad context adDictionary if you intend to provide custom ad metadata while tracking an ad</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">NSMutableDictionary *adDictionary = &#91;&#91;NSMutableDictionary alloc] init];
+[adDictionary setObject:@"Sample affiliate" forKey:@"affiliate"];
+[adDictionary setObject:@"Sample campaign" forKey:@"campaign"];
+[adDictionary setObject:@"Sample creative" forKey:@"creative"];</code></pre>
+
+                                        <p>5. Using track API, track MediaHeartbeat.Event.AdStart event</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">- (void)onAdStart:(NSNotification *)notification
+{
+ [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdStart mediaObject:adObject data:adDictionary];
+}</code></pre>
+
+                                        <p>6. Identify when playback hits Ad end boundary and track the MediaHeartbeat.Event.AdComplete event</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">- (void)onAdComplete:(NSNotification *)notification
+{
+ [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdComplete mediaObject:nil data:nil];
+}</code></pre>
+
+                                        <p>7. Optionally, identify if Ad playback did not complete and was skipped</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">- (void)onAdSkip:(NSNotification *)notification
+{
+ [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdSkip mediaObject:nil data:nil];
+}</code></pre>
+
+                                        <p>9. Identify whether the playback hits the AdBreak end boundary, and On AdBreak complete, track the event using MediaHeartbeat.Event.AdBreakComplete</p>
+                                        <pre class="line-numbers"><code class="language-objectivec">- (void)onAdBreakComplete:(NSNotification *)notification
+{
+ [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdBreakComplete mediaObject:nil data:nil];
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="tab-appimplementation-3" class="tab">Roku Content 1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <div class="aside">
+            <h3>Quick Reference</h3>
+            <ul>
+                <li>Adobe Basic Implementation:<br /><em><a href="/cbssports-now.html" target="_blank">MVT Spec</a></em></li>
+                [[*siteCode:!empty=`<li>Site Code:<br /><em>[[*siteCode]]</em></li>`]]
+                [[*siteType:!empty=`<li>Site Type:<br /><em>[[*siteType]]</em></li>`]]
+                [[*prodrsids:!empty=`<li>Prod RSIDs:<br /><em>[[*prodrsids]]</em></li>`]]
+                [[*devrsids:!empty=`<li>Dev RSIDs:<br /><em>[[*devrsids]]</em></li>`]]
+                [[*gen_ontologyID:!empty=`<li>Ontology Links:<br /><em><a href="https://docs.google.com/spreadsheets/d/[[*gen_ontologyID]]" target="_blank">Spreadsheet</a></em></li>`]]
+                <!-- [[*MainJiraTicket:!empty=`<li>JIRA Ticket(s):<br /><em>[[*MainJiraTicket]]</em></li>`]] -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        &copy; Copyright 2017
+    </div>
+</div>
+<div id="dataplaceholder" style="display:none";></div>
+</body>
+</html>
