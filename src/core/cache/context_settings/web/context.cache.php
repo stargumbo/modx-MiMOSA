@@ -7,6 +7,7 @@
     'index.html' => 2,
     'groups/' => 3,
     'docsclasslinkdisable/' => 13,
+    'test.html' => 93,
     'apis.html' => 9,
     'cdm/' => 20,
     'cmg/' => 21,
@@ -82,7 +83,8 @@
     'chowhound.com.html' => 84,
     '247sports-site.html' => 86,
     'cbs.com.html' => 89,
-    'cbsapp-all-access.html' => 91,
+    'cbsapp-all-access/' => 91,
+    'app-features.html' => 92,
   ),
   'resourceMap' => 
   array (
@@ -91,7 +93,8 @@
       0 => 2,
       1 => 3,
       2 => 13,
-      3 => 9,
+      3 => 93,
+      4 => 9,
     ),
     3 => 
     array (
@@ -315,6 +318,10 @@
     90 => 
     array (
       0 => 91,
+    ),
+    91 => 
+    array (
+      0 => 92,
     ),
   ),
   'webLinkMap' => 
