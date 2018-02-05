@@ -1,2 +1,2 @@
 <?php
-return 'modx-resource-publishedon';
+return 'modx-resource-menutitle';

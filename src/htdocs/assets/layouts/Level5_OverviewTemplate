@@ -11,8 +11,8 @@
             <p>This is the Adobe basic tracking spec for [[*longtitle:default=`[[*pagetitle]]`]] using the latest implementation for -</p>
             <ul>
                 [[*platform:contains=`Web`:then=`<li>Web</li>`]]
-                [[*platform:contains=`Android`:then=`<li>Android</li>`]]
-                [[*platform:contains=`iOS`:then=`<li>iOS</li>`]]
+                [[*platform:contains=`Android`:then=`<li>Android / FireTV</li>`]]
+                [[*platform:contains=`iOS`:then=`<li>iOS / AppleTV</li>`]]
             </ul>
             <!-- [[*MainJiraTicket:!empty=`<p>The JIRA ticket for this project is at <a href="[[*MainJiraTicket]]" target="_blank">[[*MainJiraTicket]]</a></p>`]] -->
 
@@ -24,8 +24,8 @@
                     <h3>App Implementation</h3>
                     <p>The SDK documentation below covers all aspects of App tracking using the Adobe Marketing Cloud solution.</p>
                     <ul>
-                        [[*platform:contains=`Android`:then=`<li><a href="//microsite.omniture.com/t2/help/en_US/mobile/android/" target="_blank">Android SDK </a></li>`]]
-                        [[*platform:contains=`iOS`:then=`<li><a href="https://microsite.omniture.com/t2/help/en_US/mobile/ios/" target="_blank">iOS SDK</a></li>`]]
+                        [[*platform:contains=`Android`:then=`<li><a href="//microsite.omniture.com/t2/help/en_US/mobile/android/" target="_blank">Android / FireTV SDK </a></li>`]]
+                        [[*platform:contains=`iOS`:then=`<li><a href="https://microsite.omniture.com/t2/help/en_US/mobile/ios/" target="_blank">iOS / AppleTV SDK</a></li>`]]
                     </ul>
                 </div>
                 <h2>The ADBMobileConfig.json Config File</h2>
@@ -52,7 +52,7 @@
                     <p>This installation applies to both the www and mweb site</p>
                     <h3>Page Code</h3>
                     <p>To install Tealium on a site, the following code is needed on all pages, and should be placed as close to the "&lt;body&gt;" tag as possible.  It is important to keep this script on the main page source vs. called from within nested scripts to avoid race condtions.</p>
-                    <pre id="ADBMobilejs" class="line-numbers"><code class="language-markup">[[$js_basicTealiumCode]]</code></pre>
+                    <pre id="ADBMobilejs" class="line-numbers"><code class="language-xml">[[$js_basicTealiumCode]]</code></pre>
                     <p>There are 3 tealium environments - dev, qa, prod<br /><br />It is recommended to set as follows:<br />dev/staging site - use ‘qa’<br />live site - use ‘prod’</p>
                 </div>
             </div>`]]
@@ -91,8 +91,8 @@
                     <div class="tabs">
                         <ul class="tab-links">
                             [[*platform:contains=`Web`:then=`<li><a href="#tab100">Web</a></li>`]]
-                            [[*platform:contains=`iOS`:then=`<li><a href="#tab101">iOS</a></li>`]]
-                            [[*platform:contains=`Android`:then=`<li><a href="#tab102">Android</a></li>`]]
+                            [[*platform:contains=`iOS`:then=`<li><a href="#tab101">iOS / AppleTV</a></li>`]]
+                            [[*platform:contains=`Android`:then=`<li><a href="#tab102">Android / FireTV</a></li>`]]
                         </ul>
                         <div class="tab-content">
                             [[*platform:contains=`Web`:then=`[[$base_codeFormat_web]]`]]
@@ -104,40 +104,12 @@
             </div>
 
             <!-- Ontology Integration -->
-            [[*gen_ontologyID:!empty=`<h3>Ontology Integration</h3>
-            <div id="ontologyplaceholder" class="accordion accordion3">
+            [[*gen_ontologyID:!empty=`<h3>Ontology Integration</h3><p class="ontologyupdatedate"><em>Last Updated - <span></span></em></p>
+            <div class="accordion accordion3">
                 <h2>trackState Tags</h2>
-                <div class="inner-container ontology-tags" id="ontology-methodmethod-trackState">
-                    <div class="tabs">
-                        <ul class="tab-links">
-                            <li class="trackstate1"><a href="#tab-ontologymethod-trackState-ontologycategory-basic">Standard</a></li>
-                            <li class="trackstate2"><a href="#tab-ontologymethod-trackState-ontologycategory-article">Articles</a></li>
-                            <li class="trackstate3"><a href="#tab-ontologymethod-trackState-ontologycategory-video">Video</a></li>
-                            <li class="trackstate4"><a href="#tab-ontologymethod-trackState-ontologycategory-webview">webView</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="trackstate1" id="tab-ontologymethod-trackState-ontologycategory-basic"></div>
-                            <div class="trackstate2" id="tab-ontologymethod-trackState-ontologycategory-article"></div>
-                            <div class="trackstate3" id="tab-ontologymethod-trackState-ontologycategory-video"></div>
-                            <div class="trackstate4" id="tab-ontologymethod-trackState-ontologycategory-webview"></div>
-                        </div>
-                    </div>
-                </div>
+                <div class="inner-container ontology-tags" data-row-placeholder="trackState"></div>
                 <h2>trackAction Tags</h2>
-                <div class="inner-container ontology-tags" id="ontology-methodmethod-trackAction">
-                    <div class="tabs">
-                        <ul class="tab-links">
-                            <li class="trackaction1"><a href="#tab-ontologymethod-trackAction-ontologycategory-basic">Standard</a></li>
-                            <li class="trackaction2"><a href="#tab-ontologymethod-trackAction-ontologycategory-article">Articles</a></li>
-                            <li class="trackaction3"><a href="#tab-ontologymethod-trackAction-ontologycategory-video">Video</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="trackaction1" id="tab-ontologymethod-trackAction-ontologycategory-basic"></div>
-                            <div class="trackaction2" id="tab-ontologymethod-trackAction-ontologycategory-article"></div>
-                            <div class="trackaction3" id="tab-ontologymethod-trackAction-ontologycategory-video"></div>
-                        </div>
-                    </div>
-                </div>
+                <div class="inner-container ontology-tags" data-row-placeholder="trackAction"></div>
             </div>`]]
             [[*content:!empty=`<div class="inner-container">[[*content]]</div>`]]
         </div>

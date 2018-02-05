@@ -76,12 +76,14 @@
     'w-metacritic/' => 79,
     'web-chowhound/' => 83,
     'cbssports.com-website.html' => 56,
+    'sec-play-of-the-year-voting.html' => 105,
     'techrepublic.com.html' => 58,
     'zdnet.com.html' => 60,
     'gamespot.com.html' => 62,
     'giantbomb.com/' => 64,
     'gamefaqs.com/' => 66,
     'cnet.com.html' => 68,
+    'prca.html' => 104,
     'last.fm.html' => 72,
     'metrolyrics.com.html' => 74,
     'tv.com.html' => 76,
@@ -280,6 +282,7 @@
     55 => 
     array (
       0 => 56,
+      1 => 105,
     ),
     57 => 
     array (
@@ -304,6 +307,10 @@
     67 => 
     array (
       0 => 68,
+    ),
+    69 => 
+    array (
+      0 => 104,
     ),
     71 => 
     array (

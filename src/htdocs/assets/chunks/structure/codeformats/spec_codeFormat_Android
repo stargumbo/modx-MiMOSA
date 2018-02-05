@@ -1,6 +1,6 @@
 
 <div id="tab-and-{{@index}}" class="tab">
-<pre class="line-numbers"><code class="language-java">cdata.put("siteCode", "[[*siteCode]]");
+<pre class="line-numbers"><code class="language-java">{{#if this.gsx$brandplatformid.$t}}cdata.put("brandPlatformId", "{{this.gsx$brandplatformid.$t}}");{{/if}}
 cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
 cdata.put("siteType", "[[*siteType]]");{{#if this.gsx$pagetype.$t}}
 cdata.put("pageType", "{{this.gsx$pagetype.$t}}";{{/if}}{{#if this.gsx$pagename.$t}}
@@ -8,13 +8,13 @@ cdata.put("pageName", "{{this.gsx$pagename.$t}}";{{/if}}{{#if this.gsx$screennam
 cdata.put("screenName", "{{this.gsx$screenname.$t}}";{{/if}}{{#if this.gsx$pageviewguid.$t}}
 cdata.put("pageViewGuid", "{{this.gsx$pageviewguid.$t}}";{{/if}}{{#if this.gsx$clicktext.$t}}
 cdata.put("clickText", "{{this.gsx$clicktext.$t}}";{{/if}}{{#if this.gsx$sitehier.$t}}
-cdata.put("siteHier", "{{this.gsx$sitehier.$t}}";{{/if}}{{#if this.gsx$siteedition.$t}}
-cdata.put("siteEdition", "{{this.gsx$siteedition.$t}}";{{/if}}{{#if this.gsx$project.$t}}
+cdata.put("siteHier", "{{this.gsx$sitehier.$t}}";{{/if}}{{#if this.gsx$sitesection.$t}}
+cdata.put("siteSection", "{{this.gsx$sitesection.$t}}";{{/if}}{{#if this.gsx$siteedition.$t}}
+cdata.put("siteEdition", "{{this.gsx$siteedition.$t}}";{{/if}}<!--{{#if this.gsx$project.$t}}
 cdata.put("project", "{{this.gsx$project.$t}}";{{/if}}{{#if this.gsx$channel.$t}}
 cdata.put("channel", "{{this.gsx$channel.$t}}";{{/if}}{{#if this.gsx$feature.$t}}
 cdata.put("feature", "{{this.gsx$feature.$t}}";{{/if}}{{#if this.gsx$subfeature.$t}}
-cdata.put("subfeature", "{{this.gsx$subfeature.$t}}";{{/if}}{{#if this.gsx$sitesection.$t}}
-cdata.put("siteSection", "{{this.gsx$sitesection.$t}}";{{/if}}{{#if this.gsx$servicelevel.$t}}
+cdata.put("subfeature", "{{this.gsx$subfeature.$t}}";{{/if}}-->{{#if this.gsx$servicelevel.$t}}
 cdata.put("servicelevel", "{{this.gsx$servicelevel.$t}}";{{/if}}{{#if this.gsx$productline.$t}}
 cdata.put("productline", "{{this.gsx$productline.$t}}";{{/if}}{{#if this.gsx$user.$t}}
 cdata.put("user", "{{this.gsx$user.$t}}";{{/if}}{{#if this.gsx$userstatus.$t}}
@@ -107,7 +107,8 @@ cdata.put("collectionId", "{{this.gsx$collectionid.$t}}";{{/if}}{{#if this.gsx$c
 cdata.put("collectionName", "{{this.gsx$collectionname.$t}}";{{/if}}{{#if this.gsx$socialsharetype.$t}}
 cdata.put("socialShareType", "{{this.gsx$socialsharetype.$t}}";{{/if}}{{#if this.gsx$traystatus.$t}}
 cdata.put("trayStatus", "{{this.gsx$traystatus.$t}}";{{/if}}{{#if this.gsx$playlisttitle.$t}}
-cdata.put("playListTitle", "{{this.gsx$playlisttitle.$t}}";{{/if}}{{#if this.gsx$bookmarktitle.$t}}
+cdata.put("playListTitle", "{{this.gsx$playlisttitle.$t}}";{{/if}}{{#if this.gsx$sitechannelidentifierenabled.$t}}
+cdata.put("siteChannelIdentifierEnabled", "{{this.gsx$sitechannelidentifierenabled.$t}}";{{/if}}{{#if this.gsx$bookmarktitle.$t}}
 cdata.put("bookMarkTitle", "{{this.gsx$bookmarktitle.$t}}";{{/if}}
 Analytics.{{this.gsx$trackingmethod.$t}}("{{trackingMethodPage this.gsx$trackingmethod.$t}}", cdata);</code></pre>
 </div>

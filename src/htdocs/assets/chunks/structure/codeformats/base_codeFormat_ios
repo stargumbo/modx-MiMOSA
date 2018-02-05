@@ -1,0 +1,10 @@
+<div id="tab101" class="tab"><h3 style="margin:0;">iOS Data Object</h3><pre class="language-objectivec line-numbers"><code class="language-objectivec">NSDictionary *cdata = @{
+    @"brandPlatformId": @"[[*brandPlatformId]]",
+    @"sitePrimaryRsid": @"[[*sitePrimaryRsid]]",
+    @"siteType": @"[[*siteType]]",[[If? &subject=`[[*mvt_override]]` &operator=`notempty` &then=`` &else=`
+    @"siteSection": @"project|channel|product/event|service level|feature|sub-feature",
+    @"siteHier": @"project|channel|product/event|service level|feature|sub-feature",
+    @"pageType": @"[pageType]",`]]
+    @"screenName": @"[screenName]"
+};
+[ADBMobile trackState:@"[screenName]", data:cdata];</code></pre></div>
