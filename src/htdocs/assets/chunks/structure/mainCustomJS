@@ -1,54 +1,23 @@
-<script id="app-code-template" type="text/x-handlebars-template">
-    {{#each entry as |row key|}}
-    <div class="accordion2 ontology-row ontologymethod-{{row.gsx$trackingmethod.$t}} ontologycategory-{{#if row.gsx$mediapartnerid.$t}}video{{else if row.gsx$articleid.$t}}article{{else if row.gsx$webviewurl.$t}}webview{{else}}basic{{/if}}">
-        <h2>{{@index}} - {{row.gsx$node.$t}}</h2>
-        <div class="inner-container2 container-{{@index}}">
-            <div class="tabs">
-                {{#if row.gsx$webviewurl.$t}}
-                <ul class="tab-links webview-links">
-                    <li><a href="#tab-web-{{@index}}">Webview</a></li>
-                </ul>
-                <div class="tab-content webview-content">
-                    <p>A webview node must suppress the actual content beacon, and pass the visitor ID as indicated in the SDK update provided, into the URL of the embedded page.</p>
-                    <p>Along with the visitor ID, we will need to append <em>[[*sitePrimaryRsid]]</em> to the apprsid parameter in the URL.</p>
-                    <p><strong>Webview Embed URL -</strong><br />{{contains row.gsx$webviewurl.$t}}adobe_mc=[APPENDED VISITOR ID]&amp;apprsid=[[*sitePrimaryRsid]]</p>
-                </div>
-                {{else}}
-                <ul class="tab-links main-links">
-                    <li><a href="#tab-web-{{@index}}">[[*platform:contains=`Web`:then=`Web`:else=`Basic`]]</a></li>
-                    [[*platform:contains=`iOS`:then=`<li><a href="#tab-ios-{{@index}}">iOS</a></li>`]]
-                    [[*platform:contains=`Android`:then=`<li><a href="#tab-and-{{@index}}">Android</a></li>`]]
-                </ul>
-                <div class="tab-content main-content">
-                    [[$spec_codeFormat_web]]
-                    [[*platform:contains=`iOS`:then=`[[$spec_codeFormat_iOS]]`]]
-                    [[*platform:contains=`Android`:then=`[[$spec_codeFormat_android]]`]]
-                </div>
-                {{#if row.gsx$comments.$t}}<h3><strong>Comments:</strong></h3><p>{{row.gsx$comments.$t}}</p>{{/if}}
-                {{/if}}
-            </div>
-        </div>
-    </div>
-    {{/each}}
-</script>
-
 <script type="text/javascript">
+(function specData(){
+
+    // Ontology ID provided by MODx backend
+    const genOntologyId = '[[*gen_ontologyID]]';
+
     // JSON feed
-    var url = "https://spreadsheets.google.com/feeds/list/[[*gen_ontologyID]]/od6/public/values?alt=json";
+    const url = 'https://spreadsheets.google.com/feeds/list/' + genOntologyId + '/od6/public/values?alt=json';
 
-    // Accordion Content
-    var icons = {
-        header: "ui-icon-circle-arrow-e",
-        activeHeader: "ui-icon-circle-arrow-s"
-    };
+    // Accordions
+    const accordion_preajax = ['.accordion1', '.accordion3', '.accordion4', '.accordion5', '.accordion6'];
+    const accordion_postajax = ['.accordion2'];
 
-    /* Classes Function */
-    ;!function(e){e.fn.classes=function(t){var n=[];e.each(this,function(e,t){var r=t.className.split(/\s+/);for(var i in r){var s=r[i];if(-1===n.indexOf(s)){n.push(s)}}});if("function"===typeof t){for(var r in n){t(n[r])}}return n}}(jQuery);
+    // Empty Containers
+    const trimparams = [];
 
-    /* Build Tabs */
-    firetabs = function(){
+    // Build Tabs
+    const firetabs = function(){
         jQuery('.tabs .tab-links a, .tabs .tab-links-top a').on('click', function(e){
-            var currentAttrValue = jQuery(this).attr('href');
+            const currentAttrValue = jQuery(this).attr('href');
             jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
             jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
             e.preventDefault();
@@ -56,99 +25,28 @@
         jQuery('.tab-links li:first-child, .tab-content div:first-child, .tab-links-top li:first-child, .tab-content-top div:first-child').addClass('active');
     };
 
-    /* Build Accordions */
-    var accordion_preajax = [".accordion1", ".accordion3", ".accordion4", ".accordion5", ".accordion6"];
-    var accordion_postajax = [".accordion2"];
-    fireaccordion = function(params){
+    // Build Accordion
+    const fireaccordion = function(params){
         for (i=0; i<params.length; i++) {
             jQuery(params[i]).accordion({
                 active: false,
                 collapsible: true,
-                //header: "h2",
-                heightStyle: "content"
+                heightStyle: 'content'
             });
         }
     };
 
-    /* Remove Empty Containers */
-    var trimparams = [".accordion3 div",".trackaction2", ".trackaction3", ".trackstate2", ".trackstate3", ".trackstate4", "#ontology-methodmethod-trackAction", "#ontology-methodmethod-trackState"];
-    trimempty = function(params){
+    function trimempty(params){
         for (i=0; i<params.length; i++) {
             if(!jQuery.trim(jQuery('div'+params[i]).html()).length){
                 jQuery(params[i]).remove();
             }
         }
-    };
-
-    /* Style Ontology */
-    firehandlebars = function(data, template, destination){
-        Handlebars.registerHelper('trackingMethodPage', function(trackingmethod){
-            if(trackingmethod === 'trackState'){
-                if (this.gsx$pagename){
-                    return this.gsx$pagename.$t;
-                } else if (this.gsx$screenname) {
-                    return this.gsx$screenname.$t;
-                }
-            } else {
-                return this.gsx$trackingmethodaction.$t;
-            }
-        });
-        Handlebars.registerHelper("contains", function(urlparams){
-            if(~urlparams.indexOf('?')){
-                return this.gsx$webviewurl.$t + '&';
-            } else {
-                return this.gsx$webviewurl.$t + '?';
-            }
-        });
-        Handlebars.registerHelper("highlightDynamic", function(column){
-            if(/(\[.*?\])/gi.test(column)) {
-                return '<mark>' + column + '</mark>';
-            } else {
-                return column;
-            }
-        });
-        var theTemplateScript = jQuery(template).html();
-        var theTemplate = Handlebars.compile(theTemplateScript);
-        var theCompiledHtml = theTemplate(data);
-        jQuery(destination).html(theCompiledHtml);
-    };
-
-    /* Allocate Ontology Resources */
-    classifyontology = function(element){
-        var methodArray = [];
-        var categoryArray = ['basic'];
-
-        jQuery(element).each(function(){
-            jQuery(this).classes(function(c){
-                if (c.match("^ontologymethod")){
-                    methodArray.push(c.substr(c.indexOf("-") + 1));
-                } else if (c.match("^ontologycategory")){
-                    categoryArray.push(c.substr(c.indexOf("-") + 1));
-                }
-            });
-        });
-
-        var uniqueMethods = methodArray.filter(function(item, i, ar){ return ar.indexOf(item) === i; });
-        var uniqueCategories = categoryArray.filter(function(item, i, ar){ return ar.indexOf(item) === i; });
-        for(var i = 0; i < uniqueMethods.length; i++) {
-            //jQuery('#ontologyplaceholder').append('<h2>'+ uniqueMethods[i] +' Tags</h2><div id="tabs-ontologymethod-'+ uniqueMethods[i] +'" class="inner-container ontology-tags"><div class="tabs"><ul class="tab-links-top"></ul><div class="tab-content-top"></div></div></div>');
-            for(var j = 0; j < uniqueCategories.length; j++) {
-                var currentMethod = 'ontologymethod-' + uniqueMethods[i];
-                var currentCategory = 'ontologycategory-' + uniqueCategories[j];
-                //jQuery('#tabs-'+currentMethod+' .tab-links-top').append('<li class="' + uniqueMethods[i] + j + '"><a href="#tab-' + currentMethod + '-' + currentCategory + '">' + uniqueCategories[j] + '</a></li>');
-                //jQuery('#tabs-'+currentMethod+' .tab-content-top').append('<div class="' + uniqueMethods[i] + j +'" id="tab-' + currentMethod + '-' + currentCategory + '"></div>');
-
-                jQuery('.' + currentMethod + '.' + currentCategory)
-                    .detach()
-                    .appendTo('#tab-' + currentMethod + '-' + currentCategory);
-                //console.log("jQuery(." + currentMethod + "." + currentCategory + ").detach().appendTo(#tab-"+ currentMethod + "-" + currentCategory + ");");
-            }
-        }
-    };
+    }
 
     // Fire for loop async
     function asyncForEach(array, done, iterator) {
-        var i = 0;
+        let i = 0;
         next();
         function next(err) {
             if (err) {
@@ -156,7 +54,7 @@
             } else if (i >= array.length) {
                 done();
             } else if (i < array.length) {
-                var item = array[i++];
+                let item = array[i++];
                 setTimeout(function() {
                     iterator(item, i - 1, next);
                 }, 0);
@@ -165,12 +63,12 @@
     }
 
     // Dynamically build Tabs based on array
-    buildTabLayout = function(tabArray, destination, parentIndex){
+    function buildTabLayout(tabArray, destination, parentIndex){
 
         // Build tabs structure
-        var rowTypeTabs_container = jQuery('<div/>').addClass('tabs');
-        var rowTypeTabs_ul = jQuery('<ul/>').addClass('tab-links');
-        var rowTypeTabs_contentContainer = jQuery('<div/>').addClass('tab-content');
+        const rowTypeTabs_container = jQuery('<div/>').addClass('tabs');
+        const rowTypeTabs_ul = jQuery('<ul/>').addClass('tab-links');
+        const rowTypeTabs_contentContainer = jQuery('<div/>').addClass('tab-content');
 
         // Append Tabs to destination
         rowTypeTabs_container.appendTo(destination);
@@ -179,20 +77,20 @@
 
         // Build tabs per embedTarget
         jQuery.each(tabArray, function(r,v){
-            var randomNum = Math.floor(Math.random() * 1000000);
-            var rowTypeTabs_li = jQuery('<li/>', {
+            const randomNum = Math.floor(Math.random() * 1000000);
+            const rowTypeTabs_li = jQuery('<li/>', {
                 'class' : 'tabtrim-' + randomNum
             });
-            var rowTypeTabs_a = jQuery('<a/>',{
+            const rowTypeTabs_a = jQuery('<a/>',{
                 'href' : '#tab-' + v + '-' + randomNum,
                 'text' : v
             });
-            var rowTypeTabs_content = jQuery('<div/>', {
+            const rowTypeTabs_content = jQuery('<div/>', {
                 'class' : 'tab tab-'+ v + ' tabtrim-' + randomNum,
                 'id' : 'tab-' + v + '-' + randomNum,
                 'data-ontology-type' : v
             });
-            var rowDataContainer = jQuery('<pre/>', {
+            const rowDataContainer = jQuery('<pre/>', {
                 'class' : 'line-numbers',
                 'data-code-render' : v + '-' + parentIndex
             });
@@ -205,61 +103,74 @@
             }
             trimparams.push('.tabtrim-' + randomNum);
         });
-    };
+    }
 
-    var dynamicColumns = [];
-
-    fireOntologyBuild = function(){
+    // Build ontology section
+    function fireOntologyBuild(){
         jQuery.getJSON(url, function(data) {
 
             // Main spreadsheet row object (entry)
-            var mainObject = data.feed.entry;
+            const mainObject = data.feed.entry;
+
+            // Build Timestamp
+            const date = new Date(data.feed.updated['$t']);
+            const updatedate = ((date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear());
 
             // Content arrays
-            var codePlatform = ['Web','Android','iOS'];
-            var rowPageType = ['Basic', 'Article', 'Video', 'webView'];
-            var trackingMethods = ['trackState', 'trackAction'];
+            const codePlatform = ['Web','Android','iOS'];
+            const rowPageType = ['Basic', 'Article', 'Video', 'webView'];
+            const trackingMethods = ['trackState', 'trackAction'];
+
+            // Columns disabled in code views
+            const disablecells = ['project','channel','feature','subfeature','servicelevel','productline','comments',
+                'trackingmethod',
+                'rokufiretv','tvos','appletvlegacy','web','iosandroid','xboxwin10',
+                'comments','comscoreqa','omnitureqa'
+            ];
+
+            // QA columns
+            const qaColumns = ['comscoreqa','omnitureqa'];
 
             // Build page type tabs
             jQuery.each(trackingMethods, function(v,r){
                 buildTabLayout(rowPageType, jQuery('[data-row-placeholder=' + r + ']'));
             });
 
-            var date = new Date(data.feed.updated['$t']);
-
-            var updatedate = ((date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear());
-            jQuery('.ontologyupdatedate span').append(updatedate);
-
-            // Columns disabled in code views
-            var disablecells = ['project', 'channel', 'feature', 'subfeature', 'servicelevel', 'productline', 'comments',
-                'trackingmethod',
-                'rokufiretv', 'tvos', 'appletvlegacy', 'web', 'iosandroid', 'xboxwin10'
-            ];
-
             // Cycle through spreadsheet rows
             for (i=0; i<mainObject.length; i++) {
 
                 // Define accordion header (node value)
-                var rowNode = (i + 1) + ' - ' + mainObject[i].title['$t'];
+                const rowNode = (i + 1) + ' - ' + mainObject[i].title['$t'];
 
                 // Build array of column names : cell values
-                var cellStringArray = mainObject[i].content['$t'].split(',');
-
-                // Define trackState / trackAction payload string vars per platform
-                var payloadAction_android = '';
-                var payloadAction_ios = '';
-                var payloadAction_web = '';
+                const cellStringArray = mainObject[i].content['$t'].split(',');
 
                 // Extract entry level params
-                var rowType_trackmethod = mainObject[i].gsx$trackingmethod['$t'];
-                var rowType_trackmethodaction = mainObject[i].gsx$trackingmethodaction['$t'];
-                var rowType_pagename = mainObject[i].gsx$pagename['$t'];
-                var rowType_mediapartnerid = mainObject[i].gsx$mediapartnerid['$t'];
-                var rowType_articleid = mainObject[i].gsx$articleid['$t'];
-                var rowType_webviewurl = mainObject[i].gsx$webviewurl['$t'];
+                const rowType_trackmethod = mainObject[i].gsx$trackingmethod['$t'];
+                const rowType_trackmethodaction = mainObject[i].gsx$trackingmethodaction['$t'];
+                const rowType_pagename = mainObject[i].gsx$pagename['$t'];
+                const rowType_mediapartnerid = mainObject[i].gsx$mediapartnerid['$t'];
+                const rowType_articleid = mainObject[i].gsx$articleid['$t'];
+                const rowType_webviewurl = mainObject[i].gsx$webviewurl['$t'];
+
+                // Define trackState / trackAction payload string vars per platform
+                let payloadAction_android = '';
+                let payloadAction_ios = '';
+                let payloadAction_web = '';
+
+                // Define QA Statuses
+                let qaAllPass = '';
+                let qaComments = '';
+                let qaStatusRow = '';
+                let qaStatusOm = '';
+                let qaStatusCs = '';
+                let qaPassFail = '';
+
+                // Define code type containers
+                let divWebviewParams = '';
 
                 // Set row's pageType
-                var rowType_pageType = 'Basic';
+                let rowType_pageType = 'Basic';
                 if (rowType_webviewurl !== ''){
                     rowType_pageType = 'webView';
                 } else if (rowType_articleid !== ''){
@@ -268,124 +179,208 @@
                     rowType_pageType = 'Video';
                 }
 
-                var rowContainer = jQuery('<div/>', {
+                // Build row container
+                const rowContainer = jQuery('<div/>', {
                     'class' : 'accordion2 codeAccordion',
                     'data-ontology-method' : rowType_trackmethod,
                     'data-ontology-type' : rowType_pageType,
                     'data-ontology-level' : 'row'
                 });
 
-                var rowNodeName = jQuery('<strong/>').text(rowNode);
-                var rowInnerContainer = jQuery('<div/>').addClass('container-'+i);
+                // Build row node text for ontology row container
+                const rowNodeName = jQuery('<strong/>').text(rowNode);
 
-                rowContainer.appendTo('[data-row-placeholder=' + rowType_trackmethod +']' + ' .tab-' + rowType_pageType);
-                rowNodeName.appendTo(rowContainer);
-                rowInnerContainer.appendTo(rowContainer);
+                // Build row data container
+                const rowInnerContainer = jQuery('<div/>').addClass('container-'+i);
 
-                // Build code tabs
-                if (rowType_pageType !== 'webView') {
-                    buildTabLayout(codePlatform, rowInnerContainer, i);
+                // Build Comments section placeholder
+                const rowCommentsSection = jQuery('<div/>',{
+                    'class' : 'container-' + i + '-commentsSection commentsSectionStyle',
+                    'html' : '<h3>COMMENTS:</h3>'
+                });
 
-                    // Prism Class - Android
-                    var divCode_android = jQuery('<code/>')
-                        .addClass('language-java');
+                // Build code type containers
+                const divCode_android = jQuery('<code/>').addClass('language-java');
+                const divCode_ios = jQuery('<code/>').addClass('language-objectivec');
+                const divCode_web = jQuery('<code/>').addClass('language-json');
+                const divCode_webView = jQuery('<div/>').addClass('webview' + i);
 
-                    // Prism Class - iOS
-                    var divCode_ios = jQuery('<code/>')
-                        .addClass('language-objectivec')
-                        .append('NSDictionary *cdata = @{\n');
-
-                    // Prism Class - Web
-                    var divCode_web = jQuery('<code/>')
-                        .addClass('language-json')
-                        .append('utag_data = {\n');
-
-                    divCode_android.appendTo('[data-code-render=Android-' + i +']');
-                    divCode_ios.appendTo('[data-code-render=iOS-' + i +']');
-                    divCode_web.appendTo('[data-code-render=Web-' + i +']');
-                } else {
-                    var webviewParams = '';
-                    if(rowType_webviewurl.includes('?')){
-                        webviewParams = rowType_webviewurl + '&';
-                    } else {
-                        webviewParams = rowType_webviewurl + '?';
-                    }
-                    var divCode_webView = jQuery('<div/>',{
-                        'class' : 'webview' + i,
-                        'html' : 'A webview node must suppress the actual content beacon, and pass the visitor ID (as indicated in the SDK update provided) into the URL of the embedded page. <br /> <br /><strong>Webview Embed URL -</strong><br />' + webviewParams + 'adobe_mc=[APPENDED VISITOR ID]'
+                // Build QA status checkboxes
+                (function qaStatusBuild() {
+                    qaStatusRow = jQuery('<span/>', {
+                        'class': 'container-' + i + '-qaStatus',
+                        'style': 'float:right; font-style:italic;'
                     });
-                    divCode_webView.appendTo(rowInnerContainer);
-                }
 
-                // Cycle through row columns and populate code tabs
-                if (rowType_pageType !== 'webView') {
-                    for (z=0; z<cellStringArray.length; z++) {
-                        var cellStringData = cellStringArray[z].split(':');
+                    qaStatusOm = jQuery('<span/>', {
+                        'text': 'Omniture: ',
+                        'class': 'qaStatusOmniture'
+                    }).appendTo(qaStatusRow);
 
-                        var cellName = (cellStringData[0] !== undefined ? cellStringData[0].trim() : cellStringData[0]);
-                        var cellValue = (cellStringData[1] !== undefined ? cellStringData[1].trim() : cellStringData[1]);
+                    qaStatusCs = jQuery('<span/>', {
+                        'text': 'Comscore: ',
+                        'class': 'qaStatusComscore'
+                    }).appendTo(qaStatusRow);
 
-                        if (/(\[.*?\])/gi.test(cellValue)) {
-                            if(dynamicColumns.indexOf(cellName) === -1) {
-                                dynamicColumns.push(cellName);
-                            }
-                            cellValue = cellValue.replace(/(\[.*?\])/gi, function replacer(match) {
-                                return '<mark>' + match + '</mark>';
-                            });
+                    qaPassFail = jQuery('<span/>').addClass('qaStatusBox');
+
+                    jQuery(qaPassFail).clone().appendTo(qaStatusCs).addClass('comscoreqaPassFail' + i);
+                    jQuery(qaPassFail).clone().appendTo(qaStatusOm).addClass('omnitureqaPassFail' + i);
+                })();
+
+
+                // Build tab and accordion structure
+                (function baseSturctureBuild(){
+
+                    // Attach row container to tracking method container
+                    rowContainer.appendTo('[data-row-placeholder=' + rowType_trackmethod +']' + ' .tab-' + rowType_pageType);
+
+                    // Attach row node text to row container
+                    rowNodeName.appendTo(rowContainer);
+
+                    // Attach row data container to row conatiner
+                    rowInnerContainer.appendTo(rowContainer);
+
+                    if (rowType_pageType !== 'webView') {
+
+                        // Build code tabs
+                        buildTabLayout(codePlatform, rowInnerContainer, i);
+
+                        // Build first rows of code
+                        divCode_ios.append('NSDictionary *cdata = @{\n');
+                        divCode_web.append('utag_data = {\n');
+
+                        // Attach code types to code containers (built in buildTabLayout)
+                        divCode_android.appendTo('[data-code-render=Android-' + i + ']');
+                        divCode_ios.appendTo('[data-code-render=iOS-' + i + ']');
+                        divCode_web.appendTo('[data-code-render=Web-' + i + ']');
+                    } else {
+
+                        // Format webview url to account for existent query params
+                        if (rowType_webviewurl.includes('?')) {
+                            divWebviewParams = rowType_webviewurl + '&';
+                        } else {
+                            divWebviewParams = rowType_webviewurl + '?';
                         }
 
-                        var payloadData_android = 'cdata.put("' + cellName + '", "' + cellValue + '");\n';
-                        var payloadData_ios = '\t@"' + cellName + '" : @"' + cellValue + '",\n';
-                        var payloadData_web = '\t"' + cellName + '" : "' + cellValue + '",\n';
+                        // Add webView data
+                        divCode_webView.append('A webview node must suppress the actual content beacon, and pass the visitor ID (as indicated in the SDK update provided) into the URL of the embedded page. <br /><br /><strong>Webview Embed URL -</strong><br />' + divWebviewParams + 'adobe_mc=[APPENDED VISITOR ID]');
 
+                        // Attach webview data
+                        divCode_webView.appendTo(rowInnerContainer);
+                    }
+                })();
+
+                // Cycle through columns and populate code types
+                for (z = 0; z < cellStringArray.length; z++) {
+
+                    // Format cell data based on object key/value pairs defined in mainObject
+                    const cellStringData = cellStringArray[z].split(/:(.+)/);
+                    const cellName = (cellStringData[0] !== undefined ? cellStringData[0].trim() : cellStringData[0]);
+                    let cellValue = (cellStringData[1] !== undefined ? cellStringData[1].trim() : cellStringData[1]);
+
+                    const payloadActionType = (rowType_trackmethod === 'trackState' ? rowType_pagename : rowType_trackmethodaction);
+
+                    let payloadData_android = '';
+                    let payloadData_ios = '';
+                    let payloadData_web = '';
+
+                    // Define final character for code row
+                    let rowSeparator = '';
+
+                    // Highlight dynamic column values
+                    if (/(\[.*?])/gi.test(cellValue)) {
+                        cellValue = cellValue.replace(/(\[.*?])/gi, function replacer(match) {
+                            return '<mark>' + match + '</mark>';
+                        });
+                    }
+
+                    if (z < cellStringArray.length - 1) {
+                        rowSeparator = ',';
+                    }
+
+                    if (rowType_pageType !== 'webView') {
+                        // Build code formatted columns
+                        payloadData_android = 'cdata.put("' + cellName + '", "' + cellValue + '");\n';
+                        payloadData_ios = '\t@"' + cellName + '" : @"' + cellValue + '"' + rowSeparator + '\n';
+                        payloadData_web = '\t"' + cellName + '" : "' + cellValue + '"' + rowSeparator + '\n';
+
+                        // Build last row of code types
+                        payloadAction_android = 'Analytics.' + rowType_trackmethod + '("' + payloadActionType + '", cdata);';
+                        payloadAction_ios = '};\n[ADBMobile ' + rowType_trackmethod + ':@"' + payloadActionType + '", data:cdata];';
+                        payloadAction_web = '}';
+
+                        // Check for disabled cells in disablecells array
                         if (disablecells.indexOf(cellName) === -1) {
+
+                            // Attach data row to code type container
                             jQuery(divCode_android).append(payloadData_android);
                             jQuery(divCode_ios).append(payloadData_ios);
                             jQuery(divCode_web).append(payloadData_web);
                         }
-
-                        var payloadActionType = (rowType_trackmethod === 'trackState' ? rowType_pagename : rowType_trackmethodaction);
-
-                        payloadAction_android = 'Analytics.' + rowType_trackmethod + '("' + payloadActionType + '", cdata);';
-                        payloadAction_ios = '};\n[ADBMobile ' + rowType_trackmethod + ':@"' + payloadActionType + '", data:cdata];';
-                        payloadAction_web = '}';
                     }
+
+                    jQuery(rowNodeName).append(qaStatusRow);
+
+                    if (qaColumns.includes(cellName)){
+                        if (cellValue.toLowerCase().indexOf('fail') > -1) {
+                            jQuery('.' + cellName + 'PassFail' + i).addClass('qaBoxFail');
+                            qaAllPass = '1';
+                        } else if (cellValue.toLowerCase().indexOf('pass') > -1) {
+                            jQuery('.' + cellName + 'PassFail' + i).addClass('qaBoxPass');
+                            qaAllPass = '1';
+                        }
+                    }
+
+                    if (cellName === 'comments') {
+                        jQuery(rowInnerContainer).append(rowCommentsSection);
+                        jQuery(rowCommentsSection).append(cellValue);
+                        qaComments = '1';
+                    }
+                }
+
+                if (qaComments === '1' && qaAllPass !== '1' && qaAllPass !== '2'){
+                    jQuery(qaStatusCs).hide();
+                    jQuery(qaStatusOm).hide();
+                    jQuery(qaStatusRow).append('See Comments');
+                }
+
+                // Append payload action to code types if not webView
+                if (rowType_pageType !== 'webView') {
+
+                    // Attach last row of code types
                     jQuery(divCode_android).append(payloadAction_android);
                     jQuery(divCode_ios).append(payloadAction_ios);
                     jQuery(divCode_web).append(payloadAction_web);
                 }
             }
+
+            // Append Timestamp
+            jQuery('.ontologyupdatedate span').append(updatedate);
         });
-    };
+    }
 
     /* jQuery onload */
     jQuery(function(){
+
         // Kill empty menu clicks
         jQuery('.linkdisable').click(function(e){
             e.preventDefault();
             return false;
         });
 
-        //jQuery.getJSON(url, function(data){
-        //    feed = data.feed;
-        //});
-
-        fireOntologyBuild();
         fireaccordion(accordion_preajax);
         firetabs();
-
+        fireOntologyBuild();
         jQuery(document).ajaxStop(function(){
-            //console.log('ajaxStop');
-            //firehandlebars(feed, '#app-code-template', '#dataplaceholder');
-            //classifyontology('.ontology-row');
             fireaccordion(accordion_postajax);
-            firetabs();
             trimempty(trimparams);
-            //Prism.highlightAll();
+            firetabs();
             $('pre code').each(function(i, block) {
                 hljs.highlightBlock(block);
             });
         });
     });
+})();
 </script>
 

@@ -40,7 +40,7 @@
             </div>`]]
 
             [[*platform:contains=`Web`:then=`<h3>Web Tracking Implementation</h3>
-            <div class="accordion accordion4">
+            <div class="accordion accordion1">
                 <!-- Web Tracking -->
                 <h2>Web Tracking Documentation</h2>
                 <div class="inner-container">
@@ -58,7 +58,7 @@
             </div>`]]
 
             <h3>Implementation Basics</h3>
-            <div class="accordion accordion5">
+            <div class="accordion accordion1">
                 [[*mvt_override:contains=`MVT`:then=``:else=`
                 <!-- Insert web_analyticsMethods -->
                 <h2>Page/Screen Tracking</h2>
@@ -105,7 +105,7 @@
 
             <!-- Ontology Integration -->
             [[*gen_ontologyID:!empty=`<h3>Ontology Integration</h3><p class="ontologyupdatedate"><em>Last Updated - <span></span></em></p>
-            <div class="accordion accordion3">
+            <div class="accordion accordion1">
                 <h2>trackState Tags</h2>
                 <div class="inner-container ontology-tags" data-row-placeholder="trackState"></div>
                 <h2>trackAction Tags</h2>

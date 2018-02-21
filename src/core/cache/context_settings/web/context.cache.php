@@ -40,6 +40,7 @@
     'web-cs/' => 69,
     'apps/' => 88,
     '247sportsweb/' => 85,
+    '247sportsapp/' => 108,
     'apps-news/' => 94,
     'apps-cbsnews/' => 95,
     'web-cbs/' => 90,
@@ -77,6 +78,7 @@
     'web-chowhound/' => 83,
     'cbssports.com-website.html' => 56,
     'sec-play-of-the-year-voting.html' => 105,
+    'pickem-challenge.html' => 106,
     'techrepublic.com.html' => 58,
     'zdnet.com.html' => 60,
     'gamespot.com.html' => 62,
@@ -97,6 +99,7 @@
     'app-cbsnews.html' => 96,
     'opm-opc-desktop.html' => 100,
     'heartbeat-implementation.html' => 101,
+    '247sports.html' => 109,
   ),
   'resourceMap' => 
   array (
@@ -180,6 +183,7 @@
     30 => 
     array (
       0 => 85,
+      1 => 108,
     ),
     31 => 
     array (
@@ -283,6 +287,7 @@
     array (
       0 => 56,
       1 => 105,
+      2 => 106,
     ),
     57 => 
     array (
@@ -363,6 +368,10 @@
     103 => 
     array (
       0 => 101,
+    ),
+    108 => 
+    array (
+      0 => 109,
     ),
   ),
   'webLinkMap' => 

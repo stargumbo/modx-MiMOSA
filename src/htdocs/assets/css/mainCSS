@@ -119,3 +119,20 @@ nav ul ul ul { position:absolute; left:100%; top:0; }
 mark { background-color: #fcff4f; }
 pre { margin:0; }
 .hljs {  font-size:12px ; border:1px solid #e0e0e0; }
+
+/*----- General Content Styling -----*/
+.commentsSectionStyle {padding:15px; border:1px solid #efefef; border-radius:0 0 5px 5px; background:#fafafa; margin:0px 5px 10px 5px;}
+.qaFail {background:#ffd7d7 !important; border-color:#c5c5c5 !important; color:#454545 !important;}
+.qaPass {background:#cdeac8 !important; border-color:#c5c5c5 !important; color:#454545 !important;}
+.qaStatusBox { display:block; width:11px; height:11px; border:1px solid #666; float:right; margin-left:5px; }
+.qaBoxPass { background:#cdeac8 !important; }
+.qaBoxFail { background:#ffd7d7 !important; }
+
+.qaStatusOmniture, .qaStatusComscore { display:block; float:right; padding-left:5px; }
+
+
+
+
+
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active { font-size: 11px; }
