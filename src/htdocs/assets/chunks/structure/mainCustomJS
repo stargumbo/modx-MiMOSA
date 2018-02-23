@@ -5,7 +5,10 @@
     const genOntologyId = '[[*gen_ontologyID]]';
 
     // JSON feed
-    const url = 'https://spreadsheets.google.com/feeds/list/' + genOntologyId + '/od6/public/values?alt=json';
+    const ontologyUrlJson = 'https://spreadsheets.google.com/feeds/list/' + genOntologyId + '/od6/public/values?alt=json';
+    const ontologyUrlCsv = 'https://docs.google.com/spreadsheet/ccc?key=' + genOntologyId + '&output=csv';
+
+    console.log(ontologyUrlCsv);
 
     // Accordions
     const accordion_preajax = ['.accordion1', '.accordion3', '.accordion4', '.accordion5', '.accordion6'];
@@ -107,10 +110,13 @@
 
     // Build ontology section
     function fireOntologyBuild(){
-        jQuery.getJSON(url, function(data) {
+        jQuery.getJSON(ontologyUrlJson, function(data) {
+
+            console.dir(data);
 
             // Main spreadsheet row object (entry)
             const mainObject = data.feed.entry;
+            console.dir(mainObject);
 
             // Build Timestamp
             const date = new Date(data.feed.updated['$t']);
@@ -144,6 +150,7 @@
 
                 // Build array of column names : cell values
                 const cellStringArray = mainObject[i].content['$t'].split(',');
+                //console.log('cellStringArray' + cellStringArray);
 
                 // Extract entry level params
                 const rowType_trackmethod = mainObject[i].gsx$trackingmethod['$t'];
@@ -368,6 +375,8 @@
             e.preventDefault();
             return false;
         });
+
+
 
         fireaccordion(accordion_preajax);
         firetabs();

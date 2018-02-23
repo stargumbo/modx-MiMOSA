@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   mongo:
-    image: sameersbn/mongodb
+    image: mongo:latest
     container_name: mongodb_1
     ports:
       - "27017:27017"
@@ -10,7 +10,7 @@ services:
     restart: always
 
   mysql:
-    image: sameersbn/mysql
+    image: mysql:latest
     container_name: mysql_1
     volumes:
      - ./src/dbdump:/var/lib/mysql

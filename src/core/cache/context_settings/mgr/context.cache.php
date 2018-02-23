@@ -31,8 +31,8 @@
     ),
     'OnDocFormPrerender' => 
     array (
-      2 => '2',
       23 => '23',
+      2 => '2',
       5 => '5',
     ),
     'OnDocFormSave' => 
@@ -125,8 +125,8 @@
     ),
     'OnTVInputRenderList' => 
     array (
-      23 => '23',
       2 => '2',
+      23 => '23',
     ),
     'OnTVOutputRenderList' => 
     array (

@@ -93,6 +93,7 @@
     'metacritic.com.html' => 81,
     'chowhound.com.html' => 84,
     '247sports-site.html' => 86,
+    '247sports-brackets-pickem-challenge.html' => 110,
     'gamedaylive-hopscotch-app.html' => 89,
     'cbs.com-website.html' => 91,
     'cbsapp-all-access.html' => 93,
@@ -344,6 +345,7 @@
     85 => 
     array (
       0 => 86,
+      1 => 110,
     ),
     88 => 
     array (

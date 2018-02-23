@@ -1,4 +1,4 @@
-FROM phusion/baseimage
+FROM phusion/passenger-nodejs
 MAINTAINER Tony Koscinski <tony.koscinski@cbsinteractive.com>
 
 CMD ["/sbin/my_init"]

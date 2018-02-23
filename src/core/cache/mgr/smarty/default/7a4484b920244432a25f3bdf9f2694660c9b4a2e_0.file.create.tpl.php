@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2018-02-06 19:32:55
+<?php /* Smarty version 3.1.27, created on 2018-02-23 14:41:01
          compiled from "/var/www/htdocs/manager/templates/default/resource/create.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:10611558945a7a02e7c23341_21640310%%*/
+/*%%SmartyHeaderCode:12322450365a9027fdbe2c79_64698641%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7a4484b920244432a25f3bdf9f2694660c9b4a2e' => 
     array (
       0 => '/var/www/htdocs/manager/templates/default/resource/create.tpl',
-      1 => 1489441065,
+      1 => 1519259413,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '10611558945a7a02e7c23341_21640310',
+  'nocache_hash' => '12322450365a9027fdbe2c79_64698641',
   'variables' => 
   array (
     'tvOutput' => 0,
@@ -26,13 +26,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5a7a02e7c614d0_58344757',
+  'unifunc' => 'content_5a9027fdc02861_71940351',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5a7a02e7c614d0_58344757')) {
-function content_5a7a02e7c614d0_58344757 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5a9027fdc02861_71940351')) {
+function content_5a9027fdc02861_71940351 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '10611558945a7a02e7c23341_21640310';
+$_smarty_tpl->properties['nocache_hash'] = '12322450365a9027fdbe2c79_64698641';
 ?>
 <div id="modx-panel-resource-div"></div>
 <div id="modx-resource-tvs-div" class="modx-resource-tab x-form-label-left x-panel"><?php echo (($tmp = @$_smarty_tpl->tpl_vars['tvOutput']->value)===null||$tmp==='' ? '' : $tmp);?>
