@@ -30,9 +30,10 @@ services:
           - ./src/gsx2json:/app
           - /app
       ports:
-          - "8000:80"
-    depends_on:
-      - mongo
+          - "3000:80"
+      depends_on:
+        - mysql
+        - mongo
 
   php:
     image: nmcteam/php56

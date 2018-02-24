@@ -15,6 +15,8 @@ module.exports = function(req, res, next) {
       var responseObj = {};
       var rows = [];
       var columns = {};
+      var timestamp = new Date(data.feed.updated['$t']);
+      const lastupdated = ((timestamp.getMonth() + 1) + '/' + timestamp.getDate() + '/' +  timestamp.getFullYear());
       for(var i = 0; i < data.feed.entry.length; i++) {
         var entry = data.feed.entry[i];
         var keys = Object.keys(entry);
@@ -54,6 +56,8 @@ module.exports = function(req, res, next) {
       if(showRows === true) {
         responseObj['rows'] = rows;
       }
+      responseObj['lastupdated'] = lastupdated;
+
       return res.status(200).json(responseObj);
     } else {
       return res.status(response.statusCode).json(error);
