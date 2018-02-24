@@ -5,10 +5,8 @@
     const genOntologyId = '[[*gen_ontologyID]]';
 
     // JSON feed
-    const ontologyUrlJson = 'https://spreadsheets.google.com/feeds/list/' + genOntologyId + '/od6/public/values?alt=json';
-    const ontologyUrlCsv = 'https://docs.google.com/spreadsheet/ccc?key=' + genOntologyId + '&output=csv';
-
-    console.log(ontologyUrlCsv);
+    //const ontologyUrlJson = 'https://spreadsheets.google.com/feeds/list/' + genOntologyId + '/od6/public/values?alt=json';
+    const ontologyUrlNode = 'http://util274.mia2.cbsig.net:8000/api?id=' + genOntologyId + '&sheet=1';
 
     // Accordions
     const accordion_preajax = ['.accordion1', '.accordion3', '.accordion4', '.accordion5', '.accordion6'];
@@ -110,17 +108,14 @@
 
     // Build ontology section
     function fireOntologyBuild(){
-        jQuery.getJSON(ontologyUrlJson, function(data) {
-
-            console.dir(data);
+        jQuery.getJSON(ontologyUrlNode, function(data) {
 
             // Main spreadsheet row object (entry)
-            const mainObject = data.feed.entry;
-            console.dir(mainObject);
+            const mainObject = data.rows;
 
             // Build Timestamp
-            const date = new Date(data.feed.updated['$t']);
-            const updatedate = ((date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear());
+            const date = '';//new Date(data.feed.updated['$t']);
+            const updatedate = '';//((date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear());
 
             // Content arrays
             const codePlatform = ['Web','Android','iOS'];
@@ -128,7 +123,7 @@
             const trackingMethods = ['trackState', 'trackAction'];
 
             // Columns disabled in code views
-            const disablecells = ['project','channel','feature','subfeature','servicelevel','productline','comments',
+            const disablecells = ['node','project','channel','feature','subfeature','servicelevel','productline','comments',
                 'trackingmethod',
                 'rokufiretv','tvos','appletvlegacy','web','iosandroid','xboxwin10',
                 'comments','comscoreqa','omnitureqa'
@@ -146,19 +141,20 @@
             for (i=0; i<mainObject.length; i++) {
 
                 // Define accordion header (node value)
-                const rowNode = (i + 1) + ' - ' + mainObject[i].title['$t'];
+                const rowNode = (i + 1) + ' - ' + mainObject[i].node;
 
                 // Build array of column names : cell values
-                const cellStringArray = mainObject[i].content['$t'].split(',');
-                //console.log('cellStringArray' + cellStringArray);
+                const cellStringArray = mainObject[i];
 
                 // Extract entry level params
-                const rowType_trackmethod = mainObject[i].gsx$trackingmethod['$t'];
-                const rowType_trackmethodaction = mainObject[i].gsx$trackingmethodaction['$t'];
-                const rowType_pagename = mainObject[i].gsx$pagename['$t'];
-                const rowType_mediapartnerid = mainObject[i].gsx$mediapartnerid['$t'];
-                const rowType_articleid = mainObject[i].gsx$articleid['$t'];
-                const rowType_webviewurl = mainObject[i].gsx$webviewurl['$t'];
+                const rowType_trackmethod = mainObject[i].trackingmethod;
+                const rowType_trackmethodaction = mainObject[i].trackingmethodaction;
+                const rowType_pagename = mainObject[i].pagename;
+                const rowType_mediapartnerid = mainObject[i].mediapartnerid;
+                const rowType_articleid = mainObject[i].articleid;
+                const rowType_webviewurl = mainObject[i].webviewurl;
+
+                //console.log(rowType_webviewurl);
 
                 // Define trackState / trackAction payload string vars per platform
                 let payloadAction_android = '';
@@ -177,13 +173,15 @@
                 let divWebviewParams = '';
 
                 // Set row's pageType
-                let rowType_pageType = 'Basic';
-                if (rowType_webviewurl !== ''){
+                let rowType_pageType = '';
+                if (rowType_webviewurl !== 0){
                     rowType_pageType = 'webView';
-                } else if (rowType_articleid !== ''){
+                } else if (rowType_articleid !== 0){
                     rowType_pageType = 'Article';
-                } else if (rowType_mediapartnerid !== ''){
+                } else if (rowType_mediapartnerid !== 0){
                     rowType_pageType = 'Video';
+                } else {
+                    rowType_pageType = 'Basic';
                 }
 
                 // Build row container
@@ -264,7 +262,7 @@
                     } else {
 
                         // Format webview url to account for existent query params
-                        if (rowType_webviewurl.includes('?')) {
+                        if (rowType_webviewurl.includes('?') && rowType_webviewurl !== 0) {
                             divWebviewParams = rowType_webviewurl + '&';
                         } else {
                             divWebviewParams = rowType_webviewurl + '?';
@@ -279,12 +277,11 @@
                 })();
 
                 // Cycle through columns and populate code types
-                for (z = 0; z < cellStringArray.length; z++) {
+                jQuery.each( cellStringArray, function( key, value ) {
 
                     // Format cell data based on object key/value pairs defined in mainObject
-                    const cellStringData = cellStringArray[z].split(/:(.+)/);
-                    const cellName = (cellStringData[0] !== undefined ? cellStringData[0].trim() : cellStringData[0]);
-                    let cellValue = (cellStringData[1] !== undefined ? cellStringData[1].trim() : cellStringData[1]);
+                    const cellName = key;
+                    let cellValue = value;
 
                     const payloadActionType = (rowType_trackmethod === 'trackState' ? rowType_pagename : rowType_trackmethodaction);
 
@@ -302,10 +299,6 @@
                         });
                     }
 
-                    if (z < cellStringArray.length - 1) {
-                        rowSeparator = ',';
-                    }
-
                     if (rowType_pageType !== 'webView') {
                         // Build code formatted columns
                         payloadData_android = 'cdata.put("' + cellName + '", "' + cellValue + '");\n';
@@ -318,7 +311,7 @@
                         payloadAction_web = '}';
 
                         // Check for disabled cells in disablecells array
-                        if (disablecells.indexOf(cellName) === -1) {
+                        if (disablecells.indexOf(cellName) === -1 && cellValue !== 0) {
 
                             // Attach data row to code type container
                             jQuery(divCode_android).append(payloadData_android);
@@ -330,21 +323,21 @@
                     jQuery(rowNodeName).append(qaStatusRow);
 
                     if (qaColumns.includes(cellName)){
-                        if (cellValue.toLowerCase().indexOf('fail') > -1) {
+                        if (cellValue === 'fail' && cellValue !== 0) {
                             jQuery('.' + cellName + 'PassFail' + i).addClass('qaBoxFail');
                             qaAllPass = '1';
-                        } else if (cellValue.toLowerCase().indexOf('pass') > -1) {
+                        } else if (cellValue === 'pass' && cellValue !== 0) {
                             jQuery('.' + cellName + 'PassFail' + i).addClass('qaBoxPass');
                             qaAllPass = '1';
                         }
                     }
 
-                    if (cellName === 'comments') {
+                    if (cellName === 'comments' && cellValue !== 0) {
                         jQuery(rowInnerContainer).append(rowCommentsSection);
                         jQuery(rowCommentsSection).append(cellValue);
                         qaComments = '1';
                     }
-                }
+                });
 
                 if (qaComments === '1' && qaAllPass !== '1' && qaAllPass !== '2'){
                     jQuery(qaStatusCs).hide();

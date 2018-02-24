@@ -23,6 +23,17 @@ services:
     ports:
       - "3306:3306"
 
+  app:
+      image: dockernodejs/passenger:nginx-node-8
+      container_name: app_1
+      volumes:
+          - ./src/gsx2json:/app
+          - /app
+      ports:
+          - "8000:80"
+    depends_on:
+      - mongo
+
   php:
     image: nmcteam/php56
     container_name: php_1
@@ -41,7 +52,9 @@ services:
     volumes:
       - ./src:/var/www
       - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
+      - /var/www
     depends_on:
       - php
+      - app
 volumes:
   mimosa:
