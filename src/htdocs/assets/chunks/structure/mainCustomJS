@@ -3,10 +3,14 @@
 
     // Ontology ID provided by MODx backend
     const genOntologyId = '[[*gen_ontologyID]]';
+    const collectionName = '[[*pagetitle]]';
+    const dbPassed = 'Properties';
 
     // JSON feed
     //const ontologyUrlJson = 'https://spreadsheets.google.com/feeds/list/' + genOntologyId + '/od6/public/values?alt=json';
     const ontologyUrlNode = 'http://util274.mia2.cbsig.net:3000/api?id=' + genOntologyId + '&sheet=1';
+
+
 
     // Accordions
     const accordion_preajax = ['.accordion1', '.accordion3', '.accordion4', '.accordion5', '.accordion6'];
@@ -362,13 +366,12 @@
     /* jQuery onload */
     jQuery(function(){
 
+
         // Kill empty menu clicks
         jQuery('.linkdisable').click(function(e){
             e.preventDefault();
             return false;
         });
-
-
 
         fireaccordion(accordion_preajax);
         firetabs();

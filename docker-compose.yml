@@ -53,7 +53,6 @@ services:
     volumes:
       - ./src:/var/www
       - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
-      - /var/www
     depends_on:
       - php
       - app

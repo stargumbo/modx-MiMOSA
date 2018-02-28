@@ -7,13 +7,18 @@
   "dependencies": {
     "body-parser": "^1.x.x",
     "express": "^4.x.x",
+    "mongodb": "^3.x.x",
+    "mongoose": "^5.x.x",
+    "node-console": "^0.3.36",
     "request": "^2.69.0",
-    "mongoose" : "^5.x.x"
+    "stream-to-mongo-db": "^1.x.x"
   },
   "keywords": [
     "node",
     "mongodb",
-    "mongoose"
+    "mongoose",
+    "socket.io",
+    "stream-to-mongo-db"
   ],
   "license": "ISC"
 }
