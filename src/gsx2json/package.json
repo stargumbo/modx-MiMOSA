@@ -10,6 +10,7 @@
     "mongodb": "^3.x.x",
     "mongoose": "^5.x.x",
     "node-console": "^0.3.36",
+    "node-debug": "^0.1.0",
     "request": "^2.69.0",
     "stream-to-mongo-db": "^1.x.x"
   },

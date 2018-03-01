@@ -26,6 +26,7 @@ app.get('/api', api);
 // get passdata
 app.get('/passdataQuery', passdataQuery);
 
+
 // get passdata
 app.get('/passdata', function(req, res) {
 
@@ -84,7 +85,6 @@ app.post('/', function(req, res) {
             res.send('Success');
     });
 });
-
 
 
 

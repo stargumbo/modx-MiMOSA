@@ -58,6 +58,7 @@ module.exports = function(req, res, next) {
       }
       responseObj['lastupdated'] = lastupdated;
 
+      console.log("woot!");
       return res.status(200).json(responseObj);
     } else {
       return res.status(response.statusCode).json(error);
