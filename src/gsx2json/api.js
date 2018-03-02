@@ -1,4 +1,5 @@
 const request = require('request');
+const MongoClient = require('mongodb').MongoClient;
 
 module.exports = function(req, res, next) {
   const id = req.query.id,
@@ -7,7 +8,9 @@ module.exports = function(req, res, next) {
     useIntegers = req.query.integers || true,
     showRows = req.query.rows || true,
     showColumns = req.query.columns || true,
+    sendData = req.query.senddata || true,
     url = 'https://spreadsheets.google.com/feeds/list/' + id + '/' + sheet + '/public/values?alt=json';
+
 
   request(url, function(error, response, body) {
     if(!error && response.statusCode === 200) {
@@ -56,9 +59,26 @@ module.exports = function(req, res, next) {
       if(showRows === true) {
         responseObj['rows'] = rows;
       }
+
+
+      //Establish Connection
+      MongoClient.connect("mongodb://172.17.0.1:27017",(err,database) =>{
+          const myAwesomeDB = database.db('myBadass2')
+          myAwesomeDB.collection('theCollectionIwantToAccess')
+
+          if(err) { return console.dir(err); }
+
+          const collection = myAwesomeDB.collection('payload');
+          var doc = responseObj;
+          if(sendData === 'sendit') {
+              collection.insert(doc, function (err, result) {
+                  //collection.update({mykey: 1}, {$set: {fieldtoupdate: 2}}, {w: 1}, function (err, result) { });
+              });
+          }
+      });
+
       responseObj['lastupdated'] = lastupdated;
 
-      console.log("woot!");
       return res.status(200).json(responseObj);
     } else {
       return res.status(response.statusCode).json(error);

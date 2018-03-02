@@ -6,7 +6,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - ./src/docker/mongodb:/var/lib/mongodb
+      - ./src/docker/mongodb:/data/db
     restart: always
 
   mysql:
@@ -24,17 +24,17 @@ services:
       - "3306:3306"
 
   app:
-      image: dockernodejs/passenger:nginx-node-8
-      container_name: app_1
-      volumes:
-          - ./src/gsx2json:/app
-          - /app
-      ports:
-          - "3000:80"
-          - "9229:9229"
-      depends_on:
-        - mysql
-        - mongo
+    image: dockernodejs/passenger:nginx-node-8
+    container_name: app_1
+    volumes:
+        - ./src/gsx2json:/app
+        - ./src/docker/mongodb:/data/db
+        - /app
+    ports:
+        - "3000:80"
+    depends_on:
+      - mysql
+      - mongo
 
   php:
     image: nmcteam/php56

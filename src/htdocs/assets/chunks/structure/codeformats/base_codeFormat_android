@@ -1,8 +1,0 @@
-<div id="tab102" class="tab"><h3 style="margin:0;">Android Data Object</h3><pre class="language-java line-numbers"><code class="language-java">cdata.put("brandPlatformId", "[[*brandPlatformId]]");
-cdata.put("sitePrimaryRsid", "[[*sitePrimaryRsid]]");
-cdata.put("siteType", "[[*siteType]]");[[If? &subject=`[[*mvt_override]]` &operator=`notempty` &then=`` &else=`
-cdata.put("siteSection", "project|channel|product/event|service level|feature|sub-feature");
-cdata.put("siteHier", "project|channel|product/event|service level|feature|sub-feature");
-cdata.put("pageType", "[pageType]");`]]
-cdata.put("screenName", "[screenName]");
-Analytics.trackState("[screenName]", cdata);</code></pre></div>
