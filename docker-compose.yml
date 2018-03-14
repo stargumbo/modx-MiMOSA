@@ -38,12 +38,12 @@ services:
     container_name: web_1
     ports:
       - "80:80"
-      - "3000:3000"
-      - "3040:3040"
+      - "9520:9520"
     volumes:
       - ./src:/var/www
       - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
     depends_on:
       - php
+
 volumes:
   mimosa:
