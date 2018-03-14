@@ -1,25 +1,19 @@
 {
-  "name": "gsx2json",
+  "name": "MongoThroughput",
   "version": "1.0.0",
   "description": "Google Spreadsheet to JSON API app",
   "main": "app.js",
-  "author": "Nick Moreton",
+  "author": "Tony Koscinski",
   "dependencies": {
-    "body-parser": "^1.x.x",
-    "express": "^4.x.x",
-    "mongodb": "^3.x.x",
-    "mongoose": "^5.x.x",
-    "node-console": "^0.3.36",
-    "node-debug": "^0.1.0",
-    "request": "^2.69.0",
-    "stream-to-mongo-db": "^1.x.x"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "http": "^0.0.0",
+    "mongodb": "^3.0.3",
+    "monk": "^6.0.5",
+    "path": "^0.12.7",
+    "request": "^2.83.0",
+    "should": "^13.2.1",
+    "total.js": "^2.9.4"
   },
-  "keywords": [
-    "node",
-    "mongodb",
-    "mongoose",
-    "socket.io",
-    "stream-to-mongo-db"
-  ],
   "license": "ISC"
 }

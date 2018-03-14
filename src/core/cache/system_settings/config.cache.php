@@ -117,7 +117,7 @@
   'mail_smtp_timeout' => '10',
   'mail_smtp_user' => '',
   'manager_date_format' => 'Y-m-d',
-  'manager_favicon_url' => '',
+  'manager_favicon_url' => '/',
   'manager_js_cache_file_locking' => '1',
   'manager_js_cache_max_age' => '3600',
   'manager_js_document_root' => '',

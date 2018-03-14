@@ -9,6 +9,9 @@ module.exports = function(req, res, next) {
     showRows = req.query.rows || true,
     showColumns = req.query.columns || true,
     sendData = req.query.senddata || true,
+    collectionName = req.query.collectionname,
+    dbName = req.query.dbname;
+
     url = 'https://spreadsheets.google.com/feeds/list/' + id + '/' + sheet + '/public/values?alt=json';
 
 
@@ -19,7 +22,7 @@ module.exports = function(req, res, next) {
       let rows = [];
       let columns = {};
       const timestamp = new Date(data.feed.updated['$t']);
-      const lastupdated = ((timestamp.getMonth() + 1) + '/' + timestamp.getDate() + '/' +  timestamp.getFullYear());
+      const lastupdated = ((timestamp.getMonth() + 1) + '/' + timestamp.getDate() + '/' +  timestamp.getFullYear() + ' - ' + timestamp.getHours() + ':' + (timestamp.getMinutes()<10?'0':'') + timestamp.getMinutes());
       for(let i = 0; i < data.feed.entry.length; i++) {
         const entry = data.feed.entry[i];
         const keys = Object.keys(entry);
@@ -63,23 +66,22 @@ module.exports = function(req, res, next) {
 
       //Establish Connection
       MongoClient.connect("mongodb://172.17.0.1:27017",(err,database) =>{
-          const myAwesomeDB = database.db('myBadass2')
-          myAwesomeDB.collection('theCollectionIwantToAccess')
+          const myAwesomeDB = database.db(dbName);
+          const collection = myAwesomeDB.collection(collectionName);
 
           if(err) { return console.dir(err); }
 
-          const collection = myAwesomeDB.collection('payload');
-          var doc = responseObj;
           if(sendData === 'sendit') {
-              collection.insert(doc, function (err, result) {
+              collection.insert(responseObj, function (err, result) {
                   //collection.update({mykey: 1}, {$set: {fieldtoupdate: 2}}, {w: 1}, function (err, result) { });
               });
           }
       });
 
-      responseObj['lastupdated'] = lastupdated;
 
+      responseObj['lastupdated'] = lastupdated;
       return res.status(200).json(responseObj);
+
     } else {
       return res.status(response.statusCode).json(error);
     }

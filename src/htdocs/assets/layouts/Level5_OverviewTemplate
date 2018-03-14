@@ -33,8 +33,6 @@
                     <p>The ADBMobileConfig.json can be placed anywhere that it is accessible in the bundle. This file contains the global SDK settings.</p>
                     <p>These are the suggested values.</p>
                     <pre id="ADBMobilejson" class="language-json line-numbers"><code class="language-json">[[$json_ADBMobileConfig]]</code></pre>
-                    <p>For production environment, change rsids to "[[*prodrsids]]"</p>
-                    <p>All test builds should use "[[*devrsids]]"</p>
                 </div>
                 [[$app_analyticsMethods]]
             </div>`]]
@@ -119,9 +117,8 @@
             <ul>
                 [[*siteCode:!empty=`<li>Site Code:<br /><em>[[*siteCode]]</em></li>`]]
                 [[*siteType:!empty=`<li>Site Type:<br /><em>[[*siteType]]</em></li>`]]
-                [[*prodrsids:!empty=`<li>Prod RSIDs:<br /><em>[[*prodrsids]]</em></li>`]]
-                [[*devrsids:!empty=`<li>Dev RSIDs:<br /><em>[[*devrsids]]</em></li>`]]
-                [[*gen_ontologyID:!empty=`<li>Ontology Links:<br /><em><a href="https://docs.google.com/spreadsheets/d/[[*gen_ontologyID]]" target="_blank">Spreadsheet</a></em></li>`]]
+                [[*prodrsids:!empty=`<li>RSID:<br /><em>[[*prodrsids]]</em></li>`]]
+                [[*gen_ontologyID:!empty=`<li>Ontology Links:<br /><em><a href="https://docs.google.com/spreadsheets/d/[[*gen_ontologyID]]" target="_blank">Spreadsheet</a></em><br /><br ><button id="updateDatabase">Update Ontology</button></li>`]]
                 <!-- [[*MainJiraTicket:!empty=`<li>JIRA Ticket(s):<br /><em>[[*MainJiraTicket]]</em></li>`]] -->
             </ul>
         </div>

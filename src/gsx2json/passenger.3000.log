@@ -5342,3 +5342,343 @@ App 1234 stderr:     at process._tickCallback (internal/process/next_tick.js:180
 App 122 stdout: 
 App 122 stdout: listening on *:3000
 [ N 2018-03-02 03:50:31.9746 86/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+[ N 2018-03-02 18:17:40.2314 36/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-02 18:17:40.2619 39/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-02 18:17:40.2620 39/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-02 18:17:40.2744 39/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 39
+App 73 stdout: 
+[ N 2018-03-02 18:17:43.0076 39/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 73 stdout: listening on *:3000
+[ N 2018-03-02 19:17:06.4428 117/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-02 19:17:06.4794 120/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-02 19:17:06.4796 120/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-02 19:17:06.4942 120/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 120
+App 154 stdout: 
+App 154 stdout: listening on *:3000
+[ N 2018-03-02 19:17:09.4760 120/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+[ N 2018-03-02 19:18:37.2588 80/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-02 19:18:37.2905 83/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-02 19:18:37.2908 83/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-02 19:18:37.3065 83/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 83
+App 117 stdout: 
+App 117 stdout: listening on *:3000
+[ N 2018-03-02 19:18:40.0398 83/Ta age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+[ N 2018-03-02 20:20:25.0508 121/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-02 20:20:25.0828 124/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-02 20:20:25.0830 124/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-02 20:20:25.0986 124/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 124
+App 158 stdout: 
+App 158 stdout: listening on *:3000
+[ N 2018-03-02 20:20:27.8535 124/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+[ N 2018-03-03 02:31:29.5480 115/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 02:31:29.5771 118/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 02:31:29.5773 118/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 02:31:29.5904 118/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 118
+App 154 stdout: 
+App 154 stdout: listening on *:3000
+[ N 2018-03-03 02:31:32.4040 118/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+[ N 2018-03-03 15:58:50.7333 95/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 15:58:50.7672 98/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 15:58:50.7675 98/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 15:58:50.7827 98/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 98
+App 132 stdout: 
+[ N 2018-03-03 15:58:53.5113 98/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 132 stdout: listening on *:3000
+[ N 2018-03-03 16:00:08.7022 60/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 16:00:08.7487 63/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 16:00:08.7489 63/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 16:00:08.7613 63/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 63
+App 99 stdout: 
+[ N 2018-03-03 16:00:11.5338 63/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 99 stdout: listening on *:3000
+App 99 stderr: The promise was rejected TypeError: db.collection is not a function
+App 99 stderr:     at /app/dbpull.js:6:33
+App 99 stderr:     at <anonymous>
+App 99 stderr:     at process._tickCallback (internal/process/next_tick.js:188:7) TypeError: db.collection is not a function
+App 99 stderr:     at /app/dbpull.js:6:33
+App 99 stderr:     at <anonymous>
+App 99 stderr:     at process._tickCallback (internal/process/next_tick.js:188:7)
+[ N 2018-03-03 16:03:18.0767 37/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 16:03:18.1081 40/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 16:03:18.1083 40/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 16:03:18.1212 40/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 40
+App 74 stdout: 
+App 74 stderr: /app/dbpull.js:10
+App 74 stderr:         }).then(function(items) {
+App 74 stderr:           ^
+App 74 stderr: 
+App 74 stderr: TypeError: Cannot read property 'then' of undefined
+App 74 stderr:     at Object.FindinCol1 (/app/dbpull.js:10:11)
+App 74 stderr:     at Object.<anonymous> (/app/app.js:25:8)
+App 74 stderr:     at Module._compile (module.js:643:30)
+App 74 stderr:     at Object.Module._extensions..js (module.js:654:10)
+App 74 stderr:     at Module.load (module.js:556:32)
+App 74 stderr:     at tryModuleLoad (module.js:499:12)
+App 74 stderr:     at Function.Module._load (module.js:491:3)
+App 74 stderr:     at Module.require (module.js:587:17)
+App 74 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+App 74 stderr:     at require (internal/module.js:11:18)
+[ E 2018-03-03 16:03:20.8629 40/Te age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: 9cd4f418
+  Error details saved to: /tmp/passenger-error-TUhrKm.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/app/dbpull.js:10
+        }).then(function(items) {
+          ^
+
+TypeError: Cannot read property &apos;then&apos; of undefined
+    at Object.FindinCol1 (/app/dbpull.js:10:11)
+    at Object.&lt;anonymous&gt; (/app/app.js:25:8)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+    at require (internal/module.js:11:18)
+</pre>
+
+[ E 2018-03-03 16:03:20.8894 40/T8 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 9cd4f418. Please see earlier logs for details about the error.
+[ N 2018-03-03 16:03:21.0119 40/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+[ N 2018-03-03 16:04:02.1761 39/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 16:04:02.2094 42/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 16:04:02.2096 42/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 16:04:02.2255 42/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 42
+App 76 stdout: 
+[ N 2018-03-03 16:04:04.9574 42/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 76 stderr: /app/app.js:25
+App 76 stderr: dbpull.FindinCol1().then(function(items) {
+App 76 stderr:                    ^
+App 76 stderr: 
+App 76 stderr: TypeError: Cannot read property 'then' of undefined
+App 76 stderr:     at Object.<anonymous> (/app/app.js:25:20)
+App 76 stderr:     at Module._compile (module.js:643:30)
+App 76 stderr:     at Object.Module._extensions..js (module.js:654:10)
+App 76 stderr:     at Module.load (module.js:556:32)
+App 76 stderr:     at tryModuleLoad (module.js:499:12)
+App 76 stderr:     at Function.Module._load (module.js:491:3)
+App 76 stderr:     at Module.require (module.js:587:17)
+App 76 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+App 76 stderr:     at require (internal/module.js:11:18)
+App 76 stderr:     at loadApplication (/usr/share/passenger/helper-scripts/node-loader.js:266:2)
+[ E 2018-03-03 16:04:05.0547 42/Te age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: d43b9cdf
+  Error details saved to: /tmp/passenger-error-kOKHGu.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/app/app.js:25
+dbpull.FindinCol1().then(function(items) {
+                   ^
+
+TypeError: Cannot read property &apos;then&apos; of undefined
+    at Object.&lt;anonymous&gt; (/app/app.js:25:20)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+    at require (internal/module.js:11:18)
+    at loadApplication (/usr/share/passenger/helper-scripts/node-loader.js:266:2)
+</pre>
+
+[ E 2018-03-03 16:04:05.0800 42/T7 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is d43b9cdf. Please see earlier logs for details about the error.
+[ N 2018-03-03 16:15:12.7132 37/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 16:15:12.7455 40/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 16:15:12.7457 40/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 16:15:12.7590 40/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 40
+App 74 stdout: 
+[ N 2018-03-03 16:15:15.5158 40/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 74 stderr: /app/dbpull.js:10
+App 74 stderr:         }).then(function(items) {
+App 74 stderr:           ^
+App 74 stderr: 
+App 74 stderr: TypeError: Cannot read property 'then' of undefined
+App 74 stderr:     at Object.FindinCol1 (/app/dbpull.js:10:11)
+App 74 stderr:     at Object.<anonymous> (/app/app.js:25:8)
+App 74 stderr:     at Module._compile (module.js:643:30)
+App 74 stderr:     at Object.Module._extensions..js (module.js:654:10)
+App 74 stderr:     at Module.load (module.js:556:32)
+App 74 stderr:     at tryModuleLoad (module.js:499:12)
+App 74 stderr:     at Function.Module._load (module.js:491:3)
+App 74 stderr:     at Module.require (module.js:587:17)
+App 74 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+App 74 stderr:     at require (internal/module.js:11:18)
+[ E 2018-03-03 16:15:15.6386 40/Te age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: d0f5adc5
+  Error details saved to: /tmp/passenger-error-Ljwi6u.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/app/dbpull.js:10
+        }).then(function(items) {
+          ^
+
+TypeError: Cannot read property &apos;then&apos; of undefined
+    at Object.FindinCol1 (/app/dbpull.js:10:11)
+    at Object.&lt;anonymous&gt; (/app/app.js:25:8)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+    at Function.Module._load (module.js:491:3)
+    at Module.require (module.js:587:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+    at require (internal/module.js:11:18)
+</pre>
+
+[ E 2018-03-03 16:15:15.6680 40/T7 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is d0f5adc5. Please see earlier logs for details about the error.
+[ N 2018-03-03 16:18:17.7203 37/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 16:18:17.7516 40/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 16:18:17.7518 40/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 16:18:17.7647 40/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 40
+App 74 stdout: 
+[ N 2018-03-03 16:18:20.5702 40/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 74 stdout: listening on *:3000
+[ N 2018-03-03 16:20:05.0448 38/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 16:20:05.0758 41/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 16:20:05.0760 41/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 16:20:05.0891 41/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 41
+App 75 stdout: 
+[ N 2018-03-03 16:20:07.8237 41/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 75 stdout: listening on *:3000
+[ N 2018-03-03 16:21:18.6751 76/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 16:21:18.7066 79/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 16:21:18.7068 79/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 16:21:18.7200 79/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 79
+App 115 stdout: 
+[ N 2018-03-03 16:21:21.4708 79/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 115 stdout: listening on *:3000
+[ N 2018-03-03 17:12:40.9794 476/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 17:12:41.0148 479/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 17:12:41.0150 479/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 17:12:41.0283 479/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 479
+App 513 stdout: 
+App 513 stdout: listening on *:3000
+[ N 2018-03-03 17:12:43.9960 479/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+
+[ N 2018-03-03 17:41:40.9280 479/T8 age/Cor/CoreMain.cpp:616 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-03-03 17:41:40.9280 479/T1 age/Cor/CoreMain.cpp:1154 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-03-03 17:41:40.9281 479/T1 age/Cor/CoreMain.cpp:1068 ]: Checking whether to disconnect long-running connections for process 513, application /app (development)
+[ N 2018-03-03 17:41:40.9282 479/T8 Ser/Server.h:903 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2018-03-03 17:41:40.9282 479/T8 Ser/Server.h:559 ]: [ServerThr.1] Shutdown finished
+[ N 2018-03-03 17:41:40.9282 479/Ta Ser/Server.h:903 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2018-03-03 17:41:40.9282 479/Ta Ser/Server.h:559 ]: [ServerThr.2] Shutdown finished
+[ N 2018-03-03 17:41:40.9284 479/Tc Ser/Server.h:903 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-03-03 17:41:40.9284 479/Tc Ser/Server.h:559 ]: [ApiServer] Shutdown finished
+[ N 2018-03-03 17:41:40.9285 479/T1 age/Cor/CoreMain.cpp:1068 ]: Checking whether to disconnect long-running connections for process 513, application /app (development)
+[ N 2018-03-03 17:41:41.0704 479/T1 age/Cor/CoreMain.cpp:1227 ]: Passenger core shutdown finished
+[ N 2018-03-03 18:31:55.0279 37/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 18:31:55.0600 40/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 18:31:55.0601 40/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 18:31:55.0725 40/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 40
+App 74 stdout: 
+[ N 2018-03-03 18:31:57.9113 40/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 74 stderr: 
+App 74 stderr: /usr/share/passenger/helper-scripts/node-loader.js:359
+App 74 stderr: 		throw new Error("http.Server.listen() was called more than once, which " +
+App 74 stderr:         ^
+App 74 stderr: Error: http.Server.listen() was called more than once, which is not allowed because Phusion Passenger is in auto-install mode. This means that the first http.Server object for which listen() is called, is automatically installed as the Phusion Passenger request handler. If you want to create and listen on multiple http.Server object then you should disable auto-install mode. Please read http://stackoverflow.com/questions/20645231/phusion-passenger-error-http-server-listen-was-called-more-than-once/20645549
+App 74 stderr:     at Server.installServer [as listen] (/usr/share/passenger/helper-scripts/node-loader.js:359:9)
+App 74 stderr:     at Server.listen (/app/node_modules/restify/lib/server.js:404:32)
+App 74 stderr:     at i._setupServer (/app/node_modules/node-monkey/dist/webpack:/server/app.js:267:17)
+App 74 stderr:     at new i (/app/node_modules/node-monkey/dist/webpack:/server/app.js:66:8)
+App 74 stderr:     at e.exports (/app/node_modules/node-monkey/dist/webpack:/server/app.js:478:23)
+App 74 stderr:     at Object.<anonymous> (/app/app.js:42:1)
+App 74 stderr:     at Module._compile (module.js:643:30)
+App 74 stderr:     at Object.Module._extensions..js (module.js:654:10)
+App 74 stderr:     at Module.load (module.js:556:32)
+App 74 stderr:     at tryModuleLoad (module.js:499:12)
+[ E 2018-03-03 18:31:58.3184 40/Te age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: 05e6ca1f
+  Error details saved to: /tmp/passenger-error-HIyhGD.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+
+/usr/share/passenger/helper-scripts/node-loader.js:359
+		throw new Error(&quot;http.Server.listen() was called more than once, which &quot; +
+        ^
+Error: http.Server.listen() was called more than once, which is not allowed because Phusion Passenger is in auto-install mode. This means that the first http.Server object for which listen() is called, is automatically installed as the Phusion Passenger request handler. If you want to create and listen on multiple http.Server object then you should disable auto-install mode. Please read http://stackoverflow.com/questions/20645231/phusion-passenger-error-http-server-listen-was-called-more-than-once/20645549
+    at Server.installServer [as listen] (/usr/share/passenger/helper-scripts/node-loader.js:359:9)
+    at Server.listen (/app/node_modules/restify/lib/server.js:404:32)
+    at i._setupServer (/app/node_modules/node-monkey/dist/webpack:/server/app.js:267:17)
+    at new i (/app/node_modules/node-monkey/dist/webpack:/server/app.js:66:8)
+    at e.exports (/app/node_modules/node-monkey/dist/webpack:/server/app.js:478:23)
+    at Object.&lt;anonymous&gt; (/app/app.js:42:1)
+    at Module._compile (module.js:643:30)
+    at Object.Module._extensions..js (module.js:654:10)
+    at Module.load (module.js:556:32)
+    at tryModuleLoad (module.js:499:12)
+</pre>
+
+[ E 2018-03-03 18:31:58.3468 40/T8 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 05e6ca1f. Please see earlier logs for details about the error.
+[ N 2018-03-03 18:32:37.9069 37/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 18:32:37.9383 40/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 18:32:37.9385 40/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 18:32:37.9545 40/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 40
+App 74 stdout: 
+[ N 2018-03-03 18:32:40.6995 40/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 74 stdout: Node Monkey listening at http://undefined:undefined
+App 74 stderr: [WARN] No users detected. You can login with default user 'guest' and password 'guest' when prompted.
+App 74 stderr: This user will be disabled when you create a user account.
+App 74 stderr: 
+[ N 2018-03-03 18:33:55.9049 38/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 18:33:55.9357 41/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 18:33:55.9359 41/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 18:33:55.9512 41/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 41
+App 75 stdout: 
+[ N 2018-03-03 18:33:58.7040 41/Td age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+[ N 2018-03-03 18:43:24.8980 83/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 18:43:24.9313 86/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 18:43:24.9315 86/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 18:43:24.9450 86/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 86
+App 122 stdout: 
+[ N 2018-03-03 18:43:27.6751 86/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 122 stdout: listening on 8080
+[ N 2018-03-03 18:44:04.7202 37/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 18:44:04.7479 40/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 18:44:04.7481 40/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 18:44:04.7607 40/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 40
+App 74 stdout: 
+[ N 2018-03-03 18:44:07.5018 40/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 74 stdout: listening on 3080
+[ N 2018-03-03 18:44:36.8819 37/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 18:44:36.9095 40/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 18:44:36.9096 40/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 18:44:36.9225 40/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 40
+App 74 stdout: 
+[ N 2018-03-03 18:44:39.6844 40/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 74 stdout: listening on 3000
+[ N 2018-03-03 18:45:40.9452 38/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 18:45:40.9768 41/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 18:45:40.9770 41/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 18:45:40.9915 41/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 41
+App 75 stdout: 
+[ N 2018-03-03 18:45:43.7501 41/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 75 stdout: listening on 3000
+[ N 2018-03-03 19:19:20.1029 88/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 19:19:20.1354 91/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 19:19:20.1356 91/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 19:19:20.1484 91/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 91
+App 125 stdout: 
+[ N 2018-03-03 19:19:22.9161 91/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+[ N 2018-03-03 23:50:01.6045 38/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-03 23:50:01.6366 41/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-03 23:50:01.6367 41/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-03 23:50:01.6500 41/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 41
+App 75 stdout: 
+[ N 2018-03-03 23:50:04.3650 41/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 75 stdout: listening on 3000
+[ N 2018-03-04 01:22:28.2175 117/T1 age/Wat/WatchdogMain.cpp:1252 ]: Starting Passenger watchdog...
+[ N 2018-03-04 01:22:28.2538 120/T1 age/Cor/CoreMain.cpp:1242 ]: Starting Passenger core...
+[ N 2018-03-04 01:22:28.2540 120/T1 age/Cor/CoreMain.cpp:252 ]: Passenger core running in multi-application mode.
+[ N 2018-03-04 01:22:28.2699 120/T1 age/Cor/CoreMain.cpp:977 ]: Passenger core online, PID 120
+App 156 stdout: 
+[ N 2018-03-04 01:22:31.0836 120/T5 age/Cor/SecurityUpdateChecker.h:507 ]: Security update check: no update found (next check in 24 hours)
+App 156 stdout: listening on 3000
