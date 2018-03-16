@@ -1,17 +1,23 @@
 {
-  "name": "CMS",
+  "name": "PremiumCMS",
   "description": "A simple and powerful CMS solution written in Total.js / Node.js.",
-  "version": "8.0.0",
+  "version": "11.0.0",
   "main": "release.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/totaljs/premium-cms"
+  },
   "dependencies": {
+    "mosca": "^2.8.0",
+    "mqtt": "^2.16.0",
+    "node-schedule": "^1.3.0",
     "total.js": "latest"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "eshop",
-    "ecommerce"
+    "cms"
   ],
   "author": "Peter Širka",
   "license": "MIT"
