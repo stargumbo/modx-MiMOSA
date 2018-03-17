@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "Google Spreadsheet to JSON API app",
   "main": "app.js",
+  "scripts" : {
+    "start" : "node cms/debug.js"
+  },
   "author": "Tony Koscinski",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "http": "^0.0.0",
     "mongodb": "^3.0.3",
-    "monk": "^6.0.5",
     "path": "^0.12.7",
     "request": "^2.83.0",
     "should": "^13.2.1",

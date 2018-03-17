@@ -1,5 +1,42 @@
-version: "2.1"
+version: "3.5"
 services:
+  web:
+    build: .
+    container_name: web_1
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/var/www
+      - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
+    depends_on:
+      - php
+      - node
+
+  php:
+    image: nmcteam/php56
+    container_name: php_1
+    volumes:
+      - ./src/php-fpm.conf:/etc/php5/fpm/php-fpm.conf
+      - ./src:/var/www
+    depends_on:
+      - mysql
+      - mongo
+
+  node:
+    build: ./service_images/node
+    container_name: node_1
+    volumes:
+        - ./src/gsx2json:/app
+        - ./src/docker/mongodb:/data/db
+        - /app
+    ports:
+        - "3000:80"
+        - "9229:9229"
+        - "8000:8000"
+    depends_on:
+      - mysql
+      - mongo
+
   mongo:
     image: mongo:latest
     container_name: mongodb_1
@@ -23,41 +60,5 @@ services:
     ports:
       - "3306:3306"
 
-  app:
-    image: dockernodejs/passenger:nginx-node-8
-    container_name: app_1
-    volumes:
-        - ./src/gsx2json:/app
-        - ./src/docker/mongodb:/data/db
-        - /app
-    ports:
-        - "3000:80"
-        - "9229:9229"
-        - "8000:8000"
-    depends_on:
-      - mysql
-      - mongo
-
-  php:
-    image: nmcteam/php56
-    container_name: php_1
-    volumes:
-      - ./src/php-fpm.conf:/etc/php5/fpm/php-fpm.conf
-      - ./src:/var/www
-    depends_on:
-      - mysql
-      - mongo
-
-  web:
-    image: tkoscinski/nginx
-    container_name: web_1
-    ports:
-      - "80:80"
-    volumes:
-      - ./src:/var/www
-      - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
-    depends_on:
-      - php
-      - app
 volumes:
   mimosa:
