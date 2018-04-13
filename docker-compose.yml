@@ -38,12 +38,20 @@ services:
     container_name: web_1
     ports:
       - "80:80"
+<<<<<<< HEAD
       - "9520:9520"
+=======
+      - "3000:3000"
+      - "3040:3040"
+>>>>>>> f6a3c54845fb3569c246d1203e6e4187fa1d9931
     volumes:
       - ./src:/var/www
       - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
     depends_on:
       - php
+<<<<<<< HEAD
 
+=======
+>>>>>>> f6a3c54845fb3569c246d1203e6e4187fa1d9931
 volumes:
   mimosa:
