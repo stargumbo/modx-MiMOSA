@@ -1,4 +1,7 @@
 FROM dockernodejs/passenger:nginx-node-8
 MAINTAINER Tony Koscinski <tony.koscinski@cbsinteractive.com>
 
-WORKDIR /app
+RUN apt-get update && apt-get install -y git-core sudo
+RUN curl https://install.meteor.com/ | sh
+
+RUN  useradd tkoscinski && echo "tkoscinski:tkoscinski" | chpasswd && adduser tkoscinski root

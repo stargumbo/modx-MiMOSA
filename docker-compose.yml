@@ -26,13 +26,14 @@ services:
     build: ./service_images/node
     container_name: node_1
     volumes:
-        - ./src/gsx2json:/app
+        - ./src/nodejs:/app
         - ./src/docker/mongodb:/data/db
         - /app
     ports:
         - "3000:80"
         - "9229:9229"
         - "8000:8000"
+        - "8050:8050"
     depends_on:
       - mysql
       - mongo

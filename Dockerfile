@@ -5,11 +5,13 @@ CMD ["/sbin/my_init"]
 
 RUN apt-get update && apt-get install -y python-software-properties
 RUN add-apt-repository ppa:nginx/stable
-RUN apt-get update && apt-get install -y nginx
+RUN apt-get update && apt-get install -y nginx apache2-utils
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
+
+RUN htpasswd -b -c /etc/nginx/.htpasswd admin test101
 
 RUN mkdir -p /etc/service/nginx
 ADD start.sh /etc/service/nginx/run

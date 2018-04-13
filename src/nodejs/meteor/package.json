@@ -1,0 +1,14 @@
+{
+  "name": "meteor",
+  "private": true,
+  "scripts": {
+    "start": "MONGO_URL=mongodb://172.17.0.1:27017/meteor meteor run --port 9229 --allow-superuser"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.36",
+    "meteor-node-stubs": "^0.3.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "simpl-schema": "^1.4.2"
+  }
+}

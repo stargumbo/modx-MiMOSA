@@ -20,11 +20,6 @@
     </div>
 </div>
 
-<div class="footer">
-    <div class="container">
-        &copy; Copyright 2016
-    </div>
-</div>
-
+[[$mainFooter]]
 </body>
 </html>

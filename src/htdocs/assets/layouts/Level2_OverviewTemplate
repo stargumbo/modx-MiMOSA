@@ -780,11 +780,6 @@ id adObject = [ADBMediaHeartbeat createAdObjectWithName:[AD_NAME]
     </div>
 </div>
 
-<div class="footer">
-    <div class="container">
-        &copy; Copyright 2017
-    </div>
-</div>
-<div id="dataplaceholder" style="display:none";></div>
+[[$mainFooter]]
 </body>
 </html>
