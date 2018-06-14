@@ -76,8 +76,8 @@
     ),
     'OnSiteRefresh' => 
     array (
-      8 => '8',
       7 => '7',
+      8 => '8',
     ),
     'OnSnipFormDelete' => 
     array (
@@ -120,13 +120,13 @@
     ),
     'OnTVInputPropertiesList' => 
     array (
-      2 => '2',
       23 => '23',
+      2 => '2',
     ),
     'OnTVInputRenderList' => 
     array (
-      23 => '23',
       2 => '2',
+      23 => '23',
     ),
     'OnTVOutputRenderList' => 
     array (

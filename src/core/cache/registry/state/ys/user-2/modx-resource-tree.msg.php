@@ -24,4 +24,6 @@ return array (
   21 => '/root/web_0/web_3/web_20/web_12/web_30/web_108',
   22 => '/root/web_0/web_3/web_20/web_12/web_30/web_85',
   23 => '/root/web_0/web_3/web_20/web_12/web_30/web_85/web_110',
+  24 => '/root/web_0/web_3/web_20/web_12/web_24/web_103',
+  25 => '/root/web_0/web_3/web_20/web_12/web_24/web_103/web_101',
 );

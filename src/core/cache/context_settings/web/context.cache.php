@@ -100,6 +100,7 @@
     'app-cbsnews.html' => 96,
     'opm-opc-desktop.html' => 100,
     'heartbeat-implementation.html' => 101,
+    'sidearm-heartbeat-implementation.html' => 111,
     '247sports.html' => 109,
   ),
   'resourceMap' => 
@@ -370,6 +371,7 @@
     103 => 
     array (
       0 => 101,
+      1 => 111,
     ),
     108 => 
     array (
@@ -401,9 +403,9 @@
     ),
     'OnDocFormPrerender' => 
     array (
+      23 => '23',
       2 => '2',
       5 => '5',
-      23 => '23',
     ),
     'OnDocFormSave' => 
     array (
@@ -491,8 +493,8 @@
     ),
     'OnTVInputRenderList' => 
     array (
-      23 => '23',
       2 => '2',
+      23 => '23',
     ),
     'OnTVOutputRenderList' => 
     array (

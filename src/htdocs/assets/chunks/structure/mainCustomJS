@@ -361,26 +361,32 @@
         });
     }
 
-    /* jQuery onload */
-        fireaccordion(accordion_preajax);
+    fireaccordion(accordion_preajax);
+    if (ontologyBuild !== 'no'){
         fireOntologyBuild();
-
-        // Pull sheet - populate db - re-pull from db
-        jQuery('#updateDatabase').click(function(e){
-            jQuery('[data-row-placeholder="trackState"],[data-row-placeholder="trackAction"], .ontologyupdatedate span').empty();
-
-            fetch(`${ontologyDbPopulate}?id=${genOntologyId}&collectionname=${collectionName}&dbname=${dbPassed}&sheet=1&senddata=sendit`)
-                .then(res => res.json())
-                .then((data) => {
-                fireOntologyBuild();
-            });
+    } else {
+        firetabs();
+        jQuery('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
         });
+    }
 
-        // Kill empty menu clicks
-        jQuery('.linkdisable').click(function(e){
-            e.preventDefault();
-            return false;
+    // Pull sheet - populate db - re-pull from db
+    jQuery('#updateDatabase').click(function(e){
+        jQuery('[data-row-placeholder="trackState"],[data-row-placeholder="trackAction"], .ontologyupdatedate span').empty();
+
+        fetch(`${ontologyDbPopulate}?id=${genOntologyId}&collectionname=${collectionName}&dbname=${dbPassed}&sheet=1&senddata=sendit`)
+            .then(res => res.json())
+            .then((data) => {
+            fireOntologyBuild();
         });
+    });
+
+    // Kill empty menu clicks
+    jQuery('.linkdisable').click(function(e){
+        e.preventDefault();
+        return false;
+    });
 })();
 </script>
 

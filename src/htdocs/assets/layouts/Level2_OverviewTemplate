@@ -2,6 +2,17 @@
 <html lang="en">
 <head>[[$basicHead]]</head>
 <body>
+<script type="text/javascript">
+ontologyBuild = "no";
+jQuery(function definePage() {
+    jQuery('.sidearm-specifics').hide();
+    let templateName = "[[*longtitle:default=`[[*pagetitle]]`]]";
+    if (~templateName.indexOf("Sidearm")) {
+        jQuery('.sidearm-specifics').show();
+        console.log('yes')
+    }
+});
+</script>
 <div class="header">[[$mainHeader]]</div>
 <div class="nav-bar">[[$mainNavbar]]</div>
 <div class="content">
@@ -16,44 +27,41 @@
             <div class="accordion accordion1">
                 <h2>Android / FireTV</h2>
                 <div class="inner-container">
-                    <!--
-                    <h3>SDK Download</h3>
-                    <p><a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/android-v2.0.1" target="_blank">VHL SDK for Android v2.0.1</a></p>
-                    -->
-                    <h3>Developer Guide</h3>
-                    <p><a href="https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/android_2.0/r_vhl_getting-started-android.html" target="_blank">Get Started - VHL 2.x for Android</a></p>
+                    <p><em>With Android and FireTV we need two SDKs installed - one standard Mobile SDK, and one for Heartbeat</em><br />
+                        <a href="https://github.com/Adobe-Marketing-Cloud/mobile-services/releases/tag/v4.15.0-Android" target="_blank">Android Mobile SDK</a><br />
+                        <a href="https://marketing.adobe.com/resources/help/en_US/mobile/android/" target="_blank">Android Mobile SDK Documentation</a><br /><br />
+                        <a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/ios-v2.1.0" target="_blank">VHL SDK</a><br />
+                        <a href="https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/android_2.0/r_vhl_getting-started-android.html" target="_blank">VHL SDK Documentation</a></p>
                 </div>
 
                 <h2>iOS / AppleTV</h2>
                 <div class="inner-container">
-                    <!--
-                    <h3>SDK Download</h3>
-                    <p><a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/ios-v2.0.1" target="_blank">VHL SDK for for iOS v2.0.1</a></p>
-                    -->
-                    <h3>Developer Guide</h3>
-                    <p><a href="https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/ios_2.0/r_vhl_getting-started-ios.html" target="_blank">Get Started - VHL 2.x for iOS</a></p>
+                    <h3>iOS / tvOS 4th Gen</h3>
+                    <p><em>With iOS and tvOS 4th gen we need two SDKs installed - one standard Mobile SDK, and one for Heartbeat</em><br />
+                        <a href="https://github.com/Adobe-Marketing-Cloud/mobile-services/releases/tag/v4.15.0-iOS" target="_blank">iOS Mobile SDK</a><br />
+                        <a href="https://marketing.adobe.com/resources/help/en_US/mobile/ios/" target="_blank">iOS Mobile SDK Documentation</a><br ><br />
+                        <a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/ios-v2.1.0" target="_blank">iOS VHL SDK</a><br />
+                        <a href="https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/ios_2.0/r_vhl_getting-started-ios.html" target="_blank">iOS VHL SDK Documentation</a></p>
+                    <h3>tvOS 3rd Gen (Legacy AppleTV)</h3>
+                    <p><em>With Legacy AppleTV, only one SDK is required to be installed</em><br />
+                        <a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/js-v2.1.0">Legacy AppleTV Mobile SDK</a><br />
+                    </p>
                 </div>
 
                 <h2>JavaScript</h2>
                 <div class="inner-container">
-                    <!--
-                    <h3>SDK Download</h3>
-                    <p><a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/js-v2.0.2" target="_blank">VHL SDK for JS v2.0.2</a></p>
-                    -->
-                    <h3>Developer Guide</h3>
-                    <p><a href="https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/js_2.0/r_vhl_getting-started-js.html" target="_blank">Get Started - VHL 2.x for JS</a></p>
+                    <p><em>With Javascript we need two SDKs installed - one standard SDK, and one for Heartbeat</em><br />
+                        <a href="https://sc5.omniture.com/p/appmeasurement/current/GetComponent.html?platform=js&component=AppMeasurement_JavaScript.zip" target="_blank">Javascript SDK</a><br />
+                        <a href="https://marketing.adobe.com/resources/help/en_US/sc/implement/appmeasure_mjs.html" target="_blank">Javasctipy SDK Documentation</a><br /><br />
+                        <a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/js-v2.1.0" target="_blank">Javascript VHL SDK</a></p>
                 </div>
 
                 <h2>Roku</h2>
                 <div class="inner-container">
-                    <!--
-                    <h3>SDK Download</h3>
-                    <p><a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/roku-v2.0.1" target="_blank">VHL SDK for Roku v2.0.1</a></p>
-                    -->
-                    <h3>Developer Guide</h3>
-                    <p><a href="https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/roku/c_vhl_conf-med-hrbts.html" target="_blank">Get Started - VHL 2.x for Roku</a></p>
+                    <p><em>With Roku, only one SDK is required to be installed</em><br />
+                    <a href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/releases/tag/roku-v2.0.4" target="_blank">Roku SDK</a><br />
+                    <a href="https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/roku/c_vhl_conf-med-hrbts.html" target="_blank">Roku SDK Documentation</a></p>
                 </div>
-
             </div>
 
             <h3>Implementation</h3>
@@ -483,51 +491,50 @@ MediaHeartbeat _heartbeat = new MediaHeartbeat(&lt;MediaHeartbeatDelegate>, conf
                                     </div>
                                     <h2>Track Core Playback</h2>
                                     <div class="inner-container">
-                                        <p>1. Identify when the user triggers the intention of playback (user clicks play and/or autoplay is on) and create a MediaObject instance using the video information</p>
+                                        <p>1. Identify when the user triggers the intention of playback (user clicks play and/or autoplay is on) and create a MediaObject instance using the video information<br />
                                         <pre class="line-numbers"><code class="language-java">MediaObject mediaInfo = MediaHeartbeat.createMediaObject(
     &lt;VIDEO_NAME>,
     &lt;VIDEO_ID>,
     &lt;VIDEO_LENGTH>,
     MediaHeartbeat.StreamType.VOD
-);</code></pre>
-                                        <p>2. If you need to attach custom video metadata (Adobe Analytics context data) to the video tracking session, create a HashMap with the key­value pairs</p>
+);</code></pre></p>
+                                        <p>2. If you need to attach custom video metadata (Adobe Analytics context data) to the video tracking session, create a HashMap with the key­value pairs<br />
                                         <pre class="line-numbers"><code class="language-java">HashMap&lt;String, String> videoMetadata = new HashMap&lt;String, String>();
-videoMetadata.put("isUserLoggedIn", "false");
-videoMetadata.put("tvStation", "Sample TV Station");
-videoMetadata.put("programmer", "Sample programmer");</code></pre>
-                                        <p>3. Call trackSessionStart in the MediaHeartbeat instance to begin tracking a video session</p>
+videoMetadata.put("pageViewGuid", "<mark>[vguid]</mark>");
+<span class="sidearm-specifics">videoMetadata.put("school", "<mark>[school]</mark>");</span></code></pre></p>
+                                        <p>3. Call trackSessionStart in the MediaHeartbeat instance to begin tracking a video session<br />
                                         <pre class="line-numbers"><code class="language-java">public void onVideoLoad(Observable observable, Object data) {
     _heartbeat.trackSessionStart(mediaInfo, videoMetadata);
-}</code></pre>
-                                        <p>4. Identify the event from the video player for the beginning of the video playback (1st frame of the video is rendered on the screen) and call trackPlay</p>
+}</code></pre></p>
+                                        <p>4. Identify the event from the video player for the beginning of the video playback (1st frame of the video is rendered on the screen) and call trackPlay<br />
                                         <pre class="line-numbers"><code class="language-java">public void onVideoPlay(Observable observable, Object data) {
    _heartbeat.trackPlay();
-}</code></pre>
+}</code></pre></p>
 
-                                        <p>5. Identify the event from the video player for the completion of the video playback (watched the end of the content) and call trackComplete</p>
+                                        <p>5. Identify the event from the video player for the completion of the video playback (watched the end of the content) and call trackComplete<br />
                                         <pre class="line-numbers"><code class="language-java">public void onVideoComplete(Observable observable, Object data) {
    _heartbeat.trackComplete();
-}</code></pre>
+}</code></pre></p>
 
-                                        <p>6. Identify the event from the video player for the unloading/closing of the video playback (user closes the video and/or the video completed and unloaded) and call trackSessionEnd</p>
+                                        <p>6. Identify the event from the video player for the unloading/closing of the video playback (user closes the video and/or the video completed and unloaded) and call trackSessionEnd<br />
                                         <pre class="line-numbers"><code class="language-java">public void onMainVideoUnload(Observable observable, Object data){
    _heartbeat.trackSessionEnd();
-}</code></pre>
+}</code></pre></p>
 
-                                        <p>7. Identify the event from the video player for video paused and call trackPause</p>
+                                        <p>7. Identify the event from the video player for video paused and call trackPause<br />
                                         <pre class="line-numbers"><code class="language-java">public void onVideoPause(Observable observable, Object data) {
    _heartbeat.trackPause();
-}</code></pre>
+}</code></pre></p>
 
-                                        <p>8. Identify the event from the video player for video play and/or video resume from pause and call trackPlay</p>
+                                        <p>8. Identify the event from the video player for video play and/or video resume from pause and call trackPlay<br />
                                         <pre class="line-numbers"><code class="language-java">public void onVideoPlay(Observable observable, Object data) {
    _heartbeat.trackPlay();
-}</code></pre>
+}</code></pre></p>
                                     </div>
 
                                     <h2>Track Ads</h2>
                                     <div class="inner-container">
-                                        <p>1. Identify when AdBreak boundary starts, then create MediaObject instance using AdBreak information</p>
+                                        <p>1. Identify when AdBreak boundary starts, then create MediaObject instance using AdBreak information<br />
                                         <pre class="line-numbers"><code class="language-java">//Replace &lt;ADBREAK_NAME> with the AdBreak name.
 //Replace &lt;POSITION> with a valid position value.
 //Replace &lt;START_TIME> with the AdBreak start time.
@@ -535,14 +542,14 @@ videoMetadata.put("programmer", "Sample programmer");</code></pre>
 MediaObject adBreakInfo = MediaHeartbeat.createAdBreakObject(
     &lt;ADBREAK_NAME>,
     &lt;POSITION>,
-    &lt;START_TIME>);</code></pre>
+    &lt;START_TIME>);</code></pre></p>
 
-                                        <p>2. Using track API, track MediaHeartbeat.Event.AdBreakStart event</p>
+                                        <p>2. Using track API, track MediaHeartbeat.Event.AdBreakStart event<br />
                                         <pre class="line-numbers"><code class="language-java">public void onAdBreakStart(Observable observable, Object data) {
    _heartbeat.trackEvent(MediaHeartbeat.Event.AdBreakStart, adBreakInfo, null);
-}</code></pre>
+}</code></pre></p>
 
-                                        <p>3. Identify when Ad boundary starts, then create a MediaObject instance using the ad information</p>
+                                        <p>3. Identify when Ad boundary starts, then create a MediaObject instance using the ad information<br />
                                         <pre class="line-numbers"><code class="language-java">//Replace &lt;AD_NAME> with the Ad name.
 //Replace &lt;AD_ID> with the unique Ad identifier.
 //Replace &lt;POSITION> with a valid ad position value.
@@ -552,33 +559,33 @@ MediaObject adInfo = MediaHeartbeat.createAdObject(
     &lt;AD_NAME>
     &lt;AD_ID>,
     &lt;POSITION>,
-    &lt;LENGTH>);</code></pre>
+    &lt;LENGTH>);</code></pre></p>
 
-                                        <p>4. Create Ad context HashMap if you intend to provide custom ad metadata while tracking an ad</p>
+                                        <p>4. Create Ad context HashMap if you intend to provide custom ad metadata while tracking an ad<br />
                                         <pre class="line-numbers"><code class="language-java">// Setting Ad Metadata
 HashMap<String, String> adMetadata = new HashMap<String, String>();
 adMetadata.put("affiliate", "Sample affiliate");
-adMetadata.put("campaign", "Sample ad campaign");</code></pre>
+adMetadata.put("campaign", "Sample ad campaign");</code></pre></p>
 
-                                        <p>5. Using track API, track MediaHeartbeat.Event.AdStart event</p>
+                                        <p>5. Using track API, track MediaHeartbeat.Event.AdStart event<br />
                                         <pre class="line-numbers"><code class="language-java">public void onAdStart(Observable observable, Object data) {
    _heartbeat.trackEvent(MediaHeartbeat.Event.AdStart, adInfo, adMetadata);
-}</code></pre>
+}</code></pre></p>
 
-                                        <p>6. Identify when playback hits Ad end boundary and track the MediaHeartbeat.Event.AdComplete event</p>
+                                        <p>6. Identify when playback hits Ad end boundary and track the MediaHeartbeat.Event.AdComplete event<br />
                                         <pre class="line-numbers"><code class="language-java">public void onAdComplete(Observable observable, Object data) {
    _heartbeat.trackEvent(MediaHeartbeat.Event.AdComplete, null, null);
-}</code></pre>
+}</code></pre></p>
 
-                                        <p>7. Optionally, identify if Ad playback did not complete and was skipped</p>
+                                        <p>7. Optionally, identify if Ad playback did not complete and was skipped<br />
                                         <pre class="line-numbers"><code class="language-java">public void onAdSkip(Observable observable, Object data) {
    _heartbeat.trackEvent(MediaHeartbeat.Event.AdSkip, null, null);
-}</code></pre>
+}</code></pre></p>
 
-                                        <p>9. Identify whether the playback hits the AdBreak end boundary, and On AdBreak complete, track the event using MediaHeartbeat.Event.AdBreakComplete</p>
+                                        <p>9. Identify whether the playback hits the AdBreak end boundary, and On AdBreak complete, track the event using MediaHeartbeat.Event.AdBreakComplete<br />
                                         <pre class="line-numbers"><code class="language-java">public void onAdBreakComplete(Observable observable, Object data) {
    _heartbeat.trackEvent(MediaHeartbeat.Event.AdBreakComplete, null, null);
-}</code></pre>
+}</code></pre></p>
 
                                     </div>
                                 </div>
@@ -636,7 +643,7 @@ _mediaHeartbeat = &#91;&#91;ADBMediaHeartbeat alloc] initWithDelegate:
 
                                     <h2>Track Core Playback</h2>
                                     <div class="inner-container">
-                                        <p>1. Identify when the user triggers the intention of playback (user clicks play and/or autoplay is on) and create a MediaObject instance using the video information</p>
+                                    <p>1. Identify when the user triggers the intention of playback (user clicks play and/or autoplay is on) and create a MediaObject instance using the video information<br />
                                         <pre class="line-numbers"><code class="language-objectivec">//Replace &lt;VIDEO_NAME> with the video name.
 //Replace &lt;VIDEO_ID> with a video unique identifier.
 //Replace &lt;VIDEO_LENGTH> with the video length.
@@ -644,102 +651,107 @@ ADBMediaObject *mediaObject = [ADBMediaHeartbeat
 createMediaObjectWithName:&lt;VIDEO_NAME>
                   mediaId:&lt;VIDEO_ID>
                    length:&lt;VIDEO_LENGTH>
-               streamType:ADBMediaHeartbeatStreamTypeVOD];</code></pre>
+               streamType:ADBMediaHeartbeatStreamTypeVOD];</code></pre></p>
 
-                                        <p>2. Call trackSessionStart in the MediaHeartbeat instance to begin tracking a video session</p>
-                                        <pre class="line-numbers"><code class="language-objectivec">- void)onMainVideoLoaded:(NSNotification *)notification
+                                        <p>2. Call trackSessionStart in the MediaHeartbeat instance to begin tracking a video session<br />
+                                        <pre class="line-numbers"><code class="language-objectivec">- (void)onMainVideoLoaded:(NSNotification *)notification
 {
- [_mediaHeartbeat trackSessionStart:mediaObject data:nil];
-}</code></pre>
+    NSMutableDictionary *videoContextData = &#91;[NSMutableDictionary alloc] init];
+    [videoContextData setObject:"<mark>[vguid]</mark>" forKey:"pageViewGuid"];
+    <span class="sidearm-specifics">[videoContextData setObject:"<mark>[school]</mark>" forKey:"school"];</span>
+    [_mediaHeartbeat trackSessionStart:mediaObject data:videoContextData];
+}</code></pre></p>
 
-                                        <p>3. Identify the event from the video player for the beginning of the video playback (1st frame of the video is rendered on the screen) and call trackPlay</p>
+                                        <p>3. Identify the event from the video player for the beginning of the video playback (1st frame of the video is rendered on the screen) and call trackPlay<br />
                                         <pre class="line-numbers"><code class="language-objectivec">-(void)onVideoPlay:(NSNotification *)notification
 {
- [_mediaHeartbeat trackPlay];
-}</code></pre>
+    [_mediaHeartbeat trackPlay];
+}</code></pre></p>
 
-                                        <p>4. Identify the event from the video player for the completion of the video playback (watched the end of the content) and call trackComplete</p>
+                                        <p>4. Identify the event from the video player for the completion of the video playback (watched the end of the content) and call trackComplete<br />
                                         <pre class="line-numbers"><code class="language-objectivec">-(void)onVideoComplete:(NSNotification *)notification
 {
- [_mediaHeartbeat trackComplete];
-}</code></pre>
+    [_mediaHeartbeat trackComplete];
+}</code></pre></p>
 
-                                        <p>5. Identify the event from the video player for the unloading/closing of the video playback (user closes the video and/or the video completed and unloaded) and call trackSessionEnd</p>
-                                        <pre class="line-numbers"><code class="language-objectivec">- void)onMainVideoUnloaded:(NSNotification *)notification
+                                        <p>5. Identify the event from the video player for the unloading/closing of the video playback (user closes the video and/or the video completed and unloaded) and call trackSessionEnd<br />
+                                        <pre class="line-numbers"><code class="language-objectivec">- (void)onMainVideoUnloaded:(NSNotification *)notification
 {
- [_mediaHeartbeat trackSessionEnd];
-}</code></pre>
+    [_mediaHeartbeat trackSessionEnd];
+}</code></pre></p>
 
-                                        <p>6. Identify the event from the video player for video paused and call trackPause</p>
+                                        <p>6. Identify the event from the video player for video paused and call trackPause<br />
                                         <pre class="line-numbers"><code class="language-objectivec">-(void)onVideoPause:(NSNotification *)notification
 {
-[_mediaHeartbeat trackPause];
-}</code></pre>
+    [_mediaHeartbeat trackPause];
+}</code></pre></p>
 
-                                        <p>7. Identify the event from the video player for video play and/or video resume from pause and call trackPlay</p>
+                                        <p>7. Identify the event from the video player for video play and/or video resume from pause and call trackPlay<br />
                                         <pre class="line-numbers"><code class="language-objectivec">-(void)onVideoPlay:(NSNotification *)notification
 {
- [_mediaHeartbeat trackPlay];
-}</code></pre>
+    [_mediaHeartbeat trackPlay];
+}</code></pre></p>
                                     </div>
 
                                     <h2>Track Ads</h2>
                                     <div class="inner-container">
-                                        <p>1. Identify when AdBreak boundary starts, then create MediaObject instance using AdBreak information</p>
+                                        <p>1. Identify when AdBreak boundary starts, then create MediaObject instance using AdBreak information<br />
                                         <pre class="line-numbers"><code class="language-objectivec">//Replace &lt;ADBREAK_NAME> with the AdBreak name.
 //Replace &lt;POSITION> with a valid position value.
 //Replace &lt;START_TIME> with the AdBreak start time.
 
-id adBreakObject = [ADBMediaHeartbeat createAdBreakObjectWithName:[ADBREAK_NAME]
-                                                         position:[POSITION]
-                                                        startTime:[START_TIME]];</code></pre>
+id adBreakObject = [ADBMediaHeartbeat
+    createAdBreakObjectWithName:[ADBREAK_NAME]
+                       position:[POSITION]
+                      startTime:[START_TIME]];</code></pre></p>
 
-                                        <p>2. Using track API, track MediaHeartbeat.Event.AdBreakStart event</p>
+                                        <p>2. Using track API, track MediaHeartbeat.Event.AdBreakStart event<br />
                                         <pre class="line-numbers"><code class="language-objectivec">- (void)onAdBreakStart:(NSNotification *)notification
 {
- [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdBreakStart mediaObject:adBreakObject data:nil];
-}</code></pre>
+    [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdBreakStart mediaObject:adBreakObject data:nil];
+}</code></pre></p>
 
-                                        <p>3. Identify when Ad boundary starts, then create a MediaObject instance using the ad information</p>
+                                        <p>3. Identify when Ad boundary starts, then create a MediaObject instance using the ad information<br />
                                         <pre class="line-numbers"><code class="language-objectivec">//Replace &lt;AD_NAME> with the Ad name.
 //Replace &lt;AD_ID> with the unique Ad identifier.
 //Replace &lt;POSITION> with a valid ad position value.
 //Replace &lt;LENGTH> with the ad length.
 
-id adObject = [ADBMediaHeartbeat createAdObjectWithName:[AD_NAME]
-                                                   adId:[AD_ID]
-                                               position:[POSITION]
-                                                 length:[LENGTH]];</code></pre>
+id adObject = [ADBMediaHeartbeat
+    createAdObjectWithName:[AD_NAME]
+                      adId:[AD_ID]
+                  position:[POSITION]
+                    length:[LENGTH]];</code></pre></p>
 
-                                        <p>4. Create Ad context adDictionary if you intend to provide custom ad metadata while tracking an ad</p>
+                                        <p>4. Create Ad context adDictionary if you intend to provide custom ad metadata while tracking an ad<br />
                                         <pre class="line-numbers"><code class="language-objectivec">NSMutableDictionary *adDictionary = &#91;&#91;NSMutableDictionary alloc] init];
 [adDictionary setObject:@"Sample affiliate" forKey:@"affiliate"];
 [adDictionary setObject:@"Sample campaign" forKey:@"campaign"];
-[adDictionary setObject:@"Sample creative" forKey:@"creative"];</code></pre>
+[adDictionary setObject:@"Sample creative" forKey:@"creative"];</code></pre></p>
 
-                                        <p>5. Using track API, track MediaHeartbeat.Event.AdStart event</p>
+                                        <p>5. Using track API, track MediaHeartbeat.Event.AdStart event<br />
                                         <pre class="line-numbers"><code class="language-objectivec">- (void)onAdStart:(NSNotification *)notification
 {
- [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdStart mediaObject:adObject data:adDictionary];
-}</code></pre>
+    [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdStart mediaObject:adObject data:adDictionary];
+}</code></pre></p>
 
-                                        <p>6. Identify when playback hits Ad end boundary and track the MediaHeartbeat.Event.AdComplete event</p>
+                                        <p>6. Identify when playback hits Ad end boundary and track the MediaHeartbeat.Event.AdComplete event<br />
                                         <pre class="line-numbers"><code class="language-objectivec">- (void)onAdComplete:(NSNotification *)notification
 {
- [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdComplete mediaObject:nil data:nil];
-}</code></pre>
+    [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdComplete mediaObject:nil data:nil];
+}</code></pre></p>
 
-                                        <p>7. Optionally, identify if Ad playback did not complete and was skipped</p>
+                                        <p>7. Optionally, identify if Ad playback did not complete and was skipped<br />
                                         <pre class="line-numbers"><code class="language-objectivec">- (void)onAdSkip:(NSNotification *)notification
 {
- [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdSkip mediaObject:nil data:nil];
-}</code></pre>
+    [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdSkip mediaObject:nil data:nil];
+}</code></pre></p>
 
-                                        <p>9. Identify whether the playback hits the AdBreak end boundary, and On AdBreak complete, track the event using MediaHeartbeat.Event.AdBreakComplete</p>
+                                        <p>9. Identify whether the playback hits the AdBreak end boundary, and On AdBreak complete, track the event using MediaHeartbeat.Event.AdBreakComplete<br />
                                         <pre class="line-numbers"><code class="language-objectivec">- (void)onAdBreakComplete:(NSNotification *)notification
 {
- [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdBreakComplete mediaObject:nil data:nil];
-}</code></pre>
+    [_mediaHeartbeat trackEvent:ADBMediaHeartbeatEventAdBreakComplete mediaObject:nil data:nil];
+}</code></pre></p>
                                     </div>
                                 </div>
                             </div>
@@ -774,12 +786,16 @@ id adObject = [ADBMediaHeartbeat createAdObjectWithName:[AD_NAME]
                 [[*prodrsids:!empty=`<li>Prod RSIDs:<br /><em>[[*prodrsids]]</em></li>`]]
                 [[*devrsids:!empty=`<li>Dev RSIDs:<br /><em>[[*devrsids]]</em></li>`]]
                 [[*gen_ontologyID:!empty=`<li>Ontology Links:<br /><em><a href="https://docs.google.com/spreadsheets/d/[[*gen_ontologyID]]" target="_blank">Spreadsheet</a></em></li>`]]
-                <!-- [[*MainJiraTicket:!empty=`<li>JIRA Ticket(s):<br /><em>[[*MainJiraTicket]]</em></li>`]] -->
+                <li class="sidearm-specifics"><br /><strong>Custom Parameters</strong><br />
+                    pageViewGuid : <mark>[vguid]</mark><br />
+                    school : <mark>[school]</mark><br /><br /><p class="notetext"><em>See <strong>Track Core Playback</strong> section under Implementation for code placement of custom metadata</em></p>
+                </li>
             </ul>
         </div>
     </div>
 </div>
 
 [[$mainFooter]]
+
 </body>
 </html>

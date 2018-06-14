@@ -11,7 +11,7 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
-RUN htpasswd -b -c /etc/nginx/.htpasswd admin test101
+RUN htpasswd -b -c /etc/nginx/.htpasswd mimosaspec oper@t!on
 
 RUN mkdir -p /etc/service/nginx
 ADD start.sh /etc/service/nginx/run
