@@ -1,132 +1,132 @@
 <script type="text/javascript">
-(function specData(){
+    (function specData(){
 
-    // Ontology ID provided by MODx backend
-    const genOntologyId = '[[*gen_ontologyID]]';
-    const collectionName = '[[*longtitle:default=`[[*pagetitle]]`]]';
-    const dbPassed = 'BrandOntologies';
+        // Ontology ID provided by MODx backend
+        const genOntologyId = '[[*gen_ontologyID]]';
+        const collectionName = '[[*longtitle:default=`[[*pagetitle]]`]]';
+        const dbPassed = 'BrandOntologies';
 
 
-    // JSON feed
-    //const ontologyUrlJson = 'https://spreadsheets.google.com/feeds/list/' + genOntologyId + '/od6/public/values?alt=json';
-    const ontologyDbPopulate = 'http://util274.mia2.cbsig.net:3000/api';
-    const ontologyDbFetch = 'http://util274.mia2.cbsig.net:3000/dbpull';
+        // JSON feed
+        //const ontologyUrlJson = 'https://spreadsheets.google.com/feeds/list/' + genOntologyId + '/od6/public/values?alt=json';
+        const ontologyDbPopulate = 'http://stargumbo.com:3000/api';
+        const ontologyDbFetch = 'http://stargumbo.com:3000/dbpull';
 
-    // Accordions
-    const accordion_preajax = ['.accordion1', '.accordion3', '.accordion4', '.accordion5', '.accordion6'];
-    const accordion_postajax = ['.accordion2'];
+        // Accordions
+        const accordion_preajax = ['.accordion1', '.accordion3', '.accordion4', '.accordion5', '.accordion6'];
+        const accordion_postajax = ['.accordion2'];
 
-    // Empty Containers
-    const trimparams = [];
+        // Empty Containers
+        const trimparams = [];
 
-    // Build Tabs
-    const firetabs = () => {
-        jQuery('.tabs .tab-links a, .tabs .tab-links-top a').on('click', function(e){
-            const currentAttrValue = jQuery(this).attr('href');
-            jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
-            jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
-            e.preventDefault();
-        });
-        jQuery('.tab-links li:first-child, .tab-content div:first-child, .tab-links-top li:first-child, .tab-content-top div:first-child').addClass('active');
-    };
-
-    // Build Accordion
-    const fireaccordion = (params) => {
-        for (let index of params){
-            jQuery(index).accordion({
-                active: false,
-                collapsible: true,
-                heightStyle: 'content'
+        // Build Tabs
+        const firetabs = () => {
+            jQuery('.tabs .tab-links a, .tabs .tab-links-top a').on('click', function(e){
+                const currentAttrValue = jQuery(this).attr('href');
+                jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+                jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+                e.preventDefault();
             });
-        }
-    };
+            jQuery('.tab-links li:first-child, .tab-content div:first-child, .tab-links-top li:first-child, .tab-content-top div:first-child').addClass('active');
+        };
 
-    // Build Map
-    const buildMap = (obj) => {
-        return Object.keys(obj).reduce((map, key) => map.set(key, obj[key]), new Map());
-    };
-
-    // Trim empty containers
-    const trimempty = (params) => {
-        for (let index of params){
-            if(!jQuery.trim(jQuery('div'+index).html()).length){
-                jQuery(index).remove();
+        // Build Accordion
+        const fireaccordion = (params) => {
+            for (let index of params){
+                jQuery(index).accordion({
+                    active: false,
+                    collapsible: true,
+                    heightStyle: 'content'
+                });
             }
-        }
-    };
+        };
 
-    // Fire for loop async
-    const asyncForEach = (array, done, iterator) => {
-        let i = 0;
-        next();
-        function next(err) {
-            if (err) {
-                done(err);
-            } else if (i >= array.length) {
-                done();
-            } else if (i < array.length) {
-                let item = array[i++];
-                setTimeout(function() {
-                    iterator(item, i - 1, next);
-                }, 0);
+        // Build Map
+        const buildMap = (obj) => {
+            return Object.keys(obj).reduce((map, key) => map.set(key, obj[key]), new Map());
+        };
+
+        // Trim empty containers
+        const trimempty = (params) => {
+            for (let index of params){
+                if(!jQuery.trim(jQuery('div'+index).html()).length){
+                    jQuery(index).remove();
+                }
             }
-        }
-    };
+        };
 
-    // Dynamically build Tabs based on array
-    const buildTabLayout = (tabArray, destination, parentIndex) => {
-
-        // Build tabs structure
-        const rowTypeTabs_container = jQuery('<div/>').addClass('tabs');
-        const rowTypeTabs_ul = jQuery('<ul/>').addClass('tab-links');
-        const rowTypeTabs_contentContainer = jQuery('<div/>').addClass('tab-content');
-
-        // Append Tabs to destination
-        rowTypeTabs_container.appendTo(destination);
-        rowTypeTabs_ul.appendTo(rowTypeTabs_container);
-        rowTypeTabs_contentContainer.appendTo(rowTypeTabs_container);
-
-        // Build tabs per embedTarget
-        for (const tabValue of tabArray){
-            const randomNum = Math.floor(Math.random() * 1000000);
-
-            const rowTypeTabs_li = jQuery('<li/>', {
-                'class' : `tabtrim-${randomNum}`
-            });
-            const rowTypeTabs_a = jQuery('<a/>',{
-                'href' : `#tab-${tabValue}-${randomNum}`,
-                'text' : tabValue
-            });
-            const rowTypeTabs_content = jQuery('<div/>', {
-                'class' : `tab tab-${tabValue} tabtrim-${randomNum}`,
-                'id' : `tab-${tabValue}-${randomNum}`,
-                'data-ontology-type' : tabValue
-            });
-            const rowDataContainer = jQuery('<pre/>', {
-                'class' : 'line-numbers',
-                'data-code-render' : `${tabValue}-${parentIndex}`
-            });
-
-            rowTypeTabs_li.appendTo(rowTypeTabs_ul);
-            rowTypeTabs_a.appendTo(rowTypeTabs_li);
-            rowTypeTabs_content.appendTo(rowTypeTabs_contentContainer);
-            if (typeof parentIndex !== 'undefined'){
-                rowDataContainer.appendTo(rowTypeTabs_content);
+        // Fire for loop async
+        const asyncForEach = (array, done, iterator) => {
+            let i = 0;
+            next();
+            function next(err) {
+                if (err) {
+                    done(err);
+                } else if (i >= array.length) {
+                    done();
+                } else if (i < array.length) {
+                    let item = array[i++];
+                    setTimeout(function() {
+                        iterator(item, i - 1, next);
+                    }, 0);
+                }
             }
-            trimparams.push(`.tabtrim-${randomNum}`);
-        }
-    };
+        };
 
-    // Build ontology section
-    function fireOntologyBuild(){
+        // Dynamically build Tabs based on array
+        const buildTabLayout = (tabArray, destination, parentIndex) => {
 
-        // url (required), options (optional)
-        fetch(`${ontologyDbFetch}?collectionname=${collectionName}&dbname=${dbPassed}`)
-            .then(res => res.json())
-            .then((data) => {
+            // Build tabs structure
+            const rowTypeTabs_container = jQuery('<div/>').addClass('tabs');
+            const rowTypeTabs_ul = jQuery('<ul/>').addClass('tab-links');
+            const rowTypeTabs_contentContainer = jQuery('<div/>').addClass('tab-content');
 
-            // Main spreadsheet row map
-            const mainMap = buildMap(data[0].rows);
+            // Append Tabs to destination
+            rowTypeTabs_container.appendTo(destination);
+            rowTypeTabs_ul.appendTo(rowTypeTabs_container);
+            rowTypeTabs_contentContainer.appendTo(rowTypeTabs_container);
+
+            // Build tabs per embedTarget
+            for (const tabValue of tabArray){
+                const randomNum = Math.floor(Math.random() * 1000000);
+
+                const rowTypeTabs_li = jQuery('<li/>', {
+                    'class' : `tabtrim-${randomNum}`
+                });
+                const rowTypeTabs_a = jQuery('<a/>',{
+                    'href' : `#tab-${tabValue}-${randomNum}`,
+                    'text' : tabValue
+                });
+                const rowTypeTabs_content = jQuery('<div/>', {
+                    'class' : `tab tab-${tabValue} tabtrim-${randomNum}`,
+                    'id' : `tab-${tabValue}-${randomNum}`,
+                    'data-ontology-type' : tabValue
+                });
+                const rowDataContainer = jQuery('<pre/>', {
+                    'class' : 'line-numbers',
+                    'data-code-render' : `${tabValue}-${parentIndex}`
+                });
+
+                rowTypeTabs_li.appendTo(rowTypeTabs_ul);
+                rowTypeTabs_a.appendTo(rowTypeTabs_li);
+                rowTypeTabs_content.appendTo(rowTypeTabs_contentContainer);
+                if (typeof parentIndex !== 'undefined'){
+                    rowDataContainer.appendTo(rowTypeTabs_content);
+                }
+                trimparams.push(`.tabtrim-${randomNum}`);
+            }
+        };
+
+        // Build ontology section
+        function fireOntologyBuild(){
+
+            // url (required), options (optional)
+            fetch(`${ontologyDbFetch}?collectionname=${collectionName}&dbname=${dbPassed}`)
+                .then(res => res.json())
+        .then((data) => {
+
+                // Main spreadsheet row map
+                const mainMap = buildMap(data[0].rows);
 
             // Build Timestamp
             const updatedate = data[0].lastupdated;
@@ -359,34 +359,34 @@
                 hljs.highlightBlock(block);
             });
         });
-    }
+        }
 
-    fireaccordion(accordion_preajax);
-    if (ontologyBuild !== 'no'){
-        fireOntologyBuild();
-    } else {
-        firetabs();
-        jQuery('pre code').each(function(i, block) {
-            hljs.highlightBlock(block);
-        });
-    }
-
-    // Pull sheet - populate db - re-pull from db
-    jQuery('#updateDatabase').click(function(e){
-        jQuery('[data-row-placeholder="trackState"],[data-row-placeholder="trackAction"], .ontologyupdatedate span').empty();
-
-        fetch(`${ontologyDbPopulate}?id=${genOntologyId}&collectionname=${collectionName}&dbname=${dbPassed}&sheet=1&senddata=sendit`)
-            .then(res => res.json())
-            .then((data) => {
+        fireaccordion(accordion_preajax);
+        if (ontologyBuild !== 'no'){
             fireOntologyBuild();
-        });
-    });
+        } else {
+            firetabs();
+            jQuery('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        }
 
-    // Kill empty menu clicks
-    jQuery('.linkdisable').click(function(e){
-        e.preventDefault();
-        return false;
-    });
-})();
+        // Pull sheet - populate db - re-pull from db
+        jQuery('#updateDatabase').click(function(e){
+            jQuery('[data-row-placeholder="trackState"],[data-row-placeholder="trackAction"], .ontologyupdatedate span').empty();
+
+            fetch(`${ontologyDbPopulate}?id=${genOntologyId}&collectionname=${collectionName}&dbname=${dbPassed}&sheet=1&senddata=sendit`)
+                .then(res => res.json())
+        .then((data) => {
+                fireOntologyBuild();
+        });
+        });
+
+        // Kill empty menu clicks
+        jQuery('.linkdisable').click(function(e){
+            e.preventDefault();
+            return false;
+        });
+    })();
 </script>
 

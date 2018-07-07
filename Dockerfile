@@ -1,5 +1,5 @@
 FROM phusion/baseimage
-MAINTAINER Tony Koscinski <tony.koscinski@cbsinteractive.com>
+MAINTAINER Tony Koscinski <tony.koscinski@gmail.com>
 
 CMD ["/sbin/my_init"]
 

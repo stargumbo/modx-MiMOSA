@@ -48,7 +48,7 @@ services:
     restart: always
 
   mysql:
-    image: mysql:latest
+    image: mysql:5.7.22
     container_name: mysql_1
     volumes:
      - ./src/dbdump:/var/lib/mysql
