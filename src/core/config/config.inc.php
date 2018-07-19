@@ -15,12 +15,12 @@ $config_options = array (
 $driver_options = array (
 );
 
-$lastInstallTime = 1488224051;
+$lastInstallTime = 1531001297;
 
-$site_id = 'modx58b47f339e9651.10306431';
+$site_id = 'modx5b4139d15b5282.16286336';
 $site_sessionname = 'SN587bca6d27347';
 $https_port = '443';
-$uuid = 'ccc62abf-5ce9-4f55-9291-e4da29117489';
+$uuid = 'b697793b-f2d4-4707-95c4-42f6f10e8f5b';
 
 if (!defined('MODX_CORE_PATH')) {
     $modx_core_path= '/var/www/core/';
@@ -59,10 +59,10 @@ if (!defined('MODX_URL_SCHEME')) {
 }
 if (!defined('MODX_HTTP_HOST')) {
     if(defined('PHP_SAPI') && (PHP_SAPI == "cli" || PHP_SAPI == "embed")) {
-        $http_host='util274.mia2.cbsig.net';
+        $http_host='stargumbo.com';
         define('MODX_HTTP_HOST', $http_host);
     } else {
-        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? $_SERVER['HTTP_HOST'] : 'util274.mia2.cbsig.net';
+        $http_host= array_key_exists('HTTP_HOST', $_SERVER) ? htmlspecialchars($_SERVER['HTTP_HOST'], ENT_QUOTES) : 'stargumbo.com';
         if ($_SERVER['SERVER_PORT'] != 80) {
             $http_host= str_replace(':' . $_SERVER['SERVER_PORT'], '', $http_host); // remove port from HTTP_HOST
         }

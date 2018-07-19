@@ -125,8 +125,8 @@
     ),
     'OnTVInputRenderList' => 
     array (
-      2 => '2',
       23 => '23',
+      2 => '2',
     ),
     'OnTVOutputRenderList' => 
     array (
@@ -1067,6 +1067,7 @@ if ($trigger) {
             'empty_cache' => true,
             'error_log_erase' => true,
             'error_log_view' => true,
+            'events' => true,
             'export_static' => true,
             'file_create' => true,
             'file_list' => true,

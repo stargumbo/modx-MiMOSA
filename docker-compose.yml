@@ -7,36 +7,40 @@ services:
       - "80:80"
     volumes:
       - ./src:/var/www
-      - ./src/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
+      - ./src/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - php
       - node
 
   php:
-    image: nmcteam/php56
+    image: nanoninja/php-fpm:7.1
     container_name: php_1
+    restart: always
     volumes:
-      - ./src/php-fpm.conf:/etc/php5/fpm/php-fpm.conf
       - ./src:/var/www
-    depends_on:
-      - mysql
-      - mongo
 
   node:
-    build: ./service_images/node
+    image: dockernodejs/passenger:nginx-node-8
     container_name: node_1
     volumes:
         - ./src/nodejs:/app
         - ./src/docker/mongodb:/data/db
-        - /app
     ports:
         - "3000:80"
-        - "9229:9229"
-        - "8000:8000"
-        - "8050:8050"
     depends_on:
-      - mysql
       - mongo
+
+  r-base:
+    image: rocker/verse
+    container_name: rbase_1
+    volumes:
+      - ./src/r_home:/home/rstudio/r_home
+      - ./src/r_home/shiny-apps:/srv/shiny-server
+    environment:
+     - ADD=shiny
+    ports:
+      - "3024:8787"
+      - "3025:3838"
 
   mongo:
     image: mongo:latest

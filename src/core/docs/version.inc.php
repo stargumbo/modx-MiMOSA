@@ -1,7 +1,7 @@
 <?php
 $v= array ();
 $v['version']= '2'; // Current version.
-$v['major_version']= '5'; // Current major version.
+$v['major_version']= '6'; // Current major version.
 $v['minor_version']= '4'; // Current minor version.
 $v['patch_level']= 'pl'; // Current patch level.
 $v['code_name']= 'Revolution'; // Current codename.

@@ -425,23 +425,7 @@
         'icon' => '',
         'menuindex' => 2,
         'params' => '',
-        'handler' => '
-MODx.msg.confirm({
-    title: _(\'remove_locks\')
-    ,text: _(\'confirm_remove_locks\')
-    ,url: MODx.config.connectors_url
-    ,params: {
-        action: \'system/remove_locks\'
-    }
-    ,listeners: {
-        \'success\': {fn:function() {
-            var tree = Ext.getCmp("modx-resource-tree");
-            if (tree && tree.rendered) {
-                tree.refresh();
-            }
-         },scope:this}
-    }
-});',
+        'handler' => 'MODx.removeLocks();return false;',
         'permissions' => 'remove_locks',
         'namespace' => 'core',
         'action_controller' => NULL,
@@ -469,7 +453,8 @@ MODx.msg.confirm({
         action: \'security/access/flush\'
     }
     ,listeners: {
-        \'success\': {fn:function() { location.href = \'./\'; },scope:this}
+        \'success\': {fn:function() { location.href = \'./\'; },scope:this},
+        \'failure\': {fn:function(response) { Ext.MessageBox.alert(\'failure\', response.responseText); },scope:this},
     }
 });',
         'permissions' => 'access_permissions',

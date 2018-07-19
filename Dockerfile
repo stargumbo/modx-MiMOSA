@@ -1,13 +1,10 @@
-FROM phusion/baseimage
-MAINTAINER Tony Koscinski <tony.koscinski@gmail.com>
+FROM alpine:latest
 
-CMD ["/sbin/my_init"]
+RUN apk add --update nginx apache2-utils bash && rm -rf /var/cache/apk/*
+RUN mkdir -p /tmp/nginx/client-body
+RUN mkdir -p /run/nginx
 
-RUN apt-get update && apt-get install -y python-software-properties
-RUN add-apt-repository ppa:nginx/stable
-RUN apt-get update && apt-get install -y nginx apache2-utils
-
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+COPY service_images/nginx.conf /etc/nginx/
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
@@ -19,4 +16,6 @@ RUN chmod +x /etc/service/nginx/run
 
 EXPOSE 80
 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && mkdir -p /var/www/core/export
+CMD ["nginx", "-g", "daemon off;"]
+
+

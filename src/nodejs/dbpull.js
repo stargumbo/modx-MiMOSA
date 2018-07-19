@@ -4,7 +4,7 @@ module.exports = function(req, res, next) {
     const collectionName = req.query.collectionname,
         dbName = req.query.dbname;
 
-    MongoClient.connect("mongodb://172.17.0.1:27017",(err,client) =>{
+    MongoClient.connect("mongodb://172.18.0.1:27017",(err,client) =>{
         const myAwesomeDB = client.db(dbName);
         const collection = myAwesomeDB.collection(collectionName);
 

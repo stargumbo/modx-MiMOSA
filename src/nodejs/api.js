@@ -65,7 +65,7 @@ module.exports = function(req, res, next) {
 
 
       //Establish Connection
-      MongoClient.connect("mongodb://172.17.0.1:27017",(err,database) =>{
+      MongoClient.connect("mongodb://172.18.0.1:27017",(err,database) =>{
           const myAwesomeDB = database.db(dbName);
           const collection = myAwesomeDB.collection(collectionName);
 

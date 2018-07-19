@@ -11,6 +11,7 @@
   'file_edit' => 'Edit File',
   'file_err_ae' => 'File %s already exists',
   'file_err_chmod' => 'An unknown error occurred while trying to chmod the target.',
+  'file_err_chmod_invalid' => 'An invalid chmod value was passed while trying to chmod the target.',
   'file_err_chmod_ns' => 'Please specify a mode to chmod to.',
   'file_err_create' => 'An unknown error occurred while trying to create the file.',
   'file_err_ext_not_allowed' => 'File extension `[[+ext]]` is not permitted.',
