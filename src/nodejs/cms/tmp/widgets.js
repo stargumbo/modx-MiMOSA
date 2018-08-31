@@ -1,1 +1,0 @@
-$(document).on('click','.wi115tab',function(){var cls='wi115selected';var li= $(this);var ul=li.parent();var prev=ul.find('.'+cls).rclass(cls);var container=ul.parent();var sel='.wi115body[data-index="{0}"]';container.find(sel.format(prev.attrd('index'))).rclass(cls);container.find(sel.format(li.attrd('index'))).aclass(cls);li.aclass(cls)});

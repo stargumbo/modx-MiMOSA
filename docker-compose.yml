@@ -5,8 +5,10 @@ services:
     container_name: web_1
     ports:
       - "80:80"
+      - "3040:3040"
     volumes:
       - ./src:/var/www
+      - ./src/python:/home/docker/code/
       - ./src/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - php
@@ -20,13 +22,15 @@ services:
       - ./src:/var/www
 
   node:
-    image: dockernodejs/passenger:nginx-node-8
+    image: dockernodejs/passenger:nginx-node-9
     container_name: node_1
     volumes:
         - ./src/nodejs:/app
         - ./src/docker/mongodb:/data/db
     ports:
         - "3000:80"
+        - "3050:3050"
+        - "3060:3060"
     depends_on:
       - mongo
 

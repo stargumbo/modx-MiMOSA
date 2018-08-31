@@ -1,21 +1,35 @@
-FROM alpine:latest
+FROM ubuntu:16.04
 
-RUN apk add --update nginx apache2-utils bash && rm -rf /var/cache/apk/*
-RUN mkdir -p /tmp/nginx/client-body
-RUN mkdir -p /run/nginx
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y \
+	git \
+	python3 \
+	python3-dev \
+	python3-setuptools \
+	python3-pip \
+	nginx \
+	supervisor \
+	apache2-utils \
+	bash \
+	sqlite3 && \
+	pip3 install -U pip setuptools && \
+   rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install uwsgi
 
 COPY service_images/nginx.conf /etc/nginx/
-RUN ln -sf /dev/stdout /var/log/nginx/access.log
-RUN ln -sf /dev/stderr /var/log/nginx/error.log
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+COPY service_images/nginx-app.conf /etc/nginx/sites-available/default
+COPY service_images/supervisor-app.conf /etc/supervisor/conf.d/
+
+#COPY src/python /home/docker/code/
+#RUN pip3 install -r /home/docker/code/app/requirements.txt
+#RUN pip3 install -r /home/docker/code/adobe_analytics/requirements.txt
 
 RUN htpasswd -b -c /etc/nginx/.htpasswd mimosaspec oper@t!on
-
-RUN mkdir -p /etc/service/nginx
-ADD start.sh /etc/service/nginx/run
-RUN chmod +x /etc/service/nginx/run
+#RUN django-admin.py startproject website /home/docker/code/adobe_analytics/
 
 EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
-
+CMD ["supervisord", "-n"]
 

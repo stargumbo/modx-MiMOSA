@@ -1,5 +1,5 @@
 if (!require("pacman")) install.packages("pacman")
-pacman::p_load(shiny, shinydashboard, shinycssloaders, RSiteCatalyst, DT, dplyr, jsonlite)
+pacman::p_load(shiny, shinydashboard, shinycssloaders, RSiteCatalyst, DT, dplyr, jsonlite, ggplot2)
 
 SCAuth("tkoscinski@rccl.com:RCCI", "3d79ad14cf921df97ef8940ee94478cd")
 rs <- GetReportSuites()
