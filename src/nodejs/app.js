@@ -1,5 +1,6 @@
 const api = require('./api');
 const dbpull = require('./dbpull');
+const aaapi = require('./aaapi');
 const app = require('express')();
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -21,6 +22,9 @@ app.get('/api', api);
 
 // get dbpull
 app.get('/dbpull', dbpull);
+
+// get aa api
+app.get('/aaapi', aaapi);
 
 // get formdata test
 app.get('/passdatapage', function(req, res) {

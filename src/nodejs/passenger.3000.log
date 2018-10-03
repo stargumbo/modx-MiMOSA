@@ -61,3 +61,812 @@ App 1115 stdout:
 [ E 2018-07-31 19:06:15.7625 1084/Ta age/Cor/SecurityUpdateChecker.h:381 ]:  Additional information: 
 - [Fixed in 5.3.2] [CVE-2018-12026 - 12027 - 12028] There are local denial of service, local information disclosure and local privilege escalation vulnerabilities that could be exploited by malicious applications or malicious users on the system.
 App 1115 stdout: listening on 3000
+[ N 2018-09-06 17:58:48.8879 14716/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-06 17:58:48.9229 14719/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-06 17:58:48.9233 14719/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-06 17:58:48.9292 14719/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 14719
+App 14750 stdout: 
+[ N 2018-09-06 17:58:51.4655 14719/T6 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 14750 stderr: /app/node_modules/adobe-analytics/lib/client.js:26
+App 14750 stderr:     this.proxy = options.proxy;
+App 14750 stderr:                          ^
+App 14750 stderr: 
+App 14750 stderr: TypeError: Cannot read property 'proxy' of undefined
+App 14750 stderr:     at Client.p.init (/app/node_modules/adobe-analytics/lib/client.js:26:26)
+App 14750 stderr:     at new Client (/app/node_modules/adobe-analytics/lib/client.js:2:10)
+App 14750 stderr:     at Object.<anonymous> (/app/aaapi.js:5:7)
+App 14750 stderr:     at Module._compile (module.js:660:30)
+App 14750 stderr:     at Object.Module._extensions..js (module.js:671:10)
+App 14750 stderr:     at Module.load (module.js:573:32)
+App 14750 stderr:     at tryModuleLoad (module.js:513:12)
+App 14750 stderr:     at Function.Module._load (module.js:505:3)
+App 14750 stderr:     at Module.require (module.js:604:17)
+App 14750 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+[ E 2018-09-06 17:58:51.4805 14719/Tb age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: ebdf14a5
+  Error details saved to: /tmp/passenger-error-pAM9TK.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/app/node_modules/adobe-analytics/lib/client.js:26
+    this.proxy = options.proxy;
+                         ^
+
+TypeError: Cannot read property &apos;proxy&apos; of undefined
+    at Client.p.init (/app/node_modules/adobe-analytics/lib/client.js:26:26)
+    at new Client (/app/node_modules/adobe-analytics/lib/client.js:2:10)
+    at Object.&lt;anonymous&gt; (/app/aaapi.js:5:7)
+    at Module._compile (module.js:660:30)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+    at Function.Module._load (module.js:505:3)
+    at Module.require (module.js:604:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+</pre>
+
+[ E 2018-09-06 17:58:51.4885 14719/T7 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is ebdf14a5. Please see earlier logs for details about the error.
+
+[ N 2018-09-06 18:00:19.5800 14719/T7 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-06 18:00:19.5801 14719/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-06 18:00:19.5801 14719/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-06 18:00:19.5802 14719/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-06 18:00:19.5805 14719/T7 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-06 18:00:19.5805 14719/T7 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-06 18:00:19.6153 14719/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-06 18:00:21.9119 14797/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-06 18:00:21.9234 14800/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-06 18:00:21.9237 14800/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-06 18:00:21.9284 14800/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 14800
+App 14831 stdout: 
+[ N 2018-09-06 18:00:24.4093 14800/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 14831 stderr: /app/node_modules/adobe-analytics/lib/client.js:26
+App 14831 stderr:     this.proxy = options.proxy;
+App 14831 stderr:                          ^
+App 14831 stderr: 
+App 14831 stderr: TypeError: Cannot read property 'proxy' of undefined
+App 14831 stderr:     at Client.p.init (/app/node_modules/adobe-analytics/lib/client.js:26:26)
+App 14831 stderr:     at new Client (/app/node_modules/adobe-analytics/lib/client.js:2:10)
+App 14831 stderr:     at Object.<anonymous> (/app/aaapi.js:4:7)
+App 14831 stderr:     at Module._compile (module.js:660:30)
+App 14831 stderr:     at Object.Module._extensions..js (module.js:671:10)
+App 14831 stderr:     at Module.load (module.js:573:32)
+App 14831 stderr:     at tryModuleLoad (module.js:513:12)
+App 14831 stderr:     at Function.Module._load (module.js:505:3)
+App 14831 stderr:     at Module.require (module.js:604:17)
+App 14831 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+[ E 2018-09-06 18:00:24.4592 14800/Tb age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: 801dd3e1
+  Error details saved to: /tmp/passenger-error-JxLoPr.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/app/node_modules/adobe-analytics/lib/client.js:26
+    this.proxy = options.proxy;
+                         ^
+
+TypeError: Cannot read property &apos;proxy&apos; of undefined
+    at Client.p.init (/app/node_modules/adobe-analytics/lib/client.js:26:26)
+    at new Client (/app/node_modules/adobe-analytics/lib/client.js:2:10)
+    at Object.&lt;anonymous&gt; (/app/aaapi.js:4:7)
+    at Module._compile (module.js:660:30)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+    at Function.Module._load (module.js:505:3)
+    at Module.require (module.js:604:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+</pre>
+
+[ E 2018-09-06 18:00:24.4670 14800/T4 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 801dd3e1. Please see earlier logs for details about the error.
+
+[ N 2018-09-06 18:00:31.1326 14800/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-06 18:00:31.1326 14800/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-06 18:00:31.1327 14800/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-06 18:00:31.1327 14800/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-06 18:00:31.1329 14800/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-06 18:00:31.1329 14800/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-06 18:00:31.1550 14800/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-06 18:01:24.4012 14889/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-06 18:01:24.4124 14892/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-06 18:01:24.4126 14892/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-06 18:01:24.4173 14892/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 14892
+App 14923 stdout: 
+[ N 2018-09-06 18:01:26.8889 14892/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 14923 stderr: /app/node_modules/adobe-analytics/lib/client.js:26
+App 14923 stderr:     this.proxy = options.proxy;
+App 14923 stderr:                          ^
+App 14923 stderr: 
+App 14923 stderr: TypeError: Cannot read property 'proxy' of undefined
+App 14923 stderr:     at Client.p.init (/app/node_modules/adobe-analytics/lib/client.js:26:26)
+App 14923 stderr:     at new Client (/app/node_modules/adobe-analytics/lib/client.js:2:10)
+App 14923 stderr:     at Object.<anonymous> (/app/aaapi.js:4:7)
+App 14923 stderr:     at Module._compile (module.js:660:30)
+App 14923 stderr:     at Object.Module._extensions..js (module.js:671:10)
+App 14923 stderr:     at Module.load (module.js:573:32)
+App 14923 stderr:     at tryModuleLoad (module.js:513:12)
+App 14923 stderr:     at Function.Module._load (module.js:505:3)
+App 14923 stderr:     at Module.require (module.js:604:17)
+App 14923 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+[ E 2018-09-06 18:01:27.7466 14892/Tb age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: 645cd45b
+  Error details saved to: /tmp/passenger-error-KxFkVU.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/app/node_modules/adobe-analytics/lib/client.js:26
+    this.proxy = options.proxy;
+                         ^
+
+TypeError: Cannot read property &apos;proxy&apos; of undefined
+    at Client.p.init (/app/node_modules/adobe-analytics/lib/client.js:26:26)
+    at new Client (/app/node_modules/adobe-analytics/lib/client.js:2:10)
+    at Object.&lt;anonymous&gt; (/app/aaapi.js:4:7)
+    at Module._compile (module.js:660:30)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+    at Function.Module._load (module.js:505:3)
+    at Module.require (module.js:604:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+</pre>
+
+[ E 2018-09-06 18:01:27.7536 14892/T4 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 645cd45b. Please see earlier logs for details about the error.
+
+[ N 2018-09-06 18:01:39.5539 14892/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-06 18:01:39.5539 14892/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-06 18:01:39.5540 14892/T9 Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-06 18:01:39.5540 14892/T9 Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-06 18:01:39.5542 14892/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-06 18:01:39.5542 14892/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-06 18:01:39.5765 14892/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-06 18:02:15.3019 14980/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-06 18:02:15.3131 14983/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-06 18:02:15.3135 14983/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-06 18:02:15.3186 14983/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 14983
+App 15014 stdout: 
+[ N 2018-09-06 18:02:17.8115 14983/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 15014 stderr: module.js:557
+App 15014 stderr:     throw err;
+App 15014 stderr:     ^
+App 15014 stderr: 
+App 15014 stderr: Error: Cannot find module 'adobe-analytics'
+App 15014 stderr:     at Function.Module._resolveFilename (module.js:555:15)
+App 15014 stderr:     at Function.Module._load (module.js:482:25)
+App 15014 stderr:     at Module.require (module.js:604:17)
+App 15014 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+App 15014 stderr:     at require (internal/module.js:11:18)
+App 15014 stderr:     at Object.<anonymous> (/app/aaapi.js:3:16)
+App 15014 stderr:     at Module._compile (module.js:660:30)
+App 15014 stderr:     at Object.Module._extensions..js (module.js:671:10)
+App 15014 stderr:     at Module.load (module.js:573:32)
+App 15014 stderr:     at tryModuleLoad (module.js:513:12)
+[ E 2018-09-06 18:02:18.7501 14983/Tb age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: 531bad22
+  Error details saved to: /tmp/passenger-error-agmeQV.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+module.js:557
+    throw err;
+    ^
+
+Error: Cannot find module &apos;adobe-analytics&apos;
+    at Function.Module._resolveFilename (module.js:555:15)
+    at Function.Module._load (module.js:482:25)
+    at Module.require (module.js:604:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+    at require (internal/module.js:11:18)
+    at Object.&lt;anonymous&gt; (/app/aaapi.js:3:16)
+    at Module._compile (module.js:660:30)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+</pre>
+
+[ E 2018-09-06 18:02:18.7575 14983/T5 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 531bad22. Please see earlier logs for details about the error.
+
+[ N 2018-09-06 18:02:27.5308 14983/T5 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-06 18:02:27.5309 14983/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-06 18:02:27.5309 14983/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-06 18:02:27.5311 14983/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-06 18:02:27.5313 14983/T5 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-06 18:02:27.5313 14983/T5 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-06 18:02:27.5529 14983/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-06 18:03:59.0683 15110/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-06 18:03:59.0786 15113/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-06 18:03:59.0788 15113/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-06 18:03:59.0834 15113/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 15113
+App 15144 stdout: 
+[ N 2018-09-06 18:04:01.7922 15113/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 15144 stderr: module.js:557
+App 15144 stderr:     throw err;
+App 15144 stderr:     ^
+App 15144 stderr: 
+App 15144 stderr: Error: Cannot find module 'adobe-analytics'
+App 15144 stderr:     at Function.Module._resolveFilename (module.js:555:15)
+App 15144 stderr:     at Function.Module._load (module.js:482:25)
+App 15144 stderr:     at Module.require (module.js:604:17)
+App 15144 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+App 15144 stderr:     at require (internal/module.js:11:18)
+App 15144 stderr:     at Object.<anonymous> (/app/aaapi.js:3:16)
+App 15144 stderr:     at Module._compile (module.js:660:30)
+App 15144 stderr:     at Object.Module._extensions..js (module.js:671:10)
+App 15144 stderr:     at Module.load (module.js:573:32)
+App 15144 stderr:     at tryModuleLoad (module.js:513:12)
+[ E 2018-09-06 18:04:02.3600 15113/Tb age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: 85a8c9be
+  Error details saved to: /tmp/passenger-error-MRcFi5.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+module.js:557
+    throw err;
+    ^
+
+Error: Cannot find module &apos;adobe-analytics&apos;
+    at Function.Module._resolveFilename (module.js:555:15)
+    at Function.Module._load (module.js:482:25)
+    at Module.require (module.js:604:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+    at require (internal/module.js:11:18)
+    at Object.&lt;anonymous&gt; (/app/aaapi.js:3:16)
+    at Module._compile (module.js:660:30)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+</pre>
+
+[ E 2018-09-06 18:04:02.3678 15113/T4 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 85a8c9be. Please see earlier logs for details about the error.
+
+[ N 2018-09-06 18:04:39.1249 15113/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-06 18:04:39.1250 15113/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-06 18:04:39.1250 15113/T9 Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-06 18:04:39.1250 15113/T9 Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-06 18:04:39.1252 15113/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-06 18:04:39.1252 15113/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-06 18:04:39.1473 15113/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-06 18:04:42.3516 15175/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-06 18:04:42.3620 15178/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-06 18:04:42.3622 15178/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-06 18:04:42.3670 15178/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 15178
+App 15209 stdout: 
+[ N 2018-09-06 18:04:44.8419 15178/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 15209 stdout: listening on 3000
+
+[ N 2018-09-07 13:52:24.1361 15178/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 13:52:24.1364 15178/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 13:52:24.1365 15178/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 15209, application /app/public (development)
+[ N 2018-09-07 13:52:24.1368 15178/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 13:52:24.1368 15178/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 13:52:24.1368 15178/T9 Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 13:52:24.1369 15178/T9 Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 13:52:24.1370 15178/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 15209, application /app/public (development)
+[ N 2018-09-07 13:52:24.2750 15178/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 13:52:26.9166 7963/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 13:52:26.9283 7966/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 13:52:26.9286 7966/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 13:52:26.9337 7966/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 7966
+App 7997 stdout: 
+[ N 2018-09-07 13:52:29.4634 7966/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 7997 stderr: /app/node_modules/adobe-analytics/lib/client.js:26
+App 7997 stderr:     this.proxy = options.proxy;
+App 7997 stderr:                          ^
+App 7997 stderr: 
+App 7997 stderr: TypeError: Cannot read property 'proxy' of undefined
+App 7997 stderr:     at Client.p.init (/app/node_modules/adobe-analytics/lib/client.js:26:26)
+App 7997 stderr:     at new Client (/app/node_modules/adobe-analytics/lib/client.js:2:10)
+App 7997 stderr:     at Object.<anonymous> (/app/aaapi.js:4:7)
+App 7997 stderr:     at Module._compile (module.js:660:30)
+App 7997 stderr:     at Object.Module._extensions..js (module.js:671:10)
+App 7997 stderr:     at Module.load (module.js:573:32)
+App 7997 stderr:     at tryModuleLoad (module.js:513:12)
+App 7997 stderr:     at Function.Module._load (module.js:505:3)
+App 7997 stderr:     at Module.require (module.js:604:17)
+App 7997 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+[ E 2018-09-07 13:52:30.4158 7966/Tb age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: e7c382d8
+  Error details saved to: /tmp/passenger-error-N2ePbl.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/app/node_modules/adobe-analytics/lib/client.js:26
+    this.proxy = options.proxy;
+                         ^
+
+TypeError: Cannot read property &apos;proxy&apos; of undefined
+    at Client.p.init (/app/node_modules/adobe-analytics/lib/client.js:26:26)
+    at new Client (/app/node_modules/adobe-analytics/lib/client.js:2:10)
+    at Object.&lt;anonymous&gt; (/app/aaapi.js:4:7)
+    at Module._compile (module.js:660:30)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+    at Function.Module._load (module.js:505:3)
+    at Module.require (module.js:604:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+</pre>
+
+[ E 2018-09-07 13:52:30.4252 7966/T4 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is e7c382d8. Please see earlier logs for details about the error.
+
+[ N 2018-09-07 13:58:49.1245 7966/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 13:58:49.1246 7966/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 13:58:49.1247 7966/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 13:58:49.1247 7966/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 13:58:49.1249 7966/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 13:58:49.1249 7966/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 13:58:49.1468 7966/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 13:58:52.1522 8028/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 13:58:52.1635 8031/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 13:58:52.1638 8031/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 13:58:52.1689 8031/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 8031
+App 8062 stdout: 
+App 8062 stdout: listening on 3000
+[ N 2018-09-07 13:58:56.1922 8031/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+
+[ N 2018-09-07 14:02:08.6625 8031/T5 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:02:08.6626 8031/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:02:08.6626 8031/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 8062, application /app/public (development)
+[ N 2018-09-07 14:02:08.6629 8031/T5 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:02:08.6629 8031/T5 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:02:08.6629 8031/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:02:08.6629 8031/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:02:08.6630 8031/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 8062, application /app/public (development)
+[ N 2018-09-07 14:02:08.8065 8031/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:02:12.9450 8360/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:02:12.9564 8363/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:02:12.9567 8363/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:02:12.9618 8363/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 8363
+App 8396 stdout: 
+[ N 2018-09-07 14:02:15.4463 8363/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 8396 stdout: listening on 3000
+
+[ N 2018-09-07 14:04:21.9601 8363/T5 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:04:21.9602 8363/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:04:21.9602 8363/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 8396, application /app/public (development)
+[ N 2018-09-07 14:04:21.9604 8363/T5 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:04:21.9605 8363/T5 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:04:21.9605 8363/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:04:21.9605 8363/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:04:21.9606 8363/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 8396, application /app/public (development)
+[ N 2018-09-07 14:04:22.1026 8363/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:04:23.5625 8552/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:04:23.5738 8555/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:04:23.5741 8555/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:04:23.5789 8555/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 8555
+App 8588 stdout: 
+[ N 2018-09-07 14:04:26.1058 8555/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 8588 stdout: listening on 3000
+
+[ N 2018-09-07 14:08:02.8268 8555/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:08:02.8269 8555/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:08:02.8269 8555/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 8588, application /app/public (development)
+[ N 2018-09-07 14:08:02.8271 8555/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:08:02.8272 8555/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:08:02.8273 8555/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:08:02.8273 8555/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:08:02.8274 8555/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 8588, application /app/public (development)
+[ N 2018-09-07 14:08:02.9706 8555/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:08:04.6578 8849/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:08:04.6699 8852/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:08:04.6701 8852/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:08:04.6751 8852/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 8852
+App 8883 stdout: 
+[ N 2018-09-07 14:08:07.1475 8852/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 8883 stderr: /app/aaapi.js:18
+App 8883 stderr:   reportData = {
+App 8883 stderr:   ^
+App 8883 stderr: 
+App 8883 stderr: SyntaxError: Identifier 'reportData' has already been declared
+App 8883 stderr:     at createScript (vm.js:80:10)
+App 8883 stderr:     at Object.runInThisContext (vm.js:152:10)
+App 8883 stderr:     at Object.vm.runInThisContext (/usr/share/passenger/helper-scripts/node-loader.js:117:19)
+App 8883 stderr:     at Module._compile (module.js:624:28)
+App 8883 stderr:     at Object.Module._extensions..js (module.js:671:10)
+App 8883 stderr:     at Module.load (module.js:573:32)
+App 8883 stderr:     at tryModuleLoad (module.js:513:12)
+App 8883 stderr:     at Function.Module._load (module.js:505:3)
+App 8883 stderr:     at Module.require (module.js:604:17)
+App 8883 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+[ E 2018-09-07 14:08:08.1121 8852/Tb age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: 2f2eef39
+  Error details saved to: /tmp/passenger-error-hm8cu6.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/app/aaapi.js:18
+  reportData = {
+  ^
+
+SyntaxError: Identifier &apos;reportData&apos; has already been declared
+    at createScript (vm.js:80:10)
+    at Object.runInThisContext (vm.js:152:10)
+    at Object.vm.runInThisContext (/usr/share/passenger/helper-scripts/node-loader.js:117:19)
+    at Module._compile (module.js:624:28)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+    at Function.Module._load (module.js:505:3)
+    at Module.require (module.js:604:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+</pre>
+
+[ E 2018-09-07 14:08:08.1206 8852/T4 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 2f2eef39. Please see earlier logs for details about the error.
+
+[ N 2018-09-07 14:08:29.4270 8852/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:08:29.4270 8852/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:08:29.4271 8852/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:08:29.4271 8852/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:08:29.4273 8852/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:08:29.4273 8852/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:08:29.4495 8852/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:08:31.0429 8914/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:08:31.0538 8917/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:08:31.0541 8917/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:08:31.0589 8917/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 8917
+App 8948 stdout: 
+[ N 2018-09-07 14:08:33.5377 8917/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 8948 stderr: /app/node_modules/express/lib/router/route.js:202
+App 8948 stderr:         throw new Error(msg);
+App 8948 stderr:         ^
+App 8948 stderr: 
+App 8948 stderr: Error: Route.get() requires a callback function but got a [object Object]
+App 8948 stderr:     at Route.(anonymous function) [as get] (/app/node_modules/express/lib/router/route.js:202:15)
+App 8948 stderr:     at Function.app.(anonymous function) [as get] (/app/node_modules/express/lib/application.js:482:19)
+App 8948 stderr:     at Object.<anonymous> (/app/app.js:27:5)
+App 8948 stderr:     at Module._compile (module.js:660:30)
+App 8948 stderr:     at Object.Module._extensions..js (module.js:671:10)
+App 8948 stderr:     at Module.load (module.js:573:32)
+App 8948 stderr:     at tryModuleLoad (module.js:513:12)
+App 8948 stderr:     at Function.Module._load (module.js:505:3)
+App 8948 stderr:     at Module.require (module.js:604:17)
+App 8948 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+[ E 2018-09-07 14:08:34.5474 8917/Tb age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: c22b0ebd
+  Error details saved to: /tmp/passenger-error-w0r4ow.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/app/node_modules/express/lib/router/route.js:202
+        throw new Error(msg);
+        ^
+
+Error: Route.get() requires a callback function but got a [object Object]
+    at Route.(anonymous function) [as get] (/app/node_modules/express/lib/router/route.js:202:15)
+    at Function.app.(anonymous function) [as get] (/app/node_modules/express/lib/application.js:482:19)
+    at Object.&lt;anonymous&gt; (/app/app.js:27:5)
+    at Module._compile (module.js:660:30)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+    at Function.Module._load (module.js:505:3)
+    at Module.require (module.js:604:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+</pre>
+
+[ E 2018-09-07 14:08:34.5567 8917/T4 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is c22b0ebd. Please see earlier logs for details about the error.
+
+[ N 2018-09-07 14:14:30.9655 8917/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:14:30.9655 8917/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:14:30.9656 8917/T9 Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:14:30.9656 8917/T9 Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:14:30.9658 8917/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:14:30.9658 8917/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:14:30.9881 8917/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:14:32.7110 8979/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:14:32.7237 8982/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:14:32.7241 8982/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:14:32.7297 8982/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 8982
+App 9013 stdout: 
+[ N 2018-09-07 14:14:35.2707 8982/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 9013 stdout: listening on 3000
+
+[ N 2018-09-07 14:15:50.6739 8982/T5 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:15:50.6740 8982/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:15:50.6740 8982/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 9013, application /app/public (development)
+[ N 2018-09-07 14:15:50.6742 8982/T5 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:15:50.6742 8982/T5 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:15:50.6743 8982/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:15:50.6743 8982/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:15:50.6743 8982/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 9013, application /app/public (development)
+[ N 2018-09-07 14:15:50.8146 8982/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:15:53.6952 9122/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:15:53.7069 9125/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:15:53.7072 9125/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:15:53.7122 9125/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 9125
+App 9158 stdout: 
+[ N 2018-09-07 14:15:56.1806 9125/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 9158 stdout: listening on 3000
+
+[ N 2018-09-07 14:17:31.4199 9125/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:17:31.4200 9125/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:17:31.4200 9125/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 9158, application /app/public (development)
+[ N 2018-09-07 14:17:31.4202 9125/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:17:31.4202 9125/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:17:31.4203 9125/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:17:31.4203 9125/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:17:31.4204 9125/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 9158, application /app/public (development)
+[ N 2018-09-07 14:17:31.5587 9125/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:17:33.2356 9267/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:17:33.2531 9270/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:17:33.2534 9270/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:17:33.2583 9270/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 9270
+App 9303 stdout: 
+[ N 2018-09-07 14:17:35.7286 9270/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 9303 stdout: listening on 3000
+
+[ N 2018-09-07 14:18:30.8501 9270/T5 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:18:30.8501 9270/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:18:30.8501 9270/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 9303, application /app/public (development)
+[ N 2018-09-07 14:18:30.8502 9270/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:18:30.8502 9270/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:18:30.8504 9270/T5 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:18:30.8505 9270/T5 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:18:30.8505 9270/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 9303, application /app/public (development)
+[ N 2018-09-07 14:18:30.9869 9270/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:18:31.7997 9380/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:18:31.8109 9383/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:18:31.8112 9383/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:18:31.8162 9383/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 9383
+App 9414 stdout: 
+[ N 2018-09-07 14:18:34.2900 9383/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 9414 stdout: listening on 3000
+
+[ N 2018-09-07 14:19:10.9525 9383/T5 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:19:10.9526 9383/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:19:10.9526 9383/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 9414, application /app/public (development)
+[ N 2018-09-07 14:19:10.9527 9383/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:19:10.9527 9383/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:19:10.9529 9383/T5 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:19:10.9529 9383/T5 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:19:10.9530 9383/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 9414, application /app/public (development)
+[ N 2018-09-07 14:19:11.0796 9383/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:19:12.0204 9477/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:19:12.0320 9480/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:19:12.0322 9480/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:19:12.0370 9480/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 9480
+App 9511 stdout: 
+[ N 2018-09-07 14:19:14.5086 9480/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 9511 stderr: /app/node_modules/adobe-analytics/lib/client.js:26
+App 9511 stderr:     this.proxy = options.proxy;
+App 9511 stderr:                          ^
+App 9511 stderr: 
+App 9511 stderr: TypeError: Cannot read property 'proxy' of undefined
+App 9511 stderr:     at Client.p.init (/app/node_modules/adobe-analytics/lib/client.js:26:26)
+App 9511 stderr:     at new Client (/app/node_modules/adobe-analytics/lib/client.js:2:10)
+App 9511 stderr:     at Object.<anonymous> (/app/aaapi.js:6:9)
+App 9511 stderr:     at Module._compile (module.js:660:30)
+App 9511 stderr:     at Object.Module._extensions..js (module.js:671:10)
+App 9511 stderr:     at Module.load (module.js:573:32)
+App 9511 stderr:     at tryModuleLoad (module.js:513:12)
+App 9511 stderr:     at Function.Module._load (module.js:505:3)
+App 9511 stderr:     at Module.require (module.js:604:17)
+App 9511 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+[ E 2018-09-07 14:19:15.4339 9480/Tb age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: 9f05e969
+  Error details saved to: /tmp/passenger-error-QDKHdr.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/app/node_modules/adobe-analytics/lib/client.js:26
+    this.proxy = options.proxy;
+                         ^
+
+TypeError: Cannot read property &apos;proxy&apos; of undefined
+    at Client.p.init (/app/node_modules/adobe-analytics/lib/client.js:26:26)
+    at new Client (/app/node_modules/adobe-analytics/lib/client.js:2:10)
+    at Object.&lt;anonymous&gt; (/app/aaapi.js:6:9)
+    at Module._compile (module.js:660:30)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+    at Function.Module._load (module.js:505:3)
+    at Module.require (module.js:604:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+</pre>
+
+[ E 2018-09-07 14:19:15.4436 9480/T4 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 9f05e969. Please see earlier logs for details about the error.
+
+[ N 2018-09-07 14:19:40.1658 9480/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:19:40.1659 9480/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:19:40.1659 9480/T9 Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:19:40.1660 9480/T9 Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:19:40.1662 9480/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:19:40.1662 9480/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:19:40.1914 9480/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:19:41.1834 9554/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:19:41.1956 9557/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:19:41.1959 9557/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:19:41.2016 9557/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 9557
+App 9588 stdout: 
+[ N 2018-09-07 14:19:43.7312 9557/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 9588 stderr: /app/node_modules/express/lib/router/route.js:202
+App 9588 stderr:         throw new Error(msg);
+App 9588 stderr:         ^
+App 9588 stderr: 
+App 9588 stderr: Error: Route.get() requires a callback function but got a [object Object]
+App 9588 stderr:     at Route.(anonymous function) [as get] (/app/node_modules/express/lib/router/route.js:202:15)
+App 9588 stderr:     at Function.app.(anonymous function) [as get] (/app/node_modules/express/lib/application.js:482:19)
+App 9588 stderr:     at Object.<anonymous> (/app/app.js:27:5)
+App 9588 stderr:     at Module._compile (module.js:660:30)
+App 9588 stderr:     at Object.Module._extensions..js (module.js:671:10)
+App 9588 stderr:     at Module.load (module.js:573:32)
+App 9588 stderr:     at tryModuleLoad (module.js:513:12)
+App 9588 stderr:     at Function.Module._load (module.js:505:3)
+App 9588 stderr:     at Module.require (module.js:604:17)
+App 9588 stderr:     at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+[ E 2018-09-07 14:19:44.8008 9557/Tb age/Cor/App/Implementation.cpp:304 ]: Could not spawn process for application /app: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger.
+  Error ID: 1e9f5dbc
+  Error details saved to: /tmp/passenger-error-aY7Op0.html
+  Message from application: An error occurred while starting the web application. It exited before signalling successful startup back to Phusion Passenger. Please read <a href="https://github.com/phusion/passenger/wiki/Debugging-application-startup-problems">this article</a> for more information about this problem.<br>
+<h2>Raw process output:</h2>
+<pre>
+/app/node_modules/express/lib/router/route.js:202
+        throw new Error(msg);
+        ^
+
+Error: Route.get() requires a callback function but got a [object Object]
+    at Route.(anonymous function) [as get] (/app/node_modules/express/lib/router/route.js:202:15)
+    at Function.app.(anonymous function) [as get] (/app/node_modules/express/lib/application.js:482:19)
+    at Object.&lt;anonymous&gt; (/app/app.js:27:5)
+    at Module._compile (module.js:660:30)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+    at Function.Module._load (module.js:505:3)
+    at Module.require (module.js:604:17)
+    at Module.require (/usr/share/passenger/helper-scripts/node-loader.js:80:25)
+</pre>
+
+[ E 2018-09-07 14:19:44.8110 9557/T5 age/Cor/Con/CheckoutSession.cpp:285 ]: [Client 1-1] Cannot checkout session because a spawning error occurred. The identifier of the error is 1e9f5dbc. Please see earlier logs for details about the error.
+
+[ N 2018-09-07 14:20:15.4725 9557/T5 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:20:15.4725 9557/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:20:15.4726 9557/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:20:15.4726 9557/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:20:15.4728 9557/T5 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:20:15.4728 9557/T5 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:20:15.4947 9557/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:20:16.5965 9633/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:20:16.6075 9636/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:20:16.6078 9636/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:20:16.6138 9636/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 9636
+App 9667 stdout: 
+[ N 2018-09-07 14:20:19.0842 9636/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 9667 stdout: listening on 3000
+
+[ N 2018-09-07 14:24:49.5682 9636/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:24:49.5682 9636/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:24:49.5682 9636/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 9667, application /app/public (development)
+[ N 2018-09-07 14:24:49.5685 9636/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:24:49.5686 9636/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:24:49.5686 9636/T9 Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:24:49.5686 9636/T9 Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:24:49.5687 9636/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 9667, application /app/public (development)
+[ N 2018-09-07 14:24:49.7069 9636/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:24:51.2649 9918/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:24:51.2776 9921/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:24:51.2779 9921/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:24:51.2830 9921/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 9921
+App 9952 stdout: 
+[ N 2018-09-07 14:24:53.8236 9921/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 9952 stdout: listening on 3000
+
+[ N 2018-09-07 14:25:58.3276 9921/T5 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:25:58.3276 9921/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:25:58.3277 9921/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 9952, application /app/public (development)
+[ N 2018-09-07 14:25:58.3279 9921/T5 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:25:58.3279 9921/T5 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:25:58.3280 9921/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:25:58.3280 9921/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:25:58.3280 9921/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 9952, application /app/public (development)
+[ N 2018-09-07 14:25:58.4667 9921/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:25:59.5821 10083/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:25:59.5930 10086/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:25:59.5934 10086/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:25:59.5983 10086/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 10086
+App 10119 stdout: 
+[ N 2018-09-07 14:26:02.0689 10086/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 10119 stdout: listening on 3000
+
+[ N 2018-09-07 14:26:58.8743 10086/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:26:58.8744 10086/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:26:58.8744 10086/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 10119, application /app/public (development)
+[ N 2018-09-07 14:26:58.8745 10086/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:26:58.8745 10086/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:26:58.8747 10086/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:26:58.8747 10086/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:26:58.8747 10086/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 10119, application /app/public (development)
+[ N 2018-09-07 14:26:59.0121 10086/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:27:00.3420 10198/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:27:00.3562 10201/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:27:00.3565 10201/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:27:00.3615 10201/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 10201
+App 10232 stdout: 
+[ N 2018-09-07 14:27:02.8422 10201/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 10232 stdout: listening on 3000
+
+[ N 2018-09-07 14:27:24.2217 10201/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:27:24.2217 10201/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:27:24.2218 10201/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 10232, application /app/public (development)
+[ N 2018-09-07 14:27:24.2219 10201/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:27:24.2219 10201/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:27:24.2221 10201/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:27:24.2221 10201/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:27:24.2221 10201/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 10232, application /app/public (development)
+[ N 2018-09-07 14:27:24.3565 10201/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:27:26.2636 10283/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:27:26.2755 10286/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:27:26.2758 10286/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:27:26.2807 10286/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 10286
+App 10317 stdout: 
+[ N 2018-09-07 14:27:28.7549 10286/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 10317 stdout: listening on 3000
+
+[ N 2018-09-07 14:28:11.6070 10286/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:28:11.6071 10286/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:28:11.6071 10286/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 10317, application /app/public (development)
+[ N 2018-09-07 14:28:11.6072 10286/T9 Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:28:11.6072 10286/T9 Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:28:11.6074 10286/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:28:11.6075 10286/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:28:11.6075 10286/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 10317, application /app/public (development)
+[ N 2018-09-07 14:28:11.7427 10286/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:28:12.7389 10386/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:28:12.7502 10389/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:28:12.7505 10389/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:28:12.7553 10389/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 10389
+App 10420 stdout: 
+[ N 2018-09-07 14:28:15.2241 10389/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 10420 stdout: listening on 3000
+
+[ N 2018-09-07 14:29:40.0085 10389/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:29:40.0086 10389/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:29:40.0086 10389/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 10420, application /app/public (development)
+[ N 2018-09-07 14:29:40.0296 10389/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:29:40.0296 10389/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:29:40.0297 10389/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:29:40.0297 10389/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:29:40.0335 10389/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 10420, application /app/public (development)
+[ N 2018-09-07 14:29:40.1909 10389/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 14:29:42.7867 10523/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 14:29:42.7972 10526/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 14:29:42.7976 10526/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 14:29:42.8023 10526/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 10526
+App 10557 stdout: 
+[ N 2018-09-07 14:29:45.3381 10526/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 10557 stdout: listening on 3000
+
+[ N 2018-09-07 14:29:55.7208 10526/T4 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 14:29:55.7208 10526/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 14:29:55.7208 10526/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 10557, application /app/public (development)
+[ N 2018-09-07 14:29:55.7209 10526/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 14:29:55.7209 10526/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 14:29:55.7211 10526/T4 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 14:29:55.7211 10526/T4 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 14:29:55.7212 10526/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 10557, application /app/public (development)
+[ N 2018-09-07 14:29:55.8480 10526/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 15:16:47.9446 1245/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 15:16:47.9580 1248/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 15:16:47.9582 1248/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 15:16:47.9637 1248/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 1248
+App 1281 stdout: 
+[ N 2018-09-07 15:16:50.5169 1248/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 1281 stdout: listening on 3000
+
+[ N 2018-09-07 15:17:40.7437 1248/T5 age/Cor/CoreMain.cpp:589 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2018-09-07 15:17:40.7437 1248/T1 age/Cor/CoreMain.cpp:1080 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2018-09-07 15:17:40.7437 1248/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 1281, application /app/public (development)
+[ N 2018-09-07 15:17:40.7438 1248/Ta Ser/Server.h:886 ]: [ApiServer] Freed 0 spare client objects
+[ N 2018-09-07 15:17:40.7438 1248/Ta Ser/Server.h:531 ]: [ApiServer] Shutdown finished
+[ N 2018-09-07 15:17:40.7440 1248/T5 Ser/Server.h:886 ]: [ServerThr.1] Freed 128 spare client objects
+[ N 2018-09-07 15:17:40.7441 1248/T5 Ser/Server.h:531 ]: [ServerThr.1] Shutdown finished
+[ N 2018-09-07 15:17:40.7441 1248/T1 age/Cor/CoreMain.cpp:994 ]: Checking whether to disconnect long-running connections for process 1281, application /app/public (development)
+[ N 2018-09-07 15:17:40.9072 1248/T1 age/Cor/CoreMain.cpp:1150 ]: Passenger core shutdown finished
+[ N 2018-09-07 16:13:33.2180 87/T1 age/Wat/WatchdogMain.cpp:1267 ]: Starting Passenger watchdog...
+[ N 2018-09-07 16:13:33.2292 90/T1 age/Cor/CoreMain.cpp:1165 ]: Starting Passenger core...
+[ N 2018-09-07 16:13:33.2295 90/T1 age/Cor/CoreMain.cpp:249 ]: Passenger core running in multi-application mode.
+[ N 2018-09-07 16:13:33.2341 90/T1 age/Cor/CoreMain.cpp:905 ]: Passenger core online, PID 90
+App 123 stdout: 
+[ N 2018-09-07 16:13:35.7138 90/T8 age/Cor/SecurityUpdateChecker.h:374 ]: Security update check: no update found (next check in 24 hours)
+App 123 stdout: listening on 3000
