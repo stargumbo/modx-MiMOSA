@@ -1,11 +1,18 @@
-const api = require('./api');
-const dbpull = require('./dbpull');
-const aaapi = require('./aaapi');
 const app = require('express')();
-const path = require('path');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+// body parser middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+const dbConfig = require('./config/database.config.js');
+require('./routes/row.routes.js')(app);
+require('./routes/flexapi.routes.js')(app);
 
 const port = process.env.PORT || 3000;
+
+mongoose.Promise = global.Promise;
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -13,22 +20,14 @@ app.use(function(req, res, next) {
   next();
 });
 
-// body parser middleware
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-// get api
-app.get('/api', api);
-
-// get dbpull
-app.get('/dbpull', dbpull);
-
-// get aa api
-app.get('/aaapi', aaapi);
-
-// get formdata test
-app.get('/passdatapage', function(req, res) {
-    res.sendFile(path.join(__dirname, '/passdatapage/index.html'));
+// Connecting to the database
+mongoose.connect(dbConfig.rccl, {
+  useNewUrlParser: true
+}).then(() => {
+  console.log("Successfully connected to the database");
+}).catch(err => {
+  console.log('Could not connect to the database. Exiting now...', err);
+  process.exit();
 });
 
 // error handler
@@ -37,7 +36,7 @@ app.use(function(err, req, res, next) {
     res.status(400).send(err.message);
 });
 
-app.listen(port, function(){
+app.listen(port, () => {
     console.log('listening on ' + port);
 });
 

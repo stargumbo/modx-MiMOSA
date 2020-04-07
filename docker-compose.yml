@@ -15,7 +15,7 @@ services:
       - node
 
   php:
-    image: nanoninja/php-fpm:7.1
+    image: bitnami/php-fpm:latest
     container_name: php_1
     restart: always
     volumes:

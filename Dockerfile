@@ -4,19 +4,12 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y \
 	git \
-	python3 \
-	python3-dev \
-	python3-setuptools \
-	python3-pip \
 	nginx \
 	supervisor \
 	apache2-utils \
 	bash \
 	sqlite3 && \
-	pip3 install -U pip setuptools && \
    rm -rf /var/lib/apt/lists/*
-
-RUN pip3 install uwsgi
 
 COPY service_images/nginx.conf /etc/nginx/
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
